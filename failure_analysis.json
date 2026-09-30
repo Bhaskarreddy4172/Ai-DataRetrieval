@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "total_failures": 0,
+    "category_counts": {
+      "Spelling": 0,
+      "Phonetic": 0,
+      "Abbreviation": 0,
+      "Entity": 0,
+      "Column": 0,
+      "Intent": 0,
+      "Operator": 0,
+      "Relationship": 0,
+      "Query Plan": 0,
+      "Execution": 0,
+      "Conversation": 0,
+      "Ambiguity": 0,
+      "Answer Generation": 0
+    },
+    "category_percentages": {
+      "Spelling": 0.0,
+      "Phonetic": 0.0,
+      "Abbreviation": 0.0,
+      "Entity": 0.0,
+      "Column": 0.0,
+      "Intent": 0.0,
+      "Operator": 0.0,
+      "Relationship": 0.0,
+      "Query Plan": 0.0,
+      "Execution": 0.0,
+      "Conversation": 0.0,
+      "Ambiguity": 0.0,
+      "Answer Generation": 0.0
+    }
+  },
+  "detailed_failures": []
+}

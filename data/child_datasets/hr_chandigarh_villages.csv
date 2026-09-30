@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+HR-001,Chandigarh_Village_01,41251,21092,20159,82.1,20.2,9498,Haryana,Chandigarh
+HR-002,Chandigarh_Village_02,46748,22307,24441,77.5,40.97,10415,Haryana,Chandigarh
+HR-003,Chandigarh_Village_03,46557,23059,23498,83.9,33.6,12388,Haryana,Chandigarh
+HR-004,Chandigarh_Village_04,20273,10092,10181,85.2,27.16,4455,Haryana,Chandigarh
+HR-005,Chandigarh_Village_05,43707,21757,21950,91.4,9.67,12332,Haryana,Chandigarh
+HR-006,Chandigarh_Village_06,40383,20376,20007,80.7,5.97,9696,Haryana,Chandigarh
+HR-007,Chandigarh_Village_07,31817,15375,16442,86.7,32.77,7224,Haryana,Chandigarh
+HR-008,Chandigarh_Village_08,22650,11535,11115,93.9,25.52,6396,Haryana,Chandigarh
+HR-009,Chandigarh_Village_09,48961,24905,24056,75.4,34.44,11933,Haryana,Chandigarh
+HR-010,Chandigarh_Village_10,20065,10068,9997,74.9,22.31,5588,Haryana,Chandigarh

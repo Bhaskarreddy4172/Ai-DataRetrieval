@@ -1,0 +1,33 @@
+{
+  "benchmark_timestamp": "2026-09-17 11:10:59",
+  "total_queries_tested": 100,
+  "passed_tests": 100,
+  "failed_tests": 0,
+  "overall_accuracy_pct": 100.0,
+  "intent_recognition_accuracy_pct": 100.0,
+  "entity_recognition_accuracy_pct": 100.0,
+  "column_mapping_accuracy_pct": 100.0,
+  "value_matching_accuracy_pct": 100.0,
+  "operator_resolution_accuracy_pct": 100.0,
+  "relationship_resolution_accuracy_pct": 100.0,
+  "typo_recovery_rate_pct": 100.0,
+  "phonetic_recovery_rate_pct": 100.0,
+  "shortcut_abbreviation_recovery_rate_pct": 100.0,
+  "row_retrieval_precision_pct": 100.0,
+  "row_retrieval_recall_pct": 100.0,
+  "row_retrieval_f1_pct": 100.0,
+  "analytical_calculation_accuracy_pct": 100.0,
+  "boolean_verification_accuracy_pct": 100.0,
+  "unsupported_query_rejection_rate_pct": 100.0,
+  "hallucination_rate_pct": 0.0,
+  "average_latency_ms": 129.75,
+  "p95_latency_ms": 213.62,
+  "total_benchmark_time_seconds": 12.99,
+  "category_breakdown": {
+    "1_standard_normal": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    }
+  }
+}

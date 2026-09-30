@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+PB-001,Chandigarh_Village_01,17951,8641,9310,72.6,18.32,3507,Punjab,Chandigarh
+PB-002,Chandigarh_Village_02,16436,7846,8590,72.0,19.48,3768,Punjab,Chandigarh
+PB-003,Chandigarh_Village_03,35731,17879,17852,69.6,15.21,9743,Punjab,Chandigarh
+PB-004,Chandigarh_Village_04,35584,18397,17187,96.4,19.43,8366,Punjab,Chandigarh
+PB-005,Chandigarh_Village_05,42354,21236,21118,81.4,7.99,8254,Punjab,Chandigarh
+PB-006,Chandigarh_Village_06,17200,8924,8276,69.1,40.05,3817,Punjab,Chandigarh
+PB-007,Chandigarh_Village_07,42050,21212,20838,93.8,4.61,9891,Punjab,Chandigarh
+PB-008,Chandigarh_Village_08,40566,19543,21023,75.2,23.09,11048,Punjab,Chandigarh
+PB-009,Chandigarh_Village_09,33433,16130,17303,70.8,22.66,7579,Punjab,Chandigarh
+PB-010,Chandigarh_Village_10,39148,18673,20475,84.8,31.84,7898,Punjab,Chandigarh

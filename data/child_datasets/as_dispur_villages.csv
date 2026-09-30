@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+AS-001,Dispur_Village_01,43959,21109,22850,82.7,26.16,8496,Assam,Dispur
+AS-002,Dispur_Village_02,46359,23574,22785,71.0,29.99,9687,Assam,Dispur
+AS-003,Dispur_Village_03,22457,11516,10941,92.7,32.63,4760,Assam,Dispur
+AS-004,Dispur_Village_04,30602,14773,15829,81.8,35.73,8755,Assam,Dispur
+AS-005,Dispur_Village_05,34455,16832,17623,85.4,20.85,7432,Assam,Dispur
+AS-006,Dispur_Village_06,31271,14747,16524,78.9,5.99,6712,Assam,Dispur
+AS-007,Dispur_Village_07,27952,14535,13417,84.4,15.46,6819,Assam,Dispur
+AS-008,Dispur_Village_08,47585,24255,23330,94.1,16.69,11407,Assam,Dispur
+AS-009,Dispur_Village_09,20619,10397,10222,79.7,36.41,4783,Assam,Dispur
+AS-010,Dispur_Village_10,38268,19319,18949,88.4,41.1,10581,Assam,Dispur

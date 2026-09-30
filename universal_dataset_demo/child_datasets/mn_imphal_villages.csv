@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+MN-001,Imphal_Village_01,17100,8316,8784,68.7,30.71,4481,Manipur,Imphal
+MN-002,Imphal_Village_02,33555,16714,16841,84.5,23.55,8205,Manipur,Imphal
+MN-003,Imphal_Village_03,18511,9723,8788,81.9,33.0,3785,Manipur,Imphal
+MN-004,Imphal_Village_04,13288,6753,6535,75.8,10.42,2648,Manipur,Imphal
+MN-005,Imphal_Village_05,29680,15205,14475,73.1,31.57,7730,Manipur,Imphal
+MN-006,Imphal_Village_06,24498,12632,11866,87.6,14.25,5625,Manipur,Imphal
+MN-007,Imphal_Village_07,11549,5562,5987,82.9,26.55,2248,Manipur,Imphal
+MN-008,Imphal_Village_08,21936,11558,10378,77.8,19.48,5413,Manipur,Imphal
+MN-009,Imphal_Village_09,14960,7345,7615,76.3,18.32,4143,Manipur,Imphal
+MN-010,Imphal_Village_10,17857,9259,8598,92.8,34.48,4059,Manipur,Imphal

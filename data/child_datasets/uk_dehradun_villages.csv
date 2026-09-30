@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+UK-001,Dehradun_Village_01,35193,18549,16644,90.7,22.82,7917,Uttarakhand,Dehradun
+UK-002,Dehradun_Village_02,38684,20340,18344,69.1,10.79,8444,Uttarakhand,Dehradun
+UK-003,Dehradun_Village_03,17700,8606,9094,91.6,10.97,4458,Uttarakhand,Dehradun
+UK-004,Dehradun_Village_04,24893,12491,12402,78.5,22.41,5359,Uttarakhand,Dehradun
+UK-005,Dehradun_Village_05,46562,24080,22482,70.7,5.3,13011,Uttarakhand,Dehradun
+UK-006,Dehradun_Village_06,37579,18006,19573,92.7,4.44,10680,Uttarakhand,Dehradun
+UK-007,Dehradun_Village_07,58442,27890,30552,86.0,16.51,16684,Uttarakhand,Dehradun
+UK-008,Dehradun_Village_08,36060,18976,17084,91.8,6.99,8132,Uttarakhand,Dehradun
+UK-009,Dehradun_Village_09,27197,13838,13359,70.7,6.53,6657,Uttarakhand,Dehradun
+UK-010,Dehradun_Village_10,17546,8486,9060,81.2,31.27,4498,Uttarakhand,Dehradun

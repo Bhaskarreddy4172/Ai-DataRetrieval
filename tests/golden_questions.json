@@ -1,0 +1,858 @@
+[
+  {
+    "id": "GOLDEN_001",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Who gets paid more than 1000000?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">",
+    "expected_value": 1000000.0
+  },
+  {
+    "id": "GOLDEN_002",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "who earns more than 1000000?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">",
+    "expected_value": 1000000.0
+  },
+  {
+    "id": "GOLDEN_003",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "hey can you tell me who gets paid more than 1000000?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">",
+    "expected_value": 1000000.0
+  },
+  {
+    "id": "GOLDEN_004",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Who gets paid more than 1000000?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">",
+    "expected_value": 1000000.0
+  },
+  {
+    "id": "GOLDEN_005",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Show employees making at least 1500000",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">=",
+    "expected_value": 1500000.0
+  },
+  {
+    "id": "GOLDEN_006",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "list staff making at least 1500000",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">=",
+    "expected_value": 1500000.0
+  },
+  {
+    "id": "GOLDEN_007",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "hey can you tell me show employees making at least 1500000",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">=",
+    "expected_value": 1500000.0
+  },
+  {
+    "id": "GOLDEN_008",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Show employees making at least 1500000",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">=",
+    "expected_value": 1500000.0
+  },
+  {
+    "id": "GOLDEN_009",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Find workers earning under 600k",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "<",
+    "expected_value": 600000.0
+  },
+  {
+    "id": "GOLDEN_010",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "hey can you tell me find workers earning under 600k",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "<",
+    "expected_value": 600000.0
+  },
+  {
+    "id": "GOLDEN_011",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Find workers earning under 600k",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "<",
+    "expected_value": 600000.0
+  },
+  {
+    "id": "GOLDEN_012",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Who earns between 800k and 1200k?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "range"
+  },
+  {
+    "id": "GOLDEN_013",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "hey can you tell me who earns between 800k and 1200k?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "range"
+  },
+  {
+    "id": "GOLDEN_014",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "Who earns between 800k and 1200k?",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "range"
+  },
+  {
+    "id": "GOLDEN_015",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "Who spent more than 10000 on service?",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">",
+    "expected_value": 10000.0
+  },
+  {
+    "id": "GOLDEN_016",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "hey can you tell me who spent more than 10000 on service?",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">",
+    "expected_value": 10000.0
+  },
+  {
+    "id": "GOLDEN_017",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "Who spent more than 10000 on service?",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">",
+    "expected_value": 10000.0
+  },
+  {
+    "id": "GOLDEN_018",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "Show customers with service amount at least 15k",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">=",
+    "expected_value": 15000.0
+  },
+  {
+    "id": "GOLDEN_019",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "hey can you tell me show customers with service amount at least 15k",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">=",
+    "expected_value": 15000.0
+  },
+  {
+    "id": "GOLDEN_020",
+    "category": "numeric_strict",
+    "dataset": "customers",
+    "question": "Show customers with service amount at least 15k",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">=",
+    "expected_value": 15000.0
+  },
+  {
+    "id": "GOLDEN_021",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "hey who makes the most in Engineering?",
+    "expected_intent": "MAX",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_022",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "hey can you tell me hey who makes the most in engineering?",
+    "expected_intent": "MAX",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_023",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "hey who makes the most in Engineering?",
+    "expected_intent": "MAX",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_024",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "who gets paid the least in Sales?",
+    "expected_intent": "MIN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_025",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "who earns the least in sales?",
+    "expected_intent": "MIN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_026",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "hey can you tell me who gets paid the least in sales?",
+    "expected_intent": "MIN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_027",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "who gets paid the least in Sales?",
+    "expected_intent": "MIN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_028",
+    "category": "slang",
+    "dataset": "products",
+    "question": "what is the costliest product?",
+    "expected_intent": "MAX",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_029",
+    "category": "slang",
+    "dataset": "products",
+    "question": "hey can you tell me what is the costliest product?",
+    "expected_intent": "MAX",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_030",
+    "category": "slang",
+    "dataset": "products",
+    "question": "costliest product?",
+    "expected_intent": "MAX",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_031",
+    "category": "slang",
+    "dataset": "products",
+    "question": "show me the cheapest gadget",
+    "expected_intent": "MIN",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_032",
+    "category": "slang",
+    "dataset": "products",
+    "question": "hey can you tell me show me the cheapest gadget",
+    "expected_intent": "MIN",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_033",
+    "category": "slang",
+    "dataset": "products",
+    "question": "show me the cheapest gadget",
+    "expected_intent": "MIN",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_034",
+    "category": "slang",
+    "dataset": "customers",
+    "question": "gimme all high-value customers",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_035",
+    "category": "slang",
+    "dataset": "customers",
+    "question": "hey can you tell me gimme all high-value customers",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_036",
+    "category": "slang",
+    "dataset": "customers",
+    "question": "gimme all high-value customers",
+    "expected_intent": "FILTER",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_037",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "how many employees are in hyd?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_038",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "hey can you tell me how many employees are in hyd?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_039",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "how many employees are in hyd?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_040",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "who works in blr?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_041",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "hey can you tell me who works in blr?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_042",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "who works in blr?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_043",
+    "category": "abbreviation",
+    "dataset": "customers",
+    "question": "show all clients from mum",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Mumbai"
+  },
+  {
+    "id": "GOLDEN_044",
+    "category": "abbreviation",
+    "dataset": "customers",
+    "question": "hey can you tell me show all clients from mum",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Mumbai"
+  },
+  {
+    "id": "GOLDEN_045",
+    "category": "abbreviation",
+    "dataset": "customers",
+    "question": "clients from mum",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Mumbai"
+  },
+  {
+    "id": "GOLDEN_046",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "what is the capital of ka?",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_047",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "hey can you tell me what is the capital of ka?",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_048",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "capital of ka?",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_049",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "which state has hyd as its capital?",
+    "expected_intent": "FILTER",
+    "expected_column": "capital",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_050",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "hey can you tell me which state has hyd as its capital?",
+    "expected_intent": "FILTER",
+    "expected_column": "capital",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_051",
+    "category": "abbreviation",
+    "dataset": "states",
+    "question": "which state has hyd as its capital?",
+    "expected_intent": "FILTER",
+    "expected_column": "capital",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_052",
+    "category": "typo",
+    "dataset": "states",
+    "question": "capital of karnatka",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_053",
+    "category": "typo",
+    "dataset": "states",
+    "question": "hey can you tell me capital of karnatka",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_054",
+    "category": "typo",
+    "dataset": "states",
+    "question": "capital of karnatka",
+    "expected_intent": "FILTER",
+    "expected_column": "state",
+    "expected_value": "Karnataka"
+  },
+  {
+    "id": "GOLDEN_055",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "who works in hyderbad?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_056",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "hey can you tell me who works in hyderbad?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_057",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "who works in hyderbad?",
+    "expected_intent": "FILTER",
+    "expected_column": "City",
+    "expected_value": "Hyderabad"
+  },
+  {
+    "id": "GOLDEN_058",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "how many in bangalore?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_059",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "hey can you tell me how many in bangalore?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_060",
+    "category": "typo",
+    "dataset": "employees",
+    "question": "how many in bangalore?",
+    "expected_intent": "COUNT",
+    "expected_column": "City",
+    "expected_value": "Bengaluru"
+  },
+  {
+    "id": "GOLDEN_061",
+    "category": "typo",
+    "dataset": "products",
+    "question": "show me all laptps",
+    "expected_intent": "FILTER",
+    "expected_column": "Category",
+    "expected_value": "Laptops"
+  },
+  {
+    "id": "GOLDEN_062",
+    "category": "typo",
+    "dataset": "products",
+    "question": "hey can you tell me show me all laptps",
+    "expected_intent": "FILTER",
+    "expected_column": "Category",
+    "expected_value": "Laptops"
+  },
+  {
+    "id": "GOLDEN_063",
+    "category": "typo",
+    "dataset": "products",
+    "question": "show me all laptps",
+    "expected_intent": "FILTER",
+    "expected_column": "Category",
+    "expected_value": "Laptops"
+  },
+  {
+    "id": "GOLDEN_064",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "what is the median salary?",
+    "expected_intent": "MEDIAN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_065",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "hey can you tell me what is the median salary?",
+    "expected_intent": "MEDIAN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_066",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "median salary?",
+    "expected_intent": "MEDIAN",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_067",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "what is the average salary in Engineering?",
+    "expected_intent": "AVERAGE",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_068",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "hey can you tell me what is the average salary in engineering?",
+    "expected_intent": "AVERAGE",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_069",
+    "category": "aggregation",
+    "dataset": "employees",
+    "question": "average salary in Engineering?",
+    "expected_intent": "AVERAGE",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_070",
+    "category": "aggregation",
+    "dataset": "customers",
+    "question": "what is the total service revenue?",
+    "expected_intent": "SUM",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_071",
+    "category": "aggregation",
+    "dataset": "customers",
+    "question": "hey can you tell me what is the total service revenue?",
+    "expected_intent": "SUM",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_072",
+    "category": "aggregation",
+    "dataset": "customers",
+    "question": "total service revenue?",
+    "expected_intent": "SUM",
+    "expected_column": "Service Amount"
+  },
+  {
+    "id": "GOLDEN_073",
+    "category": "aggregation",
+    "dataset": "products",
+    "question": "how many products have stock under 10?",
+    "expected_intent": "COUNT",
+    "expected_column": "Stock Quantity"
+  },
+  {
+    "id": "GOLDEN_074",
+    "category": "aggregation",
+    "dataset": "products",
+    "question": "hey can you tell me how many products have stock under 10?",
+    "expected_intent": "COUNT",
+    "expected_column": "Stock Quantity"
+  },
+  {
+    "id": "GOLDEN_075",
+    "category": "aggregation",
+    "dataset": "products",
+    "question": "how many products have stock under 10?",
+    "expected_intent": "COUNT",
+    "expected_column": "Stock Quantity"
+  },
+  {
+    "id": "GOLDEN_076",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "are there any duplicate records?",
+    "expected_intent": "DUPLICATES"
+  },
+  {
+    "id": "GOLDEN_077",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "hey can you tell me are there any duplicate records?",
+    "expected_intent": "DUPLICATES"
+  },
+  {
+    "id": "GOLDEN_078",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "duplicate records?",
+    "expected_intent": "DUPLICATES"
+  },
+  {
+    "id": "GOLDEN_079",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "list all distinct departments",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Department"
+  },
+  {
+    "id": "GOLDEN_080",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "hey can you tell me list all distinct departments",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Department"
+  },
+  {
+    "id": "GOLDEN_081",
+    "category": "structure",
+    "dataset": "employees",
+    "question": "list all distinct departments",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Department"
+  },
+  {
+    "id": "GOLDEN_082",
+    "category": "structure",
+    "dataset": "products",
+    "question": "what distinct categories exist?",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Category"
+  },
+  {
+    "id": "GOLDEN_083",
+    "category": "structure",
+    "dataset": "products",
+    "question": "hey can you tell me what distinct categories exist?",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Category"
+  },
+  {
+    "id": "GOLDEN_084",
+    "category": "structure",
+    "dataset": "products",
+    "question": "what distinct categories exist?",
+    "expected_intent": "DISTINCT",
+    "expected_column": "Category"
+  },
+  {
+    "id": "GOLDEN_085",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "what is the weather in Delhi?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_086",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "hey can you tell me what is the weather in delhi?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_087",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "weather in Delhi?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_088",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "who is the prime minister of India?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_089",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "hey can you tell me who is the prime minister of india?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_090",
+    "category": "anti_hallucination",
+    "dataset": "employees",
+    "question": "who is the prime minister of India?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_091",
+    "category": "anti_hallucination",
+    "dataset": "customers",
+    "question": "what is the population of Mumbai?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_092",
+    "category": "anti_hallucination",
+    "dataset": "customers",
+    "question": "hey can you tell me what is the population of mumbai?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_093",
+    "category": "anti_hallucination",
+    "dataset": "customers",
+    "question": "population of Mumbai?",
+    "expected_intent": "UNSUPPORTED_QUERY"
+  },
+  {
+    "id": "GOLDEN_094",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "people making >= 1200000",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": ">="
+  },
+  {
+    "id": "GOLDEN_095",
+    "category": "numeric_strict",
+    "dataset": "employees",
+    "question": "employees with compensation under 700k",
+    "expected_intent": "FILTER",
+    "expected_column": "Salary",
+    "expected_operator": "<"
+  },
+  {
+    "id": "GOLDEN_096",
+    "category": "slang",
+    "dataset": "employees",
+    "question": "who takes home the biggest bucks in HR?",
+    "expected_intent": "MAX",
+    "expected_column": "Salary"
+  },
+  {
+    "id": "GOLDEN_097",
+    "category": "abbreviation",
+    "dataset": "employees",
+    "question": "show me eng dept staff",
+    "expected_intent": "FILTER",
+    "expected_column": "Department",
+    "expected_value": "Engineering"
+  },
+  {
+    "id": "GOLDEN_098",
+    "category": "typo",
+    "dataset": "products",
+    "question": "smartfones with rating above 4.5",
+    "expected_intent": "FILTER",
+    "expected_column": "Category",
+    "expected_value": "Smartphones"
+  },
+  {
+    "id": "GOLDEN_099",
+    "category": "aggregation",
+    "dataset": "products",
+    "question": "total price across all products",
+    "expected_intent": "SUM",
+    "expected_column": "Price"
+  },
+  {
+    "id": "GOLDEN_100",
+    "category": "structure",
+    "dataset": "customers",
+    "question": "list all distinct cities",
+    "expected_intent": "DISTINCT",
+    "expected_column": "City"
+  }
+]

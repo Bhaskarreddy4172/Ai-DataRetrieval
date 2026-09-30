@@ -1,0 +1,101 @@
+test_id,category,question,expected_intent,actual_operation,expected_answer,actual_answer,passed,latency_ms,fail_reasons
+TEST_00001,1_standard_normal,What is the capital of Andhra Pradesh?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,244.95,NONE
+TEST_00002,1_standard_normal,What is Arunachal Pradesh's capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,44.89,NONE
+TEST_00003,1_standard_normal,Tell me the capital of Assam.,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,91.83,NONE
+TEST_00004,1_standard_normal,Which city is the capital of Bihar?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,109.45,NONE
+TEST_00005,1_standard_normal,Find the capital city of Chhattisgarh.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,110.45,NONE
+TEST_00006,1_standard_normal,Goa capital?,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,41.73,NONE
+TEST_00007,1_standard_normal,What is the capital city associated with Gujarat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,185.58,NONE
+TEST_00008,1_standard_normal,Show me the capital of Haryana.,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,174.0,NONE
+TEST_00009,1_standard_normal,Capital of Himachal Pradesh please.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,105.09,NONE
+TEST_00010,1_standard_normal,Can you tell me Jharkhand's capital?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,201.58,NONE
+TEST_00011,1_standard_normal,What is the capital of Karnataka?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,67.94,NONE
+TEST_00012,1_standard_normal,What is Kerala's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,48.29,NONE
+TEST_00013,1_standard_normal,Tell me the capital of Madhya Pradesh.,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,179.63,NONE
+TEST_00014,1_standard_normal,Which city is the capital of Maharashtra?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,181.29,NONE
+TEST_00015,1_standard_normal,Find the capital city of Manipur.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,116.56,NONE
+TEST_00016,1_standard_normal,Meghalaya capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,68.77,NONE
+TEST_00017,1_standard_normal,What is the capital city associated with Mizoram?,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,99.03,NONE
+TEST_00018,1_standard_normal,Show me the capital of Nagaland.,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,97.12,NONE
+TEST_00019,1_standard_normal,Capital of Odisha please.,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,78.1,NONE
+TEST_00020,1_standard_normal,Can you tell me Punjab's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,210.62,NONE
+TEST_00021,1_standard_normal,What is the capital of Rajasthan?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,158.44,NONE
+TEST_00022,1_standard_normal,What is Sikkim's capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,104.98,NONE
+TEST_00023,1_standard_normal,Tell me the capital of Tamil Nadu.,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,119.38,NONE
+TEST_00024,1_standard_normal,Which city is the capital of Telangana?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,104.23,NONE
+TEST_00025,1_standard_normal,Find the capital city of Tripura.,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,111.29,NONE
+TEST_00026,1_standard_normal,Uttar Pradesh capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,103.0,NONE
+TEST_00027,1_standard_normal,What is the capital city associated with Uttarakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,161.93,NONE
+TEST_00028,1_standard_normal,Show me the capital of West Bengal.,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,161.25,NONE
+TEST_00029,1_standard_normal,Capital of Andhra Pradesh please.,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,127.3,NONE
+TEST_00030,1_standard_normal,Can you tell me Arunachal Pradesh's capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,209.3,NONE
+TEST_00031,1_standard_normal,What is the capital of Assam?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,59.68,NONE
+TEST_00032,1_standard_normal,What is Bihar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,73.79,NONE
+TEST_00033,1_standard_normal,Tell me the capital of Chhattisgarh.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,94.08,NONE
+TEST_00034,1_standard_normal,Which city is the capital of Goa?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,77.86,NONE
+TEST_00035,1_standard_normal,Find the capital city of Gujarat.,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,117.16,NONE
+TEST_00036,1_standard_normal,Haryana capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,79.17,NONE
+TEST_00037,1_standard_normal,What is the capital city associated with Himachal Pradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,209.33,NONE
+TEST_00038,1_standard_normal,Show me the capital of Jharkhand.,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,241.11,NONE
+TEST_00039,1_standard_normal,Capital of Karnataka please.,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,131.49,NONE
+TEST_00040,1_standard_normal,Can you tell me Kerala's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,180.9,NONE
+TEST_00041,1_standard_normal,What is the capital of Madhya Pradesh?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,122.12,NONE
+TEST_00042,1_standard_normal,What is Maharashtra's capital?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,50.0,NONE
+TEST_00043,1_standard_normal,Tell me the capital of Manipur.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,93.77,NONE
+TEST_00044,1_standard_normal,Which city is the capital of Meghalaya?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,138.1,NONE
+TEST_00045,1_standard_normal,Find the capital city of Mizoram.,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,259.32,NONE
+TEST_00046,1_standard_normal,Nagaland capital?,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,152.84,NONE
+TEST_00047,1_standard_normal,What is the capital city associated with Odisha?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,154.61,NONE
+TEST_00048,1_standard_normal,Show me the capital of Punjab.,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,141.28,NONE
+TEST_00049,1_standard_normal,Capital of Rajasthan please.,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,98.33,NONE
+TEST_00050,1_standard_normal,Can you tell me Sikkim's capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,171.78,NONE
+TEST_00051,1_standard_normal,What is the capital of Tamil Nadu?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,67.13,NONE
+TEST_00052,1_standard_normal,What is Telangana's capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,68.13,NONE
+TEST_00053,1_standard_normal,Tell me the capital of Tripura.,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,149.29,NONE
+TEST_00054,1_standard_normal,Which city is the capital of Uttar Pradesh?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,98.62,NONE
+TEST_00055,1_standard_normal,Find the capital city of Uttarakhand.,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,207.02,NONE
+TEST_00056,1_standard_normal,West Bengal capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,150.92,NONE
+TEST_00057,1_standard_normal,What is the capital city associated with Andhra Pradesh?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,166.21,NONE
+TEST_00058,1_standard_normal,Show me the capital of Arunachal Pradesh.,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,108.87,NONE
+TEST_00059,1_standard_normal,Capital of Assam please.,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,87.0,NONE
+TEST_00060,1_standard_normal,Can you tell me Bihar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,162.58,NONE
+TEST_00061,1_standard_normal,What is the capital of Chhattisgarh?,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,102.19,NONE
+TEST_00062,1_standard_normal,What is Goa's capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,46.61,NONE
+TEST_00063,1_standard_normal,Tell me the capital of Gujarat.,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,100.94,NONE
+TEST_00064,1_standard_normal,Which city is the capital of Haryana?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,99.74,NONE
+TEST_00065,1_standard_normal,Find the capital city of Himachal Pradesh.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,157.29,NONE
+TEST_00066,1_standard_normal,Jharkhand capital?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,79.78,NONE
+TEST_00067,1_standard_normal,What is the capital city associated with Karnataka?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,171.96,NONE
+TEST_00068,1_standard_normal,Show me the capital of Kerala.,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,172.9,NONE
+TEST_00069,1_standard_normal,Capital of Madhya Pradesh please.,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,98.52,NONE
+TEST_00070,1_standard_normal,Can you tell me Maharashtra's capital?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,145.35,NONE
+TEST_00071,1_standard_normal,What is the capital of Manipur?,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,75.04,NONE
+TEST_00072,1_standard_normal,What is Meghalaya's capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,98.99,NONE
+TEST_00073,1_standard_normal,Tell me the capital of Mizoram.,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,93.56,NONE
+TEST_00074,1_standard_normal,Which city is the capital of Nagaland?,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,82.01,NONE
+TEST_00075,1_standard_normal,Find the capital city of Odisha.,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,187.96,NONE
+TEST_00076,1_standard_normal,Punjab capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,125.39,NONE
+TEST_00077,1_standard_normal,What is the capital city associated with Rajasthan?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,148.65,NONE
+TEST_00078,1_standard_normal,Show me the capital of Sikkim.,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,147.64,NONE
+TEST_00079,1_standard_normal,Capital of Tamil Nadu please.,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,83.83,NONE
+TEST_00080,1_standard_normal,Can you tell me Telangana's capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,253.25,NONE
+TEST_00081,1_standard_normal,What is the capital of Tripura?,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,143.88,NONE
+TEST_00082,1_standard_normal,What is Uttar Pradesh's capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,69.13,NONE
+TEST_00083,1_standard_normal,Tell me the capital of Uttarakhand.,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,210.98,NONE
+TEST_00084,1_standard_normal,Which city is the capital of West Bengal?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,150.4,NONE
+TEST_00085,1_standard_normal,Find the capital city of Andhra Pradesh.,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,212.17,NONE
+TEST_00086,1_standard_normal,Arunachal Pradesh capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,122.64,NONE
+TEST_00087,1_standard_normal,What is the capital city associated with Assam?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,140.92,NONE
+TEST_00088,1_standard_normal,Show me the capital of Bihar.,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,92.44,NONE
+TEST_00089,1_standard_normal,Capital of Chhattisgarh please.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,81.97,NONE
+TEST_00090,1_standard_normal,Can you tell me Goa's capital?,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,49.37,NONE
+TEST_00091,1_standard_normal,What is the capital of Gujarat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,84.0,NONE
+TEST_00092,1_standard_normal,What is Haryana's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,142.92,NONE
+TEST_00093,1_standard_normal,Tell me the capital of Himachal Pradesh.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,112.29,NONE
+TEST_00094,1_standard_normal,Which city is the capital of Jharkhand?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,153.3,NONE
+TEST_00095,1_standard_normal,Find the capital city of Karnataka.,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,329.11,NONE
+TEST_00096,1_standard_normal,Kerala capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,194.57,NONE
+TEST_00097,1_standard_normal,What is the capital city associated with Madhya Pradesh?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,104.26,NONE
+TEST_00098,1_standard_normal,Show me the capital of Maharashtra.,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,102.58,NONE
+TEST_00099,1_standard_normal,Capital of Manipur please.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,78.33,NONE
+TEST_00100,1_standard_normal,Can you tell me Meghalaya's capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,198.14,NONE

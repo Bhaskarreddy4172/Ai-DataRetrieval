@@ -1,0 +1,1001 @@
+test_id,category,question,expected_intent,actual_operation,expected_answer,actual_answer,passed,latency_ms,fail_reasons
+TEST_00001,1_standard_normal,What is the capital of Andhra Pradesh?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,118.86,NONE
+TEST_00002,1_standard_normal,What is Arunachal Pradesh's capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,36.65,NONE
+TEST_00003,1_standard_normal,Tell me the capital of Assam.,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,73.78,NONE
+TEST_00004,1_standard_normal,Which city is the capital of Bihar?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,60.46,NONE
+TEST_00005,1_standard_normal,Find the capital city of Chhattisgarh.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,82.08,NONE
+TEST_00006,1_standard_normal,Goa capital?,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,44.95,NONE
+TEST_00007,1_standard_normal,What is the capital city associated with Gujarat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,90.38,NONE
+TEST_00008,1_standard_normal,Show me the capital of Haryana.,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,70.69,NONE
+TEST_00009,1_standard_normal,Capital of Himachal Pradesh please.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,56.67,NONE
+TEST_00010,1_standard_normal,Can you tell me Jharkhand's capital?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,108.46,NONE
+TEST_00011,1_standard_normal,What is the capital of Karnataka?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,52.31,NONE
+TEST_00012,1_standard_normal,What is Kerala's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,65.08,NONE
+TEST_00013,1_standard_normal,Tell me the capital of Madhya Pradesh.,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,67.69,NONE
+TEST_00014,1_standard_normal,Which city is the capital of Maharashtra?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,66.93,NONE
+TEST_00015,1_standard_normal,Find the capital city of Manipur.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,115.65,NONE
+TEST_00016,1_standard_normal,Meghalaya capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,51.65,NONE
+TEST_00017,1_standard_normal,What is the capital city associated with Mizoram?,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,113.75,NONE
+TEST_00018,1_standard_normal,Show me the capital of Nagaland.,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,108.44,NONE
+TEST_00019,1_standard_normal,Capital of Odisha please.,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,104.96,NONE
+TEST_00020,1_standard_normal,Can you tell me Punjab's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,518.97,NONE
+TEST_00021,1_standard_normal,What is the capital of Rajasthan?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,196.71,NONE
+TEST_00022,1_standard_normal,What is Sikkim's capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,125.49,NONE
+TEST_00023,1_standard_normal,Tell me the capital of Tamil Nadu.,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,336.36,NONE
+TEST_00024,1_standard_normal,Which city is the capital of Telangana?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,148.61,NONE
+TEST_00025,1_standard_normal,Find the capital city of Tripura.,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,293.05,NONE
+TEST_00026,1_standard_normal,Uttar Pradesh capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,400.04,NONE
+TEST_00027,1_standard_normal,What is the capital city associated with Uttarakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,327.24,NONE
+TEST_00028,1_standard_normal,Show me the capital of West Bengal.,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,246.19,NONE
+TEST_00029,1_standard_normal,Capital of Andhra Pradesh please.,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,207.13,NONE
+TEST_00030,1_standard_normal,Can you tell me Arunachal Pradesh's capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,545.21,NONE
+TEST_00031,1_standard_normal,What is the capital of Assam?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,182.1,NONE
+TEST_00032,1_standard_normal,What is Bihar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,166.29,NONE
+TEST_00033,1_standard_normal,Tell me the capital of Chhattisgarh.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,293.36,NONE
+TEST_00034,1_standard_normal,Which city is the capital of Goa?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,279.79,NONE
+TEST_00035,1_standard_normal,Find the capital city of Gujarat.,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,432.64,NONE
+TEST_00036,1_standard_normal,Haryana capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,87.03,NONE
+TEST_00037,1_standard_normal,What is the capital city associated with Himachal Pradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,103.88,NONE
+TEST_00038,1_standard_normal,Show me the capital of Jharkhand.,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,125.87,NONE
+TEST_00039,1_standard_normal,Capital of Karnataka please.,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,126.36,NONE
+TEST_00040,1_standard_normal,Can you tell me Kerala's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,321.32,NONE
+TEST_00041,1_standard_normal,What is the capital of Madhya Pradesh?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,121.64,NONE
+TEST_00042,1_standard_normal,What is Maharashtra's capital?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,37.51,NONE
+TEST_00043,1_standard_normal,Tell me the capital of Manipur.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,112.42,NONE
+TEST_00044,1_standard_normal,Which city is the capital of Meghalaya?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,160.92,NONE
+TEST_00045,1_standard_normal,Find the capital city of Mizoram.,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,186.15,NONE
+TEST_00046,1_standard_normal,Nagaland capital?,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,112.25,NONE
+TEST_00047,1_standard_normal,What is the capital city associated with Odisha?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,130.41,NONE
+TEST_00048,1_standard_normal,Show me the capital of Punjab.,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,119.71,NONE
+TEST_00049,1_standard_normal,Capital of Rajasthan please.,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,85.18,NONE
+TEST_00050,1_standard_normal,Can you tell me Sikkim's capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,155.43,NONE
+TEST_00051,1_standard_normal,What is the capital of Tamil Nadu?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,89.8,NONE
+TEST_00052,1_standard_normal,What is Telangana's capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,95.94,NONE
+TEST_00053,1_standard_normal,Tell me the capital of Tripura.,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,235.74,NONE
+TEST_00054,1_standard_normal,Which city is the capital of Uttar Pradesh?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,216.59,NONE
+TEST_00055,1_standard_normal,Find the capital city of Uttarakhand.,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,164.31,NONE
+TEST_00056,1_standard_normal,West Bengal capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,90.62,NONE
+TEST_00057,1_standard_normal,What is the capital city associated with Andhra Pradesh?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,181.31,NONE
+TEST_00058,1_standard_normal,Show me the capital of Arunachal Pradesh.,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,189.68,NONE
+TEST_00059,1_standard_normal,Capital of Assam please.,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,140.91,NONE
+TEST_00060,1_standard_normal,Can you tell me Bihar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,188.41,NONE
+TEST_00061,1_standard_normal,What is the capital of Chhattisgarh?,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,66.51,NONE
+TEST_00062,1_standard_normal,What is Goa's capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,52.82,NONE
+TEST_00063,1_standard_normal,Tell me the capital of Gujarat.,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,97.12,NONE
+TEST_00064,1_standard_normal,Which city is the capital of Haryana?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,81.05,NONE
+TEST_00065,1_standard_normal,Find the capital city of Himachal Pradesh.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,149.45,NONE
+TEST_00066,1_standard_normal,Jharkhand capital?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,100.51,NONE
+TEST_00067,1_standard_normal,What is the capital city associated with Karnataka?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,104.98,NONE
+TEST_00068,1_standard_normal,Show me the capital of Kerala.,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,138.59,NONE
+TEST_00069,1_standard_normal,Capital of Madhya Pradesh please.,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,329.71,NONE
+TEST_00070,1_standard_normal,Can you tell me Maharashtra's capital?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,190.46,NONE
+TEST_00071,1_standard_normal,What is the capital of Manipur?,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,145.64,NONE
+TEST_00072,1_standard_normal,What is Meghalaya's capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,59.0,NONE
+TEST_00073,1_standard_normal,Tell me the capital of Mizoram.,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,95.72,NONE
+TEST_00074,1_standard_normal,Which city is the capital of Nagaland?,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,155.74,NONE
+TEST_00075,1_standard_normal,Find the capital city of Odisha.,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,308.77,NONE
+TEST_00076,1_standard_normal,Punjab capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,149.0,NONE
+TEST_00077,1_standard_normal,What is the capital city associated with Rajasthan?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,161.97,NONE
+TEST_00078,1_standard_normal,Show me the capital of Sikkim.,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,96.05,NONE
+TEST_00079,1_standard_normal,Capital of Tamil Nadu please.,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,140.2,NONE
+TEST_00080,1_standard_normal,Can you tell me Telangana's capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,350.61,NONE
+TEST_00081,1_standard_normal,What is the capital of Tripura?,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,234.79,NONE
+TEST_00082,1_standard_normal,What is Uttar Pradesh's capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,46.26,NONE
+TEST_00083,1_standard_normal,Tell me the capital of Uttarakhand.,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,100.1,NONE
+TEST_00084,1_standard_normal,Which city is the capital of West Bengal?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,81.72,NONE
+TEST_00085,1_standard_normal,Find the capital city of Andhra Pradesh.,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,123.31,NONE
+TEST_00086,1_standard_normal,Arunachal Pradesh capital?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,91.15,NONE
+TEST_00087,1_standard_normal,What is the capital city associated with Assam?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,106.7,NONE
+TEST_00088,1_standard_normal,Show me the capital of Bihar.,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,115.64,NONE
+TEST_00089,1_standard_normal,Capital of Chhattisgarh please.,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,114.88,NONE
+TEST_00090,1_standard_normal,Can you tell me Goa's capital?,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,51.93,NONE
+TEST_00091,1_standard_normal,What is the capital of Gujarat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,88.04,NONE
+TEST_00092,1_standard_normal,What is Haryana's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,77.7,NONE
+TEST_00093,1_standard_normal,Tell me the capital of Himachal Pradesh.,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,178.75,NONE
+TEST_00094,1_standard_normal,Which city is the capital of Jharkhand?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,147.25,NONE
+TEST_00095,1_standard_normal,Find the capital city of Karnataka.,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,242.94,NONE
+TEST_00096,1_standard_normal,Kerala capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,118.45,NONE
+TEST_00097,1_standard_normal,What is the capital city associated with Madhya Pradesh?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,194.19,NONE
+TEST_00098,1_standard_normal,Show me the capital of Maharashtra.,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,185.24,NONE
+TEST_00099,1_standard_normal,Capital of Manipur please.,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,115.17,NONE
+TEST_00100,1_standard_normal,Can you tell me Meghalaya's capital?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,181.72,NONE
+TEST_00101,2_informal_slang,yo what is Andhra Pradesh capital,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,103.21,NONE
+TEST_00102,2_informal_slang,tell me Arunachal Pradesh capital bro,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,194.59,NONE
+TEST_00103,2_informal_slang,capital Assam?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,244.09,NONE
+TEST_00104,2_informal_slang,hey Bihar capital please,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,185.55,NONE
+TEST_00105,2_informal_slang,Chhattisgarh capital dude,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,221.66,NONE
+TEST_00106,2_informal_slang,whats Goa capital bro,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,173.63,NONE
+TEST_00107,2_informal_slang,capital of Gujarat yo,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,104.65,NONE
+TEST_00108,2_informal_slang,gimme Haryana capital,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,98.04,NONE
+TEST_00109,2_informal_slang,tell Himachal Pradesh capital now,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,138.37,NONE
+TEST_00110,2_informal_slang,Jharkhand capital fast,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,312.94,NONE
+TEST_00111,2_informal_slang,yo what is Karnataka capital,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,216.81,NONE
+TEST_00112,2_informal_slang,tell me Kerala capital bro,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,145.35,NONE
+TEST_00113,2_informal_slang,capital Madhya Pradesh?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,175.81,NONE
+TEST_00114,2_informal_slang,hey Maharashtra capital please,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,143.59,NONE
+TEST_00115,2_informal_slang,Manipur capital dude,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,214.31,NONE
+TEST_00116,2_informal_slang,whats Meghalaya capital bro,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,200.2,NONE
+TEST_00117,2_informal_slang,capital of Mizoram yo,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,291.77,NONE
+TEST_00118,2_informal_slang,gimme Nagaland capital,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,175.73,NONE
+TEST_00119,2_informal_slang,tell Odisha capital now,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,172.11,NONE
+TEST_00120,2_informal_slang,Punjab capital fast,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,184.94,NONE
+TEST_00121,2_informal_slang,yo what is Rajasthan capital,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,158.42,NONE
+TEST_00122,2_informal_slang,tell me Sikkim capital bro,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,100.62,NONE
+TEST_00123,2_informal_slang,capital Tamil Nadu?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,113.2,NONE
+TEST_00124,2_informal_slang,hey Telangana capital please,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,96.84,NONE
+TEST_00125,2_informal_slang,Tripura capital dude,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,211.71,NONE
+TEST_00126,2_informal_slang,whats Uttar Pradesh capital bro,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,53.84,NONE
+TEST_00127,2_informal_slang,capital of Uttarakhand yo,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,67.95,NONE
+TEST_00128,2_informal_slang,gimme West Bengal capital,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,67.85,NONE
+TEST_00129,2_informal_slang,tell Andhra Pradesh capital now,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,85.85,NONE
+TEST_00130,2_informal_slang,Arunachal Pradesh capital fast,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,163.85,NONE
+TEST_00131,2_informal_slang,yo what is Assam capital,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,194.7,NONE
+TEST_00132,2_informal_slang,tell me Bihar capital bro,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,95.94,NONE
+TEST_00133,2_informal_slang,capital Chhattisgarh?,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,89.49,NONE
+TEST_00134,2_informal_slang,hey Goa capital please,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,66.43,NONE
+TEST_00135,2_informal_slang,Gujarat capital dude,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,92.55,NONE
+TEST_00136,2_informal_slang,whats Haryana capital bro,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,74.5,NONE
+TEST_00137,2_informal_slang,capital of Himachal Pradesh yo,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,68.68,NONE
+TEST_00138,2_informal_slang,gimme Jharkhand capital,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,69.88,NONE
+TEST_00139,2_informal_slang,tell Karnataka capital now,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,95.52,NONE
+TEST_00140,2_informal_slang,Kerala capital fast,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,90.91,NONE
+TEST_00141,2_informal_slang,yo what is Madhya Pradesh capital,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,55.0,NONE
+TEST_00142,2_informal_slang,tell me Maharashtra capital bro,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,108.15,NONE
+TEST_00143,2_informal_slang,capital Manipur?,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,170.88,NONE
+TEST_00144,2_informal_slang,hey Meghalaya capital please,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,196.03,NONE
+TEST_00145,2_informal_slang,Mizoram capital dude,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,193.83,NONE
+TEST_00146,2_informal_slang,whats Nagaland capital bro,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,64.3,NONE
+TEST_00147,2_informal_slang,capital of Odisha yo,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,116.92,NONE
+TEST_00148,2_informal_slang,gimme Punjab capital,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,213.52,NONE
+TEST_00149,2_informal_slang,tell Rajasthan capital now,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,269.79,NONE
+TEST_00150,2_informal_slang,Sikkim capital fast,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,165.72,NONE
+TEST_00151,2_informal_slang,yo what is Tamil Nadu capital,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,258.99,NONE
+TEST_00152,2_informal_slang,tell me Telangana capital bro,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,76.93,NONE
+TEST_00153,2_informal_slang,capital Tripura?,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,79.33,NONE
+TEST_00154,2_informal_slang,hey Uttar Pradesh capital please,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,148.87,NONE
+TEST_00155,2_informal_slang,Uttarakhand capital dude,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,103.16,NONE
+TEST_00156,2_informal_slang,whats West Bengal capital bro,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,126.6,NONE
+TEST_00157,2_informal_slang,capital of Andhra Pradesh yo,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,415.73,NONE
+TEST_00158,2_informal_slang,gimme Arunachal Pradesh capital,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,254.67,NONE
+TEST_00159,2_informal_slang,tell Assam capital now,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,96.38,NONE
+TEST_00160,2_informal_slang,Bihar capital fast,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,192.71,NONE
+TEST_00161,2_informal_slang,yo what is Chhattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,105.66,NONE
+TEST_00162,2_informal_slang,tell me Goa capital bro,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,104.4,NONE
+TEST_00163,2_informal_slang,capital Gujarat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,107.71,NONE
+TEST_00164,2_informal_slang,hey Haryana capital please,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,160.08,NONE
+TEST_00165,2_informal_slang,Himachal Pradesh capital dude,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,185.86,NONE
+TEST_00166,2_informal_slang,whats Jharkhand capital bro,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,109.33,NONE
+TEST_00167,2_informal_slang,capital of Karnataka yo,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,241.75,NONE
+TEST_00168,2_informal_slang,gimme Kerala capital,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,140.54,NONE
+TEST_00169,2_informal_slang,tell Madhya Pradesh capital now,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,84.8,NONE
+TEST_00170,2_informal_slang,Maharashtra capital fast,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,91.23,NONE
+TEST_00171,2_informal_slang,yo what is Manipur capital,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,88.67,NONE
+TEST_00172,2_informal_slang,tell me Meghalaya capital bro,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,129.19,NONE
+TEST_00173,2_informal_slang,capital Mizoram?,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,103.52,NONE
+TEST_00174,2_informal_slang,hey Nagaland capital please,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,66.87,NONE
+TEST_00175,2_informal_slang,Odisha capital dude,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,68.93,NONE
+TEST_00176,2_informal_slang,whats Punjab capital bro,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,54.69,NONE
+TEST_00177,2_informal_slang,capital of Rajasthan yo,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,70.14,NONE
+TEST_00178,2_informal_slang,gimme Sikkim capital,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,69.27,NONE
+TEST_00179,2_informal_slang,tell Tamil Nadu capital now,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,68.61,NONE
+TEST_00180,2_informal_slang,Telangana capital fast,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,68.49,NONE
+TEST_00181,2_informal_slang,yo what is Tripura capital,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,59.16,NONE
+TEST_00182,2_informal_slang,tell me Uttar Pradesh capital bro,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,67.49,NONE
+TEST_00183,2_informal_slang,capital Uttarakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,83.72,NONE
+TEST_00184,2_informal_slang,hey West Bengal capital please,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,107.12,NONE
+TEST_00185,2_informal_slang,Andhra Pradesh capital dude,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,189.14,NONE
+TEST_00186,2_informal_slang,whats Arunachal Pradesh capital bro,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,92.31,NONE
+TEST_00187,2_informal_slang,capital of Assam yo,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,87.67,NONE
+TEST_00188,2_informal_slang,gimme Bihar capital,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,97.99,NONE
+TEST_00189,2_informal_slang,tell Chhattisgarh capital now,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,81.18,NONE
+TEST_00190,2_informal_slang,Goa capital fast,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,37.31,NONE
+TEST_00191,2_informal_slang,yo what is Gujarat capital,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,95.11,NONE
+TEST_00192,2_informal_slang,tell me Haryana capital bro,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,167.18,NONE
+TEST_00193,2_informal_slang,capital Himachal Pradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,156.96,NONE
+TEST_00194,2_informal_slang,hey Jharkhand capital please,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,110.54,NONE
+TEST_00195,2_informal_slang,Karnataka capital dude,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,83.15,NONE
+TEST_00196,2_informal_slang,whats Kerala capital bro,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,77.75,NONE
+TEST_00197,2_informal_slang,capital of Madhya Pradesh yo,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,116.47,NONE
+TEST_00198,2_informal_slang,gimme Maharashtra capital,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,91.67,NONE
+TEST_00199,2_informal_slang,tell Manipur capital now,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,129.25,NONE
+TEST_00200,2_informal_slang,Meghalaya capital fast,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,220.09,NONE
+TEST_00201,3_typo_variations,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,89.14,NONE
+TEST_00202,3_typo_variations,capital of gujrat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,214.81,NONE
+TEST_00203,3_typo_variations,what is bihaar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,79.59,NONE
+TEST_00204,3_typo_variations,sikim captal?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,109.99,NONE
+TEST_00205,3_typo_variations,wat is sikkimm capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,73.17,NONE
+TEST_00206,3_typo_variations,tell me chattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,128.61,NONE
+TEST_00207,3_typo_variations,what is the captal of karnatak?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,55.75,NONE
+TEST_00208,3_typo_variations,westbengal capital city?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,64.87,NONE
+TEST_00209,3_typo_variations,which city is west bengol capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,93.94,NONE
+TEST_00210,3_typo_variations,find capital of andhrapradesh,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,219.76,NONE
+TEST_00211,3_typo_variations,andra pradesh capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,296.76,NONE
+TEST_00212,3_typo_variations,capital of himachalpradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,316.47,NONE
+TEST_00213,3_typo_variations,what is tamilnadu's capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,175.69,NONE
+TEST_00214,3_typo_variations,arunachalpradesh captal?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,262.98,NONE
+TEST_00215,3_typo_variations,wat is madhyapradesh capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,220.16,NONE
+TEST_00216,3_typo_variations,tell me uttarpradesh capital,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,242.73,NONE
+TEST_00217,3_typo_variations,what is the captal of uttrakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,133.7,NONE
+TEST_00218,3_typo_variations,maharastra capital city?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,146.99,NONE
+TEST_00219,3_typo_variations,which city is odisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,68.21,NONE
+TEST_00220,3_typo_variations,find capital of punjaab,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,87.25,NONE
+TEST_00221,3_typo_variations,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,65.28,NONE
+TEST_00222,3_typo_variations,capital of gujrat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,69.6,NONE
+TEST_00223,3_typo_variations,what is bihaar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,47.67,NONE
+TEST_00224,3_typo_variations,sikim captal?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,135.26,NONE
+TEST_00225,3_typo_variations,wat is sikkimm capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,184.85,NONE
+TEST_00226,3_typo_variations,tell me chattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,115.91,NONE
+TEST_00227,3_typo_variations,what is the captal of karnatak?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,87.49,NONE
+TEST_00228,3_typo_variations,westbengal capital city?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,72.91,NONE
+TEST_00229,3_typo_variations,which city is west bengol capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,50.0,NONE
+TEST_00230,3_typo_variations,find capital of andhrapradesh,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,129.85,NONE
+TEST_00231,3_typo_variations,andra pradesh capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,154.98,NONE
+TEST_00232,3_typo_variations,capital of himachalpradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,165.24,NONE
+TEST_00233,3_typo_variations,what is tamilnadu's capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,77.85,NONE
+TEST_00234,3_typo_variations,arunachalpradesh captal?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,82.29,NONE
+TEST_00235,3_typo_variations,wat is madhyapradesh capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,73.65,NONE
+TEST_00236,3_typo_variations,tell me uttarpradesh capital,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,84.46,NONE
+TEST_00237,3_typo_variations,what is the captal of uttrakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,63.98,NONE
+TEST_00238,3_typo_variations,maharastra capital city?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,65.58,NONE
+TEST_00239,3_typo_variations,which city is odisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,82.35,NONE
+TEST_00240,3_typo_variations,find capital of punjaab,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,119.59,NONE
+TEST_00241,3_typo_variations,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,122.08,NONE
+TEST_00242,3_typo_variations,capital of gujrat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,95.18,NONE
+TEST_00243,3_typo_variations,what is bihaar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,113.26,NONE
+TEST_00244,3_typo_variations,sikim captal?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,170.45,NONE
+TEST_00245,3_typo_variations,wat is sikkimm capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,184.27,NONE
+TEST_00246,3_typo_variations,tell me chattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,160.4,NONE
+TEST_00247,3_typo_variations,what is the captal of karnatak?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,195.87,NONE
+TEST_00248,3_typo_variations,westbengal capital city?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,150.67,NONE
+TEST_00249,3_typo_variations,which city is west bengol capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,103.43,NONE
+TEST_00250,3_typo_variations,find capital of andhrapradesh,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,95.06,NONE
+TEST_00251,3_typo_variations,andra pradesh capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,124.82,NONE
+TEST_00252,3_typo_variations,capital of himachalpradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,95.54,NONE
+TEST_00253,3_typo_variations,what is tamilnadu's capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,103.19,NONE
+TEST_00254,3_typo_variations,arunachalpradesh captal?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,156.99,NONE
+TEST_00255,3_typo_variations,wat is madhyapradesh capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,180.57,NONE
+TEST_00256,3_typo_variations,tell me uttarpradesh capital,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,72.4,NONE
+TEST_00257,3_typo_variations,what is the captal of uttrakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,54.18,NONE
+TEST_00258,3_typo_variations,maharastra capital city?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,78.46,NONE
+TEST_00259,3_typo_variations,which city is odisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,75.37,NONE
+TEST_00260,3_typo_variations,find capital of punjaab,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,95.96,NONE
+TEST_00261,3_typo_variations,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,85.88,NONE
+TEST_00262,3_typo_variations,capital of gujrat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,119.87,NONE
+TEST_00263,3_typo_variations,what is bihaar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,97.36,NONE
+TEST_00264,3_typo_variations,sikim captal?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,73.24,NONE
+TEST_00265,3_typo_variations,wat is sikkimm capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,92.46,NONE
+TEST_00266,3_typo_variations,tell me chattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,66.69,NONE
+TEST_00267,3_typo_variations,what is the captal of karnatak?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,111.86,NONE
+TEST_00268,3_typo_variations,westbengal capital city?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,211.21,NONE
+TEST_00269,3_typo_variations,which city is west bengol capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,86.37,NONE
+TEST_00270,3_typo_variations,find capital of andhrapradesh,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,88.76,NONE
+TEST_00271,3_typo_variations,andra pradesh capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,92.97,NONE
+TEST_00272,3_typo_variations,capital of himachalpradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,87.25,NONE
+TEST_00273,3_typo_variations,what is tamilnadu's capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,117.67,NONE
+TEST_00274,3_typo_variations,arunachalpradesh captal?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,85.23,NONE
+TEST_00275,3_typo_variations,wat is madhyapradesh capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,75.29,NONE
+TEST_00276,3_typo_variations,tell me uttarpradesh capital,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,100.72,NONE
+TEST_00277,3_typo_variations,what is the captal of uttrakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,162.15,NONE
+TEST_00278,3_typo_variations,maharastra capital city?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,113.95,NONE
+TEST_00279,3_typo_variations,which city is odisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,131.57,NONE
+TEST_00280,3_typo_variations,find capital of punjaab,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,89.46,NONE
+TEST_00281,3_typo_variations,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,140.35,NONE
+TEST_00282,3_typo_variations,capital of gujrat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,66.78,NONE
+TEST_00283,3_typo_variations,what is bihaar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,159.8,NONE
+TEST_00284,3_typo_variations,sikim captal?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,145.68,NONE
+TEST_00285,3_typo_variations,wat is sikkimm capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,173.28,NONE
+TEST_00286,3_typo_variations,tell me chattisgarh capital,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,235.15,NONE
+TEST_00287,3_typo_variations,what is the captal of karnatak?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,75.75,NONE
+TEST_00288,3_typo_variations,westbengal capital city?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,77.81,NONE
+TEST_00289,3_typo_variations,which city is west bengol capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,66.37,NONE
+TEST_00290,3_typo_variations,find capital of andhrapradesh,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,113.54,NONE
+TEST_00291,3_typo_variations,andra pradesh capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,81.05,NONE
+TEST_00292,3_typo_variations,capital of himachalpradesh?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,71.57,NONE
+TEST_00293,3_typo_variations,what is tamilnadu's capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,40.01,NONE
+TEST_00294,3_typo_variations,arunachalpradesh captal?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,97.28,NONE
+TEST_00295,3_typo_variations,wat is madhyapradesh capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,74.19,NONE
+TEST_00296,3_typo_variations,tell me uttarpradesh capital,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,69.42,NONE
+TEST_00297,3_typo_variations,what is the captal of uttrakhand?,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,75.41,NONE
+TEST_00298,3_typo_variations,maharastra capital city?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,69.51,NONE
+TEST_00299,3_typo_variations,which city is odisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,94.78,NONE
+TEST_00300,3_typo_variations,find capital of punjaab,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,169.4,NONE
+TEST_00301,4_phonetic_soundalike,capital of cikkim?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,193.1,NONE
+TEST_00302,4_phonetic_soundalike,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,219.67,NONE
+TEST_00303,4_phonetic_soundalike,what is gujraat's capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,104.53,NONE
+TEST_00304,4_phonetic_soundalike,which state has beehar?,LOOKUP,FILTER,Patna,Patna is the capital of Bihar.,True,163.83,NONE
+TEST_00305,4_phonetic_soundalike,state of keralam?,LOOKUP,FILTER,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,169.98,NONE
+TEST_00306,4_phonetic_soundalike,where is asom situated?,LOOKUP,FILTER,Dispur,The capital of Assam is Dispur.,True,187.09,NONE
+TEST_00307,4_phonetic_soundalike,which state is associated with goaa?,LOOKUP,FILTER,Panaji,The capital of Goa is Panaji.,True,119.11,NONE
+TEST_00308,4_phonetic_soundalike,capital of panjab?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,67.04,NONE
+TEST_00309,4_phonetic_soundalike,orisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,70.7,NONE
+TEST_00310,4_phonetic_soundalike,what is dehradoon's capital?,LOOKUP,FILTER,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,81.67,NONE
+TEST_00311,4_phonetic_soundalike,which state has bangalore?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,70.0,NONE
+TEST_00312,4_phonetic_soundalike,state of calcutta?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,165.35,NONE
+TEST_00313,4_phonetic_soundalike,where is cikkim situated?,LOOKUP,FILTER,Gangtok,The capital of Sikkim is Gangtok.,True,363.34,NONE
+TEST_00314,4_phonetic_soundalike,which state is associated with telengana?,LOOKUP,FILTER,Hyderabad,The capital of Telangana is Hyderabad.,True,336.8,NONE
+TEST_00315,4_phonetic_soundalike,capital of gujraat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,160.98,NONE
+TEST_00316,4_phonetic_soundalike,beehar capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,142.12,NONE
+TEST_00317,4_phonetic_soundalike,what is keralam's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,113.43,NONE
+TEST_00318,4_phonetic_soundalike,which state has asom?,LOOKUP,FILTER,Dispur,Dispur is the capital of Assam.,True,202.51,NONE
+TEST_00319,4_phonetic_soundalike,state of goaa?,LOOKUP,FILTER,Panaji,The capital of Goa is Panaji.,True,295.78,NONE
+TEST_00320,4_phonetic_soundalike,where is panjab situated?,LOOKUP,FILTER,Chandigarh,The capital of Punjab is Chandigarh.,True,168.63,NONE
+TEST_00321,4_phonetic_soundalike,which state is associated with orisa?,LOOKUP,FILTER,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,208.35,NONE
+TEST_00322,4_phonetic_soundalike,capital of dehradoon?,LOOKUP,FILTER,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,219.16,NONE
+TEST_00323,4_phonetic_soundalike,bangalore capital?,LOOKUP,FILTER,Karnataka,The capital of Karnataka is Bengaluru.,True,217.47,NONE
+TEST_00324,4_phonetic_soundalike,what is calcutta's capital?,LOOKUP,FILTER,West Bengal,The capital of West Bengal is Kolkata.,True,223.83,NONE
+TEST_00325,4_phonetic_soundalike,which state has cikkim?,LOOKUP,FILTER,Gangtok,Gangtok is the capital of Sikkim.,True,188.13,NONE
+TEST_00326,4_phonetic_soundalike,state of telengana?,LOOKUP,FILTER,Hyderabad,The capital of Telangana is Hyderabad.,True,156.06,NONE
+TEST_00327,4_phonetic_soundalike,where is gujraat situated?,LOOKUP,FILTER,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,135.84,NONE
+TEST_00328,4_phonetic_soundalike,which state is associated with beehar?,LOOKUP,FILTER,Patna,The capital of Bihar is Patna.,True,187.92,NONE
+TEST_00329,4_phonetic_soundalike,capital of keralam?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,89.11,NONE
+TEST_00330,4_phonetic_soundalike,asom capital?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,140.31,NONE
+TEST_00331,4_phonetic_soundalike,what is goaa's capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,92.35,NONE
+TEST_00332,4_phonetic_soundalike,which state has panjab?,LOOKUP,FILTER,Chandigarh,Chandigarh is the capital of Punjab.,True,197.78,NONE
+TEST_00333,4_phonetic_soundalike,state of orisa?,LOOKUP,FILTER,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,321.66,NONE
+TEST_00334,4_phonetic_soundalike,where is dehradoon situated?,LOOKUP,LOOKUP,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,100.84,NONE
+TEST_00335,4_phonetic_soundalike,which state is associated with bangalore?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,150.83,NONE
+TEST_00336,4_phonetic_soundalike,capital of calcutta?,LOOKUP,FILTER,West Bengal,The capital of West Bengal is Kolkata.,True,220.78,NONE
+TEST_00337,4_phonetic_soundalike,cikkim capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,83.38,NONE
+TEST_00338,4_phonetic_soundalike,what is telengana's capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,35.63,NONE
+TEST_00339,4_phonetic_soundalike,which state has gujraat?,LOOKUP,FILTER,Gandhinagar,Gandhinagar is the capital of Gujarat.,True,144.63,NONE
+TEST_00340,4_phonetic_soundalike,state of beehar?,LOOKUP,FILTER,Patna,The capital of Bihar is Patna.,True,205.69,NONE
+TEST_00341,4_phonetic_soundalike,where is keralam situated?,LOOKUP,FILTER,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,332.63,NONE
+TEST_00342,4_phonetic_soundalike,which state is associated with asom?,LOOKUP,FILTER,Dispur,The capital of Assam is Dispur.,True,270.75,NONE
+TEST_00343,4_phonetic_soundalike,capital of goaa?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,269.23,NONE
+TEST_00344,4_phonetic_soundalike,panjab capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,159.77,NONE
+TEST_00345,4_phonetic_soundalike,what is orisa's capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,106.7,NONE
+TEST_00346,4_phonetic_soundalike,which state has dehradoon?,LOOKUP,LOOKUP,Uttarakhand,Dehradun is the capital of Uttarakhand.,True,184.31,NONE
+TEST_00347,4_phonetic_soundalike,state of bangalore?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,319.06,NONE
+TEST_00348,4_phonetic_soundalike,where is calcutta situated?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,201.84,NONE
+TEST_00349,4_phonetic_soundalike,which state is associated with cikkim?,LOOKUP,FILTER,Gangtok,The capital of Sikkim is Gangtok.,True,295.94,NONE
+TEST_00350,4_phonetic_soundalike,capital of telengana?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,72.29,NONE
+TEST_00351,4_phonetic_soundalike,gujraat capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,70.99,NONE
+TEST_00352,4_phonetic_soundalike,what is beehar's capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,86.54,NONE
+TEST_00353,4_phonetic_soundalike,which state has keralam?,LOOKUP,FILTER,Thiruvananthapuram,Thiruvananthapuram is the capital of Kerala.,True,236.88,NONE
+TEST_00354,4_phonetic_soundalike,state of asom?,LOOKUP,FILTER,Dispur,The capital of Assam is Dispur.,True,222.43,NONE
+TEST_00355,4_phonetic_soundalike,where is goaa situated?,LOOKUP,FILTER,Panaji,The capital of Goa is Panaji.,True,163.69,NONE
+TEST_00356,4_phonetic_soundalike,which state is associated with panjab?,LOOKUP,FILTER,Chandigarh,The capital of Punjab is Chandigarh.,True,274.09,NONE
+TEST_00357,4_phonetic_soundalike,capital of orisa?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,162.36,NONE
+TEST_00358,4_phonetic_soundalike,dehradoon capital?,LOOKUP,FILTER,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,228.05,NONE
+TEST_00359,4_phonetic_soundalike,what is bangalore's capital?,LOOKUP,FILTER,Karnataka,The capital of Karnataka is Bengaluru.,True,94.9,NONE
+TEST_00360,4_phonetic_soundalike,which state has calcutta?,LOOKUP,LOOKUP,West Bengal,Kolkata is the capital of West Bengal.,True,79.6,NONE
+TEST_00361,4_phonetic_soundalike,state of cikkim?,LOOKUP,FILTER,Gangtok,The capital of Sikkim is Gangtok.,True,159.6,NONE
+TEST_00362,4_phonetic_soundalike,where is telengana situated?,LOOKUP,FILTER,Hyderabad,The capital of Telangana is Hyderabad.,True,180.47,NONE
+TEST_00363,4_phonetic_soundalike,which state is associated with gujraat?,LOOKUP,FILTER,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,178.99,NONE
+TEST_00364,4_phonetic_soundalike,capital of beehar?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,160.82,NONE
+TEST_00365,4_phonetic_soundalike,keralam capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,183.48,NONE
+TEST_00366,4_phonetic_soundalike,what is asom's capital?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,164.73,NONE
+TEST_00367,4_phonetic_soundalike,which state has goaa?,LOOKUP,FILTER,Panaji,Panaji is the capital of Goa.,True,302.85,NONE
+TEST_00368,4_phonetic_soundalike,state of panjab?,LOOKUP,FILTER,Chandigarh,The capital of Punjab is Chandigarh.,True,301.71,NONE
+TEST_00369,4_phonetic_soundalike,where is orisa situated?,LOOKUP,FILTER,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,178.98,NONE
+TEST_00370,4_phonetic_soundalike,which state is associated with dehradoon?,LOOKUP,LOOKUP,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,214.54,NONE
+TEST_00371,4_phonetic_soundalike,capital of bangalore?,LOOKUP,FILTER,Karnataka,The capital of Karnataka is Bengaluru.,True,196.41,NONE
+TEST_00372,4_phonetic_soundalike,calcutta capital?,LOOKUP,FILTER,West Bengal,The capital of West Bengal is Kolkata.,True,208.56,NONE
+TEST_00373,4_phonetic_soundalike,what is cikkim's capital?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,93.25,NONE
+TEST_00374,4_phonetic_soundalike,which state has telengana?,LOOKUP,FILTER,Hyderabad,Hyderabad is the capital of Telangana.,True,153.96,NONE
+TEST_00375,4_phonetic_soundalike,state of gujraat?,LOOKUP,FILTER,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,140.87,NONE
+TEST_00376,4_phonetic_soundalike,where is beehar situated?,LOOKUP,FILTER,Patna,The capital of Bihar is Patna.,True,159.0,NONE
+TEST_00377,4_phonetic_soundalike,which state is associated with keralam?,LOOKUP,FILTER,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,247.28,NONE
+TEST_00378,4_phonetic_soundalike,capital of asom?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,259.93,NONE
+TEST_00379,4_phonetic_soundalike,goaa capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,196.62,NONE
+TEST_00380,4_phonetic_soundalike,what is panjab's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,73.07,NONE
+TEST_00381,4_phonetic_soundalike,which state has orisa?,LOOKUP,FILTER,Bhubaneswar,Bhubaneswar is the capital of Odisha.,True,221.31,NONE
+TEST_00382,4_phonetic_soundalike,state of dehradoon?,LOOKUP,LOOKUP,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,99.12,NONE
+TEST_00383,4_phonetic_soundalike,where is bangalore situated?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,83.48,NONE
+TEST_00384,4_phonetic_soundalike,which state is associated with calcutta?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,116.48,NONE
+TEST_00385,4_phonetic_soundalike,capital of cikkim?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,96.16,NONE
+TEST_00386,4_phonetic_soundalike,telengana capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,76.62,NONE
+TEST_00387,4_phonetic_soundalike,what is gujraat's capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,35.66,NONE
+TEST_00388,4_phonetic_soundalike,which state has beehar?,LOOKUP,FILTER,Patna,Patna is the capital of Bihar.,True,171.39,NONE
+TEST_00389,4_phonetic_soundalike,state of keralam?,LOOKUP,FILTER,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,314.42,NONE
+TEST_00390,4_phonetic_soundalike,where is asom situated?,LOOKUP,FILTER,Dispur,The capital of Assam is Dispur.,True,360.51,NONE
+TEST_00391,4_phonetic_soundalike,which state is associated with goaa?,LOOKUP,FILTER,Panaji,The capital of Goa is Panaji.,True,335.53,NONE
+TEST_00392,4_phonetic_soundalike,capital of panjab?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,110.34,NONE
+TEST_00393,4_phonetic_soundalike,orisa capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,83.07,NONE
+TEST_00394,4_phonetic_soundalike,what is dehradoon's capital?,LOOKUP,FILTER,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,132.87,NONE
+TEST_00395,4_phonetic_soundalike,which state has bangalore?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,171.52,NONE
+TEST_00396,4_phonetic_soundalike,state of calcutta?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,160.34,NONE
+TEST_00397,4_phonetic_soundalike,where is cikkim situated?,LOOKUP,FILTER,Gangtok,The capital of Sikkim is Gangtok.,True,129.33,NONE
+TEST_00398,4_phonetic_soundalike,which state is associated with telengana?,LOOKUP,FILTER,Hyderabad,The capital of Telangana is Hyderabad.,True,170.14,NONE
+TEST_00399,4_phonetic_soundalike,capital of gujraat?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,65.41,NONE
+TEST_00400,4_phonetic_soundalike,beehar capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,134.71,NONE
+TEST_00401,5_abbreviation_shortcuts,capital of TS?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,82.38,NONE
+TEST_00402,5_abbreviation_shortcuts,TG capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,69.28,NONE
+TEST_00403,5_abbreviation_shortcuts,AP ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,53.03,NONE
+TEST_00404,5_abbreviation_shortcuts,what is WB's capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,32.54,NONE
+TEST_00405,5_abbreviation_shortcuts,which city is KA capital?,LOOKUP,FILTER,Bengaluru,"Found 28 matching records, including Andhra Pradesh, Arunachal Pradesh, Assam, Bihar.",True,186.01,NONE
+TEST_00406,5_abbreviation_shortcuts,tell me TN capital,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,57.07,NONE
+TEST_00407,5_abbreviation_shortcuts,capital of MH?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,50.18,NONE
+TEST_00408,5_abbreviation_shortcuts,GJ capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,83.48,NONE
+TEST_00409,5_abbreviation_shortcuts,RJ ka capital?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,53.91,NONE
+TEST_00410,5_abbreviation_shortcuts,what is PB's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,33.42,NONE
+TEST_00411,5_abbreviation_shortcuts,which city is UP capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,50.52,NONE
+TEST_00412,5_abbreviation_shortcuts,tell me HP capital,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,64.15,NONE
+TEST_00413,5_abbreviation_shortcuts,capital of MP?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,48.21,NONE
+TEST_00414,5_abbreviation_shortcuts,BR capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,101.91,NONE
+TEST_00415,5_abbreviation_shortcuts,GA ka capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,37.05,NONE
+TEST_00416,5_abbreviation_shortcuts,what is KL's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,75.74,NONE
+TEST_00417,5_abbreviation_shortcuts,which city is OD capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,41.72,NONE
+TEST_00418,5_abbreviation_shortcuts,tell me SK capital,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,51.09,NONE
+TEST_00419,5_abbreviation_shortcuts,which state is HYD in?,LOOKUP,LOOKUP,Telangana,The capital of Telangana is Hyderabad.,True,107.79,NONE
+TEST_00420,5_abbreviation_shortcuts,which state has BLR as capital?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,141.01,NONE
+TEST_00421,5_abbreviation_shortcuts,which state has CCU?,LOOKUP,LOOKUP,West Bengal,Kolkata is the capital of West Bengal.,True,60.81,NONE
+TEST_00422,5_abbreviation_shortcuts,BOM which state comes?,LOOKUP,LOOKUP,Maharashtra,The capital of Maharashtra is Mumbai.,True,129.88,NONE
+TEST_00423,5_abbreviation_shortcuts,MAA is the capital of which state?,LOOKUP,LOOKUP,Tamil Nadu,Chennai is the capital of Tamil Nadu.,True,118.16,NONE
+TEST_00424,5_abbreviation_shortcuts,which state is JAI in?,LOOKUP,LOOKUP,Rajasthan,The capital of Rajasthan is Jaipur.,True,62.84,NONE
+TEST_00425,5_abbreviation_shortcuts,capital of TS?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,117.5,NONE
+TEST_00426,5_abbreviation_shortcuts,TG capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,121.51,NONE
+TEST_00427,5_abbreviation_shortcuts,AP ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,134.65,NONE
+TEST_00428,5_abbreviation_shortcuts,what is WB's capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,24.45,NONE
+TEST_00429,5_abbreviation_shortcuts,which city is KA capital?,LOOKUP,FILTER,Bengaluru,"Found 28 matching records, including Andhra Pradesh, Arunachal Pradesh, Assam, Bihar.",True,140.59,NONE
+TEST_00430,5_abbreviation_shortcuts,tell me TN capital,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,53.82,NONE
+TEST_00431,5_abbreviation_shortcuts,capital of MH?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,52.09,NONE
+TEST_00432,5_abbreviation_shortcuts,GJ capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,50.07,NONE
+TEST_00433,5_abbreviation_shortcuts,RJ ka capital?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,35.15,NONE
+TEST_00434,5_abbreviation_shortcuts,what is PB's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,25.37,NONE
+TEST_00435,5_abbreviation_shortcuts,which city is UP capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,36.79,NONE
+TEST_00436,5_abbreviation_shortcuts,tell me HP capital,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,57.12,NONE
+TEST_00437,5_abbreviation_shortcuts,capital of MP?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,75.82,NONE
+TEST_00438,5_abbreviation_shortcuts,BR capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,54.77,NONE
+TEST_00439,5_abbreviation_shortcuts,GA ka capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,37.44,NONE
+TEST_00440,5_abbreviation_shortcuts,what is KL's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,35.35,NONE
+TEST_00441,5_abbreviation_shortcuts,which city is OD capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,48.41,NONE
+TEST_00442,5_abbreviation_shortcuts,tell me SK capital,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,55.25,NONE
+TEST_00443,5_abbreviation_shortcuts,HYD is the capital of which state?,LOOKUP,LOOKUP,Telangana,Hyderabad is the capital of Telangana.,True,135.39,NONE
+TEST_00444,5_abbreviation_shortcuts,which state is BLR in?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,63.69,NONE
+TEST_00445,5_abbreviation_shortcuts,which state has CCU as capital?,LOOKUP,LOOKUP,West Bengal,Kolkata is the capital of West Bengal.,True,98.3,NONE
+TEST_00446,5_abbreviation_shortcuts,which state has BOM?,LOOKUP,LOOKUP,Maharashtra,Mumbai is the capital of Maharashtra.,True,69.54,NONE
+TEST_00447,5_abbreviation_shortcuts,MAA which state comes?,LOOKUP,LOOKUP,Tamil Nadu,The capital of Tamil Nadu is Chennai.,True,68.06,NONE
+TEST_00448,5_abbreviation_shortcuts,JAI is the capital of which state?,LOOKUP,LOOKUP,Rajasthan,Jaipur is the capital of Rajasthan.,True,134.33,NONE
+TEST_00449,5_abbreviation_shortcuts,capital of TS?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,65.61,NONE
+TEST_00450,5_abbreviation_shortcuts,TG capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,54.86,NONE
+TEST_00451,5_abbreviation_shortcuts,AP ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,39.34,NONE
+TEST_00452,5_abbreviation_shortcuts,what is WB's capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,25.94,NONE
+TEST_00453,5_abbreviation_shortcuts,which city is KA capital?,LOOKUP,FILTER,Bengaluru,"Found 28 matching records, including Andhra Pradesh, Arunachal Pradesh, Assam, Bihar.",True,121.23,NONE
+TEST_00454,5_abbreviation_shortcuts,tell me TN capital,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,65.41,NONE
+TEST_00455,5_abbreviation_shortcuts,capital of MH?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,49.89,NONE
+TEST_00456,5_abbreviation_shortcuts,GJ capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,51.78,NONE
+TEST_00457,5_abbreviation_shortcuts,RJ ka capital?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,44.77,NONE
+TEST_00458,5_abbreviation_shortcuts,what is PB's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,23.29,NONE
+TEST_00459,5_abbreviation_shortcuts,which city is UP capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,39.62,NONE
+TEST_00460,5_abbreviation_shortcuts,tell me HP capital,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,70.59,NONE
+TEST_00461,5_abbreviation_shortcuts,capital of MP?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,94.32,NONE
+TEST_00462,5_abbreviation_shortcuts,BR capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,78.65,NONE
+TEST_00463,5_abbreviation_shortcuts,GA ka capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,43.52,NONE
+TEST_00464,5_abbreviation_shortcuts,what is KL's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,41.97,NONE
+TEST_00465,5_abbreviation_shortcuts,which city is OD capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,62.93,NONE
+TEST_00466,5_abbreviation_shortcuts,tell me SK capital,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,66.69,NONE
+TEST_00467,5_abbreviation_shortcuts,HYD which state comes?,LOOKUP,LOOKUP,Telangana,The capital of Telangana is Hyderabad.,True,78.06,NONE
+TEST_00468,5_abbreviation_shortcuts,BLR is the capital of which state?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,171.36,NONE
+TEST_00469,5_abbreviation_shortcuts,which state is CCU in?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,75.84,NONE
+TEST_00470,5_abbreviation_shortcuts,which state has BOM as capital?,LOOKUP,LOOKUP,Maharashtra,Mumbai is the capital of Maharashtra.,True,124.6,NONE
+TEST_00471,5_abbreviation_shortcuts,which state has MAA?,LOOKUP,LOOKUP,Tamil Nadu,Chennai is the capital of Tamil Nadu.,True,82.48,NONE
+TEST_00472,5_abbreviation_shortcuts,JAI which state comes?,LOOKUP,LOOKUP,Rajasthan,The capital of Rajasthan is Jaipur.,True,100.74,NONE
+TEST_00473,5_abbreviation_shortcuts,capital of TS?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,101.41,NONE
+TEST_00474,5_abbreviation_shortcuts,TG capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,69.42,NONE
+TEST_00475,5_abbreviation_shortcuts,AP ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,53.26,NONE
+TEST_00476,5_abbreviation_shortcuts,what is WB's capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,30.09,NONE
+TEST_00477,5_abbreviation_shortcuts,which city is KA capital?,LOOKUP,FILTER,Bengaluru,"Found 28 matching records, including Andhra Pradesh, Arunachal Pradesh, Assam, Bihar.",True,174.11,NONE
+TEST_00478,5_abbreviation_shortcuts,tell me TN capital,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,71.85,NONE
+TEST_00479,5_abbreviation_shortcuts,capital of MH?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,105.44,NONE
+TEST_00480,5_abbreviation_shortcuts,GJ capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,72.46,NONE
+TEST_00481,5_abbreviation_shortcuts,RJ ka capital?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,45.69,NONE
+TEST_00482,5_abbreviation_shortcuts,what is PB's capital?,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,32.68,NONE
+TEST_00483,5_abbreviation_shortcuts,which city is UP capital?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,55.97,NONE
+TEST_00484,5_abbreviation_shortcuts,tell me HP capital,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,70.84,NONE
+TEST_00485,5_abbreviation_shortcuts,capital of MP?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,99.54,NONE
+TEST_00486,5_abbreviation_shortcuts,BR capital?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,67.56,NONE
+TEST_00487,5_abbreviation_shortcuts,GA ka capital?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,47.04,NONE
+TEST_00488,5_abbreviation_shortcuts,what is KL's capital?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,44.82,NONE
+TEST_00489,5_abbreviation_shortcuts,which city is OD capital?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,62.2,NONE
+TEST_00490,5_abbreviation_shortcuts,tell me SK capital,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,69.11,NONE
+TEST_00491,5_abbreviation_shortcuts,which state has HYD?,LOOKUP,LOOKUP,Telangana,Hyderabad is the capital of Telangana.,True,76.03,NONE
+TEST_00492,5_abbreviation_shortcuts,BLR which state comes?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,84.77,NONE
+TEST_00493,5_abbreviation_shortcuts,CCU is the capital of which state?,LOOKUP,LOOKUP,West Bengal,Kolkata is the capital of West Bengal.,True,235.15,NONE
+TEST_00494,5_abbreviation_shortcuts,which state is BOM in?,LOOKUP,LOOKUP,Maharashtra,The capital of Maharashtra is Mumbai.,True,78.3,NONE
+TEST_00495,5_abbreviation_shortcuts,which state has MAA as capital?,LOOKUP,LOOKUP,Tamil Nadu,Chennai is the capital of Tamil Nadu.,True,138.81,NONE
+TEST_00496,5_abbreviation_shortcuts,which state has JAI?,LOOKUP,LOOKUP,Rajasthan,Jaipur is the capital of Rajasthan.,True,119.37,NONE
+TEST_00497,5_abbreviation_shortcuts,capital of TS?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,125.67,NONE
+TEST_00498,5_abbreviation_shortcuts,TG capital?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,68.28,NONE
+TEST_00499,5_abbreviation_shortcuts,AP ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,46.57,NONE
+TEST_00500,5_abbreviation_shortcuts,what is WB's capital?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,42.19,NONE
+TEST_00501,6_reverse_relationships,Which state has Amaravati as capital?,LOOKUP,LOOKUP,Andhra Pradesh,Amaravati is the capital of Andhra Pradesh.,True,115.47,NONE
+TEST_00502,6_reverse_relationships,Itanagar is the capital of which state?,LOOKUP,LOOKUP,Arunachal Pradesh,Itanagar is the capital of Arunachal Pradesh.,True,234.85,NONE
+TEST_00503,6_reverse_relationships,Which state has Dispur?,LOOKUP,LOOKUP,Assam,Dispur is the capital of Assam.,True,190.56,NONE
+TEST_00504,6_reverse_relationships,Which state is Patna in?,LOOKUP,LOOKUP,Bihar,The capital of Bihar is Patna.,True,258.9,NONE
+TEST_00505,6_reverse_relationships,Raipur which state comes?,LOOKUP,LOOKUP,Chhattisgarh,The capital of Chhattisgarh is Raipur.,True,245.68,NONE
+TEST_00506,6_reverse_relationships,Which state is associated with Panaji?,LOOKUP,LOOKUP,Goa,The capital of Goa is Panaji.,True,168.51,NONE
+TEST_00507,6_reverse_relationships,Gandhinagar belongs to which state?,LOOKUP,LOOKUP,Gujarat,Gandhinagar is the capital of Gujarat.,True,193.11,NONE
+TEST_00508,6_reverse_relationships,What state is Chandigarh in?,LOOKUP,LOOKUP,Haryana,"Found 2 matching records, including Haryana, Punjab.",True,183.4,NONE
+TEST_00509,6_reverse_relationships,Tell me the state having Shimla as capital,LOOKUP,FILTER,Himachal Pradesh,The capital of Himachal Pradesh is Shimla.,True,308.15,NONE
+TEST_00510,6_reverse_relationships,In which state is Ranchi located?,LOOKUP,LOOKUP,Jharkhand,Ranchi is the capital of Jharkhand.,True,116.77,NONE
+TEST_00511,6_reverse_relationships,Which state has Bengaluru as capital?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,120.81,NONE
+TEST_00512,6_reverse_relationships,Thiruvananthapuram is the capital of which state?,LOOKUP,LOOKUP,Kerala,Thiruvananthapuram is the capital of Kerala.,True,198.82,NONE
+TEST_00513,6_reverse_relationships,Which state has Bhopal?,LOOKUP,LOOKUP,Madhya Pradesh,Bhopal is the capital of Madhya Pradesh.,True,191.17,NONE
+TEST_00514,6_reverse_relationships,Which state is Mumbai in?,LOOKUP,LOOKUP,Maharashtra,The capital of Maharashtra is Mumbai.,True,82.43,NONE
+TEST_00515,6_reverse_relationships,Imphal which state comes?,LOOKUP,LOOKUP,Manipur,The capital of Manipur is Imphal.,True,97.43,NONE
+TEST_00516,6_reverse_relationships,Which state is associated with Shillong?,LOOKUP,LOOKUP,Meghalaya,The capital of Meghalaya is Shillong.,True,210.3,NONE
+TEST_00517,6_reverse_relationships,Aizawl belongs to which state?,LOOKUP,LOOKUP,Mizoram,Aizawl is the capital of Mizoram.,True,229.34,NONE
+TEST_00518,6_reverse_relationships,What state is Kohima in?,LOOKUP,LOOKUP,Nagaland,The capital of Nagaland is Kohima.,True,72.9,NONE
+TEST_00519,6_reverse_relationships,Tell me the state having Bhubaneswar as capital,LOOKUP,FILTER,Odisha,The capital of Odisha is Bhubaneswar.,True,246.04,NONE
+TEST_00520,6_reverse_relationships,In which state is Chandigarh located?,LOOKUP,LOOKUP,Punjab,"Found 2 matching records, including Haryana, Punjab.",True,110.96,NONE
+TEST_00521,6_reverse_relationships,Which state has Jaipur as capital?,LOOKUP,LOOKUP,Rajasthan,Jaipur is the capital of Rajasthan.,True,121.18,NONE
+TEST_00522,6_reverse_relationships,Gangtok is the capital of which state?,LOOKUP,LOOKUP,Sikkim,Gangtok is the capital of Sikkim.,True,338.35,NONE
+TEST_00523,6_reverse_relationships,Which state has Chennai?,LOOKUP,LOOKUP,Tamil Nadu,Chennai is the capital of Tamil Nadu.,True,191.62,NONE
+TEST_00524,6_reverse_relationships,Which state is Hyderabad in?,LOOKUP,LOOKUP,Telangana,The capital of Telangana is Hyderabad.,True,210.44,NONE
+TEST_00525,6_reverse_relationships,Agartala which state comes?,LOOKUP,LOOKUP,Tripura,The capital of Tripura is Agartala.,True,300.5,NONE
+TEST_00526,6_reverse_relationships,Which state is associated with Lucknow?,LOOKUP,LOOKUP,Uttar Pradesh,The capital of Uttar Pradesh is Lucknow.,True,286.27,NONE
+TEST_00527,6_reverse_relationships,Dehradun belongs to which state?,LOOKUP,LOOKUP,Uttarakhand,Dehradun is the capital of Uttarakhand.,True,301.74,NONE
+TEST_00528,6_reverse_relationships,What state is Kolkata in?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,111.2,NONE
+TEST_00529,6_reverse_relationships,Tell me the state having Amaravati as capital,LOOKUP,FILTER,Andhra Pradesh,The capital of Andhra Pradesh is Amaravati.,True,335.16,NONE
+TEST_00530,6_reverse_relationships,In which state is Itanagar located?,LOOKUP,LOOKUP,Arunachal Pradesh,Itanagar is the capital of Arunachal Pradesh.,True,432.5,NONE
+TEST_00531,6_reverse_relationships,Which state has Dispur as capital?,LOOKUP,LOOKUP,Assam,Dispur is the capital of Assam.,True,419.02,NONE
+TEST_00532,6_reverse_relationships,Patna is the capital of which state?,LOOKUP,LOOKUP,Bihar,Patna is the capital of Bihar.,True,492.48,NONE
+TEST_00533,6_reverse_relationships,Which state has Raipur?,LOOKUP,LOOKUP,Chhattisgarh,Raipur is the capital of Chhattisgarh.,True,214.18,NONE
+TEST_00534,6_reverse_relationships,Which state is Panaji in?,LOOKUP,LOOKUP,Goa,The capital of Goa is Panaji.,True,115.91,NONE
+TEST_00535,6_reverse_relationships,Gandhinagar which state comes?,LOOKUP,LOOKUP,Gujarat,The capital of Gujarat is Gandhinagar.,True,159.42,NONE
+TEST_00536,6_reverse_relationships,Which state is associated with Chandigarh?,LOOKUP,LOOKUP,Haryana,"Found 2 matching records, including Haryana, Punjab.",True,202.46,NONE
+TEST_00537,6_reverse_relationships,Shimla belongs to which state?,LOOKUP,LOOKUP,Himachal Pradesh,Shimla is the capital of Himachal Pradesh.,True,134.47,NONE
+TEST_00538,6_reverse_relationships,What state is Ranchi in?,LOOKUP,LOOKUP,Jharkhand,The capital of Jharkhand is Ranchi.,True,65.82,NONE
+TEST_00539,6_reverse_relationships,Tell me the state having Bengaluru as capital,LOOKUP,FILTER,Karnataka,The capital of Karnataka is Bengaluru.,True,263.95,NONE
+TEST_00540,6_reverse_relationships,In which state is Thiruvananthapuram located?,LOOKUP,LOOKUP,Kerala,Thiruvananthapuram is the capital of Kerala.,True,110.96,NONE
+TEST_00541,6_reverse_relationships,Which state has Bhopal as capital?,LOOKUP,LOOKUP,Madhya Pradesh,Bhopal is the capital of Madhya Pradesh.,True,138.69,NONE
+TEST_00542,6_reverse_relationships,Mumbai is the capital of which state?,LOOKUP,LOOKUP,Maharashtra,Mumbai is the capital of Maharashtra.,True,209.33,NONE
+TEST_00543,6_reverse_relationships,Which state has Imphal?,LOOKUP,LOOKUP,Manipur,Imphal is the capital of Manipur.,True,112.51,NONE
+TEST_00544,6_reverse_relationships,Which state is Shillong in?,LOOKUP,LOOKUP,Meghalaya,The capital of Meghalaya is Shillong.,True,98.65,NONE
+TEST_00545,6_reverse_relationships,Aizawl which state comes?,LOOKUP,LOOKUP,Mizoram,The capital of Mizoram is Aizawl.,True,130.49,NONE
+TEST_00546,6_reverse_relationships,Which state is associated with Kohima?,LOOKUP,LOOKUP,Nagaland,The capital of Nagaland is Kohima.,True,174.1,NONE
+TEST_00547,6_reverse_relationships,Bhubaneswar belongs to which state?,LOOKUP,LOOKUP,Odisha,Bhubaneswar is the capital of Odisha.,True,227.88,NONE
+TEST_00548,6_reverse_relationships,What state is Chandigarh in?,LOOKUP,LOOKUP,Punjab,"Found 2 matching records, including Haryana, Punjab.",True,115.13,NONE
+TEST_00549,6_reverse_relationships,Tell me the state having Jaipur as capital,LOOKUP,FILTER,Rajasthan,The capital of Rajasthan is Jaipur.,True,272.44,NONE
+TEST_00550,6_reverse_relationships,In which state is Gangtok located?,LOOKUP,LOOKUP,Sikkim,Gangtok is the capital of Sikkim.,True,129.04,NONE
+TEST_00551,6_reverse_relationships,Which state has Chennai as capital?,LOOKUP,LOOKUP,Tamil Nadu,Chennai is the capital of Tamil Nadu.,True,126.86,NONE
+TEST_00552,6_reverse_relationships,Hyderabad is the capital of which state?,LOOKUP,LOOKUP,Telangana,Hyderabad is the capital of Telangana.,True,241.34,NONE
+TEST_00553,6_reverse_relationships,Which state has Agartala?,LOOKUP,LOOKUP,Tripura,Agartala is the capital of Tripura.,True,144.26,NONE
+TEST_00554,6_reverse_relationships,Which state is Lucknow in?,LOOKUP,LOOKUP,Uttar Pradesh,The capital of Uttar Pradesh is Lucknow.,True,202.47,NONE
+TEST_00555,6_reverse_relationships,Dehradun which state comes?,LOOKUP,LOOKUP,Uttarakhand,The capital of Uttarakhand is Dehradun.,True,269.43,NONE
+TEST_00556,6_reverse_relationships,Which state is associated with Kolkata?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,265.72,NONE
+TEST_00557,6_reverse_relationships,Amaravati belongs to which state?,LOOKUP,LOOKUP,Andhra Pradesh,Amaravati is the capital of Andhra Pradesh.,True,188.85,NONE
+TEST_00558,6_reverse_relationships,What state is Itanagar in?,LOOKUP,LOOKUP,Arunachal Pradesh,The capital of Arunachal Pradesh is Itanagar.,True,84.05,NONE
+TEST_00559,6_reverse_relationships,Tell me the state having Dispur as capital,LOOKUP,FILTER,Assam,The capital of Assam is Dispur.,True,197.73,NONE
+TEST_00560,6_reverse_relationships,In which state is Patna located?,LOOKUP,LOOKUP,Bihar,Patna is the capital of Bihar.,True,144.81,NONE
+TEST_00561,6_reverse_relationships,Which state has Raipur as capital?,LOOKUP,LOOKUP,Chhattisgarh,Raipur is the capital of Chhattisgarh.,True,127.65,NONE
+TEST_00562,6_reverse_relationships,Panaji is the capital of which state?,LOOKUP,LOOKUP,Goa,Panaji is the capital of Goa.,True,190.5,NONE
+TEST_00563,6_reverse_relationships,Which state has Gandhinagar?,LOOKUP,LOOKUP,Gujarat,Gandhinagar is the capital of Gujarat.,True,91.13,NONE
+TEST_00564,6_reverse_relationships,Which state is Chandigarh in?,LOOKUP,LOOKUP,Haryana,"Found 2 matching records, including Haryana, Punjab.",True,133.79,NONE
+TEST_00565,6_reverse_relationships,Shimla which state comes?,LOOKUP,LOOKUP,Himachal Pradesh,The capital of Himachal Pradesh is Shimla.,True,90.26,NONE
+TEST_00566,6_reverse_relationships,Which state is associated with Ranchi?,LOOKUP,LOOKUP,Jharkhand,The capital of Jharkhand is Ranchi.,True,130.67,NONE
+TEST_00567,6_reverse_relationships,Bengaluru belongs to which state?,LOOKUP,LOOKUP,Karnataka,Bengaluru is the capital of Karnataka.,True,128.17,NONE
+TEST_00568,6_reverse_relationships,What state is Thiruvananthapuram in?,LOOKUP,LOOKUP,Kerala,The capital of Kerala is Thiruvananthapuram.,True,78.34,NONE
+TEST_00569,6_reverse_relationships,Tell me the state having Bhopal as capital,LOOKUP,FILTER,Madhya Pradesh,The capital of Madhya Pradesh is Bhopal.,True,224.84,NONE
+TEST_00570,6_reverse_relationships,In which state is Mumbai located?,LOOKUP,LOOKUP,Maharashtra,Mumbai is the capital of Maharashtra.,True,114.96,NONE
+TEST_00571,6_reverse_relationships,Which state has Imphal as capital?,LOOKUP,LOOKUP,Manipur,Imphal is the capital of Manipur.,True,129.59,NONE
+TEST_00572,6_reverse_relationships,Shillong is the capital of which state?,LOOKUP,LOOKUP,Meghalaya,Shillong is the capital of Meghalaya.,True,160.2,NONE
+TEST_00573,6_reverse_relationships,Which state has Aizawl?,LOOKUP,LOOKUP,Mizoram,Aizawl is the capital of Mizoram.,True,85.0,NONE
+TEST_00574,6_reverse_relationships,Which state is Kohima in?,LOOKUP,LOOKUP,Nagaland,The capital of Nagaland is Kohima.,True,78.41,NONE
+TEST_00575,6_reverse_relationships,Bhubaneswar which state comes?,LOOKUP,LOOKUP,Odisha,The capital of Odisha is Bhubaneswar.,True,78.15,NONE
+TEST_00576,6_reverse_relationships,Which state is associated with Chandigarh?,LOOKUP,LOOKUP,Punjab,"Found 2 matching records, including Haryana, Punjab.",True,114.78,NONE
+TEST_00577,6_reverse_relationships,Jaipur belongs to which state?,LOOKUP,LOOKUP,Rajasthan,Jaipur is the capital of Rajasthan.,True,132.68,NONE
+TEST_00578,6_reverse_relationships,What state is Gangtok in?,LOOKUP,LOOKUP,Sikkim,The capital of Sikkim is Gangtok.,True,73.75,NONE
+TEST_00579,6_reverse_relationships,Tell me the state having Chennai as capital,LOOKUP,FILTER,Tamil Nadu,The capital of Tamil Nadu is Chennai.,True,215.8,NONE
+TEST_00580,6_reverse_relationships,In which state is Hyderabad located?,LOOKUP,LOOKUP,Telangana,Hyderabad is the capital of Telangana.,True,98.33,NONE
+TEST_00581,6_reverse_relationships,Which state has Agartala as capital?,LOOKUP,LOOKUP,Tripura,Agartala is the capital of Tripura.,True,171.75,NONE
+TEST_00582,6_reverse_relationships,Lucknow is the capital of which state?,LOOKUP,LOOKUP,Uttar Pradesh,Lucknow is the capital of Uttar Pradesh.,True,154.22,NONE
+TEST_00583,6_reverse_relationships,Which state has Dehradun?,LOOKUP,LOOKUP,Uttarakhand,Dehradun is the capital of Uttarakhand.,True,59.29,NONE
+TEST_00584,6_reverse_relationships,Which state is Kolkata in?,LOOKUP,LOOKUP,West Bengal,The capital of West Bengal is Kolkata.,True,60.67,NONE
+TEST_00585,6_reverse_relationships,Amaravati which state comes?,LOOKUP,LOOKUP,Andhra Pradesh,The capital of Andhra Pradesh is Amaravati.,True,76.14,NONE
+TEST_00586,6_reverse_relationships,Which state is associated with Itanagar?,LOOKUP,LOOKUP,Arunachal Pradesh,The capital of Arunachal Pradesh is Itanagar.,True,91.35,NONE
+TEST_00587,6_reverse_relationships,Dispur belongs to which state?,LOOKUP,LOOKUP,Assam,Dispur is the capital of Assam.,True,91.83,NONE
+TEST_00588,6_reverse_relationships,What state is Patna in?,LOOKUP,LOOKUP,Bihar,The capital of Bihar is Patna.,True,58.8,NONE
+TEST_00589,6_reverse_relationships,Tell me the state having Raipur as capital,LOOKUP,FILTER,Chhattisgarh,The capital of Chhattisgarh is Raipur.,True,147.2,NONE
+TEST_00590,6_reverse_relationships,In which state is Panaji located?,LOOKUP,LOOKUP,Goa,Panaji is the capital of Goa.,True,108.61,NONE
+TEST_00591,6_reverse_relationships,Which state has Gandhinagar as capital?,LOOKUP,LOOKUP,Gujarat,Gandhinagar is the capital of Gujarat.,True,88.93,NONE
+TEST_00592,6_reverse_relationships,Chandigarh is the capital of which state?,LOOKUP,LOOKUP,Haryana,"Found 2 matching records, including Haryana, Punjab.",True,122.94,NONE
+TEST_00593,6_reverse_relationships,Which state has Shimla?,LOOKUP,LOOKUP,Himachal Pradesh,Shimla is the capital of Himachal Pradesh.,True,66.26,NONE
+TEST_00594,6_reverse_relationships,Which state is Ranchi in?,LOOKUP,LOOKUP,Jharkhand,The capital of Jharkhand is Ranchi.,True,59.54,NONE
+TEST_00595,6_reverse_relationships,Bengaluru which state comes?,LOOKUP,LOOKUP,Karnataka,The capital of Karnataka is Bengaluru.,True,73.81,NONE
+TEST_00596,6_reverse_relationships,Which state is associated with Thiruvananthapuram?,LOOKUP,LOOKUP,Kerala,The capital of Kerala is Thiruvananthapuram.,True,102.04,NONE
+TEST_00597,6_reverse_relationships,Bhopal belongs to which state?,LOOKUP,LOOKUP,Madhya Pradesh,Bhopal is the capital of Madhya Pradesh.,True,154.25,NONE
+TEST_00598,6_reverse_relationships,What state is Mumbai in?,LOOKUP,LOOKUP,Maharashtra,The capital of Maharashtra is Mumbai.,True,49.39,NONE
+TEST_00599,6_reverse_relationships,Tell me the state having Imphal as capital,LOOKUP,FILTER,Manipur,The capital of Manipur is Imphal.,True,128.1,NONE
+TEST_00600,6_reverse_relationships,In which state is Shillong located?,LOOKUP,LOOKUP,Meghalaya,Shillong is the capital of Meghalaya.,True,84.88,NONE
+TEST_00601,7_hinglish_colloquial,Andhra Pradesh ka capital?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,41.58,NONE
+TEST_00602,7_hinglish_colloquial,Arunachal Pradesh ka capital kya hai?,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,35.72,NONE
+TEST_00603,7_hinglish_colloquial,Assam ka capital batao,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,46.99,NONE
+TEST_00604,7_hinglish_colloquial,Bihar ki capital kya hai?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,38.67,NONE
+TEST_00605,7_hinglish_colloquial,Chhattisgarh ke capital bataiye,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,67.26,NONE
+TEST_00606,7_hinglish_colloquial,Goa capital kya hai bhai,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,32.19,NONE
+TEST_00607,7_hinglish_colloquial,Gujarat ka capital batao zara,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,51.94,NONE
+TEST_00608,7_hinglish_colloquial,mujhe Haryana ka capital chahiye,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,46.57,NONE
+TEST_00609,7_hinglish_colloquial,Himachal Pradesh ka rajdhani kya hai?,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,38.03,NONE
+TEST_00610,7_hinglish_colloquial,Jharkhand ki rajdhani batao,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,51.81,NONE
+TEST_00611,7_hinglish_colloquial,Karnataka ka capital?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,34.64,NONE
+TEST_00612,7_hinglish_colloquial,Kerala ka capital kya hai?,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,35.54,NONE
+TEST_00613,7_hinglish_colloquial,Madhya Pradesh ka capital batao,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,43.92,NONE
+TEST_00614,7_hinglish_colloquial,Maharashtra ki capital kya hai?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,48.33,NONE
+TEST_00615,7_hinglish_colloquial,Manipur ke capital bataiye,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,53.01,NONE
+TEST_00616,7_hinglish_colloquial,Meghalaya capital kya hai bhai,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,62.62,NONE
+TEST_00617,7_hinglish_colloquial,Mizoram ka capital batao zara,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,57.69,NONE
+TEST_00618,7_hinglish_colloquial,mujhe Nagaland ka capital chahiye,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,52.85,NONE
+TEST_00619,7_hinglish_colloquial,Odisha ka rajdhani kya hai?,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,34.18,NONE
+TEST_00620,7_hinglish_colloquial,Punjab ki rajdhani batao,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,54.86,NONE
+TEST_00621,7_hinglish_colloquial,Rajasthan ka capital?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,50.76,NONE
+TEST_00622,7_hinglish_colloquial,Sikkim ka capital kya hai?,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,45.9,NONE
+TEST_00623,7_hinglish_colloquial,Tamil Nadu ka capital batao,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,45.17,NONE
+TEST_00624,7_hinglish_colloquial,Telangana ki capital kya hai?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,47.37,NONE
+TEST_00625,7_hinglish_colloquial,Tripura ke capital bataiye,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,49.16,NONE
+TEST_00626,7_hinglish_colloquial,Uttar Pradesh capital kya hai bhai,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,59.88,NONE
+TEST_00627,7_hinglish_colloquial,Uttarakhand ka capital batao zara,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,39.45,NONE
+TEST_00628,7_hinglish_colloquial,mujhe West Bengal ka capital chahiye,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,70.67,NONE
+TEST_00629,7_hinglish_colloquial,Andhra Pradesh ka rajdhani kya hai?,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,47.9,NONE
+TEST_00630,7_hinglish_colloquial,Arunachal Pradesh ki rajdhani batao,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,74.98,NONE
+TEST_00631,7_hinglish_colloquial,Assam ka capital?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,57.65,NONE
+TEST_00632,7_hinglish_colloquial,Bihar ka capital kya hai?,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,51.0,NONE
+TEST_00633,7_hinglish_colloquial,Chhattisgarh ka capital batao,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,57.11,NONE
+TEST_00634,7_hinglish_colloquial,Goa ki capital kya hai?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,52.88,NONE
+TEST_00635,7_hinglish_colloquial,Gujarat ke capital bataiye,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,72.04,NONE
+TEST_00636,7_hinglish_colloquial,Haryana capital kya hai bhai,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,149.41,NONE
+TEST_00637,7_hinglish_colloquial,Himachal Pradesh ka capital batao zara,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,56.18,NONE
+TEST_00638,7_hinglish_colloquial,mujhe Jharkhand ka capital chahiye,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,57.54,NONE
+TEST_00639,7_hinglish_colloquial,Karnataka ka rajdhani kya hai?,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,57.69,NONE
+TEST_00640,7_hinglish_colloquial,Kerala ki rajdhani batao,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,90.36,NONE
+TEST_00641,7_hinglish_colloquial,Madhya Pradesh ka capital?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,47.77,NONE
+TEST_00642,7_hinglish_colloquial,Maharashtra ka capital kya hai?,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,50.29,NONE
+TEST_00643,7_hinglish_colloquial,Manipur ka capital batao,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,48.94,NONE
+TEST_00644,7_hinglish_colloquial,Meghalaya ki capital kya hai?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,49.57,NONE
+TEST_00645,7_hinglish_colloquial,Mizoram ke capital bataiye,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,85.66,NONE
+TEST_00646,7_hinglish_colloquial,Nagaland capital kya hai bhai,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,103.11,NONE
+TEST_00647,7_hinglish_colloquial,Odisha ka capital batao zara,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,83.4,NONE
+TEST_00648,7_hinglish_colloquial,mujhe Punjab ka capital chahiye,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,132.87,NONE
+TEST_00649,7_hinglish_colloquial,Rajasthan ka rajdhani kya hai?,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,99.95,NONE
+TEST_00650,7_hinglish_colloquial,Sikkim ki rajdhani batao,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,88.09,NONE
+TEST_00651,7_hinglish_colloquial,Tamil Nadu ka capital?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,48.97,NONE
+TEST_00652,7_hinglish_colloquial,Telangana ka capital kya hai?,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,64.94,NONE
+TEST_00653,7_hinglish_colloquial,Tripura ka capital batao,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,52.52,NONE
+TEST_00654,7_hinglish_colloquial,Uttar Pradesh ki capital kya hai?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,64.77,NONE
+TEST_00655,7_hinglish_colloquial,Uttarakhand ke capital bataiye,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,191.53,NONE
+TEST_00656,7_hinglish_colloquial,West Bengal capital kya hai bhai,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,133.54,NONE
+TEST_00657,7_hinglish_colloquial,Andhra Pradesh ka capital batao zara,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,63.68,NONE
+TEST_00658,7_hinglish_colloquial,mujhe Arunachal Pradesh ka capital chahiye,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,61.04,NONE
+TEST_00659,7_hinglish_colloquial,Assam ka rajdhani kya hai?,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,49.45,NONE
+TEST_00660,7_hinglish_colloquial,Bihar ki rajdhani batao,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,67.97,NONE
+TEST_00661,7_hinglish_colloquial,Chhattisgarh ka capital?,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,51.69,NONE
+TEST_00662,7_hinglish_colloquial,Goa ka capital kya hai?,LOOKUP,LOOKUP,Panaji,The capital of Goa is Panaji.,True,69.36,NONE
+TEST_00663,7_hinglish_colloquial,Gujarat ka capital batao,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,55.51,NONE
+TEST_00664,7_hinglish_colloquial,Haryana ki capital kya hai?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,74.24,NONE
+TEST_00665,7_hinglish_colloquial,Himachal Pradesh ke capital bataiye,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,99.64,NONE
+TEST_00666,7_hinglish_colloquial,Jharkhand capital kya hai bhai,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,79.44,NONE
+TEST_00667,7_hinglish_colloquial,Karnataka ka capital batao zara,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,57.11,NONE
+TEST_00668,7_hinglish_colloquial,mujhe Kerala ka capital chahiye,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,71.86,NONE
+TEST_00669,7_hinglish_colloquial,Madhya Pradesh ka rajdhani kya hai?,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,57.58,NONE
+TEST_00670,7_hinglish_colloquial,Maharashtra ki rajdhani batao,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,68.69,NONE
+TEST_00671,7_hinglish_colloquial,Manipur ka capital?,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,52.16,NONE
+TEST_00672,7_hinglish_colloquial,Meghalaya ka capital kya hai?,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,66.7,NONE
+TEST_00673,7_hinglish_colloquial,Mizoram ka capital batao,LOOKUP,LOOKUP,Aizawl,The capital of Mizoram is Aizawl.,True,52.14,NONE
+TEST_00674,7_hinglish_colloquial,Nagaland ki capital kya hai?,LOOKUP,LOOKUP,Kohima,The capital of Nagaland is Kohima.,True,73.77,NONE
+TEST_00675,7_hinglish_colloquial,Odisha ke capital bataiye,LOOKUP,LOOKUP,Bhubaneswar,The capital of Odisha is Bhubaneswar.,True,103.66,NONE
+TEST_00676,7_hinglish_colloquial,Punjab capital kya hai bhai,LOOKUP,LOOKUP,Chandigarh,The capital of Punjab is Chandigarh.,True,186.46,NONE
+TEST_00677,7_hinglish_colloquial,Rajasthan ka capital batao zara,LOOKUP,LOOKUP,Jaipur,The capital of Rajasthan is Jaipur.,True,56.49,NONE
+TEST_00678,7_hinglish_colloquial,mujhe Sikkim ka capital chahiye,LOOKUP,LOOKUP,Gangtok,The capital of Sikkim is Gangtok.,True,68.42,NONE
+TEST_00679,7_hinglish_colloquial,Tamil Nadu ka rajdhani kya hai?,LOOKUP,LOOKUP,Chennai,The capital of Tamil Nadu is Chennai.,True,76.59,NONE
+TEST_00680,7_hinglish_colloquial,Telangana ki rajdhani batao,LOOKUP,LOOKUP,Hyderabad,The capital of Telangana is Hyderabad.,True,84.19,NONE
+TEST_00681,7_hinglish_colloquial,Tripura ka capital?,LOOKUP,LOOKUP,Agartala,The capital of Tripura is Agartala.,True,63.31,NONE
+TEST_00682,7_hinglish_colloquial,Uttar Pradesh ka capital kya hai?,LOOKUP,LOOKUP,Lucknow,The capital of Uttar Pradesh is Lucknow.,True,59.33,NONE
+TEST_00683,7_hinglish_colloquial,Uttarakhand ka capital batao,LOOKUP,LOOKUP,Dehradun,The capital of Uttarakhand is Dehradun.,True,52.52,NONE
+TEST_00684,7_hinglish_colloquial,West Bengal ki capital kya hai?,LOOKUP,LOOKUP,Kolkata,The capital of West Bengal is Kolkata.,True,48.59,NONE
+TEST_00685,7_hinglish_colloquial,Andhra Pradesh ke capital bataiye,LOOKUP,LOOKUP,Amaravati,The capital of Andhra Pradesh is Amaravati.,True,92.96,NONE
+TEST_00686,7_hinglish_colloquial,Arunachal Pradesh capital kya hai bhai,LOOKUP,LOOKUP,Itanagar,The capital of Arunachal Pradesh is Itanagar.,True,75.79,NONE
+TEST_00687,7_hinglish_colloquial,Assam ka capital batao zara,LOOKUP,LOOKUP,Dispur,The capital of Assam is Dispur.,True,85.33,NONE
+TEST_00688,7_hinglish_colloquial,mujhe Bihar ka capital chahiye,LOOKUP,LOOKUP,Patna,The capital of Bihar is Patna.,True,76.83,NONE
+TEST_00689,7_hinglish_colloquial,Chhattisgarh ka rajdhani kya hai?,LOOKUP,LOOKUP,Raipur,The capital of Chhattisgarh is Raipur.,True,77.58,NONE
+TEST_00690,7_hinglish_colloquial,Goa ki rajdhani batao,LOOKUP,BOOLEAN_CHECK,Panaji,True. The capital of Goa is Panaji.,True,99.69,NONE
+TEST_00691,7_hinglish_colloquial,Gujarat ka capital?,LOOKUP,LOOKUP,Gandhinagar,The capital of Gujarat is Gandhinagar.,True,96.45,NONE
+TEST_00692,7_hinglish_colloquial,Haryana ka capital kya hai?,LOOKUP,LOOKUP,Chandigarh,The capital of Haryana is Chandigarh.,True,55.55,NONE
+TEST_00693,7_hinglish_colloquial,Himachal Pradesh ka capital batao,LOOKUP,LOOKUP,Shimla,The capital of Himachal Pradesh is Shimla.,True,52.58,NONE
+TEST_00694,7_hinglish_colloquial,Jharkhand ki capital kya hai?,LOOKUP,LOOKUP,Ranchi,The capital of Jharkhand is Ranchi.,True,52.26,NONE
+TEST_00695,7_hinglish_colloquial,Karnataka ke capital bataiye,LOOKUP,LOOKUP,Bengaluru,The capital of Karnataka is Bengaluru.,True,104.93,NONE
+TEST_00696,7_hinglish_colloquial,Kerala capital kya hai bhai,LOOKUP,LOOKUP,Thiruvananthapuram,The capital of Kerala is Thiruvananthapuram.,True,115.98,NONE
+TEST_00697,7_hinglish_colloquial,Madhya Pradesh ka capital batao zara,LOOKUP,LOOKUP,Bhopal,The capital of Madhya Pradesh is Bhopal.,True,100.47,NONE
+TEST_00698,7_hinglish_colloquial,mujhe Maharashtra ka capital chahiye,LOOKUP,LOOKUP,Mumbai,The capital of Maharashtra is Mumbai.,True,73.0,NONE
+TEST_00699,7_hinglish_colloquial,Manipur ka rajdhani kya hai?,LOOKUP,LOOKUP,Imphal,The capital of Manipur is Imphal.,True,59.9,NONE
+TEST_00700,7_hinglish_colloquial,Meghalaya ki rajdhani batao,LOOKUP,LOOKUP,Shillong,The capital of Meghalaya is Shillong.,True,70.56,NONE
+TEST_00701,8_boolean_fact_checking,Is Amaravati the capital of Andhra Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Andhra Pradesh is Amaravati.,True,48.49,NONE
+TEST_00702,8_boolean_fact_checking,Is Dispur the capital of Arunachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Arunachal Pradesh is Itanagar, not Dispur.",True,38.35,NONE
+TEST_00703,8_boolean_fact_checking,Is Dispur the capital of Assam?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Assam is Dispur.,True,36.6,NONE
+TEST_00704,8_boolean_fact_checking,Is Raipur the capital of Bihar?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Bihar is Patna, not Raipur.",True,41.69,NONE
+TEST_00705,8_boolean_fact_checking,Is Raipur the capital of Chhattisgarh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Chhattisgarh is Raipur.,True,41.47,NONE
+TEST_00706,8_boolean_fact_checking,Is Gandhinagar the capital of Goa?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Goa is Panaji, not Gandhinagar.",True,44.99,NONE
+TEST_00707,8_boolean_fact_checking,Is Gandhinagar the capital of Gujarat?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Gujarat is Gandhinagar.,True,46.42,NONE
+TEST_00708,8_boolean_fact_checking,Is Shimla the capital of Haryana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Haryana is Chandigarh, not Shimla.",True,57.13,NONE
+TEST_00709,8_boolean_fact_checking,Is Shimla the capital of Himachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Himachal Pradesh is Shimla.,True,55.0,NONE
+TEST_00710,8_boolean_fact_checking,Is Bengaluru the capital of Jharkhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Jharkhand is Ranchi, not Bengaluru.",True,58.17,NONE
+TEST_00711,8_boolean_fact_checking,Is Bengaluru the capital of Karnataka?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Karnataka is Bengaluru.,True,39.79,NONE
+TEST_00712,8_boolean_fact_checking,Is Bhopal the capital of Kerala?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Kerala is Thiruvananthapuram, not Bhopal.",True,44.59,NONE
+TEST_00713,8_boolean_fact_checking,Is Bhopal the capital of Madhya Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Madhya Pradesh is Bhopal.,True,51.23,NONE
+TEST_00714,8_boolean_fact_checking,Is Imphal the capital of Maharashtra?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Maharashtra is Mumbai, not Imphal.",True,57.44,NONE
+TEST_00715,8_boolean_fact_checking,Is Imphal the capital of Manipur?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Manipur is Imphal.,True,50.88,NONE
+TEST_00716,8_boolean_fact_checking,Is Aizawl the capital of Meghalaya?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Meghalaya is Shillong, not Aizawl.",True,57.91,NONE
+TEST_00717,8_boolean_fact_checking,Is Aizawl the capital of Mizoram?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Mizoram is Aizawl.,True,72.64,NONE
+TEST_00718,8_boolean_fact_checking,Is Bhubaneswar the capital of Nagaland?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Nagaland is Kohima, not Bhubaneswar.",True,68.89,NONE
+TEST_00719,8_boolean_fact_checking,Is Bhubaneswar the capital of Odisha?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Odisha is Bhubaneswar.,True,46.8,NONE
+TEST_00720,8_boolean_fact_checking,Is Jaipur the capital of Punjab?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Punjab is Chandigarh, not Jaipur.",True,70.0,NONE
+TEST_00721,8_boolean_fact_checking,Is Jaipur the capital of Rajasthan?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Rajasthan is Jaipur.,True,45.57,NONE
+TEST_00722,8_boolean_fact_checking,Is Chennai the capital of Sikkim?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Sikkim is Gangtok, not Chennai.",True,43.79,NONE
+TEST_00723,8_boolean_fact_checking,Is Chennai the capital of Tamil Nadu?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tamil Nadu is Chennai.,True,40.07,NONE
+TEST_00724,8_boolean_fact_checking,Is Agartala the capital of Telangana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Telangana is Hyderabad, not Agartala.",True,41.98,NONE
+TEST_00725,8_boolean_fact_checking,Is Agartala the capital of Tripura?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tripura is Agartala.,True,42.65,NONE
+TEST_00726,8_boolean_fact_checking,Is Dehradun the capital of Uttar Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Uttar Pradesh is Lucknow, not Dehradun.",True,38.68,NONE
+TEST_00727,8_boolean_fact_checking,Is Dehradun the capital of Uttarakhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Uttarakhand is Dehradun.,True,47.47,NONE
+TEST_00728,8_boolean_fact_checking,Is Amaravati the capital of West Bengal?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of West Bengal is Kolkata, not Amaravati.",True,36.69,NONE
+TEST_00729,8_boolean_fact_checking,Is Amaravati the capital of Andhra Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Andhra Pradesh is Amaravati.,True,37.93,NONE
+TEST_00730,8_boolean_fact_checking,Is Dispur the capital of Arunachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Arunachal Pradesh is Itanagar, not Dispur.",True,70.03,NONE
+TEST_00731,8_boolean_fact_checking,Is Dispur the capital of Assam?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Assam is Dispur.,True,51.13,NONE
+TEST_00732,8_boolean_fact_checking,Is Raipur the capital of Bihar?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Bihar is Patna, not Raipur.",True,54.49,NONE
+TEST_00733,8_boolean_fact_checking,Is Raipur the capital of Chhattisgarh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Chhattisgarh is Raipur.,True,55.34,NONE
+TEST_00734,8_boolean_fact_checking,Is Gandhinagar the capital of Goa?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Goa is Panaji, not Gandhinagar.",True,57.84,NONE
+TEST_00735,8_boolean_fact_checking,Is Gandhinagar the capital of Gujarat?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Gujarat is Gandhinagar.,True,40.4,NONE
+TEST_00736,8_boolean_fact_checking,Is Shimla the capital of Haryana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Haryana is Chandigarh, not Shimla.",True,39.4,NONE
+TEST_00737,8_boolean_fact_checking,Is Shimla the capital of Himachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Himachal Pradesh is Shimla.,True,43.52,NONE
+TEST_00738,8_boolean_fact_checking,Is Bengaluru the capital of Jharkhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Jharkhand is Ranchi, not Bengaluru.",True,35.92,NONE
+TEST_00739,8_boolean_fact_checking,Is Bengaluru the capital of Karnataka?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Karnataka is Bengaluru.,True,40.71,NONE
+TEST_00740,8_boolean_fact_checking,Is Bhopal the capital of Kerala?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Kerala is Thiruvananthapuram, not Bhopal.",True,47.55,NONE
+TEST_00741,8_boolean_fact_checking,Is Bhopal the capital of Madhya Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Madhya Pradesh is Bhopal.,True,68.18,NONE
+TEST_00742,8_boolean_fact_checking,Is Imphal the capital of Maharashtra?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Maharashtra is Mumbai, not Imphal.",True,77.5,NONE
+TEST_00743,8_boolean_fact_checking,Is Imphal the capital of Manipur?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Manipur is Imphal.,True,69.91,NONE
+TEST_00744,8_boolean_fact_checking,Is Aizawl the capital of Meghalaya?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Meghalaya is Shillong, not Aizawl.",True,66.87,NONE
+TEST_00745,8_boolean_fact_checking,Is Aizawl the capital of Mizoram?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Mizoram is Aizawl.,True,76.09,NONE
+TEST_00746,8_boolean_fact_checking,Is Bhubaneswar the capital of Nagaland?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Nagaland is Kohima, not Bhubaneswar.",True,62.51,NONE
+TEST_00747,8_boolean_fact_checking,Is Bhubaneswar the capital of Odisha?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Odisha is Bhubaneswar.,True,38.57,NONE
+TEST_00748,8_boolean_fact_checking,Is Jaipur the capital of Punjab?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Punjab is Chandigarh, not Jaipur.",True,42.74,NONE
+TEST_00749,8_boolean_fact_checking,Is Jaipur the capital of Rajasthan?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Rajasthan is Jaipur.,True,42.9,NONE
+TEST_00750,8_boolean_fact_checking,Is Chennai the capital of Sikkim?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Sikkim is Gangtok, not Chennai.",True,36.81,NONE
+TEST_00751,8_boolean_fact_checking,Is Chennai the capital of Tamil Nadu?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tamil Nadu is Chennai.,True,36.68,NONE
+TEST_00752,8_boolean_fact_checking,Is Agartala the capital of Telangana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Telangana is Hyderabad, not Agartala.",True,42.55,NONE
+TEST_00753,8_boolean_fact_checking,Is Agartala the capital of Tripura?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tripura is Agartala.,True,49.53,NONE
+TEST_00754,8_boolean_fact_checking,Is Dehradun the capital of Uttar Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Uttar Pradesh is Lucknow, not Dehradun.",True,39.64,NONE
+TEST_00755,8_boolean_fact_checking,Is Dehradun the capital of Uttarakhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Uttarakhand is Dehradun.,True,37.56,NONE
+TEST_00756,8_boolean_fact_checking,Is Amaravati the capital of West Bengal?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of West Bengal is Kolkata, not Amaravati.",True,59.54,NONE
+TEST_00757,8_boolean_fact_checking,Is Amaravati the capital of Andhra Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Andhra Pradesh is Amaravati.,True,61.57,NONE
+TEST_00758,8_boolean_fact_checking,Is Dispur the capital of Arunachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Arunachal Pradesh is Itanagar, not Dispur.",True,108.86,NONE
+TEST_00759,8_boolean_fact_checking,Is Dispur the capital of Assam?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Assam is Dispur.,True,38.81,NONE
+TEST_00760,8_boolean_fact_checking,Is Raipur the capital of Bihar?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Bihar is Patna, not Raipur.",True,43.24,NONE
+TEST_00761,8_boolean_fact_checking,Is Raipur the capital of Chhattisgarh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Chhattisgarh is Raipur.,True,54.77,NONE
+TEST_00762,8_boolean_fact_checking,Is Gandhinagar the capital of Goa?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Goa is Panaji, not Gandhinagar.",True,50.18,NONE
+TEST_00763,8_boolean_fact_checking,Is Gandhinagar the capital of Gujarat?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Gujarat is Gandhinagar.,True,46.26,NONE
+TEST_00764,8_boolean_fact_checking,Is Shimla the capital of Haryana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Haryana is Chandigarh, not Shimla.",True,42.75,NONE
+TEST_00765,8_boolean_fact_checking,Is Shimla the capital of Himachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Himachal Pradesh is Shimla.,True,46.79,NONE
+TEST_00766,8_boolean_fact_checking,Is Bengaluru the capital of Jharkhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Jharkhand is Ranchi, not Bengaluru.",True,40.35,NONE
+TEST_00767,8_boolean_fact_checking,Is Bengaluru the capital of Karnataka?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Karnataka is Bengaluru.,True,49.26,NONE
+TEST_00768,8_boolean_fact_checking,Is Bhopal the capital of Kerala?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Kerala is Thiruvananthapuram, not Bhopal.",True,47.24,NONE
+TEST_00769,8_boolean_fact_checking,Is Bhopal the capital of Madhya Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Madhya Pradesh is Bhopal.,True,93.57,NONE
+TEST_00770,8_boolean_fact_checking,Is Imphal the capital of Maharashtra?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Maharashtra is Mumbai, not Imphal.",True,87.49,NONE
+TEST_00771,8_boolean_fact_checking,Is Imphal the capital of Manipur?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Manipur is Imphal.,True,38.21,NONE
+TEST_00772,8_boolean_fact_checking,Is Aizawl the capital of Meghalaya?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Meghalaya is Shillong, not Aizawl.",True,41.14,NONE
+TEST_00773,8_boolean_fact_checking,Is Aizawl the capital of Mizoram?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Mizoram is Aizawl.,True,43.13,NONE
+TEST_00774,8_boolean_fact_checking,Is Bhubaneswar the capital of Nagaland?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Nagaland is Kohima, not Bhubaneswar.",True,37.23,NONE
+TEST_00775,8_boolean_fact_checking,Is Bhubaneswar the capital of Odisha?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Odisha is Bhubaneswar.,True,37.3,NONE
+TEST_00776,8_boolean_fact_checking,Is Jaipur the capital of Punjab?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Punjab is Chandigarh, not Jaipur.",True,42.64,NONE
+TEST_00777,8_boolean_fact_checking,Is Jaipur the capital of Rajasthan?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Rajasthan is Jaipur.,True,48.56,NONE
+TEST_00778,8_boolean_fact_checking,Is Chennai the capital of Sikkim?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Sikkim is Gangtok, not Chennai.",True,82.06,NONE
+TEST_00779,8_boolean_fact_checking,Is Chennai the capital of Tamil Nadu?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tamil Nadu is Chennai.,True,36.42,NONE
+TEST_00780,8_boolean_fact_checking,Is Agartala the capital of Telangana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Telangana is Hyderabad, not Agartala.",True,39.12,NONE
+TEST_00781,8_boolean_fact_checking,Is Agartala the capital of Tripura?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Tripura is Agartala.,True,38.19,NONE
+TEST_00782,8_boolean_fact_checking,Is Dehradun the capital of Uttar Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Uttar Pradesh is Lucknow, not Dehradun.",True,60.67,NONE
+TEST_00783,8_boolean_fact_checking,Is Dehradun the capital of Uttarakhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Uttarakhand is Dehradun.,True,37.73,NONE
+TEST_00784,8_boolean_fact_checking,Is Amaravati the capital of West Bengal?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of West Bengal is Kolkata, not Amaravati.",True,46.49,NONE
+TEST_00785,8_boolean_fact_checking,Is Amaravati the capital of Andhra Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Andhra Pradesh is Amaravati.,True,50.21,NONE
+TEST_00786,8_boolean_fact_checking,Is Dispur the capital of Arunachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Arunachal Pradesh is Itanagar, not Dispur.",True,53.7,NONE
+TEST_00787,8_boolean_fact_checking,Is Dispur the capital of Assam?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Assam is Dispur.,True,38.94,NONE
+TEST_00788,8_boolean_fact_checking,Is Raipur the capital of Bihar?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Bihar is Patna, not Raipur.",True,59.66,NONE
+TEST_00789,8_boolean_fact_checking,Is Raipur the capital of Chhattisgarh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Chhattisgarh is Raipur.,True,48.88,NONE
+TEST_00790,8_boolean_fact_checking,Is Gandhinagar the capital of Goa?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Goa is Panaji, not Gandhinagar.",True,55.1,NONE
+TEST_00791,8_boolean_fact_checking,Is Gandhinagar the capital of Gujarat?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Gujarat is Gandhinagar.,True,59.25,NONE
+TEST_00792,8_boolean_fact_checking,Is Shimla the capital of Haryana?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Haryana is Chandigarh, not Shimla.",True,47.56,NONE
+TEST_00793,8_boolean_fact_checking,Is Shimla the capital of Himachal Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Himachal Pradesh is Shimla.,True,51.39,NONE
+TEST_00794,8_boolean_fact_checking,Is Bengaluru the capital of Jharkhand?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Jharkhand is Ranchi, not Bengaluru.",True,51.8,NONE
+TEST_00795,8_boolean_fact_checking,Is Bengaluru the capital of Karnataka?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Karnataka is Bengaluru.,True,64.33,NONE
+TEST_00796,8_boolean_fact_checking,Is Bhopal the capital of Kerala?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Kerala is Thiruvananthapuram, not Bhopal.",True,39.75,NONE
+TEST_00797,8_boolean_fact_checking,Is Bhopal the capital of Madhya Pradesh?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Madhya Pradesh is Bhopal.,True,42.63,NONE
+TEST_00798,8_boolean_fact_checking,Is Imphal the capital of Maharashtra?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Maharashtra is Mumbai, not Imphal.",True,44.06,NONE
+TEST_00799,8_boolean_fact_checking,Is Imphal the capital of Manipur?,BOOLEAN_CHECK,BOOLEAN_CHECK,True,True. The capital of Manipur is Imphal.,True,52.5,NONE
+TEST_00800,8_boolean_fact_checking,Is Aizawl the capital of Meghalaya?,BOOLEAN_CHECK,BOOLEAN_CHECK,False,"False. The capital of Meghalaya is Shillong, not Aizawl.",True,52.42,NONE
+TEST_00801,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,106.66,NONE
+TEST_00802,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,190.75,NONE
+TEST_00803,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,391.86,NONE
+TEST_00804,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,187.44,NONE
+TEST_00805,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,99.89,NONE
+TEST_00806,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,91.64,NONE
+TEST_00807,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,98.95,NONE
+TEST_00808,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,159.65,NONE
+TEST_00809,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,343.28,NONE
+TEST_00810,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,114.5,NONE
+TEST_00811,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,141.23,NONE
+TEST_00812,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,164.03,NONE
+TEST_00813,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,361.89,NONE
+TEST_00814,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,164.37,NONE
+TEST_00815,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,205.65,NONE
+TEST_00816,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,86.58,NONE
+TEST_00817,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,104.71,NONE
+TEST_00818,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,113.11,NONE
+TEST_00819,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,221.54,NONE
+TEST_00820,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,256.79,NONE
+TEST_00821,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,292.24,NONE
+TEST_00822,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,162.7,NONE
+TEST_00823,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,112.99,NONE
+TEST_00824,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,173.76,NONE
+TEST_00825,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,218.38,NONE
+TEST_00826,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,376.75,NONE
+TEST_00827,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,257.57,NONE
+TEST_00828,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,189.52,NONE
+TEST_00829,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,270.55,NONE
+TEST_00830,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,292.43,NONE
+TEST_00831,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,287.93,NONE
+TEST_00832,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,145.33,NONE
+TEST_00833,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,220.36,NONE
+TEST_00834,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,197.12,NONE
+TEST_00835,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,198.51,NONE
+TEST_00836,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,90.42,NONE
+TEST_00837,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,96.38,NONE
+TEST_00838,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,163.15,NONE
+TEST_00839,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,357.8,NONE
+TEST_00840,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,172.21,NONE
+TEST_00841,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,303.59,NONE
+TEST_00842,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,281.5,NONE
+TEST_00843,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,299.47,NONE
+TEST_00844,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,327.15,NONE
+TEST_00845,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,161.48,NONE
+TEST_00846,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,84.29,NONE
+TEST_00847,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,120.92,NONE
+TEST_00848,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,95.85,NONE
+TEST_00849,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,95.06,NONE
+TEST_00850,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,159.34,NONE
+TEST_00851,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,202.35,NONE
+TEST_00852,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,97.97,NONE
+TEST_00853,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,167.29,NONE
+TEST_00854,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,115.2,NONE
+TEST_00855,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,145.29,NONE
+TEST_00856,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,184.53,NONE
+TEST_00857,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,170.59,NONE
+TEST_00858,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,198.23,NONE
+TEST_00859,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,207.63,NONE
+TEST_00860,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,287.14,NONE
+TEST_00861,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,318.01,NONE
+TEST_00862,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,387.66,NONE
+TEST_00863,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,301.37,NONE
+TEST_00864,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,241.32,NONE
+TEST_00865,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,326.08,NONE
+TEST_00866,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,248.19,NONE
+TEST_00867,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,317.41,NONE
+TEST_00868,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,223.63,NONE
+TEST_00869,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,163.82,NONE
+TEST_00870,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,131.47,NONE
+TEST_00871,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,122.24,NONE
+TEST_00872,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,105.41,NONE
+TEST_00873,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,116.72,NONE
+TEST_00874,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,179.48,NONE
+TEST_00875,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,439.29,NONE
+TEST_00876,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,236.43,NONE
+TEST_00877,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,113.5,NONE
+TEST_00878,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,175.93,NONE
+TEST_00879,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,94.89,NONE
+TEST_00880,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,192.45,NONE
+TEST_00881,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,380.13,NONE
+TEST_00882,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,225.65,NONE
+TEST_00883,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,243.4,NONE
+TEST_00884,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,97.6,NONE
+TEST_00885,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,116.99,NONE
+TEST_00886,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,145.83,NONE
+TEST_00887,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,182.23,NONE
+TEST_00888,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,184.45,NONE
+TEST_00889,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,228.7,NONE
+TEST_00890,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,98.88,NONE
+TEST_00891,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,92.61,NONE
+TEST_00892,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,233.9,NONE
+TEST_00893,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,260.05,NONE
+TEST_00894,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,203.51,NONE
+TEST_00895,9_analytical_aggregations,List all distinct states,DISTINCT,DISTINCT,28,"Found 28 distinct values: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur.",True,106.71,NONE
+TEST_00896,9_analytical_aggregations,Distinct capitals in the dataset,DISTINCT,DISTINCT,27,"Found 27 distinct values: Amaravati, Itanagar, Dispur, Patna, Raipur, Panaji, Gandhinagar, Chandigarh, Shimla, Ranchi, Bengaluru, Thiruvananthapuram, Bhopal, Mumbai, Imphal.",True,87.49,NONE
+TEST_00897,9_analytical_aggregations,How many states are in the dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,90.98,NONE
+TEST_00898,9_analytical_aggregations,Count the total states,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,122.84,NONE
+TEST_00899,9_analytical_aggregations,Total count of states in data,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,162.91,NONE
+TEST_00900,9_analytical_aggregations,How many records are in this dataset?,COUNT,COUNT,28,There are 28 matching records in the dataset.,True,85.47,NONE
+TEST_00901,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,64.62,NONE
+TEST_00902,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,96.86,NONE
+TEST_00903,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,53.08,NONE
+TEST_00904,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,73.77,NONE
+TEST_00905,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,71.69,NONE
+TEST_00906,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,71.98,NONE
+TEST_00907,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,86.05,NONE
+TEST_00908,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,77.63,NONE
+TEST_00909,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,50.63,NONE
+TEST_00910,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,61.11,NONE
+TEST_00911,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,86.35,NONE
+TEST_00912,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,80.86,NONE
+TEST_00913,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,54.06,NONE
+TEST_00914,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,81.69,NONE
+TEST_00915,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,111.96,NONE
+TEST_00916,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,71.98,NONE
+TEST_00917,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,94.04,NONE
+TEST_00918,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,85.36,NONE
+TEST_00919,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,52.13,NONE
+TEST_00920,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,82.56,NONE
+TEST_00921,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,56.62,NONE
+TEST_00922,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,96.08,NONE
+TEST_00923,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,62.76,NONE
+TEST_00924,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,74.82,NONE
+TEST_00925,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,86.33,NONE
+TEST_00926,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,70.34,NONE
+TEST_00927,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,90.95,NONE
+TEST_00928,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,75.37,NONE
+TEST_00929,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,78.02,NONE
+TEST_00930,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,58.73,NONE
+TEST_00931,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,54.63,NONE
+TEST_00932,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,82.25,NONE
+TEST_00933,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,62.54,NONE
+TEST_00934,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,76.68,NONE
+TEST_00935,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,72.22,NONE
+TEST_00936,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,73.33,NONE
+TEST_00937,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,86.64,NONE
+TEST_00938,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,84.64,NONE
+TEST_00939,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,51.73,NONE
+TEST_00940,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,66.12,NONE
+TEST_00941,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,71.09,NONE
+TEST_00942,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,75.7,NONE
+TEST_00943,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,56.59,NONE
+TEST_00944,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,77.38,NONE
+TEST_00945,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,75.62,NONE
+TEST_00946,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,82.83,NONE
+TEST_00947,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,92.04,NONE
+TEST_00948,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,109.9,NONE
+TEST_00949,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,64.11,NONE
+TEST_00950,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,58.8,NONE
+TEST_00951,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,56.92,NONE
+TEST_00952,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,75.58,NONE
+TEST_00953,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,52.61,NONE
+TEST_00954,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,105.82,NONE
+TEST_00955,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,123.74,NONE
+TEST_00956,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,78.12,NONE
+TEST_00957,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,83.67,NONE
+TEST_00958,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,73.6,NONE
+TEST_00959,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,48.84,NONE
+TEST_00960,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,57.25,NONE
+TEST_00961,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,55.73,NONE
+TEST_00962,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,77.19,NONE
+TEST_00963,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,55.16,NONE
+TEST_00964,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,80.92,NONE
+TEST_00965,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,72.37,NONE
+TEST_00966,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,107.72,NONE
+TEST_00967,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,234.58,NONE
+TEST_00968,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,238.19,NONE
+TEST_00969,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,82.62,NONE
+TEST_00970,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,79.86,NONE
+TEST_00971,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,64.37,NONE
+TEST_00972,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,82.88,NONE
+TEST_00973,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,99.83,NONE
+TEST_00974,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,112.42,NONE
+TEST_00975,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,71.81,NONE
+TEST_00976,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,84.18,NONE
+TEST_00977,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,93.96,NONE
+TEST_00978,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,75.67,NONE
+TEST_00979,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,53.77,NONE
+TEST_00980,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,56.97,NONE
+TEST_00981,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,58.97,NONE
+TEST_00982,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,75.6,NONE
+TEST_00983,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,69.58,NONE
+TEST_00984,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,95.68,NONE
+TEST_00985,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,165.11,NONE
+TEST_00986,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,90.27,NONE
+TEST_00987,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,98.46,NONE
+TEST_00988,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,90.26,NONE
+TEST_00989,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,61.5,NONE
+TEST_00990,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,77.28,NONE
+TEST_00991,10_unsupported_antihallucination,What is the population of Telangana?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain population,The uploaded dataset does not contain information about 'population'.,True,62.07,NONE
+TEST_00992,10_unsupported_antihallucination,Who is the chief minister of West Bengal?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain chief minister,"The uploaded dataset does not contain chief minister information, so I cannot determine it from the provided data.",True,85.69,NONE
+TEST_00993,10_unsupported_antihallucination,What is the GDP of Maharashtra?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain gdp,The uploaded dataset does not contain information about 'gdp'.,True,72.51,NONE
+TEST_00994,10_unsupported_antihallucination,What is the literacy rate of Kerala?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain literacy rate,"The uploaded dataset does not contain literacy rate information, so I cannot determine it from the provided data.",True,140.4,NONE
+TEST_00995,10_unsupported_antihallucination,What is the capital of Wakanda?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Wakanda""","No matching state or entity was found in the uploaded dataset for ""Wakanda"".",True,127.44,NONE
+TEST_00996,10_unsupported_antihallucination,What is the capital of France?,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""France""","No matching state or entity was found in the uploaded dataset for ""France"".",True,211.53,NONE
+TEST_00997,10_unsupported_antihallucination,Tell me the capital of Narnia,NO_MATCH,NO_MATCH,"No matching state or entity was found in the uploaded dataset for ""Narnia""","No matching state or entity was found in the uploaded dataset for ""Narnia"".",True,178.91,NONE
+TEST_00998,10_unsupported_antihallucination,What is the crime rate in Delhi?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain crime rate,The uploaded dataset does not contain information about 'crime'.,True,99.02,NONE
+TEST_00999,10_unsupported_antihallucination,What is the temperature in Hyderabad?,UNSUPPORTED_QUERY,UNKNOWN,The uploaded dataset does not contain temperature,The uploaded dataset does not contain information about 'temperature'.,True,68.98,NONE
+TEST_01000,10_unsupported_antihallucination,Who has the highest salary?,UNSUPPORTED_QUERY,UNSUPPORTED_QUERY,The uploaded dataset does not contain salary,"The uploaded dataset does not contain salary information, so I cannot determine it from the provided data.",True,64.27,NONE

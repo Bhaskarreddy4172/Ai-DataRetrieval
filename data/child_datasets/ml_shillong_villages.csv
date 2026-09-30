@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+ML-001,Shillong_Village_01,14942,7784,7158,85.8,11.32,2896,Meghalaya,Shillong
+ML-002,Shillong_Village_02,28319,13770,14549,74.8,39.45,5553,Meghalaya,Shillong
+ML-003,Shillong_Village_03,11806,5887,5919,74.8,21.8,2448,Meghalaya,Shillong
+ML-004,Shillong_Village_04,17297,8678,8619,69.0,6.94,4826,Meghalaya,Shillong
+ML-005,Shillong_Village_05,30429,15036,15393,85.4,26.0,6665,Meghalaya,Shillong
+ML-006,Shillong_Village_06,9716,4992,4724,82.8,15.97,1875,Meghalaya,Shillong
+ML-007,Shillong_Village_07,9167,4854,4313,80.8,26.03,2321,Meghalaya,Shillong
+ML-008,Shillong_Village_08,15825,8175,7650,77.2,17.47,3101,Meghalaya,Shillong
+ML-009,Shillong_Village_09,24155,12739,11416,96.8,12.2,6618,Meghalaya,Shillong
+ML-010,Shillong_Village_10,20011,10329,9682,73.5,20.77,5738,Meghalaya,Shillong

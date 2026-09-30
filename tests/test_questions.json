@@ -1,0 +1,61 @@
+[
+  {
+    "requirement": "Find customers with service amount above 10000",
+    "expected_operation": "FILTER",
+    "expected_column": "Service Amount",
+    "expected_operator": ">",
+    "questions": [
+      "Who spent more than 10000?",
+      "Show customers with service costs above 10k",
+      "Find people who paid over ten thousand",
+      "Which customers have service amounts greater than 10000?",
+      "Give me high-value service customers"
+    ]
+  },
+  {
+    "requirement": "Count total records or city filter with abbreviation",
+    "expected_operation": "COUNT",
+    "expected_column": "City",
+    "questions": [
+      "How many customers are there in hyd?",
+      "Count of rows in blr",
+      "Total number of records in mum"
+    ]
+  },
+  {
+    "requirement": "Sum total revenue",
+    "expected_operation": "SUM",
+    "expected_column": "Service Amount",
+    "questions": [
+      "What is the total service revenue?",
+      "Sum of all service amounts",
+      "Calculate total revenue"
+    ]
+  },
+  {
+    "requirement": "Median value computation",
+    "expected_operation": "MEDIAN",
+    "expected_column": "Service Amount",
+    "questions": [
+      "What is the median service amount?",
+      "Calculate median amount"
+    ]
+  },
+  {
+    "requirement": "Detect duplicates",
+    "expected_operation": "DUPLICATES",
+    "questions": [
+      "Are there any duplicate records?",
+      "Find duplicates in dataset"
+    ]
+  },
+  {
+    "requirement": "Detect out of scope question",
+    "expected_operation": "UNKNOWN",
+    "questions": [
+      "What is the population of Telangana?",
+      "Who is the Prime Minister of India?",
+      "What is the weather in Mumbai?"
+    ]
+  }
+]

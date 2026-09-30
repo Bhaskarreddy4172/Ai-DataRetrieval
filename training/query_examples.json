@@ -1,0 +1,76 @@
+[
+  {
+    "question": "Which customers spent more than 10000 on service?",
+    "paraphrases": [
+      "Who spent more than 10000?",
+      "Show customers with service costs above 10k",
+      "Find people who paid over ten thousand",
+      "Which customers have service amounts greater than 10000?",
+      "Give me high-value service customers"
+    ],
+    "operation": "FILTER",
+    "column": "Service Amount",
+    "operator": ">",
+    "value": 10000
+  },
+  {
+    "question": "How many customers are there?",
+    "paraphrases": [
+      "Count total customers",
+      "Total number of customers",
+      "What is the total count of rows?"
+    ],
+    "operation": "COUNT",
+    "column": null,
+    "operator": null,
+    "value": null
+  },
+  {
+    "question": "What is the total service revenue?",
+    "paraphrases": [
+      "Sum of all service amounts",
+      "Total amount earned from services",
+      "Overall service spending"
+    ],
+    "operation": "SUM",
+    "column": "Service Amount",
+    "operator": null,
+    "value": null
+  },
+  {
+    "question": "Show all customers from Hyderabad",
+    "paraphrases": [
+      "Who are the clients in Hyderabad?",
+      "List customers living in Hyderabad",
+      "Find Hyderabad customers"
+    ],
+    "operation": "FILTER",
+    "column": "City",
+    "operator": "=",
+    "value": "Hyderabad"
+  },
+  {
+    "question": "Which customers have overdue service?",
+    "paraphrases": [
+      "Show overdue vehicles",
+      "Find services with overdue status",
+      "List customers whose service is overdue"
+    ],
+    "operation": "FILTER",
+    "column": "Service Status",
+    "operator": "=",
+    "value": "Overdue"
+  },
+  {
+    "question": "What is the capital of Telangana?",
+    "paraphrases": [
+      "Tell me Telangana's capital",
+      "Which city is the capital of Telangana?",
+      "Can you tell me which city serves as Telangana's capital?"
+    ],
+    "operation": "LOOKUP",
+    "column": "state",
+    "operator": "=",
+    "value": "Telangana"
+  }
+]

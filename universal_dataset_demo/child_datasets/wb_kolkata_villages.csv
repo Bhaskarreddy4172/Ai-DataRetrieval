@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+WB-001,Kolkata_Village_01,109587,58076,51511,93.9,9.11,21363,West Bengal,Kolkata
+WB-002,Kolkata_Village_02,60749,31634,29115,82.1,39.17,13928,West Bengal,Kolkata
+WB-003,Kolkata_Village_03,51711,27335,24376,83.3,13.41,12028,West Bengal,Kolkata
+WB-004,Kolkata_Village_04,91422,47460,43962,87.3,9.3,19740,West Bengal,Kolkata
+WB-005,Kolkata_Village_05,147029,73796,73233,69.0,25.73,37410,West Bengal,Kolkata
+WB-006,Kolkata_Village_06,116646,55318,61328,68.5,5.72,26640,West Bengal,Kolkata
+WB-007,Kolkata_Village_07,89419,43956,45463,71.6,19.46,18255,West Bengal,Kolkata
+WB-008,Kolkata_Village_08,60823,30141,30682,82.1,13.6,16103,West Bengal,Kolkata
+WB-009,Kolkata_Village_09,129218,63772,65446,88.4,28.7,33926,West Bengal,Kolkata
+WB-010,Kolkata_Village_10,116175,59672,56503,72.7,3.71,22794,West Bengal,Kolkata

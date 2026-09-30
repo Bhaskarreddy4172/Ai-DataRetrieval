@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+GA-001,Panaji_Village_01,7555,3595,3960,78.9,8.15,1738,Goa,Panaji
+GA-002,Panaji_Village_02,10093,4917,5176,76.8,39.36,2886,Goa,Panaji
+GA-003,Panaji_Village_03,17400,8459,8941,69.2,23.22,4630,Goa,Panaji
+GA-004,Panaji_Village_04,12640,6574,6066,88.6,23.74,2524,Goa,Panaji
+GA-005,Panaji_Village_05,8635,4510,4125,93.5,10.54,1746,Goa,Panaji
+GA-006,Panaji_Village_06,7889,4156,3733,87.7,35.74,2055,Goa,Panaji
+GA-007,Panaji_Village_07,12943,6709,6234,69.2,16.19,3363,Goa,Panaji
+GA-008,Panaji_Village_08,5368,2780,2588,95.7,34.9,1239,Goa,Panaji
+GA-009,Panaji_Village_09,7039,3419,3620,79.0,30.7,1401,Goa,Panaji
+GA-010,Panaji_Village_10,14482,6845,7637,78.7,21.23,4056,Goa,Panaji

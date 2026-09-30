@@ -1,0 +1,2126 @@
+<USER_REQUEST>
+# ULTIMATE MASTER PROMPT
+
+## Universal AI Dataset Retrieval, Semantic Understanding, Spell Correction, Entity Resolution & Verified Answer Engine
+
+You are upgrading an existing AI Dataset Retrieval project.
+
+The objective is to transform the current system into a **universal, highly accurate natural-language dataset question-answering platform**.
+
+The system must allow a customer to upload an arbitrary CSV, Excel, JSON, or similar structured dataset and then ask questions in **any natural form**, including professional, informal, broken English, unprofessional wording, slang, abbreviations, spelling mistakes, phonetic spellings, synonyms, indirect questions, incomplete questions, possessive questions, multi-condition questions, analytical questions, comparison questions, relationship questions, and follow-up questions.
+
+The system must work even when the developer does NOT know the customer's questions in advance.
+
+---
+
+# 1. MOST IMPORTANT RULE
+
+## NEVER use this architecture:
+
+```text
+CUSTOMER QUESTION
+        ↓
+OLLAMA
+        ↓
+ANSWER
+```
+
+This creates hallucinations and incorrect dataset answers.
+
+Instead implement:
+
+```text
+CUSTOMER QUESTION
+        ↓
+TEXT NORMALIZATION
+        ↓
+SPELLING / TYPO CORRECTION
+        ↓
+ABBREVIATION / SHORTCUT RESOLUTION
+        ↓
+PHONETIC MATCHING
+        ↓
+ALIAS RESOLUTION
+        ↓
+ENTITY RESOLUTION
+        ↓
+SEMANTIC COLUMN MAPPING
+        ↓
+VALUE RESOLUTION
+        ↓
+INTENT DETECTION
+        ↓
+QUESTION DECOMPOSITION
+        ↓
+QUERY PLANNING
+        ↓
+QUERY PLAN VALIDATION
+        ↓
+PANDAS / DUCKDB EXECUTION
+        ↓
+EXACT VERIFIED RESULT
+        ↓
+RESULT VALIDATION
+        ↓
+HALLUCINATION FIREWALL
+        ↓
+OLLAMA NATURAL-LANGUAGE RESPONSE
+```
+
+### Responsibility separation
+
+**OLLAMA:**
+
+* Understand natural language
+* Normalize user language
+* Detect intent
+* Understand synonyms
+* Resolve semantic meaning
+* Generate structured query plans
+* Understand conversation context
+* Explain verified results
+
+**PYTHON / PANDAS / DUCKDB:**
+
+* Read the dataset
+* Filter rows
+* Sort
+* Rank
+* Count
+* Sum
+* Average
+* Median
+* Min/max
+* Group
+* Compare
+* Join
+* Perform calculations
+* Perform date operations
+* Retrieve exact values
+
+**DATASET:**
+
+The uploaded customer dataset is the factual source of truth for dataset questions.
+
+Never allow Ollama's pretrained knowledge to replace the uploaded dataset.
+
+---
+
+# 2. UNIVERSAL DATASET SUPPORT
+
+The system must NOT be designed only for employee datasets or Indian states.
+
+It must work with arbitrary datasets such as:
+
+```text
+Employees
+Students
+Customers
+Products
+Orders
+Sales
+Inventory
+Finance
+Vehicles
+Hospitals
+Universities
+Companies
+Transactions
+Locations
+States
+Cities
+Countries
+Hotels
+Courses
+Projects
+```
+
+The system must automatically understand the schema.
+
+For example:
+
+```text
+Employee Name → PERSON
+Salary → MONEY
+Department → CATEGORY
+City → LOCATION
+Joining Date → DATE
+Performance Score → SCORE
+```
+
+Do not require developers to manually configure every dataset.
+
+---
+
+# 3. AUTOMATIC DATASET PROFILING
+
+When a dataset is uploaded, automatically create a dataset profile.
+
+Analyze:
+
+```text
+Columns
+Data types
+Unique values
+Missing values
+Duplicate values
+Numeric ranges
+Date ranges
+Categorical values
+Potential IDs
+Potential entities
+Potential relationships
+Semantic meaning
+```
+
+Create a cached dataset profile using:
+
+```text
+dataset_hash
+```
+
+Do not rebuild the entire profile unnecessarily.
+
+---
+
+# 4. UNIVERSAL SPELL-CHECKING ENGINE
+
+Create a dataset-aware spelling correction engine.
+
+It must detect:
+
+### Character deletion
+
+```text
+Telngana → Telangana
+Sikim → Sikkim
+Hydrabad → Hyderabad
+Banglre → Bangalore
+```
+
+### Character insertion
+
+```text
+Sikkimm → Sikkim
+Hyderabaad → Hyderabad
+```
+
+### Character substitution
+
+```text
+Cikkim → Sikkim
+Kerela → Kerala
+Andra Pradesh → Andhra Pradesh
+```
+
+### Transposition
+
+```text
+Telangnaa → Telangana
+Karnatka → Karnataka
+```
+
+### Spacing problems
+
+```text
+WestBengal → West Bengal
+AndhraPradesh → Andhra Pradesh
+TamilNadu → Tamil Nadu
+```
+
+### Case variations
+
+```text
+TELANGANA
+telangana
+Telangana
+tElAnGaNa
+```
+
+Also support punctuation and Unicode variations.
+
+---
+
+# 5. PHONETIC MATCHING
+
+Users may type words according to how they sound.
+
+Implement:
+
+```text
+Double Metaphone
+Metaphone
+Soundex where useful
+Levenshtein distance
+RapidFuzz
+Character n-grams
+Semantic embeddings
+```
+
+Use these as candidate-generation and confidence signals.
+
+Examples:
+
+```text
+Sikkim
+Sikim
+Cikkim
+Sikkem
+Sikkimm
+```
+
+```text
+Hyderabad
+Hydrabad
+Hyderbad
+```
+
+```text
+Bangalore
+Banglore
+Bangluru
+Benglore
+```
+
+```text
+Telangana
+Telengana
+Telngana
+Telanagana
+```
+
+The system must perform **maximum correct matching**, not blindly select the closest word.
+
+If multiple candidates have similar confidence, ask for clarification.
+
+---
+
+# 6. UNIVERSAL ABBREVIATION AND SHORTCUT RESOLUTION
+
+Create a generic abbreviation-resolution engine.
+
+For Indian states recognize common forms such as:
+
+```text
+AP → Andhra Pradesh
+AR → Arunachal Pradesh
+AS → Assam
+BR → Bihar
+CG → Chhattisgarh
+GA → Goa
+GJ → Gujarat
+HR → Haryana
+HP → Himachal Pradesh
+JH → Jharkhand
+KA → Karnataka
+KL → Kerala
+MP → Madhya Pradesh
+MH → Maharashtra
+MN → Manipur
+ML → Meghalaya
+MZ → Mizoram
+NL → Nagaland
+OD / OR → Odisha
+PB → Punjab
+RJ → Rajasthan
+SK → Sikkim
+TN → Tamil Nadu
+TS / TG → Telangana
+TR → Tripura
+UP → Uttar Pradesh
+UK / UA → Uttarakhand
+WB → West Bengal
+```
+
+Recognize:
+
+```text
+AP
+ap
+A.P.
+TS
+ts
+TG
+tg
+WB
+wb
+W.B.
+KA
+ka
+KL
+kl
+TN
+tn
+```
+
+---
+
+# 7. UNION TERRITORY SHORTCUTS
+
+Support:
+
+```text
+AN → Andaman and Nicobar Islands
+CH → Chandigarh
+DN / DNHDD → Dadra and Nagar Haveli and Daman and Diu
+DL → Delhi
+JK / J&K → Jammu and Kashmir
+LA → Ladakh
+LD → Lakshadweep
+PY → Puducherry
+```
+
+Do not blindly resolve an abbreviation without checking context.
+
+---
+
+# 8. CITY / CAPITAL SHORTCUTS
+
+Recognize common variations such as:
+
+```text
+HYD → Hyderabad
+Hyd → Hyderabad
+BLR → Bengaluru
+BOM → Mumbai
+MUM → Mumbai
+CCU → Kolkata
+CAL → Kolkata
+MAA → Chennai
+MAD → Chennai
+PNQ → Pune
+AMD → Ahmedabad
+JAI → Jaipur
+LKO → Lucknow
+BBSR → Bhubaneswar
+COK → Kochi
+TRV → Thiruvananthapuram
+PAT → Patna
+RPR → Raipur
+RNC → Ranchi
+GAU → Guwahati
+```
+
+Recognize alternate city names:
+
+```text
+Bangalore ↔ Bengaluru
+Bombay ↔ Mumbai
+Madras ↔ Chennai
+Calcutta ↔ Kolkata
+Cochin ↔ Kochi
+Trivandrum ↔ Thiruvananthapuram
+Pondicherry ↔ Puducherry
+```
+
+These must be candidate aliases and must be contextually validated.
+
+---
+
+# 9. FULL QUESTION CORRECTION
+
+Do not only correct individual words.
+
+Understand the entire question.
+
+Example:
+
+```text
+who haz the higest salry in hydrabad?
+```
+
+must become semantically:
+
+```text
+Who has the highest salary in Hyderabad?
+```
+
+Example:
+
+```text
+wat is telengana captal
+```
+
+means:
+
+```text
+What is Telangana's capital?
+```
+
+Example:
+
+```text
+sikim captal?
+```
+
+means:
+
+```text
+What is the capital of Sikkim?
+```
+
+The user does NOT need to write grammatically correct English.
+
+---
+
+# 10. SEMANTIC COLUMN MAPPING
+
+Do not depend on exact column names.
+
+For example:
+
+```text
+Salary
+```
+
+may be referred to as:
+
+```text
+pay
+income
+earnings
+compensation
+package
+CTC
+money
+makes
+earns
+```
+
+Similarly:
+
+```text
+Department
+```
+
+may mean:
+
+```text
+dept
+team
+division
+business unit
+```
+
+```text
+City
+```
+
+may mean:
+
+```text
+location
+place
+based in
+working from
+```
+
+```text
+Designation
+```
+
+may mean:
+
+```text
+role
+position
+job
+title
+```
+
+```text
+Joining Date
+```
+
+may mean:
+
+```text
+joined
+start date
+started
+when did they join
+```
+
+```text
+Performance Score
+```
+
+may mean:
+
+```text
+performance
+rating
+score
+best performer
+```
+
+The semantic layer must be dynamic and dataset-aware.
+
+---
+
+# 11. ENTITY ONTOLOGY
+
+Build a universal semantic ontology.
+
+Support concepts such as:
+
+```text
+PERSON
+EMPLOYEE
+CUSTOMER
+STUDENT
+PRODUCT
+ORDER
+LOCATION
+CITY
+STATE
+COUNTRY
+DEPARTMENT
+TEAM
+CATEGORY
+PRICE
+COST
+SALARY
+REVENUE
+PROFIT
+QUANTITY
+COUNT
+DATE
+TIME
+RATING
+SCORE
+STATUS
+ID
+NAME
+EMAIL
+PHONE
+ADDRESS
+AGE
+EXPERIENCE
+DISCOUNT
+TAX
+TOTAL
+AMOUNT
+CAPITAL
+```
+
+Extend dynamically based on the uploaded dataset.
+
+---
+
+# 12. VALUE RESOLUTION
+
+Values must also be resolved semantically.
+
+Support:
+
+```text
+Hyderabad
+HYD
+Hyd
+Hydrabad
+Hyderbad
+```
+
+as candidate representations of the same entity.
+
+Likewise:
+
+```text
+Bengaluru
+Bangalore
+BLR
+Banglore
+Bangluru
+```
+
+and:
+
+```text
+Sikkim
+Sikim
+Cikkim
+SK
+```
+
+Resolution must consider:
+
+```text
+Exact match
+Normalized match
+Alias
+Abbreviation
+Fuzzy similarity
+Phonetic similarity
+Semantic similarity
+Dataset context
+Entity type
+```
+
+---
+
+# 13. POSSESSIVE QUESTION SUPPORT
+
+Understand:
+
+```text
+West Bengal's capital?
+West Bengals capital?
+West Bengal capital?
+What is West Bengal's capital?
+```
+
+as equivalent to:
+
+```text
+What is the capital of West Bengal?
+```
+
+Create a generic semantic representation:
+
+```json
+{
+  "intent": "LOOKUP",
+  "entity": "West Bengal",
+  "attribute": "Capital",
+  "relationship": "HAS"
+}
+```
+
+Do NOT hardcode:
+
+```text
+West Bengal → Kolkata
+```
+
+Retrieve the actual answer from the dataset.
+
+This must work for any entity and attribute:
+
+```text
+Rahul's salary
+Ananya's department
+Product's price
+Student's score
+State's capital
+```
+
+---
+
+# 14. RELATIONSHIP UNDERSTANDING
+
+Support:
+
+```text
+State → Capital
+Capital → State
+Employee → Department
+Employee → Salary
+Employee → City
+Product → Price
+Customer → Orders
+City → State
+State → Country
+```
+
+Represent relationships semantically.
+
+Example:
+
+```json
+{
+  "subject": "Hyderabad",
+  "relationship": "BELONGS_TO",
+  "object": "Telangana"
+}
+```
+
+---
+
+# 15. STATE → CAPITAL AND CAPITAL → STATE
+
+Support both directions.
+
+Examples:
+
+```text
+What is the capital of Telangana?
+Telangana's capital?
+TS capital?
+TG capital?
+Which city is Telangana's capital?
+```
+
+And:
+
+```text
+Which state is Hyderabad in?
+Which state does Hyderabad belong to?
+Hyd belongs to which state?
+HYD is in which state?
+Which state has Hyderabad?
+```
+
+Do not hardcode the answer.
+
+Use the dataset relationship.
+
+---
+
+# 16. BOOLEAN / TRUE-FALSE QUESTIONS
+
+Implement:
+
+```text
+BOOLEAN_CHECK
+TRUE_FALSE
+YES_NO
+FACT_CHECK
+RELATIONSHIP_CHECK
+```
+
+Examples:
+
+```text
+Is Hyderabad in Telangana?
+Does Hyderabad belong to Telangana?
+Is hyd part of Telangana?
+Is Bangalore in Karnataka?
+Does BLR belong to Karnataka?
+```
+
+Return:
+
+```text
+True — Hyderabad belongs to Telangana.
+```
+
+or:
+
+```text
+False — the verified relationship does not match.
+```
+
+If the information cannot be established:
+
+```text
+Unknown — the uploaded dataset does not contain enough information to verify this.
+```
+
+Never turn UNKNOWN into FALSE.
+
+---
+
+# 17. GENERAL KNOWLEDGE / DATASET / HYBRID ROUTER
+
+Create:
+
+```text
+DATASET
+GENERAL_KNOWLEDGE
+HYBRID
+AMBIGUOUS
+UNSUPPORTED
+```
+
+Example:
+
+```text
+Who has the highest salary?
+```
+
+→ DATASET
+
+```text
+Which state does Bangalore belong to?
+```
+
+→ GENERAL_KNOWLEDGE if not available in the uploaded dataset.
+
+```text
+Which employee works in Bangalore and which state is Bangalore in?
+```
+
+→ HYBRID
+
+Do not force every question into a dataset query.
+
+---
+
+# 18. INTENT DETECTION
+
+Support at minimum:
+
+```text
+LOOKUP
+REVERSE_LOOKUP
+FILTER
+MULTI_FILTER
+SEARCH
+COUNT
+SUM
+AVERAGE
+MIN
+MAX
+MEDIAN
+TOP_N
+BOTTOM_N
+RANK
+SORT
+GROUP
+GROUP_AGGREGATE
+COMPARE
+DISTINCT
+DUPLICATES
+EXISTS
+MISSING
+DATE_RANGE
+TREND
+DISTRIBUTION
+PERCENTAGE
+RATIO
+CORRELATION
+CROSS_COLUMN
+CROSS_ROW
+JOIN
+RELATIONSHIP
+BOOLEAN_CHECK
+FOLLOW_UP
+CLARIFICATION
+UNSUPPORTED
+DATASET_SUMMARY
+COLUMN_SUMMARY
+ROW_SUMMARY
+```
+
+---
+
+# 19. MULTI-CONDITION QUESTIONS
+
+Support:
+
+```text
+Who earns more than 10 lakh and works in Hyderabad?
+```
+
+Represent:
+
+```text
+Salary > 1000000
+AND
+City = Hyderabad
+```
+
+Also:
+
+```text
+Who works in Hyderabad or Bangalore?
+```
+
+Represent:
+
+```text
+City = Hyderabad
+OR
+City = Bengaluru
+```
+
+Support nested conditions:
+
+```text
+(City = Hyderabad OR City = Bengaluru)
+AND
+Salary > 1000000
+```
+
+Use a proper expression tree.
+
+---
+
+# 20. NEGATION
+
+Support:
+
+```text
+Employees not in Hyderabad
+People who aren't in Finance
+Everyone except Engineering
+States other than Telangana
+Cities excluding Bangalore
+```
+
+Correctly map:
+
+```text
+not
+isn't
+except
+excluding
+other than
+```
+
+to appropriate logical operators.
+
+---
+
+# 21. NUMERICAL UNDERSTANDING
+
+Normalize:
+
+```text
+10 lakh
+10L
+10 lakhs
+₹10L
+1 million
+1000000
+10,00,000
+```
+
+to the correct numeric representation.
+
+Understand:
+
+```text
+above
+over
+more than
+greater than
+below
+under
+less than
+at least
+at most
+between
+approximately
+around
+```
+
+Map correctly to operators.
+
+---
+
+# 22. DATE UNDERSTANDING
+
+Support:
+
+```text
+joined after 2023
+joined before 2024
+joined in 2023
+joined between 2022 and 2024
+joined last year
+joined recently
+joined before January 2024
+joined after 10 January 2024
+```
+
+Normalize dates before execution.
+
+---
+
+# 23. QUERY DECOMPOSITION
+
+Complex questions must be split into deterministic steps.
+
+Example:
+
+```text
+Who is the highest-paid employee in Hyderabad and what department does he belong to?
+```
+
+Plan:
+
+```text
+1. Filter City = Hyderabad
+2. Find maximum Salary
+3. Retrieve employee
+4. Retrieve Department
+```
+
+Another example:
+
+```text
+What is the capital of the state where the highest-paid employee works?
+```
+
+Plan:
+
+```text
+1. Find highest-paid employee
+2. Retrieve employee's city
+3. Resolve city → state
+4. Resolve state → capital
+5. Return capital
+```
+
+---
+
+# 24. QUERY PLAN FORMAT
+
+Use structured JSON.
+
+Example:
+
+```json
+{
+  "intent": "TOP_N",
+  "filters": [
+    {
+      "semantic_column": "location",
+      "operator": "=",
+      "value": "Hyderabad"
+    }
+  ],
+  "metric": "compensation",
+  "order": "DESC",
+  "limit": 1,
+  "select": [
+    "person",
+    "compensation",
+    "department",
+    "location"
+  ]
+}
+```
+
+Never allow arbitrary LLM-generated Python, shell commands, or unrestricted SQL.
+
+Use a safe validated query DSL.
+
+---
+
+# 25. QUERY PLAN VALIDATION
+
+Before execution verify:
+
+```text
+Column exists
+Value exists
+Operator valid
+Data type valid
+Aggregation valid
+Relationship valid
+Entity exists
+Filters valid
+Join valid
+Ranking valid
+```
+
+If validation fails, do not execute.
+
+Return a clarification or meaningful unsupported message.
+
+---
+
+# 26. ROW IDENTITY PROTECTION
+
+Create:
+
+```text
+_internal_row_id
+```
+
+for every dataset row.
+
+Never mix attributes from different rows.
+
+For example, if:
+
+```text
+Ananya → Hyderabad → 14.9L
+Rahul → Hyderabad → 12L
+```
+
+the system must never produce:
+
+```text
+Ananya → 12L
+```
+
+unless that is actually present in the same row.
+
+---
+
+# 27. CONVERSATIONAL MEMORY
+
+Maintain:
+
+```text
+previous_question
+previous_normalized_question
+previous_intent
+previous_query_plan
+previous_entities
+previous_filters
+previous_result
+previous_selected_row
+previous_ranking
+```
+
+Understand:
+
+```text
+he
+she
+they
+him
+her
+them
+that person
+that employee
+the same one
+there
+that city
+that department
+the second one
+the next one
+what about him?
+what about the second highest?
+```
+
+Example:
+
+```text
+User:
+Who earns the most?
+
+AI:
+Ananya Reddy.
+
+User:
+Where does she work?
+
+AI:
+Hyderabad.
+
+User:
+Which department?
+
+AI:
+Engineering.
+
+User:
+What about the second highest?
+
+AI:
+...
+```
+
+---
+
+# 28. AMBIGUITY ENGINE
+
+Never guess when multiple interpretations are possible.
+
+Example:
+
+```text
+Who is the highest?
+```
+
+If the dataset contains:
+
+```text
+Salary
+Performance Score
+Experience
+Age
+```
+
+ask:
+
+```text
+Do you mean highest salary, performance score, experience, or age?
+```
+
+Also detect:
+
+```text
+Multiple entity candidates
+Multiple columns
+Multiple possible relationships
+Unknown metric
+Unclear time range
+Unclear comparison
+```
+
+---
+
+# 29. CONFIDENCE ENGINE
+
+Track confidence separately:
+
+```text
+intent_confidence
+entity_confidence
+column_confidence
+value_confidence
+operator_confidence
+relationship_confidence
+query_plan_confidence
+result_confidence
+```
+
+Use:
+
+```text
+Exact > Normalized > Alias > Abbreviation > High-confidence fuzzy/phonetic > Semantic
+```
+
+If confidence is insufficient:
+
+```text
+ASK CLARIFICATION
+```
+
+Never compensate for low confidence by asking Ollama to guess.
+
+---
+
+# 30. ANSWER VERIFICATION FIREWALL
+
+After Pandas/DuckDB returns the result:
+
+```text
+Verified Result
+      ↓
+Answer Validator
+      ↓
+Ollama
+```
+
+Ollama may only generate statements supported by the verified result.
+
+If the verified result is:
+
+```text
+Employee: Ananya Reddy
+Salary: 1490000
+City: Hyderabad
+Department: Engineering
+```
+
+and Ollama generates:
+
+```text
+Ananya Reddy earns ₹14.9 lakh, works in Hyderabad, and belongs to Engineering.
+```
+
+verify every factual claim.
+
+If Ollama adds:
+
+```text
+She joined in 2022.
+```
+
+but that information is not in the verified result, reject the response.
+
+---
+
+# 31. HALLUCINATION PREVENTION
+
+Never fabricate:
+
+```text
+Names
+Salaries
+Cities
+Capitals
+Departments
+Dates
+Scores
+Statistics
+Rows
+Relationships
+```
+
+If the dataset cannot answer the question, say so.
+
+---
+
+# 32. NO-MATCH CATEGORIES
+
+Differentiate:
+
+### ENTITY_NOT_FOUND
+
+```text
+No matching state was found in the uploaded dataset for "XYZ".
+```
+
+### COLUMN_NOT_FOUND
+
+```text
+The uploaded dataset does not contain population information, so I cannot determine it from the provided data.
+```
+
+### NO_MATCHING_ROWS
+
+```text
+No matching records were found in the uploaded dataset.
+```
+
+### VALUE_IS_NULL
+
+```text
+The entity was found, but the requested value is not available.
+```
+
+### AMBIGUOUS_QUERY
+
+```text
+I found multiple possible matches. Please specify which one you mean.
+```
+
+Do not simply return:
+
+```text
+Not found.
+```
+
+---
+
+# 33. DATASET KNOWLEDGE GRAPH
+
+For complex datasets, dynamically construct relationships.
+
+Example:
+
+```text
+Employee
+   ↓ works_in
+Department
+   ↓ located_in
+City
+   ↓ belongs_to
+State
+   ↓ has
+Capital
+```
+
+Support multi-hop reasoning:
+
+```text
+Who is the highest-paid employee?
+        ↓
+Where does he work?
+        ↓
+Which state is that city in?
+        ↓
+What is that state's capital?
+```
+
+Every hop must be validated against available data.
+
+---
+
+# 34. MULTI-COLUMN AND MULTI-ROW REASONING
+
+Support:
+
+```text
+Row → Row
+Row → Column
+Column → Row
+Column → Column
+Row → Column → Row
+Column → Column → Row
+Multi-hop
+```
+
+Examples:
+
+```text
+Compare employee A and employee B.
+```
+
+```text
+Who has the same city as Ananya?
+```
+
+```text
+Which employees earn more than the average salary?
+```
+
+```text
+Which department has the highest average salary?
+```
+
+---
+
+# 35. ANALYTICAL QUESTIONS
+
+Support:
+
+```text
+COUNT
+SUM
+AVERAGE
+MEDIAN
+MIN
+MAX
+TOP N
+BOTTOM N
+RANK
+GROUP BY
+PERCENTAGE
+RATIO
+DIFFERENCE
+DISTRIBUTION
+TREND
+CORRELATION
+```
+
+All calculations must be performed programmatically.
+
+Do NOT ask Ollama to calculate the final number.
+
+---
+
+# 36. DISTINCT / DUPLICATE / MISSING DATA
+
+Support:
+
+```text
+Which cities are unique?
+How many employees are in each city?
+Which employees have missing salary?
+Are there duplicate employee IDs?
+Which departments have duplicate records?
+Which cities appear more than once?
+```
+
+Use deterministic dataset operations.
+
+---
+
+# 37. TRAINING STRATEGY
+
+If fine-tuning Ollama or another model, do NOT train:
+
+```text
+QUESTION → FACTUAL DATASET ANSWER
+```
+
+Instead train:
+
+```text
+QUESTION
+↓
+NORMALIZED QUESTION
+↓
+INTENT
+↓
+ENTITY
+↓
+SEMANTIC COLUMN
+↓
+OPERATOR
+↓
+VALUE
+↓
+RELATIONSHIP
+↓
+QUERY PLAN
+```
+
+This allows generalization to unseen datasets.
+
+---
+
+# 38. TRAINING DATA
+
+Generate thousands of synthetic questions across:
+
+```text
+Employee
+Student
+Customer
+Product
+Order
+Sales
+Finance
+Vehicle
+Inventory
+Education
+HR
+Healthcare
+Location
+States
+Cities
+```
+
+Include:
+
+```text
+Professional language
+Informal language
+Unprofessional language
+Slang
+Broken English
+Typos
+Phonetic spelling
+Abbreviations
+Synonyms
+Paraphrases
+Indirect questions
+Incomplete questions
+Possessive questions
+Reverse questions
+Boolean questions
+Multi-condition questions
+Analytical questions
+Follow-ups
+Ambiguous questions
+Unsupported questions
+```
+
+---
+
+# 39. HARD NEGATIVE TRAINING
+
+Train the model to distinguish similar questions:
+
+```text
+highest salary
+highest performance
+highest salary in Engineering
+highest average salary
+employee with highest salary
+department with highest average salary
+```
+
+Also:
+
+```text
+before vs after
+greater than vs greater than or equal to
+same vs different
+AND vs OR
+highest vs lowest
+count vs unique count
+```
+
+This is essential for accuracy.
+
+---
+
+# 40. AUTOMATIC TEST GENERATOR
+
+Build a test-generation system.
+
+For every base question, automatically create many variants.
+
+Example:
+
+```text
+What is the capital of Telangana?
+```
+
+Generate:
+
+```text
+Telangana capital?
+TS capital?
+TG capital?
+telangana's capital?
+what capital telangana has?
+capital of ts?
+ts ka capital?
+telengana capital?
+telngana captal?
+which city is ts capital?
+what city is Telangana's capital?
+```
+
+All should resolve to the same semantic query where appropriate.
+
+---
+
+# 41. LARGE-SCALE BENCHMARK
+
+Create at least:
+
+```text
+1,000 normal questions
+1,000 informal questions
+1,000 typo questions
+1,000 phonetic questions
+1,000 abbreviation questions
+1,000 synonym/paraphrase questions
+1,000 multi-condition questions
+1,000 relationship questions
+1,000 analytical questions
+1,000 conversation/follow-up questions
+```
+
+Target at least:
+
+```text
+10,000+ test cases
+```
+
+Use unseen wording in the test set.
+
+---
+
+# 42. EXPECTED ANSWERS MUST BE PROGRAMMATIC
+
+Never manually define expected answers.
+
+For every benchmark question:
+
+```text
+Question
+↓
+Expected Query
+↓
+Pandas/DuckDB
+↓
+Expected Result
+```
+
+Then compare:
+
+```text
+Expected Result
+vs
+System Result
+```
+
+This prevents the benchmark itself from containing human errors.
+
+---
+
+# 43. ACCURACY REPORT
+
+Create:
+
+```text
+accuracy_report.json
+accuracy_report.csv
+```
+
+Measure:
+
+```text
+Intent Accuracy
+Entity Resolution Accuracy
+Column Mapping Accuracy
+Value Resolution Accuracy
+Operator Accuracy
+Relationship Accuracy
+Query Plan Accuracy
+Row Retrieval Accuracy
+Aggregation Accuracy
+Ranking Accuracy
+Follow-up Accuracy
+Ambiguity Detection Accuracy
+Unsupported Detection Accuracy
+Boolean Accuracy
+Final Factual Accuracy
+Hallucination Rate
+```
+
+Do not report only one overall accuracy number.
+
+---
+
+# 44. FAILURE ANALYZER
+
+Every failure must be logged.
+
+Example:
+
+```json
+{
+  "question": "wat is ts captal",
+  "expected_intent": "LOOKUP",
+  "predicted_intent": "...",
+  "expected_entity": "Telangana",
+  "predicted_entity": "...",
+  "expected_column": "Capital",
+  "error_type": "ENTITY_RESOLUTION",
+  "correction": "...",
+  "verified": false
+}
+```
+
+Create:
+
+```text
+failure_analyzer.py
+```
+
+that groups failures by:
+
+```text
+Spelling
+Phonetic
+Abbreviation
+Entity
+Column
+Intent
+Operator
+Relationship
+Query Plan
+Execution
+Conversation
+Ambiguity
+Answer Generation
+```
+
+---
+
+# 45. CONTINUOUS IMPROVEMENT
+
+Every discovered failure should become a regression test.
+
+Use:
+
+```text
+BUILD
+↓
+TEST
+↓
+ANALYZE
+↓
+FIX
+↓
+REGRESSION TEST
+↓
+REPEAT
+```
+
+Do not automatically train on unverified customer corrections.
+
+Only use validated examples for future training.
+
+---
+
+# 46. SECURITY
+
+Never allow the LLM to execute:
+
+```text
+arbitrary Python
+arbitrary SQL
+shell commands
+file deletion
+system commands
+```
+
+Use a strict structured query DSL.
+
+Validate every operation before execution.
+
+---
+
+# 47. PERFORMANCE
+
+Create and cache:
+
+```text
+dataset vocabulary
+normalized value index
+entity index
+alias index
+abbreviation index
+phonetic index
+fuzzy index
+embedding index
+semantic schema map
+```
+
+Use staged resolution:
+
+```text
+Exact
+↓
+Normalized
+↓
+Alias
+↓
+Abbreviation
+↓
+Fuzzy / Phonetic
+↓
+Semantic / Embedding
+```
+
+Stop early when a unique high-confidence match is found.
+
+---
+
+# 48. ANSWER FORMAT
+
+Answers should be:
+
+```text
+Accurate
+Concise
+Natural
+Easy to understand
+Based only on verified results
+```
+
+For simple questions:
+
+```text
+User: What is Telangana's capital?
+
+AI: Hyderabad.
+```
+
+For analytical questions:
+
+```text
+User: Who has the highest salary in Hyderabad?
+
+AI: Ananya Reddy has the highest salary in Hyderabad, at ₹14.9 lakh.
+```
+
+For ambiguity:
+
+```text
+Do you mean highest salary or highest performance score?
+```
+
+For unsupported information:
+
+```text
+The uploaded dataset does not contain age information, so I cannot determine the employee's age from this dataset.
+```
+
+---
+
+# 49. DO NOT HARD-CODE INDIVIDUAL ANSWERS
+
+Do NOT implement:
+
+```python
+if state == "Telangana":
+    return "Hyderabad"
+```
+
+Do NOT implement:
+
+```python
+if question contains "West Bengal":
+    return "Kolkata"
+```
+
+Do NOT implement:
+
+```python
+if question contains "HYD":
+    return "Hyderabad"
+```
+
+Instead implement a generic:
+
+```text
+Entity Resolution Engine
++
+Semantic Relationship Engine
++
+Dataset Validation Engine
+```
+
+The dataset determines the actual answer.
+
+---
+
+# 50. FINAL QUALITY REQUIREMENT
+
+The target is:
+
+```text
+Maximum possible accuracy
+0 hallucinated dataset facts
+0 fabricated rows
+0 fabricated values
+0 incorrect entity mixing
+0 unsupported guesses
+```
+
+For deterministic answerable questions, target **100% factual correctness**.
+
+When the system cannot safely determine the answer, it MUST:
+
+```text
+Clarify
+OR
+Return UNKNOWN
+OR
+Return UNSUPPORTED
+OR
+Return NO MATCH
+```
+
+It must NEVER guess.
+
+---
+
+# 51. FINAL SYSTEM
+
+Build the final architecture as:
+
+```text
+                    CUSTOMER
+                       │
+                       ▼
+             ┌───────────────────┐
+             │ Language          │
+             │ Normalization     │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Spell / Typo      │
+             │ Correction        │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Shortcut / Alias  │
+             │ Resolution        │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Phonetic + Fuzzy  │
+             │ Matching          │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Entity Resolution │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Semantic Schema   │
+             │ Mapping           │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Intent + Relation │
+             │ Detection         │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Question          │
+             │ Decomposition     │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Query Planner     │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Query Validator   │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Pandas / DuckDB   │
+             │ Exact Execution   │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Result Validator  │
+             └─────────┬─────────┘
+                       ▼
+             ┌───────────────────┐
+             │ Hallucination     │
+             │ Firewall          │
+             └─────────┬─────────┘
+                       ▼
+                    OLLAMA
+                       │
+                       ▼
+                VERIFIED ANSWER
+```
+
+## IMPLEMENTATION INSTRUCTION
+
+Do not merely describe these improvements.
+
+**Inspect the existing project architecture and implement these improvements directly into the existing codebase without unnecessarily breaking existing functionality.**
+
+Before changing code:
+
+1. Understand the existing project structure.
+2. Identify the current question-processing pipeline.
+3. Identify how Ollama is currently being used.
+4. Identify the dataset-loading mechanism.
+5. Identify the current query-generation mechanism.
+6. Identify the current search/retrieval mechanism.
+7. Identify current failure points.
+8. Preserve working functionality.
+9. Refactor only where required.
+10. Add modular components instead of creating one massive file.
+
+Create or improve modules where appropriate, such as:
+
+```text
+normalizer.py
+spell_checker.py
+entity_resolver.py
+semantic_mapper.py
+intent_detector.py
+relationship_engine.py
+query_planner.py
+query_validator.py
+query_executor.py
+conversation_manager.py
+ambiguity_engine.py
+confidence_engine.py
+answer_validator.py
+hallucination_firewall.py
+dataset_profiler.py
+knowledge_graph.py
+training_generator.py
+test_generator.py
+evaluation.py
+failure_analyzer.py
+feedback.py
+```
+
+Do not blindly create duplicate modules if equivalent functionality already exists. Reuse and improve the existing architecture.
+
+Finally:
+
+```text
+BUILD
+↓
+RUN
+↓
+TEST
+↓
+GENERATE LARGE TEST SET
+↓
+MEASURE ACCURACY
+↓
+FIND FAILURES
+↓
+FIX FAILURES
+↓
+RUN REGRESSION TESTS
+```
+
+The final result should behave like a **universal conversational data analyst**, not a simple keyword search system.
+
+The user should be able to ask questions in almost any natural form and receive an answer that is **semantically understood, deterministically calculated, dataset-grounded, validated, and free from hallucinated facts**.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-10T21:46:35+05:30.
+
+The user's current state is as follows:
+Active Document: d:\Demo_Projects\AI-Dataset-Retrieval\app\query\duckdb_engine.py (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 77
+Other open documents:
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\indexer.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\loader.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\semantic_mapper.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\validator.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\query\analytics.py (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

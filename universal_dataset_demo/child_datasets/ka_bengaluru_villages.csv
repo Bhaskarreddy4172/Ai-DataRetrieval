@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+KA-001,Bengaluru_Village_01,58104,27362,30742,94.3,13.98,12461,Karnataka,Bengaluru
+KA-002,Bengaluru_Village_02,81150,41354,39796,94.7,19.4,17505,Karnataka,Bengaluru
+KA-003,Bengaluru_Village_03,74251,37606,36645,70.9,3.76,15133,Karnataka,Bengaluru
+KA-004,Bengaluru_Village_04,46906,23593,23313,72.7,25.45,12344,Karnataka,Bengaluru
+KA-005,Bengaluru_Village_05,53071,27424,25647,77.5,10.37,10774,Karnataka,Bengaluru
+KA-006,Bengaluru_Village_06,70376,33251,37125,94.4,7.17,13696,Karnataka,Bengaluru
+KA-007,Bengaluru_Village_07,84487,44770,39717,87.5,31.78,22723,Karnataka,Bengaluru
+KA-008,Bengaluru_Village_08,41814,22033,19781,87.4,33.6,9638,Karnataka,Bengaluru
+KA-009,Bengaluru_Village_09,63370,32317,31053,80.3,41.51,16644,Karnataka,Bengaluru
+KA-010,Bengaluru_Village_10,106986,56009,50977,88.0,5.17,20830,Karnataka,Bengaluru

@@ -1,0 +1,226 @@
+[
+  {
+    "state": "Andhra Pradesh",
+    "capital": "Amaravati",
+    "state_code": "AP",
+    "dataset_file": "ap_amaravati_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Arunachal Pradesh",
+    "capital": "Itanagar",
+    "state_code": "AR",
+    "dataset_file": "ar_itanagar_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Assam",
+    "capital": "Dispur",
+    "state_code": "AS",
+    "dataset_file": "as_dispur_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Bihar",
+    "capital": "Patna",
+    "state_code": "BR",
+    "dataset_file": "br_patna_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Chhattisgarh",
+    "capital": "Raipur",
+    "state_code": "CG",
+    "dataset_file": "cg_raipur_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Goa",
+    "capital": "Panaji",
+    "state_code": "GA",
+    "dataset_file": "ga_panaji_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Gujarat",
+    "capital": "Gandhinagar",
+    "state_code": "GJ",
+    "dataset_file": "gj_gandhinagar_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Haryana",
+    "capital": "Chandigarh",
+    "state_code": "HR",
+    "dataset_file": "hr_chandigarh_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Himachal Pradesh",
+    "capital": "Shimla",
+    "state_code": "HP",
+    "dataset_file": "hp_shimla_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Jharkhand",
+    "capital": "Ranchi",
+    "state_code": "JH",
+    "dataset_file": "jh_ranchi_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Karnataka",
+    "capital": "Bengaluru",
+    "state_code": "KA",
+    "dataset_file": "ka_bengaluru_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Kerala",
+    "capital": "Thiruvananthapuram",
+    "state_code": "KL",
+    "dataset_file": "kl_thiruvananthapuram_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Madhya Pradesh",
+    "capital": "Bhopal",
+    "state_code": "MP",
+    "dataset_file": "mp_bhopal_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Maharashtra",
+    "capital": "Mumbai",
+    "state_code": "MH",
+    "dataset_file": "mh_mumbai_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Manipur",
+    "capital": "Imphal",
+    "state_code": "MN",
+    "dataset_file": "mn_imphal_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Meghalaya",
+    "capital": "Shillong",
+    "state_code": "ML",
+    "dataset_file": "ml_shillong_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Mizoram",
+    "capital": "Aizawl",
+    "state_code": "MZ",
+    "dataset_file": "mz_aizawl_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Nagaland",
+    "capital": "Kohima",
+    "state_code": "NL",
+    "dataset_file": "nl_kohima_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Odisha",
+    "capital": "Bhubaneswar",
+    "state_code": "OD",
+    "dataset_file": "od_bhubaneswar_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Punjab",
+    "capital": "Chandigarh",
+    "state_code": "PB",
+    "dataset_file": "pb_chandigarh_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Rajasthan",
+    "capital": "Jaipur",
+    "state_code": "RJ",
+    "dataset_file": "rj_jaipur_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Sikkim",
+    "capital": "Gangtok",
+    "state_code": "SK",
+    "dataset_file": "sk_gangtok_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Tamil Nadu",
+    "capital": "Chennai",
+    "state_code": "TN",
+    "dataset_file": "tn_chennai_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Telangana",
+    "capital": "Hyderabad",
+    "state_code": "TG",
+    "dataset_file": "tg_hyderabad_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Tripura",
+    "capital": "Agartala",
+    "state_code": "TR",
+    "dataset_file": "tr_agartala_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Uttar Pradesh",
+    "capital": "Lucknow",
+    "state_code": "UP",
+    "dataset_file": "up_lucknow_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "Uttarakhand",
+    "capital": "Dehradun",
+    "state_code": "UK",
+    "dataset_file": "uk_dehradun_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  },
+  {
+    "state": "West Bengal",
+    "capital": "Kolkata",
+    "state_code": "WB",
+    "dataset_file": "wb_kolkata_villages.csv",
+    "rows": 10,
+    "data_type": "SYNTHETIC DEMO DATA \u2014 not official statistics"
+  }
+]

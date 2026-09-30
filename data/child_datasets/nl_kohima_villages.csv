@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+NL-001,Kohima_Village_01,7801,3697,4104,75.0,3.74,1974,Nagaland,Kohima
+NL-002,Kohima_Village_02,10417,5255,5162,89.9,39.99,2719,Nagaland,Kohima
+NL-003,Kohima_Village_03,14619,6969,7650,72.2,37.09,4001,Nagaland,Kohima
+NL-004,Kohima_Village_04,7625,4041,3584,87.1,28.64,1532,Nagaland,Kohima
+NL-005,Kohima_Village_05,17607,9187,8420,69.3,17.93,4045,Nagaland,Kohima
+NL-006,Kohima_Village_06,13087,6367,6720,84.8,30.17,3151,Nagaland,Kohima
+NL-007,Kohima_Village_07,9288,4501,4787,68.0,5.27,2214,Nagaland,Kohima
+NL-008,Kohima_Village_08,14985,7616,7369,89.0,14.75,3918,Nagaland,Kohima
+NL-009,Kohima_Village_09,23045,11270,11775,70.5,28.48,5149,Nagaland,Kohima
+NL-010,Kohima_Village_10,22176,11714,10462,74.3,15.42,4679,Nagaland,Kohima

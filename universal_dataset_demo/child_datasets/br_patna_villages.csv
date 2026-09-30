@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+BR-001,Patna_Village_01,52632,27298,25334,85.4,16.64,11014,Bihar,Patna
+BR-002,Patna_Village_02,39765,20848,18917,83.3,24.08,9210,Bihar,Patna
+BR-003,Patna_Village_03,69917,36585,33332,82.6,5.24,20404,Bihar,Patna
+BR-004,Patna_Village_04,82564,42108,40456,68.1,40.94,17118,Bihar,Patna
+BR-005,Patna_Village_05,71553,37381,34172,89.2,23.24,19249,Bihar,Patna
+BR-006,Patna_Village_06,54426,26099,28327,95.3,9.57,13562,Bihar,Patna
+BR-007,Patna_Village_07,27525,14099,13426,68.3,15.29,5768,Bihar,Patna
+BR-008,Patna_Village_08,86279,45676,40603,79.6,26.78,20424,Bihar,Patna
+BR-009,Patna_Village_09,52445,26818,25627,92.6,4.3,13966,Bihar,Patna
+BR-010,Patna_Village_10,79766,38766,41000,85.1,41.0,22649,Bihar,Patna

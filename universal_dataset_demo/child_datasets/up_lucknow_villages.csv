@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+UP-001,Lucknow_Village_01,119649,60050,59599,86.3,28.2,24517,Uttar Pradesh,Lucknow
+UP-002,Lucknow_Village_02,105367,51089,54278,69.8,8.59,22569,Uttar Pradesh,Lucknow
+UP-003,Lucknow_Village_03,78994,37477,41517,74.8,38.98,15680,Uttar Pradesh,Lucknow
+UP-004,Lucknow_Village_04,124453,62858,61595,90.5,17.34,26061,Uttar Pradesh,Lucknow
+UP-005,Lucknow_Village_05,128987,64487,64500,86.0,36.0,31120,Uttar Pradesh,Lucknow
+UP-006,Lucknow_Village_06,35446,17429,18017,93.9,10.09,7481,Uttar Pradesh,Lucknow
+UP-007,Lucknow_Village_07,98799,50510,48289,93.5,28.52,19289,Uttar Pradesh,Lucknow
+UP-008,Lucknow_Village_08,49438,25574,23864,79.7,30.05,14029,Uttar Pradesh,Lucknow
+UP-009,Lucknow_Village_09,91482,47177,44305,91.8,19.49,25203,Uttar Pradesh,Lucknow
+UP-010,Lucknow_Village_10,102432,49022,53410,92.8,39.25,20242,Uttar Pradesh,Lucknow

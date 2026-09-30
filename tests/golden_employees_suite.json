@@ -1,0 +1,6242 @@
+[
+  {
+    "id": "TEST_0001",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1001",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0002",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1002",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1002"
+    ],
+    "expected_names": [
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0003",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1003",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1003"
+    ],
+    "expected_names": [
+      "Meera Singh"
+    ]
+  },
+  {
+    "id": "TEST_0004",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1004?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1004"
+    ],
+    "expected_names": [
+      "Aarav Rao"
+    ]
+  },
+  {
+    "id": "TEST_0005",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1005",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1005"
+    ],
+    "expected_names": [
+      "Ananya Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0006",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1006",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1006"
+    ],
+    "expected_names": [
+      "Shweta Singh"
+    ]
+  },
+  {
+    "id": "TEST_0007",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1007",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1007"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0008",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1008?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1008"
+    ],
+    "expected_names": [
+      "Meera Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0009",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1009",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1009"
+    ],
+    "expected_names": [
+      "Ananya Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0010",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1010",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1010"
+    ],
+    "expected_names": [
+      "Varun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0011",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1011",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1011"
+    ],
+    "expected_names": [
+      "Priyanka Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0012",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1012?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1012"
+    ],
+    "expected_names": [
+      "Aarav Verma"
+    ]
+  },
+  {
+    "id": "TEST_0013",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1013",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1013"
+    ],
+    "expected_names": [
+      "Arjun Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0014",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1014",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1014"
+    ],
+    "expected_names": [
+      "Preeti Bose"
+    ]
+  },
+  {
+    "id": "TEST_0015",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1015",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1015"
+    ],
+    "expected_names": [
+      "Isha Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0016",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1016?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1016"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0017",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1017",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1017"
+    ],
+    "expected_names": [
+      "Karan Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0018",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1018",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1018"
+    ],
+    "expected_names": [
+      "Pooja Verma"
+    ]
+  },
+  {
+    "id": "TEST_0019",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1019",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1019"
+    ],
+    "expected_names": [
+      "Nikhil Rao"
+    ]
+  },
+  {
+    "id": "TEST_0020",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1020?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1020"
+    ],
+    "expected_names": [
+      "Siddharth Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0021",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1021",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1021"
+    ],
+    "expected_names": [
+      "Arjun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0022",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1022",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1022"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0023",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1023",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1023"
+    ],
+    "expected_names": [
+      "Vikram Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0024",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1024?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1024"
+    ],
+    "expected_names": [
+      "Varun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0025",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1025",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1025"
+    ],
+    "expected_names": [
+      "Preeti Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0026",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1026",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1026"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0027",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1027",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1027"
+    ],
+    "expected_names": [
+      "Shweta Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0028",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1028?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0029",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1029",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1029"
+    ],
+    "expected_names": [
+      "Rahul Patel"
+    ]
+  },
+  {
+    "id": "TEST_0030",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1030",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1030"
+    ],
+    "expected_names": [
+      "Sneha Verma"
+    ]
+  },
+  {
+    "id": "TEST_0031",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1031",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1031"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0032",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1032?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1032"
+    ],
+    "expected_names": [
+      "Meera Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0033",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1033",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1033"
+    ],
+    "expected_names": [
+      "Swati Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0034",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1034",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1034"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0035",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1035",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1035"
+    ],
+    "expected_names": [
+      "Shweta Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0036",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1036?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1036"
+    ],
+    "expected_names": [
+      "Arjun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0037",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1037",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1037"
+    ],
+    "expected_names": [
+      "Kavita Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0038",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1038",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1038"
+    ],
+    "expected_names": [
+      "Rahul Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0039",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1039",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1039"
+    ],
+    "expected_names": [
+      "Deepak Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0040",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1040?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0041",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1041",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1041"
+    ],
+    "expected_names": [
+      "Siddharth Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0042",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1042",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1042"
+    ],
+    "expected_names": [
+      "Ananya Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0043",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1043",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0044",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1044?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1044"
+    ],
+    "expected_names": [
+      "Siddharth Rao"
+    ]
+  },
+  {
+    "id": "TEST_0045",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1045",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1045"
+    ],
+    "expected_names": [
+      "Shweta Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0046",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1046",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1046"
+    ],
+    "expected_names": [
+      "Divya Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0047",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1047",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1047"
+    ],
+    "expected_names": [
+      "Kavita Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0048",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1048?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1048"
+    ],
+    "expected_names": [
+      "Karan Singh"
+    ]
+  },
+  {
+    "id": "TEST_0049",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1049",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0050",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1050",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0051",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1051",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1051"
+    ],
+    "expected_names": [
+      "Divya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0052",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1052?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1052"
+    ],
+    "expected_names": [
+      "Gaurav Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0053",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1053",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1053"
+    ],
+    "expected_names": [
+      "Varun Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0054",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1054",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1054"
+    ],
+    "expected_names": [
+      "Karan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0055",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1055",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1055"
+    ],
+    "expected_names": [
+      "Karan Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0056",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1056?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1056"
+    ],
+    "expected_names": [
+      "Rahul Bose"
+    ]
+  },
+  {
+    "id": "TEST_0057",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1057",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1057"
+    ],
+    "expected_names": [
+      "Gaurav Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0058",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1058",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1058"
+    ],
+    "expected_names": [
+      "Siddharth Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0059",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1059",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1059"
+    ],
+    "expected_names": [
+      "Vikram Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0060",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1060?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1060"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0061",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1061",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1061"
+    ],
+    "expected_names": [
+      "Aarav Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0062",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1062",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1062"
+    ],
+    "expected_names": [
+      "Manish Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0063",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1063",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1063"
+    ],
+    "expected_names": [
+      "Aarav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0064",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1064?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1064"
+    ],
+    "expected_names": [
+      "Vikram Rao"
+    ]
+  },
+  {
+    "id": "TEST_0065",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1065",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1065"
+    ],
+    "expected_names": [
+      "Rohan Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0066",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1066",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1066"
+    ],
+    "expected_names": [
+      "Siddharth Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0067",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1067",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1067"
+    ],
+    "expected_names": [
+      "Manish Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0068",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1068?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1068"
+    ],
+    "expected_names": [
+      "Ananya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0069",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1069",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1069"
+    ],
+    "expected_names": [
+      "Manish Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0070",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1070",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1070"
+    ],
+    "expected_names": [
+      "Ritu Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0071",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1071",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1071"
+    ],
+    "expected_names": [
+      "Tanvi Rao"
+    ]
+  },
+  {
+    "id": "TEST_0072",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1072?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1072"
+    ],
+    "expected_names": [
+      "Aarav Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0073",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1073",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1073"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0074",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1074",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1074"
+    ],
+    "expected_names": [
+      "Shweta Rao"
+    ]
+  },
+  {
+    "id": "TEST_0075",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1075",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1075"
+    ],
+    "expected_names": [
+      "Rohan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0076",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1076?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1076"
+    ],
+    "expected_names": [
+      "Divya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0077",
+    "category": "exact_id_lookup",
+    "question": "Details for EMP-1077",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1077"
+    ],
+    "expected_names": [
+      "Gaurav Nair"
+    ]
+  },
+  {
+    "id": "TEST_0078",
+    "category": "exact_id_lookup",
+    "question": "Show record for employee EMP-1078",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1078"
+    ],
+    "expected_names": [
+      "Rahul Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0079",
+    "category": "exact_id_lookup",
+    "question": "Find employee EMP-1079",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1079"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0080",
+    "category": "exact_id_lookup",
+    "question": "Who is EMP-1080?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1080"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0081",
+    "category": "exact_name_lookup",
+    "question": "Show details for Vikram Mehta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0082",
+    "category": "exact_name_lookup",
+    "question": "Information on Aditya Kulkarni",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1002"
+    ],
+    "expected_names": [
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0083",
+    "category": "exact_name_lookup",
+    "question": "Who is Meera Singh?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1003"
+    ],
+    "expected_names": [
+      "Meera Singh"
+    ]
+  },
+  {
+    "id": "TEST_0084",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Aarav Rao",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1004"
+    ],
+    "expected_names": [
+      "Aarav Rao"
+    ]
+  },
+  {
+    "id": "TEST_0085",
+    "category": "exact_name_lookup",
+    "question": "Show details for Ananya Reddy",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1005"
+    ],
+    "expected_names": [
+      "Ananya Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0086",
+    "category": "exact_name_lookup",
+    "question": "Information on Shweta Singh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1006"
+    ],
+    "expected_names": [
+      "Shweta Singh"
+    ]
+  },
+  {
+    "id": "TEST_0087",
+    "category": "exact_name_lookup",
+    "question": "Who is Ritu Reddy?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1007",
+      "EMP-1080"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0088",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Meera Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1008"
+    ],
+    "expected_names": [
+      "Meera Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0089",
+    "category": "exact_name_lookup",
+    "question": "Show details for Ananya Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1009"
+    ],
+    "expected_names": [
+      "Ananya Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0090",
+    "category": "exact_name_lookup",
+    "question": "Information on Varun Patel",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1010"
+    ],
+    "expected_names": [
+      "Varun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0091",
+    "category": "exact_name_lookup",
+    "question": "Who is Priyanka Deshmukh?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1011"
+    ],
+    "expected_names": [
+      "Priyanka Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0092",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Aarav Verma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1012"
+    ],
+    "expected_names": [
+      "Aarav Verma"
+    ]
+  },
+  {
+    "id": "TEST_0093",
+    "category": "exact_name_lookup",
+    "question": "Show details for Arjun Kulkarni",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1013"
+    ],
+    "expected_names": [
+      "Arjun Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0094",
+    "category": "exact_name_lookup",
+    "question": "Information on Preeti Bose",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1014"
+    ],
+    "expected_names": [
+      "Preeti Bose"
+    ]
+  },
+  {
+    "id": "TEST_0095",
+    "category": "exact_name_lookup",
+    "question": "Who is Isha Mehta?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1015"
+    ],
+    "expected_names": [
+      "Isha Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0096",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Nikhil Joshi",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1016",
+      "EMP-1073"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0097",
+    "category": "exact_name_lookup",
+    "question": "Show details for Karan Kulkarni",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1017"
+    ],
+    "expected_names": [
+      "Karan Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0098",
+    "category": "exact_name_lookup",
+    "question": "Information on Pooja Verma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1018"
+    ],
+    "expected_names": [
+      "Pooja Verma"
+    ]
+  },
+  {
+    "id": "TEST_0099",
+    "category": "exact_name_lookup",
+    "question": "Who is Nikhil Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1019"
+    ],
+    "expected_names": [
+      "Nikhil Rao"
+    ]
+  },
+  {
+    "id": "TEST_0100",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Siddharth Kulkarni",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1020"
+    ],
+    "expected_names": [
+      "Siddharth Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0101",
+    "category": "exact_name_lookup",
+    "question": "Show details for Arjun Patel",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1021"
+    ],
+    "expected_names": [
+      "Arjun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0102",
+    "category": "exact_name_lookup",
+    "question": "Information on Varun Rao",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1022",
+      "EMP-1079"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0103",
+    "category": "exact_name_lookup",
+    "question": "Who is Vikram Kulkarni?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1023"
+    ],
+    "expected_names": [
+      "Vikram Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0104",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Varun Deshmukh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1024"
+    ],
+    "expected_names": [
+      "Varun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0105",
+    "category": "exact_name_lookup",
+    "question": "Show details for Preeti Mehta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1025"
+    ],
+    "expected_names": [
+      "Preeti Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0106",
+    "category": "exact_name_lookup",
+    "question": "Information on Isha Patel",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1026",
+      "EMP-1031"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0107",
+    "category": "exact_name_lookup",
+    "question": "Who is Shweta Mehta?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1027"
+    ],
+    "expected_names": [
+      "Shweta Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0108",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Gaurav Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0109",
+    "category": "exact_name_lookup",
+    "question": "Show details for Rahul Patel",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1029"
+    ],
+    "expected_names": [
+      "Rahul Patel"
+    ]
+  },
+  {
+    "id": "TEST_0110",
+    "category": "exact_name_lookup",
+    "question": "Information on Sneha Verma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1030"
+    ],
+    "expected_names": [
+      "Sneha Verma"
+    ]
+  },
+  {
+    "id": "TEST_0111",
+    "category": "exact_name_lookup",
+    "question": "Who is Isha Patel?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1026",
+      "EMP-1031"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0112",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Meera Reddy",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1032"
+    ],
+    "expected_names": [
+      "Meera Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0113",
+    "category": "exact_name_lookup",
+    "question": "Show details for Swati Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1033"
+    ],
+    "expected_names": [
+      "Swati Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0114",
+    "category": "exact_name_lookup",
+    "question": "Information on Divya Sharma",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1034",
+      "EMP-1060"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0115",
+    "category": "exact_name_lookup",
+    "question": "Who is Shweta Deshmukh?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1035"
+    ],
+    "expected_names": [
+      "Shweta Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0116",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Arjun Deshmukh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1036"
+    ],
+    "expected_names": [
+      "Arjun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0117",
+    "category": "exact_name_lookup",
+    "question": "Show details for Kavita Deshmukh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1037"
+    ],
+    "expected_names": [
+      "Kavita Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0118",
+    "category": "exact_name_lookup",
+    "question": "Information on Rahul Deshmukh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1038"
+    ],
+    "expected_names": [
+      "Rahul Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0119",
+    "category": "exact_name_lookup",
+    "question": "Who is Deepak Chopra?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1039"
+    ],
+    "expected_names": [
+      "Deepak Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0120",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Nikhil Nair",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0121",
+    "category": "exact_name_lookup",
+    "question": "Show details for Siddharth Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1041"
+    ],
+    "expected_names": [
+      "Siddharth Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0122",
+    "category": "exact_name_lookup",
+    "question": "Information on Ananya Joshi",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1042"
+    ],
+    "expected_names": [
+      "Ananya Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0123",
+    "category": "exact_name_lookup",
+    "question": "Who is Sunita Joshi?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0124",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Siddharth Rao",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1044"
+    ],
+    "expected_names": [
+      "Siddharth Rao"
+    ]
+  },
+  {
+    "id": "TEST_0125",
+    "category": "exact_name_lookup",
+    "question": "Show details for Shweta Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1045"
+    ],
+    "expected_names": [
+      "Shweta Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0126",
+    "category": "exact_name_lookup",
+    "question": "Information on Divya Mehta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1046"
+    ],
+    "expected_names": [
+      "Divya Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0127",
+    "category": "exact_name_lookup",
+    "question": "Who is Kavita Reddy?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1047"
+    ],
+    "expected_names": [
+      "Kavita Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0128",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Karan Singh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1048"
+    ],
+    "expected_names": [
+      "Karan Singh"
+    ]
+  },
+  {
+    "id": "TEST_0129",
+    "category": "exact_name_lookup",
+    "question": "Show details for Tanvi Iyer",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0130",
+    "category": "exact_name_lookup",
+    "question": "Information on Aarav Sharma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0131",
+    "category": "exact_name_lookup",
+    "question": "Who is Divya Kulkarni?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1051"
+    ],
+    "expected_names": [
+      "Divya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0132",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Gaurav Joshi",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1052"
+    ],
+    "expected_names": [
+      "Gaurav Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0133",
+    "category": "exact_name_lookup",
+    "question": "Show details for Varun Sharma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1053"
+    ],
+    "expected_names": [
+      "Varun Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0134",
+    "category": "exact_name_lookup",
+    "question": "Information on Karan Chopra",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1054"
+    ],
+    "expected_names": [
+      "Karan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0135",
+    "category": "exact_name_lookup",
+    "question": "Who is Karan Gupta?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1055"
+    ],
+    "expected_names": [
+      "Karan Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0136",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Rahul Bose",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1056"
+    ],
+    "expected_names": [
+      "Rahul Bose"
+    ]
+  },
+  {
+    "id": "TEST_0137",
+    "category": "exact_name_lookup",
+    "question": "Show details for Gaurav Reddy",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1057"
+    ],
+    "expected_names": [
+      "Gaurav Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0138",
+    "category": "exact_name_lookup",
+    "question": "Information on Siddharth Iyer",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1058"
+    ],
+    "expected_names": [
+      "Siddharth Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0139",
+    "category": "exact_name_lookup",
+    "question": "Who is Vikram Joshi?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1059"
+    ],
+    "expected_names": [
+      "Vikram Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0140",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Divya Sharma",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1034",
+      "EMP-1060"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0141",
+    "category": "exact_name_lookup",
+    "question": "Show details for Aarav Deshmukh",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1061"
+    ],
+    "expected_names": [
+      "Aarav Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0142",
+    "category": "exact_name_lookup",
+    "question": "Information on Manish Gupta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1062"
+    ],
+    "expected_names": [
+      "Manish Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0143",
+    "category": "exact_name_lookup",
+    "question": "Who is Aarav Gupta?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1063"
+    ],
+    "expected_names": [
+      "Aarav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0144",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Vikram Rao",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1064"
+    ],
+    "expected_names": [
+      "Vikram Rao"
+    ]
+  },
+  {
+    "id": "TEST_0145",
+    "category": "exact_name_lookup",
+    "question": "Show details for Rohan Mehta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1065"
+    ],
+    "expected_names": [
+      "Rohan Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0146",
+    "category": "exact_name_lookup",
+    "question": "Information on Siddharth Reddy",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1066"
+    ],
+    "expected_names": [
+      "Siddharth Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0147",
+    "category": "exact_name_lookup",
+    "question": "Who is Manish Deshmukh?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1067"
+    ],
+    "expected_names": [
+      "Manish Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0148",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Ananya Iyer",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1068"
+    ],
+    "expected_names": [
+      "Ananya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0149",
+    "category": "exact_name_lookup",
+    "question": "Show details for Manish Sharma",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1069"
+    ],
+    "expected_names": [
+      "Manish Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0150",
+    "category": "exact_name_lookup",
+    "question": "Information on Ritu Mehta",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1070"
+    ],
+    "expected_names": [
+      "Ritu Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0151",
+    "category": "exact_name_lookup",
+    "question": "Who is Tanvi Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1071"
+    ],
+    "expected_names": [
+      "Tanvi Rao"
+    ]
+  },
+  {
+    "id": "TEST_0152",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Aarav Kulkarni",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1072"
+    ],
+    "expected_names": [
+      "Aarav Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0153",
+    "category": "exact_name_lookup",
+    "question": "Show details for Nikhil Joshi",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1016",
+      "EMP-1073"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0154",
+    "category": "exact_name_lookup",
+    "question": "Information on Shweta Rao",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1074"
+    ],
+    "expected_names": [
+      "Shweta Rao"
+    ]
+  },
+  {
+    "id": "TEST_0155",
+    "category": "exact_name_lookup",
+    "question": "Who is Rohan Chopra?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1075"
+    ],
+    "expected_names": [
+      "Rohan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0156",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Divya Iyer",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1076"
+    ],
+    "expected_names": [
+      "Divya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0157",
+    "category": "exact_name_lookup",
+    "question": "Show details for Gaurav Nair",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1077"
+    ],
+    "expected_names": [
+      "Gaurav Nair"
+    ]
+  },
+  {
+    "id": "TEST_0158",
+    "category": "exact_name_lookup",
+    "question": "Information on Rahul Iyer",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1078"
+    ],
+    "expected_names": [
+      "Rahul Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0159",
+    "category": "exact_name_lookup",
+    "question": "Who is Varun Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1022",
+      "EMP-1079"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0160",
+    "category": "exact_name_lookup",
+    "question": "Tell me about Ritu Reddy",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1007",
+      "EMP-1080"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0161",
+    "category": "attribute_query",
+    "question": "What is Vikram Mehta's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0162",
+    "category": "attribute_query",
+    "question": "Which department does Aditya Kulkarni work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1002"
+    ],
+    "expected_names": [
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0163",
+    "category": "attribute_query",
+    "question": "Where is Meera Singh based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1003"
+    ],
+    "expected_names": [
+      "Meera Singh"
+    ]
+  },
+  {
+    "id": "TEST_0164",
+    "category": "attribute_query",
+    "question": "What is the performance score of Aarav Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1004"
+    ],
+    "expected_names": [
+      "Aarav Rao"
+    ]
+  },
+  {
+    "id": "TEST_0165",
+    "category": "attribute_query",
+    "question": "What is Ananya Reddy's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1005"
+    ],
+    "expected_names": [
+      "Ananya Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0166",
+    "category": "attribute_query",
+    "question": "What is Shweta Singh's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1006"
+    ],
+    "expected_names": [
+      "Shweta Singh"
+    ]
+  },
+  {
+    "id": "TEST_0167",
+    "category": "attribute_query",
+    "question": "Which department does Ritu Reddy work in?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1007",
+      "EMP-1080"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0168",
+    "category": "attribute_query",
+    "question": "Where is Meera Gupta based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1008"
+    ],
+    "expected_names": [
+      "Meera Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0169",
+    "category": "attribute_query",
+    "question": "What is the performance score of Ananya Gupta?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1009"
+    ],
+    "expected_names": [
+      "Ananya Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0170",
+    "category": "attribute_query",
+    "question": "What is Varun Patel's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1010"
+    ],
+    "expected_names": [
+      "Varun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0171",
+    "category": "attribute_query",
+    "question": "What is Priyanka Deshmukh's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1011"
+    ],
+    "expected_names": [
+      "Priyanka Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0172",
+    "category": "attribute_query",
+    "question": "Which department does Aarav Verma work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1012"
+    ],
+    "expected_names": [
+      "Aarav Verma"
+    ]
+  },
+  {
+    "id": "TEST_0173",
+    "category": "attribute_query",
+    "question": "Where is Arjun Kulkarni based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1013"
+    ],
+    "expected_names": [
+      "Arjun Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0174",
+    "category": "attribute_query",
+    "question": "What is the performance score of Preeti Bose?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1014"
+    ],
+    "expected_names": [
+      "Preeti Bose"
+    ]
+  },
+  {
+    "id": "TEST_0175",
+    "category": "attribute_query",
+    "question": "What is Isha Mehta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1015"
+    ],
+    "expected_names": [
+      "Isha Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0176",
+    "category": "attribute_query",
+    "question": "What is Nikhil Joshi's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1016",
+      "EMP-1073"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0177",
+    "category": "attribute_query",
+    "question": "Which department does Karan Kulkarni work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1017"
+    ],
+    "expected_names": [
+      "Karan Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0178",
+    "category": "attribute_query",
+    "question": "Where is Pooja Verma based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1018"
+    ],
+    "expected_names": [
+      "Pooja Verma"
+    ]
+  },
+  {
+    "id": "TEST_0179",
+    "category": "attribute_query",
+    "question": "What is the performance score of Nikhil Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1019"
+    ],
+    "expected_names": [
+      "Nikhil Rao"
+    ]
+  },
+  {
+    "id": "TEST_0180",
+    "category": "attribute_query",
+    "question": "What is Siddharth Kulkarni's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1020"
+    ],
+    "expected_names": [
+      "Siddharth Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0181",
+    "category": "attribute_query",
+    "question": "What is Arjun Patel's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1021"
+    ],
+    "expected_names": [
+      "Arjun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0182",
+    "category": "attribute_query",
+    "question": "Which department does Varun Rao work in?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1022",
+      "EMP-1079"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0183",
+    "category": "attribute_query",
+    "question": "Where is Vikram Kulkarni based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1023"
+    ],
+    "expected_names": [
+      "Vikram Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0184",
+    "category": "attribute_query",
+    "question": "What is the performance score of Varun Deshmukh?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1024"
+    ],
+    "expected_names": [
+      "Varun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0185",
+    "category": "attribute_query",
+    "question": "What is Preeti Mehta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1025"
+    ],
+    "expected_names": [
+      "Preeti Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0186",
+    "category": "attribute_query",
+    "question": "What is Isha Patel's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1026",
+      "EMP-1031"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0187",
+    "category": "attribute_query",
+    "question": "Which department does Shweta Mehta work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1027"
+    ],
+    "expected_names": [
+      "Shweta Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0188",
+    "category": "attribute_query",
+    "question": "Where is Gaurav Gupta based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0189",
+    "category": "attribute_query",
+    "question": "What is the performance score of Rahul Patel?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1029"
+    ],
+    "expected_names": [
+      "Rahul Patel"
+    ]
+  },
+  {
+    "id": "TEST_0190",
+    "category": "attribute_query",
+    "question": "What is Sneha Verma's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1030"
+    ],
+    "expected_names": [
+      "Sneha Verma"
+    ]
+  },
+  {
+    "id": "TEST_0191",
+    "category": "attribute_query",
+    "question": "What is Isha Patel's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1026",
+      "EMP-1031"
+    ],
+    "expected_names": [
+      "Isha Patel"
+    ]
+  },
+  {
+    "id": "TEST_0192",
+    "category": "attribute_query",
+    "question": "Which department does Meera Reddy work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1032"
+    ],
+    "expected_names": [
+      "Meera Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0193",
+    "category": "attribute_query",
+    "question": "Where is Swati Gupta based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1033"
+    ],
+    "expected_names": [
+      "Swati Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0194",
+    "category": "attribute_query",
+    "question": "What is the performance score of Divya Sharma?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1034",
+      "EMP-1060"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0195",
+    "category": "attribute_query",
+    "question": "What is Shweta Deshmukh's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1035"
+    ],
+    "expected_names": [
+      "Shweta Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0196",
+    "category": "attribute_query",
+    "question": "What is Arjun Deshmukh's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1036"
+    ],
+    "expected_names": [
+      "Arjun Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0197",
+    "category": "attribute_query",
+    "question": "Which department does Kavita Deshmukh work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1037"
+    ],
+    "expected_names": [
+      "Kavita Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0198",
+    "category": "attribute_query",
+    "question": "Where is Rahul Deshmukh based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1038"
+    ],
+    "expected_names": [
+      "Rahul Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0199",
+    "category": "attribute_query",
+    "question": "What is the performance score of Deepak Chopra?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1039"
+    ],
+    "expected_names": [
+      "Deepak Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0200",
+    "category": "attribute_query",
+    "question": "What is Nikhil Nair's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0201",
+    "category": "attribute_query",
+    "question": "What is Siddharth Gupta's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1041"
+    ],
+    "expected_names": [
+      "Siddharth Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0202",
+    "category": "attribute_query",
+    "question": "Which department does Ananya Joshi work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1042"
+    ],
+    "expected_names": [
+      "Ananya Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0203",
+    "category": "attribute_query",
+    "question": "Where is Sunita Joshi based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0204",
+    "category": "attribute_query",
+    "question": "What is the performance score of Siddharth Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1044"
+    ],
+    "expected_names": [
+      "Siddharth Rao"
+    ]
+  },
+  {
+    "id": "TEST_0205",
+    "category": "attribute_query",
+    "question": "What is Shweta Gupta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1045"
+    ],
+    "expected_names": [
+      "Shweta Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0206",
+    "category": "attribute_query",
+    "question": "What is Divya Mehta's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1046"
+    ],
+    "expected_names": [
+      "Divya Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0207",
+    "category": "attribute_query",
+    "question": "Which department does Kavita Reddy work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1047"
+    ],
+    "expected_names": [
+      "Kavita Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0208",
+    "category": "attribute_query",
+    "question": "Where is Karan Singh based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1048"
+    ],
+    "expected_names": [
+      "Karan Singh"
+    ]
+  },
+  {
+    "id": "TEST_0209",
+    "category": "attribute_query",
+    "question": "What is the performance score of Tanvi Iyer?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0210",
+    "category": "attribute_query",
+    "question": "What is Aarav Sharma's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0211",
+    "category": "attribute_query",
+    "question": "What is Divya Kulkarni's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1051"
+    ],
+    "expected_names": [
+      "Divya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0212",
+    "category": "attribute_query",
+    "question": "Which department does Gaurav Joshi work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1052"
+    ],
+    "expected_names": [
+      "Gaurav Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0213",
+    "category": "attribute_query",
+    "question": "Where is Varun Sharma based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1053"
+    ],
+    "expected_names": [
+      "Varun Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0214",
+    "category": "attribute_query",
+    "question": "What is the performance score of Karan Chopra?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1054"
+    ],
+    "expected_names": [
+      "Karan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0215",
+    "category": "attribute_query",
+    "question": "What is Karan Gupta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1055"
+    ],
+    "expected_names": [
+      "Karan Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0216",
+    "category": "attribute_query",
+    "question": "What is Rahul Bose's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1056"
+    ],
+    "expected_names": [
+      "Rahul Bose"
+    ]
+  },
+  {
+    "id": "TEST_0217",
+    "category": "attribute_query",
+    "question": "Which department does Gaurav Reddy work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1057"
+    ],
+    "expected_names": [
+      "Gaurav Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0218",
+    "category": "attribute_query",
+    "question": "Where is Siddharth Iyer based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1058"
+    ],
+    "expected_names": [
+      "Siddharth Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0219",
+    "category": "attribute_query",
+    "question": "What is the performance score of Vikram Joshi?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1059"
+    ],
+    "expected_names": [
+      "Vikram Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0220",
+    "category": "attribute_query",
+    "question": "What is Divya Sharma's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1034",
+      "EMP-1060"
+    ],
+    "expected_names": [
+      "Divya Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0221",
+    "category": "attribute_query",
+    "question": "What is Aarav Deshmukh's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1061"
+    ],
+    "expected_names": [
+      "Aarav Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0222",
+    "category": "attribute_query",
+    "question": "Which department does Manish Gupta work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1062"
+    ],
+    "expected_names": [
+      "Manish Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0223",
+    "category": "attribute_query",
+    "question": "Where is Aarav Gupta based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1063"
+    ],
+    "expected_names": [
+      "Aarav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0224",
+    "category": "attribute_query",
+    "question": "What is the performance score of Vikram Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1064"
+    ],
+    "expected_names": [
+      "Vikram Rao"
+    ]
+  },
+  {
+    "id": "TEST_0225",
+    "category": "attribute_query",
+    "question": "What is Rohan Mehta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1065"
+    ],
+    "expected_names": [
+      "Rohan Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0226",
+    "category": "attribute_query",
+    "question": "What is Siddharth Reddy's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1066"
+    ],
+    "expected_names": [
+      "Siddharth Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0227",
+    "category": "attribute_query",
+    "question": "Which department does Manish Deshmukh work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1067"
+    ],
+    "expected_names": [
+      "Manish Deshmukh"
+    ]
+  },
+  {
+    "id": "TEST_0228",
+    "category": "attribute_query",
+    "question": "Where is Ananya Iyer based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1068"
+    ],
+    "expected_names": [
+      "Ananya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0229",
+    "category": "attribute_query",
+    "question": "What is the performance score of Manish Sharma?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1069"
+    ],
+    "expected_names": [
+      "Manish Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0230",
+    "category": "attribute_query",
+    "question": "What is Ritu Mehta's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1070"
+    ],
+    "expected_names": [
+      "Ritu Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0231",
+    "category": "attribute_query",
+    "question": "What is Tanvi Rao's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1071"
+    ],
+    "expected_names": [
+      "Tanvi Rao"
+    ]
+  },
+  {
+    "id": "TEST_0232",
+    "category": "attribute_query",
+    "question": "Which department does Aarav Kulkarni work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1072"
+    ],
+    "expected_names": [
+      "Aarav Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0233",
+    "category": "attribute_query",
+    "question": "Where is Nikhil Joshi based?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1016",
+      "EMP-1073"
+    ],
+    "expected_names": [
+      "Nikhil Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0234",
+    "category": "attribute_query",
+    "question": "What is the performance score of Shweta Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1074"
+    ],
+    "expected_names": [
+      "Shweta Rao"
+    ]
+  },
+  {
+    "id": "TEST_0235",
+    "category": "attribute_query",
+    "question": "What is Rohan Chopra's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1075"
+    ],
+    "expected_names": [
+      "Rohan Chopra"
+    ]
+  },
+  {
+    "id": "TEST_0236",
+    "category": "attribute_query",
+    "question": "What is Divya Iyer's salary?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1076"
+    ],
+    "expected_names": [
+      "Divya Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0237",
+    "category": "attribute_query",
+    "question": "Which department does Gaurav Nair work in?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1077"
+    ],
+    "expected_names": [
+      "Gaurav Nair"
+    ]
+  },
+  {
+    "id": "TEST_0238",
+    "category": "attribute_query",
+    "question": "Where is Rahul Iyer based?",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1078"
+    ],
+    "expected_names": [
+      "Rahul Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0239",
+    "category": "attribute_query",
+    "question": "What is the performance score of Varun Rao?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1022",
+      "EMP-1079"
+    ],
+    "expected_names": [
+      "Varun Rao"
+    ]
+  },
+  {
+    "id": "TEST_0240",
+    "category": "attribute_query",
+    "question": "What is Ritu Reddy's designation?",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1007",
+      "EMP-1080"
+    ],
+    "expected_names": [
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0241",
+    "category": "typo_variation",
+    "question": "salry of Ananya Reddy",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1005"
+    ],
+    "expected_names": [
+      "Ananya Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0242",
+    "category": "typo_variation",
+    "question": "dpartmnt of Vikram Mehta",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0243",
+    "category": "typo_variation",
+    "question": "hihgest salary employee",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0244",
+    "category": "typo_variation",
+    "question": "lowst paid staff",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0245",
+    "category": "typo_variation",
+    "question": "peple in Banglore",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0246",
+    "category": "typo_variation",
+    "question": "staf in Hydrabad",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0247",
+    "category": "typo_variation",
+    "question": "who is EMP 1001",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0248",
+    "category": "typo_variation",
+    "question": "emplyee EMP-1010 details",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1010"
+    ],
+    "expected_names": [
+      "Varun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0249",
+    "category": "typo_variation",
+    "question": "best preformer",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0250",
+    "category": "typo_variation",
+    "question": "avrg salary",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0251",
+    "category": "typo_variation",
+    "question": "totl salary of all employees",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0252",
+    "category": "typo_variation",
+    "question": "who has the higest salary?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0253",
+    "category": "typo_variation",
+    "question": "which depatment pays most?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0254",
+    "category": "typo_variation",
+    "question": "city with mximum employees",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0255",
+    "category": "typo_variation",
+    "question": "slary of Sunita Joshi",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0256",
+    "category": "typo_variation",
+    "question": "whre does Aditya Kulkarni live?",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1002"
+    ],
+    "expected_names": [
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0257",
+    "category": "typo_variation",
+    "question": "designtion of Meera Singh",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1003"
+    ],
+    "expected_names": [
+      "Meera Singh"
+    ]
+  },
+  {
+    "id": "TEST_0258",
+    "category": "typo_variation",
+    "question": "who erans the lowest?",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0259",
+    "category": "typo_variation",
+    "question": "scnd highest paid employee",
+    "expected_op": "RANK",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0260",
+    "category": "typo_variation",
+    "question": "thrd highest earner",
+    "expected_op": "RANK",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0261",
+    "category": "typo_variation",
+    "question": "salry of Ananya Reddy",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1005"
+    ],
+    "expected_names": [
+      "Ananya Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0262",
+    "category": "typo_variation",
+    "question": "dpartmnt of Vikram Mehta",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0263",
+    "category": "typo_variation",
+    "question": "hihgest salary employee",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0264",
+    "category": "typo_variation",
+    "question": "lowst paid staff",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0265",
+    "category": "typo_variation",
+    "question": "peple in Banglore",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0266",
+    "category": "typo_variation",
+    "question": "staf in Hydrabad",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0267",
+    "category": "typo_variation",
+    "question": "who is EMP 1001",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1001"
+    ],
+    "expected_names": [
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0268",
+    "category": "typo_variation",
+    "question": "emplyee EMP-1010 details",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1010"
+    ],
+    "expected_names": [
+      "Varun Patel"
+    ]
+  },
+  {
+    "id": "TEST_0269",
+    "category": "typo_variation",
+    "question": "best preformer",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0270",
+    "category": "typo_variation",
+    "question": "avrg salary",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0271",
+    "category": "typo_variation",
+    "question": "totl salary of all employees",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0272",
+    "category": "typo_variation",
+    "question": "who has the higest salary?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0273",
+    "category": "typo_variation",
+    "question": "which depatment pays most?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0274",
+    "category": "typo_variation",
+    "question": "city with mximum employees",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0275",
+    "category": "typo_variation",
+    "question": "slary of Sunita Joshi",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0276",
+    "category": "typo_variation",
+    "question": "whre does Aditya Kulkarni live?",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1002"
+    ],
+    "expected_names": [
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0277",
+    "category": "typo_variation",
+    "question": "designtion of Meera Singh",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1003"
+    ],
+    "expected_names": [
+      "Meera Singh"
+    ]
+  },
+  {
+    "id": "TEST_0278",
+    "category": "typo_variation",
+    "question": "who erans the lowest?",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0279",
+    "category": "typo_variation",
+    "question": "scnd highest paid employee",
+    "expected_op": "RANK",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0280",
+    "category": "typo_variation",
+    "question": "thrd highest earner",
+    "expected_op": "RANK",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0281",
+    "category": "abbreviation_and_slang",
+    "question": "employees in blr",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0282",
+    "category": "abbreviation_and_slang",
+    "question": "staff in hyd",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0283",
+    "category": "abbreviation_and_slang",
+    "question": "who is in hr",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0284",
+    "category": "abbreviation_and_slang",
+    "question": "devs in eng",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0285",
+    "category": "abbreviation_and_slang",
+    "question": "folks based in del",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0286",
+    "category": "abbreviation_and_slang",
+    "question": "peeps in bom",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0287",
+    "category": "abbreviation_and_slang",
+    "question": "yo who makes the most cash",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0288",
+    "category": "abbreviation_and_slang",
+    "question": "show me the best performer bro",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0289",
+    "category": "abbreviation_and_slang",
+    "question": "who gets paid least dude",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0290",
+    "category": "abbreviation_and_slang",
+    "question": "top earner in the company",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0291",
+    "category": "abbreviation_and_slang",
+    "question": "who takes home the biggest paycheck",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0292",
+    "category": "abbreviation_and_slang",
+    "question": "give me the count of employees in blr",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0293",
+    "category": "abbreviation_and_slang",
+    "question": "how many heads in hyd",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0294",
+    "category": "abbreviation_and_slang",
+    "question": "number of people in hr",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0295",
+    "category": "abbreviation_and_slang",
+    "question": "who is the rockstar here",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0296",
+    "category": "abbreviation_and_slang",
+    "question": "employees in blr",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0297",
+    "category": "abbreviation_and_slang",
+    "question": "staff in hyd",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0298",
+    "category": "abbreviation_and_slang",
+    "question": "who is in hr",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0299",
+    "category": "abbreviation_and_slang",
+    "question": "devs in eng",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0300",
+    "category": "abbreviation_and_slang",
+    "question": "folks based in del",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0301",
+    "category": "abbreviation_and_slang",
+    "question": "peeps in bom",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0302",
+    "category": "abbreviation_and_slang",
+    "question": "yo who makes the most cash",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0303",
+    "category": "abbreviation_and_slang",
+    "question": "show me the best performer bro",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0304",
+    "category": "abbreviation_and_slang",
+    "question": "who gets paid least dude",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0305",
+    "category": "abbreviation_and_slang",
+    "question": "top earner in the company",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0306",
+    "category": "abbreviation_and_slang",
+    "question": "who takes home the biggest paycheck",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0307",
+    "category": "abbreviation_and_slang",
+    "question": "give me the count of employees in blr",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0308",
+    "category": "abbreviation_and_slang",
+    "question": "how many heads in hyd",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0309",
+    "category": "abbreviation_and_slang",
+    "question": "number of people in hr",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0310",
+    "category": "abbreviation_and_slang",
+    "question": "who is the rockstar here",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0311",
+    "category": "single_filter_dept",
+    "question": "List all employees in Finance",
+    "expected_op": "FILTER",
+    "expected_count": 13,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0312",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Finance?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 13.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0313",
+    "category": "single_filter_dept",
+    "question": "List all employees in Marketing",
+    "expected_op": "FILTER",
+    "expected_count": 19,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0314",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Marketing?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 19.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0315",
+    "category": "single_filter_dept",
+    "question": "List all employees in Engineering",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0316",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Engineering?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 11.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0317",
+    "category": "single_filter_dept",
+    "question": "List all employees in Data Science",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0318",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Data Science?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 11.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0319",
+    "category": "single_filter_dept",
+    "question": "List all employees in Sales",
+    "expected_op": "FILTER",
+    "expected_count": 14,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0320",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Sales?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 14.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0321",
+    "category": "single_filter_dept",
+    "question": "List all employees in Human Resources",
+    "expected_op": "FILTER",
+    "expected_count": 12,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0322",
+    "category": "count_filter_dept",
+    "question": "How many employees are in Human Resources?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 12.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0323",
+    "category": "single_filter_city",
+    "question": "Employees located in Delhi",
+    "expected_op": "FILTER",
+    "expected_count": 16,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0324",
+    "category": "count_filter_city",
+    "question": "How many employees are in Delhi?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 16.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0325",
+    "category": "single_filter_city",
+    "question": "Employees located in Chennai",
+    "expected_op": "FILTER",
+    "expected_count": 18,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0326",
+    "category": "count_filter_city",
+    "question": "How many employees are in Chennai?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 18.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0327",
+    "category": "single_filter_city",
+    "question": "Employees located in Bengaluru",
+    "expected_op": "FILTER",
+    "expected_count": 10,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0328",
+    "category": "count_filter_city",
+    "question": "How many employees are in Bengaluru?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 10.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0329",
+    "category": "single_filter_city",
+    "question": "Employees located in Hyderabad",
+    "expected_op": "FILTER",
+    "expected_count": 15,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0330",
+    "category": "count_filter_city",
+    "question": "How many employees are in Hyderabad?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 15.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0331",
+    "category": "single_filter_city",
+    "question": "Employees located in Mumbai",
+    "expected_op": "FILTER",
+    "expected_count": 12,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0332",
+    "category": "count_filter_city",
+    "question": "How many employees are in Mumbai?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 12.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0333",
+    "category": "single_filter_city",
+    "question": "Employees located in Pune",
+    "expected_op": "FILTER",
+    "expected_count": 9,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0334",
+    "category": "count_filter_city",
+    "question": "How many employees are in Pune?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 9.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0335",
+    "category": "salary_threshold_gt",
+    "question": "Who earns more than 800000?",
+    "expected_op": "FILTER",
+    "expected_count": 61,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0336",
+    "category": "salary_threshold_lt",
+    "question": "Who earns less than 800000?",
+    "expected_op": "FILTER",
+    "expected_count": 18,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0337",
+    "category": "salary_threshold_gt",
+    "question": "Who earns more than 1000000?",
+    "expected_op": "FILTER",
+    "expected_count": 51,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0338",
+    "category": "salary_threshold_lt",
+    "question": "Who earns less than 1000000?",
+    "expected_op": "FILTER",
+    "expected_count": 29,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0339",
+    "category": "salary_threshold_gt",
+    "question": "Who earns more than 1500000?",
+    "expected_op": "FILTER",
+    "expected_count": 25,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0340",
+    "category": "salary_threshold_lt",
+    "question": "Who earns less than 1500000?",
+    "expected_op": "FILTER",
+    "expected_count": 54,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0341",
+    "category": "salary_threshold_gt",
+    "question": "Who earns more than 2000000?",
+    "expected_op": "FILTER",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0342",
+    "category": "salary_threshold_lt",
+    "question": "Who earns less than 2000000?",
+    "expected_op": "FILTER",
+    "expected_count": 77,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0343",
+    "category": "score_threshold",
+    "question": "Employees with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 47,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0344",
+    "category": "score_threshold",
+    "question": "Employees with performance score at least 4.5",
+    "expected_op": "FILTER",
+    "expected_count": 25,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0345",
+    "category": "score_threshold",
+    "question": "Employees with performance score at least 4.8",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0346",
+    "category": "single_filter_extra",
+    "question": "Employees joining after 2024",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0347",
+    "category": "single_filter_extra",
+    "question": "Staff with performance score above 4.7",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0348",
+    "category": "single_filter_extra",
+    "question": "Employees earning exactly 1490000",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0349",
+    "category": "single_filter_extra",
+    "question": "Employees in Human Resources department",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0350",
+    "category": "single_filter_extra",
+    "question": "Staff in Engineering department",
+    "expected_op": "FILTER",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0351",
+    "category": "multi_condition",
+    "question": "Employees in Engineering based in Hyderabad",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0352",
+    "category": "multi_condition_count",
+    "question": "How many employees in Engineering are in Hyderabad?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 2.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0353",
+    "category": "multi_condition_sal",
+    "question": "Engineering employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0354",
+    "category": "multi_condition_score",
+    "question": "Engineering staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0355",
+    "category": "multi_condition",
+    "question": "Employees in Engineering based in Bengaluru",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0356",
+    "category": "multi_condition_count",
+    "question": "How many employees in Engineering are in Bengaluru?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 1.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0357",
+    "category": "multi_condition_sal",
+    "question": "Engineering employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0358",
+    "category": "multi_condition_score",
+    "question": "Engineering staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0359",
+    "category": "multi_condition",
+    "question": "Employees in Sales based in Mumbai",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0360",
+    "category": "multi_condition_count",
+    "question": "How many employees in Sales are in Mumbai?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 1.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0361",
+    "category": "multi_condition_sal",
+    "question": "Sales employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 6,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0362",
+    "category": "multi_condition_score",
+    "question": "Sales staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 7,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0363",
+    "category": "multi_condition",
+    "question": "Employees in Sales based in Delhi",
+    "expected_op": "FILTER",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0364",
+    "category": "multi_condition_count",
+    "question": "How many employees in Sales are in Delhi?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 2.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0365",
+    "category": "multi_condition_sal",
+    "question": "Sales employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 6,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0366",
+    "category": "multi_condition_score",
+    "question": "Sales staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 7,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0367",
+    "category": "multi_condition",
+    "question": "Employees in Marketing based in Delhi",
+    "expected_op": "FILTER",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0368",
+    "category": "multi_condition_count",
+    "question": "How many employees in Marketing are in Delhi?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 5.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0369",
+    "category": "multi_condition_sal",
+    "question": "Marketing employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0370",
+    "category": "multi_condition_score",
+    "question": "Marketing staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0371",
+    "category": "multi_condition",
+    "question": "Employees in Finance based in Chennai",
+    "expected_op": "FILTER",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0372",
+    "category": "multi_condition_count",
+    "question": "How many employees in Finance are in Chennai?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 5.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0373",
+    "category": "multi_condition_sal",
+    "question": "Finance employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 9,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0374",
+    "category": "multi_condition_score",
+    "question": "Finance staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 8,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0375",
+    "category": "multi_condition",
+    "question": "Employees in Data Science based in Hyderabad",
+    "expected_op": "FILTER",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0376",
+    "category": "multi_condition_count",
+    "question": "How many employees in Data Science are in Hyderabad?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 3.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0377",
+    "category": "multi_condition_sal",
+    "question": "Data Science employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 8,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0378",
+    "category": "multi_condition_score",
+    "question": "Data Science staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 10,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0379",
+    "category": "multi_condition",
+    "question": "Employees in Data Science based in Bengaluru",
+    "expected_op": "FILTER",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0380",
+    "category": "multi_condition_count",
+    "question": "How many employees in Data Science are in Bengaluru?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 1.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0381",
+    "category": "multi_condition_sal",
+    "question": "Data Science employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 8,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0382",
+    "category": "multi_condition_score",
+    "question": "Data Science staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 10,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0383",
+    "category": "multi_condition",
+    "question": "Employees in Human Resources based in Pune",
+    "expected_op": "FILTER",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0384",
+    "category": "multi_condition_count",
+    "question": "How many employees in Human Resources are in Pune?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 3.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0385",
+    "category": "multi_condition_sal",
+    "question": "Human Resources employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 6,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0386",
+    "category": "multi_condition_score",
+    "question": "Human Resources staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 6,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0387",
+    "category": "multi_condition",
+    "question": "Employees in Engineering based in Chennai",
+    "expected_op": "FILTER",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0388",
+    "category": "multi_condition_count",
+    "question": "How many employees in Engineering are in Chennai?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 3.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0389",
+    "category": "multi_condition_sal",
+    "question": "Engineering employees earning over 1000000",
+    "expected_op": "FILTER",
+    "expected_count": 11,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0390",
+    "category": "multi_condition_score",
+    "question": "Engineering staff with performance score at least 4.0",
+    "expected_op": "FILTER",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0391",
+    "category": "aggregation_overall",
+    "question": "What is the average salary?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1247875.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0392",
+    "category": "aggregation_overall",
+    "question": "What is the total salary paid to all employees?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 99830000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0393",
+    "category": "aggregation_overall",
+    "question": "What is the median salary?",
+    "expected_op": "MEDIAN",
+    "expected_count": null,
+    "expected_agg_val": 1275000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0394",
+    "category": "aggregation_overall",
+    "question": "What is the average performance score?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 4.09,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0395",
+    "category": "aggregation_overall",
+    "question": "What is the maximum salary?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 2370000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0396",
+    "category": "aggregation_overall",
+    "question": "What is the minimum salary?",
+    "expected_op": "MIN",
+    "expected_count": null,
+    "expected_agg_val": 450000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0397",
+    "category": "aggregation_overall",
+    "question": "How many total employees are there?",
+    "expected_op": "COUNT",
+    "expected_count": null,
+    "expected_agg_val": 80.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0398",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Finance?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1264615.38,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0399",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Finance?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 16440000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0400",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Finance?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 1830000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0401",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Finance?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 4.05,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0402",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Marketing?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1087894.74,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0403",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Marketing?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 20670000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0404",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Marketing?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 1700000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0405",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Marketing?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 4.03,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0406",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Engineering?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1685454.55,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0407",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Engineering?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 18540000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0408",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Engineering?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 2370000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0409",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Engineering?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 3.85,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0410",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Data Science?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1433636.36,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0411",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Data Science?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 15770000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0412",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Data Science?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 2310000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0413",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Data Science?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 4.48,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0414",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Sales?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1147142.86,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0415",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Sales?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 16060000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0416",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Sales?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 1930000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0417",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Sales?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 3.99,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0418",
+    "category": "agg_dept_avg",
+    "question": "What is the average salary in Human Resources?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1029166.67,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0419",
+    "category": "agg_dept_sum",
+    "question": "What is the total salary in Human Resources?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 12350000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0420",
+    "category": "agg_dept_max",
+    "question": "What is the highest salary in Human Resources?",
+    "expected_op": "MAX",
+    "expected_count": null,
+    "expected_agg_val": 1570000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0421",
+    "category": "agg_dept_score",
+    "question": "What is the average performance score in Human Resources?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 4.18,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0422",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Delhi?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1242500.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0423",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Delhi?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 19880000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0424",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Chennai?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1293888.89,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0425",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Chennai?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 23290000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0426",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Bengaluru?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1150000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0427",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Bengaluru?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 11500000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0428",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Hyderabad?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1215333.33,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0429",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Hyderabad?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 18230000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0430",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Mumbai?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1191666.67,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0431",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Mumbai?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 14300000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0432",
+    "category": "agg_city_avg",
+    "question": "What is the average salary in Pune?",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1403333.33,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0433",
+    "category": "agg_city_sum",
+    "question": "What is the total salary in Pune?",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 12630000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0434",
+    "category": "agg_extra",
+    "question": "Average salary of people in Hyderabad",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1215333.33,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0435",
+    "category": "agg_extra",
+    "question": "Average salary of people in Bengaluru",
+    "expected_op": "AVERAGE",
+    "expected_count": null,
+    "expected_agg_val": 1150000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0436",
+    "category": "agg_extra",
+    "question": "Total payroll cost for Mumbai office",
+    "expected_op": "SUM",
+    "expected_count": null,
+    "expected_agg_val": 14300000.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0437",
+    "category": "extreme",
+    "question": "Who has the highest salary?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1049"
+    ],
+    "expected_names": [
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0438",
+    "category": "extreme",
+    "question": "Who has the lowest salary?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1028"
+    ],
+    "expected_names": [
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0439",
+    "category": "extreme",
+    "question": "Who is the best performer?",
+    "expected_op": "MAX",
+    "expected_count": 4,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0440",
+    "category": "extreme",
+    "question": "Who joined most recently?",
+    "expected_op": "DATE_EXTREME",
+    "expected_count": 2,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0441",
+    "category": "extreme",
+    "question": "Who joined earliest?",
+    "expected_op": "DATE_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1043"
+    ],
+    "expected_names": [
+      "Sunita Joshi"
+    ]
+  },
+  {
+    "id": "TEST_0442",
+    "category": "ranking",
+    "question": "Who is the second highest paid?",
+    "expected_op": "RANK",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1050"
+    ],
+    "expected_names": [
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0443",
+    "category": "ranking",
+    "question": "Who is the third highest paid?",
+    "expected_op": "RANK",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [
+      "EMP-1040"
+    ],
+    "expected_names": [
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0444",
+    "category": "ranking",
+    "question": "Who is the 2nd lowest paid?",
+    "expected_op": "RANK",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0445",
+    "category": "ranking",
+    "question": "Top 5 highest paid employees",
+    "expected_op": "TOP_N",
+    "expected_count": 5,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0446",
+    "category": "ranking",
+    "question": "Top 3 highest salaries",
+    "expected_op": "TOP_N",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0447",
+    "category": "ranking",
+    "question": "Bottom 3 lowest paid employees",
+    "expected_op": "BOTTOM_N",
+    "expected_count": 3,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0448",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Finance?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0449",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Finance?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0450",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Marketing?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0451",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Marketing?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0452",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Engineering?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0453",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Engineering?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0454",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Data Science?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0455",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Data Science?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0456",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Sales?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0457",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Sales?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0458",
+    "category": "dept_extreme",
+    "question": "Who is the highest paid in Human Resources?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0459",
+    "category": "dept_extreme",
+    "question": "Who has the lowest salary in Human Resources?",
+    "expected_op": "MIN",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0460",
+    "category": "city_extreme",
+    "question": "Who has the highest salary in Hyderabad?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0461",
+    "category": "city_extreme",
+    "question": "Who has the highest salary in Bengaluru?",
+    "expected_op": "MAX",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0462",
+    "category": "group_extreme",
+    "question": "Which department has the highest average salary?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Engineering"
+    ]
+  },
+  {
+    "id": "TEST_0463",
+    "category": "group_extreme",
+    "question": "Which city has the most employees?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Chennai"
+    ]
+  },
+  {
+    "id": "TEST_0464",
+    "category": "group_extreme",
+    "question": "Which department has the most employees?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0465",
+    "category": "group_extreme",
+    "question": "Which city has the fewest employees?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0466",
+    "category": "group_extreme",
+    "question": "Which department has the lowest average salary?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0467",
+    "category": "group_extreme",
+    "question": "Department with highest average salary",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Engineering"
+    ]
+  },
+  {
+    "id": "TEST_0468",
+    "category": "group_extreme",
+    "question": "City with highest employee count",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Chennai"
+    ]
+  },
+  {
+    "id": "TEST_0469",
+    "category": "group_extreme",
+    "question": "Which department pays the highest average salary?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Engineering"
+    ]
+  },
+  {
+    "id": "TEST_0470",
+    "category": "group_extreme",
+    "question": "Which city has the maximum staff?",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Chennai"
+    ]
+  },
+  {
+    "id": "TEST_0471",
+    "category": "group_extreme",
+    "question": "Department with greatest average salary",
+    "expected_op": "GROUP_EXTREME",
+    "expected_count": 1,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Engineering"
+    ]
+  },
+  {
+    "id": "TEST_0472",
+    "category": "cross_row",
+    "question": "Who earns the same salary?",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0473",
+    "category": "cross_row",
+    "question": "Show employees with identical salary",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0474",
+    "category": "cross_row",
+    "question": "Who has duplicate salaries?",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0475",
+    "category": "cross_row",
+    "question": "Employees who make the exact same salary",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0476",
+    "category": "cross_row",
+    "question": "Who joined on the same date?",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0477",
+    "category": "cross_row",
+    "question": "Which employees share the same salary amount?",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0478",
+    "category": "cross_row",
+    "question": "Employees having identical compensation",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0479",
+    "category": "cross_row",
+    "question": "Find people with matching salaries",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0480",
+    "category": "cross_row",
+    "question": "Who earns equal salary?",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0481",
+    "category": "cross_row",
+    "question": "Employees with the same joining date",
+    "expected_op": "CROSS_ROW",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0482",
+    "category": "unmatched_or_zero",
+    "question": "How many employees are in IT?",
+    "expected_op": "COUNT",
+    "expected_count": 0,
+    "expected_agg_val": 0.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0483",
+    "category": "unmatched_or_zero",
+    "question": "List all employees in Tokyo",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0484",
+    "category": "unmatched_or_zero",
+    "question": "Who is Bruce Wayne?",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0485",
+    "category": "unmatched_or_zero",
+    "question": "Employees in Chicago",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0486",
+    "category": "unmatched_or_zero",
+    "question": "Staff in Aerospace department",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0487",
+    "category": "unmatched_or_zero",
+    "question": "What is our stock price today?",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0488",
+    "category": "unmatched_or_zero",
+    "question": "Who is Clark Kent?",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0489",
+    "category": "unmatched_or_zero",
+    "question": "Employees with salary above 5000000",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0490",
+    "category": "unmatched_or_zero",
+    "question": "Employees in London office",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0491",
+    "category": "unmatched_or_zero",
+    "question": "Count of staff in Legal department",
+    "expected_op": "COUNT",
+    "expected_count": 0,
+    "expected_agg_val": 0.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0492",
+    "category": "unmatched_or_zero",
+    "question": "Who works in Paris?",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0493",
+    "category": "unmatched_or_zero",
+    "question": "Details for EMP-9999",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0494",
+    "category": "unmatched_or_zero",
+    "question": "Information about John Doe",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0495",
+    "category": "unmatched_or_zero",
+    "question": "Staff in Logistics division",
+    "expected_op": "FILTER",
+    "expected_count": 0,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0496",
+    "category": "unmatched_or_zero",
+    "question": "How many workers in Sydney?",
+    "expected_op": "COUNT",
+    "expected_count": 0,
+    "expected_agg_val": 0.0,
+    "expected_ids": [],
+    "expected_names": []
+  },
+  {
+    "id": "TEST_0497",
+    "category": "comparison",
+    "question": "Compare salary of Tanvi Iyer and Aarav Sharma",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Tanvi Iyer",
+      "Aarav Sharma"
+    ]
+  },
+  {
+    "id": "TEST_0498",
+    "category": "comparison",
+    "question": "Compare salary of Ananya Reddy and Vikram Mehta",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Ananya Reddy",
+      "Vikram Mehta"
+    ]
+  },
+  {
+    "id": "TEST_0499",
+    "category": "comparison",
+    "question": "Compare salary of Sunita Joshi and Aditya Kulkarni",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Sunita Joshi",
+      "Aditya Kulkarni"
+    ]
+  },
+  {
+    "id": "TEST_0500",
+    "category": "comparison",
+    "question": "Compare salary of Varun Patel and Gaurav Gupta",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Varun Patel",
+      "Gaurav Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0501",
+    "category": "comparison",
+    "question": "Compare salary of Gaurav Gupta and Tanvi Iyer",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Gaurav Gupta",
+      "Tanvi Iyer"
+    ]
+  },
+  {
+    "id": "TEST_0502",
+    "category": "comparison",
+    "question": "Compare salary of Aarav Sharma and Nikhil Nair",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Aarav Sharma",
+      "Nikhil Nair"
+    ]
+  },
+  {
+    "id": "TEST_0503",
+    "category": "comparison",
+    "question": "Compare salary of Meera Singh and Aarav Rao",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Meera Singh",
+      "Aarav Rao"
+    ]
+  },
+  {
+    "id": "TEST_0504",
+    "category": "comparison",
+    "question": "Compare salary of Shweta Singh and Ritu Reddy",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Shweta Singh",
+      "Ritu Reddy"
+    ]
+  },
+  {
+    "id": "TEST_0505",
+    "category": "comparison",
+    "question": "Compare salary of Meera Gupta and Ananya Gupta",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Meera Gupta",
+      "Ananya Gupta"
+    ]
+  },
+  {
+    "id": "TEST_0506",
+    "category": "comparison",
+    "question": "Compare salary of Nikhil Nair and Sunita Joshi",
+    "expected_op": "COMPARE",
+    "expected_count": null,
+    "expected_agg_val": null,
+    "expected_ids": [],
+    "expected_names": [
+      "Nikhil Nair",
+      "Sunita Joshi"
+    ]
+  }
+]

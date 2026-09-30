@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+HP-001,Shimla_Village_01,22740,10913,11827,90.6,30.55,4980,Himachal Pradesh,Shimla
+HP-002,Shimla_Village_02,8654,4415,4239,74.9,37.99,1773,Himachal Pradesh,Shimla
+HP-003,Shimla_Village_03,9950,4854,5096,84.7,37.49,2399,Himachal Pradesh,Shimla
+HP-004,Shimla_Village_04,14487,7321,7166,88.3,41.03,3028,Himachal Pradesh,Shimla
+HP-005,Shimla_Village_05,7478,3724,3754,79.9,5.85,1879,Himachal Pradesh,Shimla
+HP-006,Shimla_Village_06,10282,4903,5379,70.0,28.77,2489,Himachal Pradesh,Shimla
+HP-007,Shimla_Village_07,15751,7768,7983,93.7,5.07,3060,Himachal Pradesh,Shimla
+HP-008,Shimla_Village_08,22129,10710,11419,68.5,15.56,6107,Himachal Pradesh,Shimla
+HP-009,Shimla_Village_09,8584,4406,4178,84.1,13.46,2147,Himachal Pradesh,Shimla
+HP-010,Shimla_Village_10,16747,8487,8260,77.0,17.71,4573,Himachal Pradesh,Shimla

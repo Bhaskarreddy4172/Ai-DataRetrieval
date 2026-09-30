@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+MP-001,Bhopal_Village_01,50916,23948,26968,80.0,36.73,13314,Madhya Pradesh,Bhopal
+MP-002,Bhopal_Village_02,25049,13146,11903,85.6,34.74,7276,Madhya Pradesh,Bhopal
+MP-003,Bhopal_Village_03,32767,15976,16791,79.3,34.91,7613,Madhya Pradesh,Bhopal
+MP-004,Bhopal_Village_04,31787,15320,16467,77.3,16.13,8204,Madhya Pradesh,Bhopal
+MP-005,Bhopal_Village_05,82806,42480,40326,72.5,36.27,22253,Madhya Pradesh,Bhopal
+MP-006,Bhopal_Village_06,67633,32424,35209,84.4,9.24,19123,Madhya Pradesh,Bhopal
+MP-007,Bhopal_Village_07,71567,37094,34473,77.2,11.96,17043,Madhya Pradesh,Bhopal
+MP-008,Bhopal_Village_08,27130,14320,12810,89.9,14.49,7170,Madhya Pradesh,Bhopal
+MP-009,Bhopal_Village_09,66080,34255,31825,86.2,11.84,14815,Madhya Pradesh,Bhopal
+MP-010,Bhopal_Village_10,32383,16319,16064,78.1,15.26,7807,Madhya Pradesh,Bhopal

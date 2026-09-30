@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # 1. FastAPI Backend & Chat UI Server
+  chatbot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dataset-chatbot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - OLLAMA_HOST=http://ollama:11434
+      - OLLAMA_MODEL=llama3.1:8b
+      - LOG_LEVEL=INFO
+    volumes:
+      - uploads_data:/app/uploads
+      - app_db:/app/app.db
+    depends_on:
+      - ollama
+    networks:
+      - chatbot-network
+
+  # 2. Local Ollama LLM Engine
+  ollama:
+    image: ollama/ollama:latest
+    container_name: dataset-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - chatbot-network
+
+volumes:
+  ollama_models:
+    name: dataset_chatbot_ollama_models
+  uploads_data:
+    name: dataset_chatbot_uploads
+  app_db:
+    name: dataset_chatbot_db
+
+networks:
+  chatbot-network:
+    name: dataset_chatbot_network
+    driver: bridge
+

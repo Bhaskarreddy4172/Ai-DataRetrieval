@@ -1,0 +1,677 @@
+<USER_REQUEST>
+# UNIVERSAL DATASET CHATBOT (OLLAMA + PYTHON + PANDAS + VECTOR SEARCH)
+
+## IMPLEMENTATION PROMPT WITH CONCRETE DELIVERABLES
+
+You are a **Senior AI Engineer, Full Stack Engineer, NLP Engineer, ML Engineer, Python Engineer, and UI/UX Engineer**.
+
+Your task is **NOT to explain** the solution.
+
+Your task is to **inspect the existing project and transform it into a production-ready AI Dataset Chatbot** similar to ChatGPT.
+
+The chatbot should answer questions **only from the uploaded dataset**, regardless of how the customer asks the question.
+
+The customer can ask:
+
+* Proper English
+* Broken English
+* Butler English
+* Hinglish
+* Telugu-English
+* Hindi-English
+* Mixed language
+* Typos
+* Phonetic spelling
+* Abbreviations
+* Slang
+* One-word questions
+* Follow-up conversational questions
+* Completely unseen questions
+
+The system must understand meaning and retrieve the answer **only from the uploaded dataset**.
+
+---
+
+# DELIVERABLE 1 — COMPLETE PROJECT RESTRUCTURING
+
+Restructure the project into a modular production architecture.
+
+```text
+Dataset-Chatbot/
+│
+├── frontend/                     # React + Tailwind Chat UI
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── chatbot/
+│   │   ├── upload/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   └── context/
+│   └── package.json
+│
+├── backend/                      # FastAPI
+│   ├── app.py
+│   ├── config.py
+│   ├── api/
+│   ├── services/
+│   ├── models/
+│   ├── utils/
+│   ├── engine/
+│   ├── vectorstore/
+│   ├── datasets/
+│   ├── cache/
+│   ├── logs/
+│   ├── tests/
+│   └── requirements.txt
+│
+├── ollama_models/
+├── uploads/
+├── benchmark/
+├── docs/
+├── README.md
+└── docker-compose.yml
+```
+
+Everything should be modular.
+
+---
+
+# DELIVERABLE 2 — CHATGPT-LIKE CHAT INTERFACE
+
+Build a responsive chatbot UI.
+
+Features:
+
+* Chat bubbles.
+* Typing animation.
+* AI thinking indicator.
+* User typing indicator.
+* Markdown support.
+* Table rendering.
+* Code rendering.
+* Copy response button.
+* Clear chat button.
+* Download chat button.
+* Dark mode.
+* Mobile responsive.
+* Desktop responsive.
+
+Top panel should show:
+
+* Dataset name.
+* Number of rows.
+* Number of columns.
+* Upload timestamp.
+* Active model (Ollama).
+* Dataset status.
+
+Bottom panel:
+
+* Chat textbox.
+* Upload dataset button.
+* Send button.
+* Enter to send.
+* Shift + Enter newline.
+
+---
+
+# DELIVERABLE 3 — UNIVERSAL DATASET UPLOAD ENGINE
+
+Support uploading:
+
+* CSV
+* XLSX
+* JSON
+
+Automatically:
+
+* Detect delimiter.
+* Detect encoding.
+* Detect sheet.
+* Detect headers.
+* Detect datatypes.
+* Detect missing values.
+* Detect duplicate rows.
+* Detect entity columns.
+* Detect numeric columns.
+* Detect date columns.
+* Detect categorical columns.
+
+Generate:
+
+```json
+{
+  "dataset_name":"",
+  "rows":0,
+  "columns":0,
+  "column_types":{},
+  "entities":[],
+  "relationships":[]
+}
+```
+
+Store metadata.
+
+---
+
+# DELIVERABLE 4 — DATASET INDEXING ENGINE
+
+When dataset uploads:
+
+Create indexes.
+
+Generate:
+
+* Vocabulary index.
+* Entity index.
+* Alias index.
+* Fuzzy index.
+* Phonetic index.
+* Embedding index.
+* Row index.
+* Column index.
+
+Cache everything.
+
+Use:
+
+* FAISS / ChromaDB
+* Sentence Transformers embeddings.
+* RapidFuzz index.
+
+No repeated indexing.
+
+---
+
+# DELIVERABLE 5 — SPELL CORRECTION ENGINE
+
+Create:
+
+`spell_checker.py`
+
+Implement:
+
+* RapidFuzz.
+* SymSpell.
+* Edit Distance.
+* Levenshtein.
+* Double Metaphone.
+* Soundex.
+
+Return:
+
+```json
+{
+ "original":"hydrabad",
+ "corrected":"Hyderabad",
+ "confidence":0.98
+}
+```
+
+Should correct:
+
+* State names.
+* Capital names.
+* Cities.
+* Person names.
+* Departments.
+* Products.
+* Dataset values.
+
+---
+
+# DELIVERABLE 6 — ENTITY RESOLUTION ENGINE
+
+Create:
+
+`entity_resolver.py`
+
+Responsibilities:
+
+* Detect entities.
+* Detect aliases.
+* Detect abbreviations.
+* Detect phonetic variants.
+* Detect plural/singular.
+* Detect spelling variants.
+
+Support dynamic datasets.
+
+Examples:
+
+Hyd → Hyderabad
+
+HYD → Hyderabad
+
+hydrabad → Hyderabad
+
+Hyderbad → Hyderabad
+
+Banglore → Bengaluru
+
+---
+
+# DELIVERABLE 7 — MULTILINGUAL LANGUAGE NORMALIZER
+
+Create:
+
+`language_normalizer.py`
+
+Support:
+
+* English.
+* Hinglish.
+* Butler English.
+* Telugu-English.
+* Hindi-English.
+* Tamil-English.
+* Kannada-English.
+
+Normalize into English semantic representation.
+
+Example:
+
+"Hyd kis state mein"
+
+↓
+
+"What state is Hyderabad in?"
+
+---
+
+# DELIVERABLE 8 — SEMANTIC COLUMN MAPPING ENGINE
+
+Create:
+
+`semantic_mapper.py`
+
+Automatically map:
+
+Salary
+
+↓
+
+Compensation
+
+Income
+
+Package
+
+CTC
+
+Pay
+
+Earnings
+
+Works for any dataset.
+
+No hardcoding.
+
+---
+
+# DELIVERABLE 9 — QUERY INTENT DETECTOR
+
+Create:
+
+`intent_detector.py`
+
+Support 100+ intents.
+
+Examples:
+
+* Lookup.
+* Reverse Lookup.
+* Boolean.
+* Aggregation.
+* Ranking.
+* Filtering.
+* Grouping.
+* Comparison.
+* Date.
+* Trend.
+* Percentage.
+* Relationship.
+* Multi-hop.
+* Summary.
+
+Return structured JSON.
+
+---
+
+# DELIVERABLE 10 — QUERY PLANNER
+
+Create:
+
+`query_planner.py`
+
+Convert natural language into JSON Query DSL.
+
+Never SQL directly.
+
+Example:
+
+```json
+{
+ "intent":"MAX",
+ "filters":[...],
+ "metric":"Salary",
+ "sort":"DESC"
+}
+```
+
+---
+
+# DELIVERABLE 11 — QUERY VALIDATOR
+
+Create:
+
+`query_validator.py`
+
+Validate:
+
+* Columns exist.
+* Values exist.
+* Operators valid.
+* Datatype valid.
+* Aggregation valid.
+* Join valid.
+* Entity valid.
+
+Return validation report.
+
+---
+
+# DELIVERABLE 12 — DATA EXECUTION ENGINE
+
+Create:
+
+`query_executor.py`
+
+Use:
+
+* Pandas.
+* DuckDB.
+
+Never Ollama.
+
+Execute:
+
+* MAX
+* MIN
+* AVG
+* SUM
+* COUNT
+* GROUP
+* JOIN
+* SORT
+* FILTER
+* BETWEEN
+* DISTINCT
+* TOP-N
+* BOTTOM-N
+
+Return verified dataframe.
+
+---
+
+# DELIVERABLE 13 — CONVERSATION MEMORY ENGINE
+
+Create:
+
+`conversation_manager.py`
+
+Maintain:
+
+* Previous entity.
+* Previous row.
+* Previous filter.
+* Previous ranking.
+* Previous dataset.
+* Previous question.
+
+Support:
+
+"Where does she work?"
+
+"What about second one?"
+
+"How much does he earn?"
+
+---
+
+# DELIVERABLE 14 — AMBIGUITY ENGINE
+
+Create:
+
+`ambiguity_engine.py`
+
+Detect ambiguous questions.
+
+Ask clarification.
+
+Never guess.
+
+---
+
+# DELIVERABLE 15 — HALLUCINATION FIREWALL
+
+Create:
+
+`answer_validator.py`
+
+Every response must match verified dataframe.
+
+Reject hallucinated information.
+
+---
+
+# DELIVERABLE 16 — GENERAL KNOWLEDGE ROUTER
+
+Create:
+
+`router.py`
+
+Classify:
+
+* DATASET
+* GENERAL
+* HYBRID
+* UNSUPPORTED
+
+Never mix dataset with model memory.
+
+---
+
+# DELIVERABLE 17 — API ENDPOINTS
+
+Build FastAPI endpoints.
+
+| Endpoint             | Purpose             |
+| -------------------- | ------------------- |
+| POST /upload         | Upload dataset      |
+| GET /dataset/profile | Dataset metadata    |
+| POST /chat           | Ask question        |
+| POST /clear-chat     | Clear conversation  |
+| POST /new-session    | New dataset session |
+| GET /history         | Chat history        |
+| GET /download-chat   | Export chat         |
+| GET /health          | API health          |
+
+Return JSON responses.
+
+---
+
+# DELIVERABLE 18 — OLLAMA INTEGRATION
+
+Integrate:
+
+* llama3.1
+* mistral
+* qwen2.5
+* gemma3
+
+Configurable model.
+
+Streaming responses.
+
+Temperature control.
+
+Context window control.
+
+---
+
+# DELIVERABLE 19 — EMBEDDING SEARCH
+
+Create hybrid retrieval.
+
+Combine:
+
+* Exact search.
+* Fuzzy search.
+* Semantic embeddings.
+* Entity lookup.
+* Column lookup.
+
+Rank candidates.
+
+---
+
+# DELIVERABLE 20 — TESTING FRAMEWORK
+
+Generate:
+
+`benchmark/`
+
+Automatically create **10,000+ questions**.
+
+Categories:
+
+* Typos.
+* Butler English.
+* Hinglish.
+* Informal.
+* Slang.
+* Abbreviations.
+* Possessive.
+* Reverse.
+* Boolean.
+* Comparison.
+* Multi-hop.
+* Follow-up.
+
+Store expected query plan.
+
+Store expected answer.
+
+---
+
+# DELIVERABLE 21 — ACCURACY DASHBOARD
+
+Create dashboard.
+
+Metrics:
+
+* Intent Accuracy.
+* Entity Accuracy.
+* Spell Accuracy.
+* Query Accuracy.
+* Retrieval Accuracy.
+* Final Accuracy.
+* Hallucination Rate.
+
+Export CSV.
+
+---
+
+# DELIVERABLE 22 — FAILURE LEARNING ENGINE
+
+Log every failure.
+
+Create:
+
+`failure_analyzer.py`
+
+Store:
+
+Question.
+
+Expected.
+
+Predicted.
+
+Reason.
+
+Automatically create regression tests.
+
+---
+
+# DELIVERABLE 23 — PRODUCTION FEATURES
+
+Implement:
+
+* Docker.
+* Environment variables.
+* Logging.
+* Error handling.
+* File validation.
+* Session management.
+* Caching.
+* Progress bars.
+* Loading indicators.
+
+---
+
+# DELIVERABLE 24 — DOCUMENTATION
+
+Generate complete documentation.
+
+Include:
+
+* Installation.
+* Folder structure.
+* API documentation.
+* Ollama setup.
+* Python setup.
+* Frontend setup.
+* Backend setup.
+* Docker setup.
+* Running locally.
+* Running with Ollama.
+
+---
+
+# DELIVERABLE 25 — ACCEPTANCE TEST
+
+Before completion, automatically verify:
+
+* Upload new dataset.
+* Ask unseen questions.
+* Ask typo questions.
+* Ask Hinglish questions.
+* Ask Butler English questions.
+* Ask phonetic questions.
+* Ask abbreviation questions.
+* Ask follow-up questions.
+* Upload second dataset.
+* Ensure first dataset is forgotten.
+* Run benchmark.
+* Generate accuracy report.
+
+Project is complete only if every dataset answer comes from the uploaded dataset and hallucination rate is **0%**.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-17T10:54:20+05:30.
+
+The user's current state is as follows:
+Active Document: d:\Demo_Projects\AI-Dataset-Retrieval\app\query\decomposer.py (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 102
+Other open documents:
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\indexer.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\loader.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\semantic_mapper.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\dataset\validator.py (LANGUAGE_UNSPECIFIED)
+- d:\Demo_Projects\AI-Dataset-Retrieval\app\query\analytics.py (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

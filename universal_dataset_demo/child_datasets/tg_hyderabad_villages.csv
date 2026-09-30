@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+TG-001,Hyderabad_Village_01,117305,58045,59260,96.9,7.7,26218,Telangana,Hyderabad
+TG-002,Hyderabad_Village_02,79281,40488,38793,94.3,10.67,22551,Telangana,Hyderabad
+TG-003,Hyderabad_Village_03,75232,38039,37193,69.0,9.33,21270,Telangana,Hyderabad
+TG-004,Hyderabad_Village_04,108554,51688,56866,73.7,22.33,21970,Telangana,Hyderabad
+TG-005,Hyderabad_Village_05,74184,38999,35185,68.3,4.71,17129,Telangana,Hyderabad
+TG-006,Hyderabad_Village_06,102217,48751,53466,91.0,18.84,22977,Telangana,Hyderabad
+TG-007,Hyderabad_Village_07,96290,49912,46378,80.2,20.23,28165,Telangana,Hyderabad
+TG-008,Hyderabad_Village_08,107110,56562,50548,76.0,18.12,25598,Telangana,Hyderabad
+TG-009,Hyderabad_Village_09,116113,60813,55300,73.0,25.15,33461,Telangana,Hyderabad
+TG-010,Hyderabad_Village_10,43527,21869,21658,89.7,39.74,10562,Telangana,Hyderabad

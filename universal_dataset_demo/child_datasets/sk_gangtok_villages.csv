@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+SK-001,Gangtok_Village_01,15403,7611,7792,80.6,5.38,4299,Sikkim,Gangtok
+SK-002,Gangtok_Village_02,17178,8645,8533,77.1,13.43,3501,Sikkim,Gangtok
+SK-003,Gangtok_Village_03,16486,7985,8501,93.5,8.5,4062,Sikkim,Gangtok
+SK-004,Gangtok_Village_04,7328,3873,3455,75.6,9.03,1477,Sikkim,Gangtok
+SK-005,Gangtok_Village_05,6377,3152,3225,69.8,33.97,1564,Sikkim,Gangtok
+SK-006,Gangtok_Village_06,9073,4603,4470,81.0,33.68,2004,Sikkim,Gangtok
+SK-007,Gangtok_Village_07,16373,7713,8660,91.2,28.42,3330,Sikkim,Gangtok
+SK-008,Gangtok_Village_08,8697,4422,4275,90.8,25.87,2087,Sikkim,Gangtok
+SK-009,Gangtok_Village_09,8346,3943,4403,92.8,12.57,1955,Sikkim,Gangtok
+SK-010,Gangtok_Village_10,10682,5181,5501,93.0,31.16,2140,Sikkim,Gangtok

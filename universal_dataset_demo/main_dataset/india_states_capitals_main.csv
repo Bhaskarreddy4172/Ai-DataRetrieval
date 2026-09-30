@@ -1,0 +1,29 @@
+State_ID,State,Capital,State_Code,Child_Dataset
+ST-01,Andhra Pradesh,Amaravati,AP,ap_amaravati_villages.csv
+ST-02,Arunachal Pradesh,Itanagar,AR,ar_itanagar_villages.csv
+ST-03,Assam,Dispur,AS,as_dispur_villages.csv
+ST-04,Bihar,Patna,BR,br_patna_villages.csv
+ST-05,Chhattisgarh,Raipur,CG,cg_raipur_villages.csv
+ST-06,Goa,Panaji,GA,ga_panaji_villages.csv
+ST-07,Gujarat,Gandhinagar,GJ,gj_gandhinagar_villages.csv
+ST-08,Haryana,Chandigarh,HR,hr_chandigarh_villages.csv
+ST-09,Himachal Pradesh,Shimla,HP,hp_shimla_villages.csv
+ST-10,Jharkhand,Ranchi,JH,jh_ranchi_villages.csv
+ST-11,Karnataka,Bengaluru,KA,ka_bengaluru_villages.csv
+ST-12,Kerala,Thiruvananthapuram,KL,kl_thiruvananthapuram_villages.csv
+ST-13,Madhya Pradesh,Bhopal,MP,mp_bhopal_villages.csv
+ST-14,Maharashtra,Mumbai,MH,mh_mumbai_villages.csv
+ST-15,Manipur,Imphal,MN,mn_imphal_villages.csv
+ST-16,Meghalaya,Shillong,ML,ml_shillong_villages.csv
+ST-17,Mizoram,Aizawl,MZ,mz_aizawl_villages.csv
+ST-18,Nagaland,Kohima,NL,nl_kohima_villages.csv
+ST-19,Odisha,Bhubaneswar,OD,od_bhubaneswar_villages.csv
+ST-20,Punjab,Chandigarh,PB,pb_chandigarh_villages.csv
+ST-21,Rajasthan,Jaipur,RJ,rj_jaipur_villages.csv
+ST-22,Sikkim,Gangtok,SK,sk_gangtok_villages.csv
+ST-23,Tamil Nadu,Chennai,TN,tn_chennai_villages.csv
+ST-24,Telangana,Hyderabad,TG,tg_hyderabad_villages.csv
+ST-25,Tripura,Agartala,TR,tr_agartala_villages.csv
+ST-26,Uttar Pradesh,Lucknow,UP,up_lucknow_villages.csv
+ST-27,Uttarakhand,Dehradun,UK,uk_dehradun_villages.csv
+ST-28,West Bengal,Kolkata,WB,wb_kolkata_villages.csv

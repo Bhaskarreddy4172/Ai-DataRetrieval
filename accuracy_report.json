@@ -1,0 +1,78 @@
+{
+  "benchmark_timestamp": "2026-09-17 12:13:32",
+  "total_queries_tested": 1000,
+  "passed_tests": 1000,
+  "failed_tests": 0,
+  "overall_accuracy_pct": 100.0,
+  "intent_recognition_accuracy_pct": 100.0,
+  "entity_recognition_accuracy_pct": 100.0,
+  "column_mapping_accuracy_pct": 100.0,
+  "value_matching_accuracy_pct": 100.0,
+  "operator_resolution_accuracy_pct": 100.0,
+  "relationship_resolution_accuracy_pct": 100.0,
+  "typo_recovery_rate_pct": 100.0,
+  "phonetic_recovery_rate_pct": 100.0,
+  "shortcut_abbreviation_recovery_rate_pct": 100.0,
+  "row_retrieval_precision_pct": 99.08,
+  "row_retrieval_recall_pct": 100.0,
+  "row_retrieval_f1_pct": 99.54,
+  "analytical_calculation_accuracy_pct": 100.0,
+  "boolean_verification_accuracy_pct": 100.0,
+  "unsupported_query_rejection_rate_pct": 100.0,
+  "hallucination_rate_pct": 0.0,
+  "average_latency_ms": 120.97,
+  "p95_latency_ms": 293.07,
+  "total_benchmark_time_seconds": 121.11,
+  "category_breakdown": {
+    "1_standard_normal": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "2_informal_slang": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "3_typo_variations": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "4_phonetic_soundalike": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "5_abbreviation_shortcuts": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "6_reverse_relationships": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "7_hinglish_colloquial": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "8_boolean_fact_checking": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "9_analytical_aggregations": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    },
+    "10_unsupported_antihallucination": {
+      "total": 100,
+      "passed": 100,
+      "accuracy_pct": 100.0
+    }
+  }
+}

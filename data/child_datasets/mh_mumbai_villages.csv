@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+MH-001,Mumbai_Village_01,55861,28261,27600,83.0,35.63,14788,Maharashtra,Mumbai
+MH-002,Mumbai_Village_02,113922,55396,58526,90.1,9.15,28689,Maharashtra,Mumbai
+MH-003,Mumbai_Village_03,69074,32608,36466,79.3,9.6,17995,Maharashtra,Mumbai
+MH-004,Mumbai_Village_04,142774,72591,70183,95.3,34.13,32067,Maharashtra,Mumbai
+MH-005,Mumbai_Village_05,107097,53208,53889,74.4,8.82,24029,Maharashtra,Mumbai
+MH-006,Mumbai_Village_06,84962,43620,41342,91.9,7.78,18219,Maharashtra,Mumbai
+MH-007,Mumbai_Village_07,113664,56316,57348,73.4,12.3,29442,Maharashtra,Mumbai
+MH-008,Mumbai_Village_08,122123,63619,58504,69.7,10.12,26160,Maharashtra,Mumbai
+MH-009,Mumbai_Village_09,91214,44232,46982,68.5,20.57,26532,Maharashtra,Mumbai
+MH-010,Mumbai_Village_10,64662,32105,32557,82.2,19.47,17682,Maharashtra,Mumbai

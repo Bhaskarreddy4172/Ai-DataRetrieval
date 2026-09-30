@@ -1,0 +1,11 @@
+Village_ID,Village,Population,No_of_Males,No_of_Females,Literacy_Rate_Percent,Area_Sq_Km,Households,State,Capital
+RJ-001,Jaipur_Village_01,86181,44318,41863,87.9,41.89,22932,Rajasthan,Jaipur
+RJ-002,Jaipur_Village_02,60241,29129,31112,85.5,21.9,11835,Rajasthan,Jaipur
+RJ-003,Jaipur_Village_03,53265,27436,25829,74.6,28.84,12947,Rajasthan,Jaipur
+RJ-004,Jaipur_Village_04,78757,37038,41719,75.8,25.29,15394,Rajasthan,Jaipur
+RJ-005,Jaipur_Village_05,36386,17822,18564,68.7,32.64,7281,Rajasthan,Jaipur
+RJ-006,Jaipur_Village_06,62561,29802,32759,75.5,35.78,18259,Rajasthan,Jaipur
+RJ-007,Jaipur_Village_07,40436,20459,19977,82.2,29.92,10284,Rajasthan,Jaipur
+RJ-008,Jaipur_Village_08,31441,16534,14907,82.1,18.23,8455,Rajasthan,Jaipur
+RJ-009,Jaipur_Village_09,90218,46972,43246,72.4,39.03,20924,Rajasthan,Jaipur
+RJ-010,Jaipur_Village_10,73852,35724,38128,96.8,38.47,15447,Rajasthan,Jaipur

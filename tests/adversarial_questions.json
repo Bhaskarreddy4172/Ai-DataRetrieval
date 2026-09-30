@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ADV_01",
+    "question": "who gets paid >= 1000000 in hyd?",
+    "expected_intent": "FILTER",
+    "notes": "Mixed symbol & abbreviation"
+  },
+  {
+    "id": "ADV_02",
+    "question": "costliest product in laptps?",
+    "expected_intent": "MAX",
+    "notes": "Slang + typo"
+  },
+  {
+    "id": "ADV_03",
+    "question": "whos making most dough in eng dept?",
+    "expected_intent": "MAX",
+    "notes": "Multiple slang and abbreviation"
+  },
+  {
+    "id": "ADV_04",
+    "question": "anyone making over 5000000 in hyd?",
+    "expected_intent": "FILTER",
+    "notes": "Zero result bound check"
+  },
+  {
+    "id": "ADV_05",
+    "question": "what is the gdp of telangana?",
+    "expected_intent": "UNSUPPORTED_QUERY",
+    "notes": "Anti-hallucination guard"
+  },
+  {
+    "id": "ADV_06",
+    "question": "who is the president of the company?",
+    "expected_intent": "UNSUPPORTED_QUERY",
+    "notes": "Out of scope entity"
+  },
+  {
+    "id": "ADV_07",
+    "question": "distinct cities in customers",
+    "expected_intent": "DISTINCT",
+    "notes": "Structure query"
+  },
+  {
+    "id": "ADV_08",
+    "question": "duplicate rows in dataset",
+    "expected_intent": "DUPLICATES",
+    "notes": "Deduplication query"
+  },
+  {
+    "id": "ADV_09",
+    "question": "median amount in customer data",
+    "expected_intent": "MEDIAN",
+    "notes": "Statistical aggregation"
+  },
+  {
+    "id": "ADV_10",
+    "question": "top 3 highest salaries",
+    "expected_intent": "FILTER",
+    "notes": "Top N bound"
+  }
+]
