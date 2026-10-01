@@ -498,6 +498,20 @@ def process_query(payload: QueryRequest) -> QueryResponse:
     h_candidate = clarified_q if hierarchical_query_engine.can_handle(clarified_q, payload.session_id) else (clean_q if hierarchical_query_engine.can_handle(clean_q, payload.session_id) else None)
     if h_candidate is not None:
         h_res = hierarchical_query_engine.execute(h_candidate, payload.session_id)
+        # Validate consistency of h_res
+        from app.query.validator import answer_consistency_validator
+        is_consistent, reason = answer_consistency_validator.validate_answer(
+            question=clean_q,
+            operation=h_res.get("operation", "LOOKUP"),
+            scope=h_res.get("scope", ""),
+            answer=h_res.get("answer", ""),
+            results=h_res.get("results", [])
+        )
+        if not is_consistent:
+            logger.warning(f"AnswerConsistencyValidator triggered re-plan: {reason}")
+            from app.query.global_aggregation_engine import universal_global_aggregation_engine
+            h_res = universal_global_aggregation_engine.execute(clean_q, payload.session_id)
+
         elapsed = round(time.perf_counter() - start_time, 4)
         h_query = StructuredQuery(
             operation=h_res.get("operation", "LOOKUP"),

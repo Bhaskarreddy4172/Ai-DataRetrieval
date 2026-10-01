@@ -116,6 +116,71 @@ class FastQueryClassifier:
         r"\bin\s+all\s+villages\b",
     ]
 
+    def is_global_query(self, question: str, session_id: Optional[str] = None) -> bool:
+        """Deterministically determine if question is a GLOBAL query across all states/villages."""
+        norm_q = normalize_question(question).lower()
+        exp_q = expand_abbreviations(norm_q).lower()
+
+        # 1. Obvious all-states / all-villages patterns
+        if any(re.search(pat, norm_q) or re.search(pat, exp_q) for pat in self.ALL_STATES_PATTERNS + self.ALL_VILLAGES_PATTERNS):
+            return True
+
+        # Check if this is a follow-up comparison in an active session
+        if session_id:
+            try:
+                from app.conversation.context import conversation_manager
+                last_comp = conversation_manager.get_last_comparison(session_id)
+                if last_comp and last_comp.get("left_entity") and last_comp.get("right_entity"):
+                    comp_followup_pats = [
+                        r"\bwhich\s+village\s+has\s+(?:more|fewer|less|higher|lower)\b",
+                        r"\bwhich\s+one\s+has\s+(?:more|fewer|less|higher|lower)\b",
+                        r"\bwhich\s+one\s+is\s+(?:more|less|higher|lower)\b",
+                        r"\bhow\s+many\s+(?:more|fewer|less)\b",
+                        r"\bhow\s+much\s+(?:more|fewer|less|higher|lower)\b",
+                        r"\b(?:what\s+is\s+the\s+)?population\s+difference\b",
+                        r"\bdifference\s+between\s+them\b",
+                    ]
+                    if any(re.search(p, norm_q) for p in comp_followup_pats):
+                        return False
+            except Exception:
+                pass
+
+        # 2. Open state extreme queries without named states (e.g. "which state has more population?", "who has the most people?")
+        state_extreme_pat = r"\b(?:which\s+state|what\s+state|state\s+with|who\s+has|who\s+have|which\s+is\s+the\s+state|states\s+with)\b"
+        if re.search(state_extreme_pat, norm_q) or re.search(r"^\s*who\s+(?:has|have|is)\b", norm_q):
+            has_dir = any(re.search(r"\b" + re.escape(w) + r"\b", norm_q) for w in [
+                "highest", "maximum", "max", "most", "largest", "more", "higher", "greater", "greatest", "top", "best",
+                "lowest", "minimum", "min", "least", "smallest", "less", "fewer", "fewest", "lower", "bottom", "worst",
+                "populated"
+            ])
+            if has_dir:
+                states = self.extract_states(exp_q)
+                if len(states) < 2:
+                    return True
+
+        # 3. Open village extreme queries (e.g. "which village has the highest population?")
+        village_extreme_pat = r"\b(?:which\s+village|what\s+village|village\s+with)\b"
+        if re.search(village_extreme_pat, norm_q):
+            has_v_ext = any(re.search(r"\b" + re.escape(w) + r"\b", norm_q) for w in [
+                "highest", "maximum", "max", "most", "largest",
+                "lowest", "minimum", "min", "least", "smallest",
+                "top", "bottom"
+            ])
+            if has_v_ext:
+                return True
+
+        # 4. Global totals or averages without specific entity (e.g. "what is the total population?", "average population")
+        if re.search(r"\b(?:total|sum\s+of|average|mean|median)\s+(?:population|people|villages|males|females)\b", norm_q):
+            states = self.extract_states(exp_q)
+            if not states:
+                return True
+
+        # 5. Global rankings (e.g. "rank all states", "top 5 states", "rank states by population")
+        if re.search(r"\b(?:rank|ranking|top\s+\d+|bottom\s+\d+)\s+(?:all\s+)?(?:states|villages)\b", norm_q):
+            return True
+
+        return False
+
     def extract_metric(self, text: str, default: str = "Population") -> str:
         """Extract the target metric column from text."""
         t_low = text.lower()
@@ -289,23 +354,89 @@ class FastQueryClassifier:
                 normalized_question=norm_q
             )
 
-        # 4. Check State Rankings / Extremes: "which state has the highest/lowest population?"
-        m_extreme = re.search(r"\bwhich\s+state\b.*\b(highest|maximum|most|lowest|minimum|least|smallest|largest|fewest)\b", q_lower)
-        if m_extreme and "village" not in q_lower:
-            ext_word = m_extreme.group(1)
-            is_max = ext_word in ["highest", "maximum", "most", "largest"]
-            return FastClassificationResult(
-                is_fast_path=True,
-                intent="MAX" if is_max else "MIN",
-                scope="STATE_RANKING",
-                metric=metric,
-                entities=[],
-                n_limit=1,
-                order="DESC" if is_max else "ASC",
-                group_by="State",
-                original_question=question,
-                normalized_question=norm_q
-            )
+        # 4. Check State Rankings / Extremes: "which state has more population?", "which state has less population", "who has more people?", etc.
+        m_state_ext = bool(re.search(r"\b(?:which\s+state|what\s+state|state\s+with|who\s+has|who\s+have|which\s+is\s+the\s+state|states\s+with)\b", q_lower))
+        has_state_word = bool(re.search(r"\b(?:state|states)\b", q_lower))
+        has_who_lead = bool(re.search(r"^\s*who\s+(?:has|have|is)\b", q_lower))
+        is_village_target = bool(re.search(r"\b(?:which\s+village|what\s+village|village\s+with)\b", q_lower))
+
+        ext_max_words = ["highest", "maximum", "max", "most", "largest", "more", "higher", "greater", "greatest", "top", "best"]
+        ext_min_words = ["lowest", "minimum", "min", "least", "smallest", "less", "fewer", "fewest", "lower", "bottom", "worst"]
+
+        # Check for Village Extremes first if village is targeted
+        if is_village_target:
+            if session_id:
+                try:
+                    from app.conversation.context import conversation_manager
+                    last_comp = conversation_manager.get_last_comparison(session_id)
+                    if last_comp and last_comp.get("left_entity") and last_comp.get("right_entity"):
+                        if not is_all_villages and not is_all_states:
+                            return FastClassificationResult(
+                                is_fast_path=True,
+                                intent="COMPARE",
+                                scope="CROSS_STATE_VILLAGE" if (last_comp.get("left_parent") != last_comp.get("right_parent")) else "SAME_STATE_VILLAGE",
+                                metric=metric or last_comp.get("attribute") or "Population",
+                                entities=[last_comp.get("left_entity"), last_comp.get("right_entity")],
+                                original_question=question,
+                                normalized_question=norm_q
+                            )
+                except Exception:
+                    pass
+
+            has_v_max = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_max_words)
+            has_v_min = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_min_words)
+            if has_v_max or has_v_min:
+                is_max = has_v_max and not has_v_min
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="MAX" if is_max else "MIN",
+                    scope="ALL_VILLAGES",
+                    metric=metric or "Population",
+                    entities=[],
+                    n_limit=1,
+                    order="DESC" if is_max else "ASC",
+                    group_by=None,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+        if (m_state_ext or has_who_lead or (has_state_word and any(w in q_lower for w in ["most", "least", "highest", "lowest", "more", "less", "top", "bottom"]))):
+            has_more_populated = bool(re.search(r"\b(?:more|most|highest)\s+populated\b", q_lower))
+            has_less_populated = bool(re.search(r"\b(?:less|least|lowest)\s+populated\b", q_lower))
+            has_max = has_more_populated or any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_max_words)
+            has_min = has_less_populated or any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_min_words)
+
+            if (has_max or has_min) and len(states) < 2:
+                is_max = has_max and not has_min
+                metric_resolved = metric
+                if not metric_resolved:
+                    if any(w in q_lower for w in ["village", "villages"]):
+                        metric_resolved = "VILLAGE_COUNT"
+                    elif any(w in q_lower for w in ["literacy", "literate", "education"]):
+                        metric_resolved = "Literacy_Rate_Percent"
+                    elif any(w in q_lower for w in ["male", "males", "men"]):
+                        metric_resolved = "No_of_Males"
+                    elif any(w in q_lower for w in ["female", "females", "women"]):
+                        metric_resolved = "No_of_Females"
+                    elif any(w in q_lower for w in ["household", "households", "houses"]):
+                        metric_resolved = "Households"
+                    elif any(w in q_lower for w in ["area", "size"]):
+                        metric_resolved = "Area_Sq_Km"
+                    else:
+                        metric_resolved = "Population"
+
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="MAX" if is_max else "MIN",
+                    scope="STATE_RANKING",
+                    metric=metric_resolved,
+                    entities=[],
+                    n_limit=1,
+                    order="DESC" if is_max else "ASC",
+                    group_by="State",
+                    original_question=question,
+                    normalized_question=norm_q
+                )
 
         # 5. Check Average / Mean per state: "average population per state", "average population of all states"
         if any(w in q_lower for w in ["average", "avg", "mean"]) and (is_all_states or "per state" in q_lower):

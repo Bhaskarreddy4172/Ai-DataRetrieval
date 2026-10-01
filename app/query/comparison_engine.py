@@ -510,8 +510,8 @@ class UniversalComparisonEngine:
                             right_parent = last_comp.get("right_parent")
                             if left_parent and right_parent and str(left_parent).lower() != str(right_parent).lower():
                                 prev_scope = "CROSS_STATE_VILLAGE"
-                            child1_res = parent_child_registry.resolve_child_dataset(left_parent) if left_parent else None
-                            child2_res = parent_child_registry.resolve_child_dataset(right_parent) if right_parent else None
+                            child1_res = parent_child_registry.resolve_child_dataset(left_parent or left_name)
+                            child2_res = parent_child_registry.resolve_child_dataset(right_parent or right_name)
                             ent1 = ComparisonEntity(
                                 name=left_name,
                                 entity_type="VILLAGE" if "village" in prev_scope.lower() else ("STATE" if "state" in prev_scope.lower() else "GENERIC"),
@@ -837,6 +837,11 @@ class UniversalComparisonEngine:
                 unique_states.append((s_name, p))
 
         if len(unique_states) >= 2:
+            # If query is explicitly a SUM/TOTAL/COMBINE/AVERAGE aggregation of selected states without comparison keywords, do NOT plan as comparison!
+            has_agg_word = any(w in q_lower for w in ["total", "sum", "combine", "together", "plus", "all of"])
+            has_comp_word = any(w in q_lower for w in ["compare", "vs", "versus", "difference", "diff", "between", "more", "less", "fewer", "higher", "lower", "ratio", "percentage"])
+            if has_agg_word and not has_comp_word:
+                return None
             entities = [
                 ComparisonEntity(
                     name=s_name,
@@ -1207,6 +1212,13 @@ class UniversalComparisonEngine:
                 child_dir = parent_child_registry.get_child_datasets_dir()
                 if child_dir:
                     child_path = child_dir / entity.dataset_name
+
+            if not child_path:
+                res_s = parent_child_registry.resolve_child_dataset(entity.name)
+                if res_s:
+                    child_path = res_s[1]
+                    entity.dataset_path = child_path
+                    entity.dataset_name = child_path.name
 
             if child_path and child_path.exists():
                 cdf = parent_child_registry.load_child_dataframe(child_path)
@@ -1729,6 +1741,17 @@ class UniversalComparisonEngine:
         # IF diff < 0: Left has X fewer ... than Right
         # NEVER output raw negative number
         noun = "people" if plan.attribute == "Population" else (unit if unit and unit not in {"%", "currency"} else attr_name)
+
+        if plan.direction_requested in ["FEWER", "LESS", "LOWER"] and lower_ent:
+            lower_label = lower_ent
+            higher_label = higher_ent
+            lower_val = v2_str if lower_ent == right_ent.name else v1_str
+            higher_val = v1_str if lower_ent == right_ent.name else v2_str
+            return (
+                f"{lower_label} has less {noun} ({lower_val}) than {higher_label} ({higher_val}). "
+                f"{lower_label} has {diff_str} fewer {noun} than {higher_label}. "
+                f"{left_label}: {v1_str} | {right_label}: {v2_str}."
+            )
 
         if directed_diff > 0:
             return (

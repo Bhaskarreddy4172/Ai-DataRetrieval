@@ -131,12 +131,7 @@ class HierarchicalQueryEngine:
         exp_q = expand_abbreviations(norm_q)
         exp_lower = exp_q.lower()
 
-        # 0. Check Universal Global Aggregation Engine FIRST (prevents global queries from being hijacked by follow-up comparison)
-        from app.query.global_aggregation_engine import universal_global_aggregation_engine
-        if universal_global_aggregation_engine.can_handle(question, session_id):
-            return "GLOBAL_AGGREGATION", None, None
-
-        # 0b. Check for comparative inquiry across entities
+        # 0. Check for comparative inquiry across entities first
         from app.query.comparison_engine import universal_comparison_engine
         comp_plan = universal_comparison_engine.parse_and_plan(question, session_id=session_id)
         if not comp_plan:
@@ -144,33 +139,7 @@ class HierarchicalQueryEngine:
         if comp_plan and comp_plan.scope != "GENERIC_DATASET":
             return "COMPARISON", None, None
 
-        # 1. Check for cross-state comparison or aggregation across all states
-        cross_keywords = [
-            "across all villages", "across all states", "across all capitals",
-            "which state has the highest village", "which state has the lowest village",
-            "which capital has the highest village", "which capital has the lowest village",
-            "which state has the village with", "which capital has the village with",
-            "which village across", "highest village population", "lowest village population",
-            "highest village", "lowest village", "highest total village population",
-            "lowest total village population", "highest total population", "lowest total population",
-            "which state has the highest total", "which state has the lowest total",
-            "which state has the highest", "which state has the lowest",
-            "which state has the most", "which state has the fewest", "which state has the least",
-            "top 10 villages", "top 5 villages", "villages across all states"
-        ]
-        is_cross = any(kw in q_lower or kw in exp_lower for kw in cross_keywords)
-
-        # Check if two states are mentioned for comparison
-        states_found: List[str] = []
-        for state_name in parent_child_registry.get_registered_child_datasets().keys():
-            if re.search(r"\b" + re.escape(state_name.lower()) + r"\b", q_lower):
-                states_found.append(state_name)
-
-        has_comparison_kw = any(w in q_lower for w in ["compare", "vs", "versus"])
-        if (len(states_found) >= 2 and has_comparison_kw) or is_cross:
-            return "MULTI_CHILD_COMPARISON", None, None
-
-        # 2. Check for explicit village code e.g. "TG-001" -> prefix "TG"
+        # 1. Check for explicit village code e.g. "TG-001" -> prefix "TG"
         m_code = re.search(r"\b([a-zA-Z]{2})-\d{3}\b", question)
         if m_code:
             code_prefix = m_code.group(1)
@@ -181,7 +150,7 @@ class HierarchicalQueryEngine:
             else:
                 return "CHILD_ONLY", code_prefix, None
 
-        # 3. Check for explicit village name e.g. "Hyderabad_Village_01", "Atlantis_Village_99"
+        # 2. Check for explicit village name e.g. "Hyderabad_Village_01", "Atlantis_Village_99"
         m_v = re.search(r"\b([a-zA-Z]+)_village_\d+\b", q_lower)
         if m_v:
             prefix = m_v.group(1)
@@ -192,22 +161,39 @@ class HierarchicalQueryEngine:
             else:
                 return "CHILD_ONLY", prefix, None
 
+        # 3. Check Universal Global Aggregation Engine
+        from app.query.global_aggregation_engine import universal_global_aggregation_engine
+        from app.query.fast_classifier import fast_query_classifier
+
+        if universal_global_aggregation_engine.can_handle(question, session_id) or universal_global_aggregation_engine.can_handle(exp_q, session_id):
+            return "GLOBAL_AGGREGATION", None, None
+
+        if fast_query_classifier.is_global_query(question, session_id=session_id) or fast_query_classifier.is_global_query(exp_q, session_id=session_id):
+            return "GLOBAL_AGGREGATION", None, None
+
         # 4. Check for State/Capital to Child navigation
         resolved_child = parent_child_registry.resolve_child_dataset(question) or parent_child_registry.resolve_child_dataset(exp_q)
         if resolved_child:
             entity_name, child_path = resolved_child
             return "MAIN_TO_CHILD", entity_name, child_path
 
-        # 5. Check for active child dataset in session (only if no explicit entity mentioned)
-        if session_id:
-            active_child_fname = conversation_manager.get_active_child_dataset(session_id)
-            active_state = conversation_manager.get_active_state(session_id)
-            if active_child_fname:
-                child_dir = parent_child_registry.get_child_datasets_dir()
-                if child_dir:
-                    child_path = child_dir / active_child_fname
-                    if child_path.exists():
-                        return "CHILD_ONLY", active_state or active_child_fname, child_path
+        # 5. Check for active child dataset in session ONLY if genuine contextual reference
+        if session_id and not fast_query_classifier.is_global_query(question):
+            is_contextual = any(re.search(r"\b" + re.escape(p) + r"\b", q_lower) for p in [
+                "it", "its", "they", "them", "this state", "that state", "the state",
+                "this village", "that village", "the village", "this capital", "that capital",
+                "here", "there"
+            ]) or any(q_lower.startswith(w) for w in ["what about", "how about", "and for", "and in"])
+
+            if is_contextual:
+                active_child_fname = conversation_manager.get_active_child_dataset(session_id)
+                active_state = conversation_manager.get_active_state(session_id)
+                if active_child_fname:
+                    child_dir = parent_child_registry.get_child_datasets_dir()
+                    if child_dir:
+                        child_path = child_dir / active_child_fname
+                        if child_path.exists():
+                            return "CHILD_ONLY", active_state or active_child_fname, child_path
 
         # Default fallback to MULTI_CHILD_COMPARISON if no single state/child identified
         return "MULTI_CHILD_COMPARISON", None, None

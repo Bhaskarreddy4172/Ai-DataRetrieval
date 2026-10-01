@@ -67,13 +67,28 @@ class ConversationManager:
             if session_id not in self._sessions:
                 self._sessions[session_id] = []
             
-            # Inherit previous session state if not overwritten
-            prev_turn = self._sessions[session_id][-1] if self._sessions[session_id] else {}
-            final_state = curr_state or prev_turn.get("state")
-            final_capital = curr_capital or prev_turn.get("capital")
-            final_child_ds = curr_child_ds or prev_turn.get("child_dataset")
-            final_village = curr_village or prev_turn.get("village")
-            final_comparison = curr_comparison or prev_turn.get("comparison")
+            # Inherit previous session state only if not a global query
+            from app.query.fast_classifier import fast_query_classifier
+            is_global = fast_query_classifier.is_global_query(question)
+
+            if is_global:
+                if results and len(results) > 0 and isinstance(results[0], dict) and (results[0].get("state") or results[0].get("State")):
+                    final_state = results[0].get("state") or results[0].get("State")
+                    final_capital = results[0].get("capital") or results[0].get("Capital")
+                    final_child_ds = None
+                else:
+                    final_state = None
+                    final_capital = None
+                    final_child_ds = None
+                final_village = None
+                final_comparison = curr_comparison
+            else:
+                prev_turn = self._sessions[session_id][-1] if self._sessions[session_id] else {}
+                final_state = curr_state or prev_turn.get("state")
+                final_capital = curr_capital or prev_turn.get("capital")
+                final_child_ds = curr_child_ds or prev_turn.get("child_dataset")
+                final_village = curr_village or prev_turn.get("village")
+                final_comparison = curr_comparison or prev_turn.get("comparison")
 
             self._sessions[session_id].append({
                 "question": question,
@@ -178,6 +193,11 @@ class ConversationManager:
             history = self._sessions.get(session_id, [])
 
         if not history:
+            return question, current_query
+
+        # Global queries must completely ignore last_entity and previous session state
+        from app.query.fast_classifier import fast_query_classifier
+        if fast_query_classifier.is_global_query(question, session_id=session_id):
             return question, current_query
 
         # 1. Use ConversationResolver
