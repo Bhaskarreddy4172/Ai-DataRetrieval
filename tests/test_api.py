@@ -55,7 +55,7 @@ def test_post_query():
 
 
 def test_post_query_out_of_scope():
-    res = client.post("/query", json={"question": "What is the population of Telangana?", "session_id": "test_api"})
+    res = client.post("/query", json={"question": "What is the GDP of Mars?", "session_id": "test_api"})
     assert res.status_code == 200
     data = res.json()
     assert data["operation"] == "UNKNOWN"
@@ -74,7 +74,7 @@ def test_get_query_history():
 
 def test_upload_csv_dataset():
     csv_content = b"Product,Category,Price\nLaptop,Electronics,55000\nPhone,Electronics,25000\nChair,Furniture,4500\n"
-    file = {"file": ("test_products.csv", io.BytesIO(csv_content), "text/csv")}
+    file = {"file": ("test_products_api.csv", io.BytesIO(csv_content), "text/csv")}
     res = client.post("/dataset/upload", files=file)
     assert res.status_code == 200
     data = res.json()
@@ -82,6 +82,6 @@ def test_upload_csv_dataset():
     assert data["profile"]["basic_info"]["row_count"] == 3
 
     # Query the newly uploaded dataset
-    q_res = client.post("/query", json={"question": "Show all products"})
+    q_res = client.post("/query", json={"question": "Show all items in test_products_api"})
     assert q_res.status_code == 200
     assert q_res.json()["result_count"] == 3

@@ -22,19 +22,7 @@ def init_db() -> None:
     try:
         with sqlite3.connect(path) as conn:
             cursor = conn.cursor()
-            cursor.execute(
-                """
-                CREATE TABLE IF NOT EXISTS datasets (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    filename TEXT NOT NULL,
-                    file_type TEXT NOT NULL,
-                    row_count INTEGER DEFAULT 0,
-                    col_count INTEGER DEFAULT 0,
-                    uploaded_at TEXT NOT NULL,
-                    is_active INTEGER DEFAULT 0
-                )
-                """
-            )
+
             cursor.execute(
                 """
                 CREATE TABLE IF NOT EXISTS query_history (

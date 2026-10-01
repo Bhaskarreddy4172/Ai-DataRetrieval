@@ -459,12 +459,14 @@ def process_query(payload: QueryRequest) -> QueryResponse:
     # Dynamic dataset resolution for queries targeting standalone or registered datasets
     is_hierarchical = hierarchical_query_engine.can_handle(clean_q, payload.session_id) or hierarchical_query_engine.can_handle(normalized_q, payload.session_id)
     if not is_hierarchical:
-        resolved = parent_child_registry.resolve_dataset_for_query(clean_q) or parent_child_registry.resolve_dataset_for_query(normalized_q)
-        if resolved:
-            res_name, res_path, _ = resolved
-            if df.empty or (res_path.name != dataset_loader.dataset_name and not parent_child_registry.is_village_level_query(clean_q)):
-                dataset_loader.load_dataset(res_path, custom_name=res_name)
-                df = dataset_loader.dataframe
+        active_stem = Path(dataset_loader.dataset_name).stem.lower() if dataset_loader.dataset_name else ""
+        if not (active_stem and active_stem in clean_q.lower()):
+            resolved = parent_child_registry.resolve_dataset_for_query(clean_q) or parent_child_registry.resolve_dataset_for_query(normalized_q)
+            if resolved:
+                res_name, res_path, _ = resolved
+                if df.empty or (res_path.name != dataset_loader.dataset_name and not parent_child_registry.is_village_level_query(clean_q)):
+                    dataset_loader.load_dataset(res_path, custom_name=res_name)
+                    df = dataset_loader.dataframe
 
     if df.empty and not is_hierarchical:
         # Fallback to main dataset if present

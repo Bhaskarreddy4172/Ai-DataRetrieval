@@ -13,12 +13,16 @@ class Settings:
     APP_NAME: str = "Dynamic AI Dataset Query & Retrieval Platform"
     API_HOST: str = os.getenv("API_HOST", "127.0.0.1")
     API_PORT: int = int(os.getenv("API_PORT", "8000"))
-    DEBUG: bool = os.getenv("DEBUG", "True").lower() in ("true", "1", "yes")
+    BACKEND_HOST: str = os.getenv("BACKEND_HOST", API_HOST)
+    BACKEND_PORT: int = int(os.getenv("BACKEND_PORT", str(API_PORT)))
+    FRONTEND_PORT: int = int(os.getenv("FRONTEND_PORT", "5173"))
+    DEBUG: bool = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
 
     # Centralized Ollama Configuration
     OLLAMA_HOST: str = os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
     OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", OLLAMA_HOST)
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+    OLLAMA_EMBEDDING_MODEL: str = os.getenv("OLLAMA_EMBEDDING_MODEL", "nomic-embed-text")
     OLLAMA_TIMEOUT: float = float(os.getenv("OLLAMA_TIMEOUT", "60.0"))
     OLLAMA_MAX_RETRIES: int = int(os.getenv("OLLAMA_MAX_RETRIES", "2"))
     OLLAMA_TEMPERATURE: float = float(os.getenv("OLLAMA_TEMPERATURE", "0.0"))
@@ -29,12 +33,27 @@ class Settings:
     TOOL_TIMEOUT: float = float(os.getenv("TOOL_TIMEOUT", "30.0"))
     AGENT_TIMEOUT: float = float(os.getenv("AGENT_TIMEOUT", "120.0"))
 
+    # Database Configuration (PostgreSQL + pgvector with SQLite fallback)
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL",
+        "postgresql+psycopg://postgres:postgres@localhost:5432/dataset_ai"
+    )
+    DATABASE_PATH: str = os.getenv("DATABASE_PATH", str(BASE_DIR / "app.db"))
+    FALLBACK_SQLITE_URL: str = f"sqlite:///{BASE_DIR / 'app.db'}"
+
+    # RAG Settings
+    RAG_TOP_K: int = int(os.getenv("RAG_TOP_K", "8"))
+    EMBEDDING_DIM: int = int(os.getenv("EMBEDDING_DIM", "768"))
+
+    # Directories
     UPLOADS_DIR: Path = BASE_DIR / "uploads"
     DATA_DIR: Path = BASE_DIR / "data"
-    DEFAULT_DATASET: str = os.getenv("DEFAULT_DATASET", str(DATA_DIR / "indian_states_capitals.csv"))
-    DATABASE_PATH: str = os.getenv("DATABASE_PATH", str(BASE_DIR / "app.db"))
+    DEFAULT_DATASET: str = os.getenv("DEFAULT_DATASET", str(DATA_DIR / "main_dataset" / "india_states_capitals_main.csv"))
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
 
 
 settings = Settings()
 settings.UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+settings.DATA_DIR.mkdir(parents=True, exist_ok=True)
+(settings.DATA_DIR / "child_datasets").mkdir(parents=True, exist_ok=True)
+(settings.DATA_DIR / "main_dataset").mkdir(parents=True, exist_ok=True)

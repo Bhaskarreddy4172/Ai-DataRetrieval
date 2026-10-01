@@ -1,51 +1,58 @@
 version: '3.8'
 
 services:
-  # 1. FastAPI Backend & Chat UI Server
-  chatbot-app:
+  # 1. PostgreSQL Database with pgvector Extension
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: dataset-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dataset_ai
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dataset-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dataset_ai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. FastAPI Backend Application
+  backend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: dataset-chatbot
+    container_name: dataset-backend
     restart: unless-stopped
     ports:
       - "8000:8000"
     environment:
-      - HOST=0.0.0.0
-      - PORT=8000
-      - OLLAMA_HOST=http://ollama:11434
+      - BACKEND_HOST=0.0.0.0
+      - BACKEND_PORT=8000
+      - DATABASE_URL=postgresql+psycopg://postgres:postgres@postgres:5432/dataset_ai
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
       - OLLAMA_MODEL=llama3.1:8b
+      - OLLAMA_EMBEDDING_MODEL=nomic-embed-text
       - LOG_LEVEL=INFO
     volumes:
-      - uploads_data:/app/uploads
-      - app_db:/app/app.db
+      - ./data:/app/data
+      - ./uploads:/app/uploads
     depends_on:
-      - ollama
+      postgres:
+        condition: service_healthy
     networks:
-      - chatbot-network
-
-  # 2. Local Ollama LLM Engine
-  ollama:
-    image: ollama/ollama:latest
-    container_name: dataset-ollama
-    restart: unless-stopped
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_models:/root/.ollama
-    networks:
-      - chatbot-network
+      - dataset-network
 
 volumes:
-  ollama_models:
-    name: dataset_chatbot_ollama_models
-  uploads_data:
-    name: dataset_chatbot_uploads
-  app_db:
-    name: dataset_chatbot_db
+  pgdata:
+    name: dataset_ai_pgdata
 
 networks:
-  chatbot-network:
-    name: dataset_chatbot_network
+  dataset-network:
+    name: dataset_ai_network
     driver: bridge
-

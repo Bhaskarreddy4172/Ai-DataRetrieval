@@ -35,6 +35,15 @@ class MultiChildExecutor:
                     frames.append(df)
 
             if not frames:
+                try:
+                    from app.database.repositories import state_village_repo
+                    db_df = state_village_repo.get_all_villages_dataframe()
+                    if not db_df.empty:
+                        frames.append(db_df)
+                except Exception:
+                    pass
+
+            if not frames:
                 self._combined_df = pd.DataFrame()
                 return self._combined_df
 
