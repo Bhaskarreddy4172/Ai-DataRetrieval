@@ -99,7 +99,7 @@ class AnswerConsistencyValidator:
         answer: str,
         results: List[Dict[str, Any]]
     ) -> Tuple[bool, Optional[str]]:
-        """Validate answer consistency against question intent.
+        """Validate answer consistency against question intent and constraints.
 
         Returns (is_valid, failure_reason).
         """
@@ -107,7 +107,42 @@ class AnswerConsistencyValidator:
         import re
         from app.query.fast_classifier import fast_query_classifier
 
-        # Rule 1: If question asks for state ranking / extreme, answer MUST NOT be a single-state total
+        # Rule 1: State / Location Filter Constraint Enforcement (CRITICAL)
+        # If the user specified one or more states in the question, the result MUST belong to one of them.
+        expected_states = fast_query_classifier.extract_states(question)
+        if expected_states and results:
+            target_canonical = [s.lower() for s in expected_states]
+            for r in results:
+                if not isinstance(r, dict):
+                    continue
+                res_state = (r.get("state") or r.get("State") or r.get("parent") or r.get("left_parent") or "").strip()
+                if res_state:
+                    res_low = res_state.lower()
+                    matches_expected = any(
+                        target_st in res_low or res_low in target_st
+                        for target_st in target_canonical
+                    )
+                    if not matches_expected:
+                        return False, f"State constraint violation: Question filtered for {expected_states} but result contains state '{res_state}'."
+
+        # Rule 2: Entity Level Match
+        # If question asks for a village entity, result must contain a village identifier
+        is_village_target = bool(re.search(r"\b(?:which\s+village|what\s+village|village\s+with|villages\s+in)\b", q_lower))
+        if is_village_target and results:
+            has_village_field = any(
+                isinstance(r, dict) and (
+                    any(k in r for k in ["village", "Village", "village_id", "Village_ID"])
+                    or any(
+                        isinstance(r.get(k), str) and ("village" in r[k].lower() or re.search(r"\b[a-zA-Z]{2}-\d{3}\b", r[k]))
+                        for k in ["left_entity", "right_entity", "higher_entity", "lower_entity", "entity", "Entity"]
+                    )
+                )
+                for r in results
+            )
+            if not has_village_field:
+                return False, "Entity level violation: Question requested a village entity, but result contains no village identifier."
+
+        # Rule 3: If question asks for state ranking / extreme, answer MUST NOT be a single-state total
         if fast_query_classifier.is_global_query(question):
             is_extreme_q = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in [
                 "highest", "lowest", "more", "less", "most", "least", "maximum", "minimum", "larger", "smaller"
@@ -119,7 +154,7 @@ class AnswerConsistencyValidator:
                 if "across all recorded villages in" in answer and "total" in answer.lower() and not any(w in answer.lower() for w in ["highest", "lowest", "most", "least"]):
                     return False, "Answer failed to identify extreme state."
 
-        # Rule 2: If question asks for comparison, must not be a direct single-value lookup
+        # Rule 4: If question asks for comparison, must not be a direct single-value lookup
         if any(w in q_lower for w in ["compare", "difference between", "how much more", "how much less"]):
             if operation in ["LOOKUP"] and len(results) == 1 and not results[0].get("left_entity"):
                 return False, "Question requires comparison, but single lookup returned."

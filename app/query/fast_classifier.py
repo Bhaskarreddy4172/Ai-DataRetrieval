@@ -21,7 +21,12 @@ class FastClassificationResult:
     """Output of FastQueryClassifier."""
     is_fast_path: bool = False
     intent: str = "LOOKUP"  # SUM, COUNT, AVERAGE, MEDIAN, MIN, MAX, TOP_N, BOTTOM_N, COMPARE, DIFFERENCE, LOOKUP, RANGE, VARIANCE, STD
-    scope: str = "GENERIC"  # ALL_STATES, ALL_VILLAGES, SELECTED_STATES, SINGLE_STATE, SINGLE_VILLAGE, STANDALONE, GENERIC
+    scope: str = "GENERIC"  # GLOBAL, FILTERED, ALL_STATES, ALL_VILLAGES, SELECTED_STATES, SINGLE_STATE, SINGLE_VILLAGE, STANDALONE, GENERIC
+    scope_type: str = "GLOBAL"  # GLOBAL, CURRENT_ENTITY, SELECTED_ENTITIES, FILTERED, PARENT_CHILD, CHILD_DATASET, MULTI_ENTITY
+    return_entity: str = "Record"  # "Village", "State", "Capital", "Record"
+    filter_entity: Optional[str] = None  # "State", "Capital", etc.
+    filter_value: Optional[Any] = None  # "Andhra Pradesh", ["Telangana", "Andhra Pradesh"]
+    filters: List[Dict[str, Any]] = field(default_factory=list)
     metric: str = "Population"
     entities: List[str] = field(default_factory=list)
     secondary_metric: Optional[str] = None
@@ -30,6 +35,22 @@ class FastClassificationResult:
     group_by: Optional[str] = None  # State, Capital, Village, etc.
     original_question: str = ""
     normalized_question: str = ""
+
+    def to_plan_dict(self) -> Dict[str, Any]:
+        """Convert to Section 2/36 standardized query plan dict."""
+        return {
+            "intent": self.intent,
+            "entity_type": self.return_entity,
+            "return_entity": self.return_entity,
+            "metric": self.metric,
+            "filters": self.filters,
+            "scope": self.scope,
+            "scope_type": self.scope_type,
+            "order": self.order,
+            "limit": self.n_limit or 1,
+            "filter_entity": self.filter_entity,
+            "filter_value": self.filter_value
+        }
 
 
 class FastQueryClassifier:
@@ -164,10 +185,13 @@ class FastQueryClassifier:
             has_v_ext = any(re.search(r"\b" + re.escape(w) + r"\b", norm_q) for w in [
                 "highest", "maximum", "max", "most", "largest",
                 "lowest", "minimum", "min", "least", "smallest",
-                "top", "bottom"
+                "top", "bottom", "more", "less", "fewer", "higher", "lower"
             ])
             if has_v_ext:
-                return True
+                states = self.extract_states(exp_q)
+                # GLOBAL ONLY IF NO STATE / LOCATION FILTERS ARE SPECIFIED!
+                if len(states) == 0:
+                    return True
 
         # 4. Global totals or averages without specific entity (e.g. "what is the total population?", "average population")
         if re.search(r"\b(?:total|sum\s+of|average|mean|median)\s+(?:population|people|villages|males|females)\b", norm_q):
@@ -210,7 +234,13 @@ class FastQueryClassifier:
         english_stop_words = {"or", "in", "is", "to", "at", "an", "on", "it", "so", "by", "of", "if", "no", "do", "and", "all", "top", "sum", "lo", "ki", "ka", "ke", "me", "se", "ko", "bro", "plz", "pls"}
         for w, pos in words:
             if w in english_stop_words:
-                continue
+                # Disambiguate 'ka': Karnataka state code vs Hindi postposition
+                if w == "ka":
+                    is_karnataka = bool(re.search(r"\b(?:in|from|for|state|of)\s+ka\b", norm_text)) or bool(re.search(r"\bKA\b", text))
+                    if not is_karnataka:
+                        continue
+                else:
+                    continue
             if w in codes_map:
                 canonical = codes_map[w]
                 if canonical in reg_states and not any(f[0] == canonical for f in found):
@@ -239,6 +269,26 @@ class FastQueryClassifier:
                 seen.add(st)
                 res.append(st)
         return res
+
+    def extract_filters(self, question: str) -> List[Dict[str, Any]]:
+        """Extract explicit filters such as State/Capital or numeric thresholds from query."""
+        filters: List[Dict[str, Any]] = []
+        norm_q = normalize_question(question)
+        exp_q = expand_abbreviations(norm_q)
+        states = self.extract_states(exp_q)
+        if len(states) == 1:
+            filters.append({"column": "State", "operator": "=", "value": states[0]})
+        elif len(states) > 1:
+            filters.append({"column": "State", "operator": "IN", "value": states})
+
+        m_num = re.search(r"\b(population|literacy|males|females|households|area)\s*(>|<|>=|<=|=|==|above|over|greater\s+than|below|under|less\s+than)\s*([0-9]+(?:\.[0-9]+)?)\b", norm_q.lower())
+        if m_num:
+            metric_raw, op_raw, val_raw = m_num.groups()
+            col = self.extract_metric(metric_raw)
+            op = ">" if op_raw in ["above", "over", "greater than", ">"] else ("<" if op_raw in ["below", "under", "less than", "<"] else "=")
+            filters.append({"column": col, "operator": op, "value": float(val_raw) if "." in val_raw else int(val_raw)})
+
+        return filters
 
     def classify(self, question: str, session_id: Optional[str] = None) -> FastClassificationResult:
         """Deterministically classify question into FastClassificationResult."""
@@ -341,14 +391,36 @@ class FastQueryClassifier:
             direction_word = m_top.group(1)
             n_val = int(m_top.group(2))
             target_entity = m_top.group(3)
+            order = "DESC" if direction_word == "top" else "ASC"
+            intent = "TOP_N" if direction_word == "top" else "BOTTOM_N"
+            if target_entity == "villages" and states:
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent=intent,
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village",
+                    filter_entity="State",
+                    filter_value=states[0] if len(states) == 1 else states,
+                    filters=[{"column": "State", "operator": "=" if len(states) == 1 else "IN", "value": states[0] if len(states) == 1 else states}],
+                    metric=metric,
+                    entities=states,
+                    n_limit=n_val,
+                    order=order,
+                    group_by=None,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
             return FastClassificationResult(
                 is_fast_path=True,
-                intent="TOP_N" if direction_word == "top" else "BOTTOM_N",
+                intent=intent,
                 scope="ALL_STATES" if target_entity == "states" else "ALL_VILLAGES",
+                scope_type="GLOBAL",
+                return_entity="State" if target_entity == "states" else "Village",
                 metric=metric,
                 entities=[],
                 n_limit=n_val,
-                order="DESC" if direction_word == "top" else "ASC",
+                order=order,
                 group_by="State" if target_entity == "states" else None,
                 original_question=question,
                 normalized_question=norm_q
@@ -370,7 +442,7 @@ class FastQueryClassifier:
                     from app.conversation.context import conversation_manager
                     last_comp = conversation_manager.get_last_comparison(session_id)
                     if last_comp and last_comp.get("left_entity") and last_comp.get("right_entity"):
-                        if not is_all_villages and not is_all_states:
+                        if not is_all_villages and not is_all_states and not states:
                             return FastClassificationResult(
                                 is_fast_path=True,
                                 intent="COMPARE",
@@ -387,14 +459,42 @@ class FastQueryClassifier:
             has_v_min = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_min_words)
             if has_v_max or has_v_min:
                 is_max = has_v_max and not has_v_min
+                order = "DESC" if is_max else "ASC"
+                intent = "MAX" if is_max else "MIN"
+
+                # Filtered village query when one or more states are specified
+                if states:
+                    return FastClassificationResult(
+                        is_fast_path=True,
+                        intent=intent,
+                        scope="FILTERED",
+                        scope_type="FILTERED",
+                        return_entity="Village",
+                        filter_entity="State",
+                        filter_value=states[0] if len(states) == 1 else states,
+                        filters=[{"column": "State", "operator": "=" if len(states) == 1 else "IN", "value": states[0] if len(states) == 1 else states}],
+                        metric=metric or "Population",
+                        entities=states,
+                        n_limit=1,
+                        order=order,
+                        group_by=None,
+                        original_question=question,
+                        normalized_question=norm_q
+                    )
+
                 return FastClassificationResult(
                     is_fast_path=True,
-                    intent="MAX" if is_max else "MIN",
+                    intent=intent,
                     scope="ALL_VILLAGES",
+                    scope_type="GLOBAL",
+                    return_entity="Village",
+                    filter_entity=None,
+                    filter_value=None,
+                    filters=[],
                     metric=metric or "Population",
                     entities=[],
                     n_limit=1,
-                    order="DESC" if is_max else "ASC",
+                    order=order,
                     group_by=None,
                     original_question=question,
                     normalized_question=norm_q
@@ -594,10 +694,40 @@ class FastQueryClassifier:
                 op = "COUNT"
                 if any(w in q_lower for w in ["village", "villages"]):
                     metric = "VILLAGE_COUNT"
-            elif any(w in q_lower for w in ["highest", "max", "maximum"]):
-                op = "MAX"
-            elif any(w in q_lower for w in ["lowest", "min", "minimum"]):
-                op = "MIN"
+            elif any(w in q_lower for w in ["highest", "max", "maximum", "most", "largest", "more", "higher"]):
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="MAX",
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village" if ("village" in q_lower or is_village_target) else "Record",
+                    filter_entity="State",
+                    filter_value=state_target,
+                    filters=[{"column": "State", "operator": "=", "value": state_target}],
+                    metric=metric or "Population",
+                    entities=[state_target],
+                    n_limit=1,
+                    order="DESC",
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+            elif any(w in q_lower for w in ["lowest", "min", "minimum", "least", "smallest", "less", "fewer", "lower"]):
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="MIN",
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village" if ("village" in q_lower or is_village_target) else "Record",
+                    filter_entity="State",
+                    filter_value=state_target,
+                    filters=[{"column": "State", "operator": "=", "value": state_target}],
+                    metric=metric or "Population",
+                    entities=[state_target],
+                    n_limit=1,
+                    order="ASC",
+                    original_question=question,
+                    normalized_question=norm_q
+                )
 
             return FastClassificationResult(
                 is_fast_path=True,

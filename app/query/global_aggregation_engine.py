@@ -82,7 +82,8 @@ class UniversalGlobalAggregationEngine:
             return cls_res.scope in [
                 "ALL_STATES", "ALL_STATES_BREAKDOWN", "SELECTED_STATES",
                 "ALL_VILLAGES", "STATE_RANKING", "SINGLE_STATE",
-                "STATE_CAPITAL", "DISTINCT_VALUES", "CONDITION_EXISTENCE", "ENTITY_EXISTENCE"
+                "STATE_CAPITAL", "DISTINCT_VALUES", "CONDITION_EXISTENCE", "ENTITY_EXISTENCE",
+                "FILTERED"
             ]
 
         return False
@@ -103,7 +104,10 @@ class UniversalGlobalAggregationEngine:
         metric = cls_res.metric
 
         # Execute based on intent and scope
-        if scope == "STATE_CAPITAL":
+        if scope == "FILTERED":
+            res = self._execute_filtered_query(cls_res, question)
+
+        elif scope == "STATE_CAPITAL":
             res = self._execute_capital_lookup(cls_res.entities, question)
 
         elif scope == "DISTINCT_VALUES":
@@ -941,5 +945,250 @@ class UniversalGlobalAggregationEngine:
             "verification_status": "PASS"
         }
 
+    def _execute_filtered_query(self, cls_res: FastClassificationResult, question: str) -> Dict[str, Any]:
+        """Execute deterministic aggregation/extremes on filtered child dataset(s) respecting state/entity constraints."""
+        target_states = cls_res.entities or ([cls_res.filter_value] if isinstance(cls_res.filter_value, str) else (cls_res.filter_value or []))
+        metric = cls_res.metric or "Population"
+        intent = cls_res.intent
+        is_max = cls_res.order != "ASC" and intent != "MIN"
+
+        if not target_states:
+            return {
+                "operation": intent,
+                "scope": "FILTERED",
+                "results": [],
+                "result_count": 0,
+                "answer": "No valid state filter could be identified in the query.",
+                "child_dataset": None,
+                "columns_used": [],
+                "verification_status": "FAILED",
+                "error": "MISSING_FILTER"
+            }
+
+        # 1. Load data for target states
+        dfs: List[pd.DataFrame] = []
+        loaded_datasets: List[str] = []
+        for st in target_states:
+            resolved = parent_child_registry.resolve_child_dataset(st)
+            if resolved:
+                st_canonical, child_path = resolved
+                df_child = parent_child_registry.load_child_dataframe(child_path)
+                if df_child is not None and not df_child.empty:
+                    df_copy = df_child.copy()
+                    if "State" not in df_copy.columns:
+                        df_copy["State"] = st_canonical
+                    dfs.append(df_copy)
+                    loaded_datasets.append(child_path.name)
+
+        if not dfs:
+            return {
+                "operation": intent,
+                "scope": "FILTERED",
+                "results": [],
+                "result_count": 0,
+                "answer": f"No records found for specified states: {', '.join(target_states)}.",
+                "child_dataset": None,
+                "columns_used": [],
+                "verification_status": "FAILED",
+                "error": "DATASET_NOT_FOUND"
+            }
+
+        combined_df = pd.concat(dfs, ignore_index=True) if len(dfs) > 1 else dfs[0]
+
+        # 2. Apply additional filters from cls_res.filters if any (e.g. numeric thresholds)
+        filtered_df = combined_df
+        for f in cls_res.filters:
+            col = f.get("column")
+            op = f.get("operator")
+            val = f.get("value")
+            if col and col != "State" and col in filtered_df.columns:
+                try:
+                    s_num = pd.to_numeric(filtered_df[col], errors="coerce")
+                    if op in [">", "gt"]:
+                        filtered_df = filtered_df[s_num > float(val)]
+                    elif op in ["<", "lt"]:
+                        filtered_df = filtered_df[s_num < float(val)]
+                    elif op in [">=", "gte"]:
+                        filtered_df = filtered_df[s_num >= float(val)]
+                    elif op in ["<=", "lte"]:
+                        filtered_df = filtered_df[s_num <= float(val)]
+                    elif op in ["=", "=="]:
+                        filtered_df = filtered_df[s_num == float(val)]
+                except Exception:
+                    pass
+
+        if filtered_df.empty:
+            return {
+                "operation": intent,
+                "scope": "FILTERED",
+                "results": [],
+                "result_count": 0,
+                "answer": f"No records matching the filter criteria were found in {', '.join(target_states)}.",
+                "child_dataset": ", ".join(loaded_datasets),
+                "columns_used": list(filtered_df.columns),
+                "verification_status": "PASS"
+            }
+
+        # 3. Check Metric column existence
+        if metric not in filtered_df.columns:
+            m_col = next((c for c in filtered_df.columns if str(c).strip().lower() == metric.lower()), None)
+            if m_col:
+                metric = m_col
+            else:
+                metric = "Population"
+
+        s_metric = pd.to_numeric(filtered_df[metric], errors="coerce").dropna()
+        if s_metric.empty:
+            return {
+                "operation": intent,
+                "scope": "FILTERED",
+                "results": [],
+                "result_count": 0,
+                "answer": f"No numeric data found for column '{metric}'.",
+                "child_dataset": ", ".join(loaded_datasets),
+                "columns_used": [metric],
+                "verification_status": "FAILED"
+            }
+
+        # 4. Compute Result based on intent
+        results: List[Dict[str, Any]] = []
+        ans: str = ""
+
+        if intent in ["MAX", "MIN"]:
+            idx_ext = s_metric.idxmax() if is_max else s_metric.idxmin()
+            ext_row = filtered_df.loc[idx_ext]
+            val = float(ext_row.get(metric))
+            val_str = f"{val:,.0f}" if val.is_integer() else f"{val:,.2f}"
+            v_name = str(ext_row.get("Village") or ext_row.get("village") or f"Record_{idx_ext}")
+            st_name = str(ext_row.get("State") or ext_row.get("state") or target_states[0])
+            cap_name = str(ext_row.get("Capital") or ext_row.get("capital") or "")
+            v_id = str(ext_row.get("Village_ID") or "")
+
+            ext_label = "highest" if is_max else "lowest"
+            if len(target_states) == 1:
+                ans = f"The village with the {ext_label} {metric.replace('_', ' ')} in {st_name} is {v_name} with a {metric.replace('_', ' ')} of {val_str}."
+            else:
+                ans = f"Among villages in {', '.join(target_states)}, the village with the {ext_label} {metric.replace('_', ' ')} is {v_name} in {st_name} with a {metric.replace('_', ' ')} of {val_str}."
+
+            results = [{
+                "rank": 1,
+                "village": v_name,
+                "Village": v_name,
+                "state": st_name,
+                "State": st_name,
+                "capital": cap_name,
+                "Capital": cap_name,
+                "village_id": v_id,
+                "Village_ID": v_id,
+                "metric": metric,
+                "value": val,
+                "filters_applied": cls_res.filters,
+                "dataset_id": f"child_{st_name.lower().replace(' ', '_')}"
+            }]
+
+        elif intent in ["TOP_N", "BOTTOM_N"]:
+            n = cls_res.n_limit or 5
+            sorted_indices = s_metric.sort_values(ascending=(not is_max)).head(n).index
+            top_word = "Top" if is_max else "Bottom"
+            top_records = []
+            for rank, idx in enumerate(sorted_indices, start=1):
+                r = filtered_df.loc[idx]
+                val = float(r.get(metric))
+                v_name = str(r.get("Village") or r.get("village") or f"Record_{idx}")
+                st_name = str(r.get("State") or r.get("state") or target_states[0])
+                cap_name = str(r.get("Capital") or r.get("capital") or "")
+                v_id = str(r.get("Village_ID") or "")
+                top_records.append({
+                    "rank": rank,
+                    "village": v_name,
+                    "Village": v_name,
+                    "state": st_name,
+                    "State": st_name,
+                    "capital": cap_name,
+                    "Capital": cap_name,
+                    "village_id": v_id,
+                    "Village_ID": v_id,
+                    "metric": metric,
+                    "value": val
+                })
+            results = top_records
+            st_scope_str = target_states[0] if len(target_states) == 1 else f"across {', '.join(target_states)}"
+            ans = f"{top_word} {len(results)} villages by {metric.replace('_', ' ')} in {st_scope_str}:\n"
+            ans += "\n".join([f"{r['rank']}. {r['village']} ({r['state']}): {r['value']:,.0f}" for r in results])
+
+        elif intent in ["SUM", "TOTAL"]:
+            total_val = float(s_metric.sum())
+            val_str = f"{total_val:,.0f}" if total_val.is_integer() else f"{total_val:,.2f}"
+            st_label = target_states[0] if len(target_states) == 1 else ", ".join(target_states)
+            ans = f"The total {metric.replace('_', ' ')} across recorded villages in {st_label} is {val_str}."
+            results = [{
+                "metric": metric,
+                "operation": "SUM",
+                "value": total_val,
+                "states": target_states,
+                "villages_count": len(s_metric)
+            }]
+
+        elif intent in ["AVERAGE", "MEAN"]:
+            avg_val = float(s_metric.mean())
+            val_str = f"{avg_val:,.0f}" if avg_val.is_integer() else f"{avg_val:,.2f}"
+            st_label = target_states[0] if len(target_states) == 1 else ", ".join(target_states)
+            ans = f"The average {metric.replace('_', ' ')} across recorded villages in {st_label} is {val_str}."
+            results = [{
+                "metric": metric,
+                "operation": "AVERAGE",
+                "value": avg_val,
+                "states": target_states,
+                "villages_count": len(s_metric)
+            }]
+
+        elif intent == "COUNT":
+            cnt_val = len(s_metric)
+            st_label = target_states[0] if len(target_states) == 1 else ", ".join(target_states)
+            ans = f"There are {cnt_val} villages recorded in {st_label}."
+            results = [{
+                "metric": "VILLAGE_COUNT",
+                "operation": "COUNT",
+                "value": float(cnt_val),
+                "states": target_states
+            }]
+
+        # 5. Strict State Constraint Verification
+        target_canonical = [s.lower() for s in target_states]
+        verification_passed = True
+        violation_reason = None
+        for r in results:
+            res_st = (r.get("state") or r.get("State") or "").lower()
+            if res_st and not any(target_st in res_st or res_st in target_st for target_st in target_canonical):
+                verification_passed = False
+                violation_reason = f"Result state '{res_st}' does not match requested filter '{target_states}'"
+                break
+
+        return {
+            "operation": intent,
+            "scope": "FILTERED",
+            "metric": metric,
+            "results": results,
+            "result_count": len(results),
+            "answer": ans,
+            "child_dataset": loaded_datasets[0] if len(loaded_datasets) == 1 else ", ".join(loaded_datasets),
+            "columns_used": ["Village", "State", "Capital", metric] if "Village" in filtered_df.columns else ["State", metric],
+            "verification_status": "PASS" if verification_passed else "FAILED",
+            "verification_checks": {
+                "filter_constraint_satisfied": verification_passed,
+                "expected_states": target_states,
+                "resolved_datasets": loaded_datasets,
+                "violation_reason": violation_reason
+            },
+            "provenance": {
+                "dataset_id": loaded_datasets[0] if len(loaded_datasets) == 1 else "multiple_child_datasets",
+                "filters_applied": cls_res.filters,
+                "return_entity": cls_res.return_entity,
+                "intent": intent,
+                "metric": metric
+            }
+        }
+
 
 universal_global_aggregation_engine = UniversalGlobalAggregationEngine()
+
