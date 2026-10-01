@@ -203,13 +203,16 @@ class UniversalGlobalAggregationEngine:
 
         if con is not None:
             try:
-                # 1. Total sum
-                row_sum = con.execute(f'SELECT SUM("{metric}") FROM global_village_data WHERE "{metric}" IS NOT NULL').fetchone()
+                # 1. Total sum / count
+                if metric == "VILLAGE_COUNT":
+                    row_sum = con.execute('SELECT COUNT(*) FROM global_village_data').fetchone()
+                    rows_states = con.execute('SELECT State, COUNT(*) as val FROM global_village_data GROUP BY State').fetchall()
+                else:
+                    row_sum = con.execute(f'SELECT SUM("{metric}") FROM global_village_data WHERE "{metric}" IS NOT NULL').fetchone()
+                    rows_states = con.execute(f'SELECT State, SUM("{metric}") as val FROM global_village_data WHERE "{metric}" IS NOT NULL GROUP BY State').fetchall()
+
                 if row_sum and row_sum[0] is not None:
                     total_val = float(row_sum[0])
-
-                # 2. State-level breakdown
-                rows_states = con.execute(f'SELECT State, SUM("{metric}") as val FROM global_village_data WHERE "{metric}" IS NOT NULL GROUP BY State').fetchall()
                 state_breakdown = [{"state": str(r[0]), "value": float(r[1])} for r in rows_states]
             except Exception as ex:
                 logger.warning(f"DuckDB total query error: {ex}")
@@ -217,11 +220,18 @@ class UniversalGlobalAggregationEngine:
         # Pandas Fallback
         if total_val is None:
             df = multi_child_executor.get_combined_dataframe()
-            if not df.empty and metric in df.columns:
-                valid_metric = pd.to_numeric(df[metric], errors="coerce").dropna()
-                total_val = float(valid_metric.sum())
-                grouped = df.groupby("State")[metric].sum().reset_index()
-                state_breakdown = [{"state": str(r["State"]), "value": float(r[metric])} for _, r in grouped.iterrows()]
+            if not df.empty:
+                if metric == "VILLAGE_COUNT":
+                    total_val = float(len(df))
+                    grouped = df.groupby("State").size().reset_index(name="val")
+                    state_breakdown = [{"state": str(r["State"]), "value": float(r["val"])} for _, r in grouped.iterrows()]
+                elif metric in df.columns:
+                    valid_metric = pd.to_numeric(df[metric], errors="coerce").dropna()
+                    total_val = float(valid_metric.sum())
+                    grouped = df.groupby("State")[metric].sum().reset_index()
+                    state_breakdown = [{"state": str(r["State"]), "value": float(r[metric])} for _, r in grouped.iterrows()]
+                else:
+                    total_val = 0.0
             else:
                 total_val = 0.0
 
@@ -231,7 +241,9 @@ class UniversalGlobalAggregationEngine:
         verification_status = "PASS" if resolved_count >= expected_state_count and len(missing) == 0 else "PARTIAL"
 
         val_str = f"{total_val:,.0f}" if total_val.is_integer() else f"{total_val:,.2f}"
-        if verification_status == "PASS":
+        if metric == "VILLAGE_COUNT":
+            ans = f"The total number of villages across all {expected_state_count} registered states is {val_str}."
+        elif verification_status == "PASS":
             ans = f"The total {metric.replace('_', ' ')} across all {expected_state_count} registered states (280 villages) is {val_str}."
         else:
             ans = f"The total {metric.replace('_', ' ')} across {resolved_count} registered states is {val_str}. (Note: Data for {len(missing)} states was not found: {', '.join(missing)})."
@@ -337,7 +349,7 @@ class UniversalGlobalAggregationEngine:
         order_sql = "DESC" if is_max else "ASC"
         rows: List[Tuple[Any, ...]] = []
 
-        agg_expr = "COUNT(*)" if metric == "VILLAGE_COUNT" else f'SUM("{metric}")'
+        agg_expr = "COUNT(*)" if metric == "VILLAGE_COUNT" else (f'AVG("{metric}")' if metric == "Literacy_Rate_Percent" else f'SUM("{metric}")')
         where_clause = "" if metric == "VILLAGE_COUNT" else f'WHERE "{metric}" IS NOT NULL'
 
         if con is not None:
@@ -359,6 +371,9 @@ class UniversalGlobalAggregationEngine:
             if not df.empty and "State" in df.columns:
                 if metric == "VILLAGE_COUNT":
                     grouped = df.groupby(["State", "Capital"]).size().reset_index(name="total_val")
+                elif metric == "Literacy_Rate_Percent" and metric in df.columns:
+                    grouped = df.groupby(["State", "Capital"])[metric].mean().reset_index()
+                    grouped.rename(columns={metric: "total_val"}, inplace=True)
                 elif metric in df.columns:
                     grouped = df.groupby(["State", "Capital"])[metric].sum().reset_index()
                     grouped.rename(columns={metric: "total_val"}, inplace=True)
@@ -379,15 +394,17 @@ class UniversalGlobalAggregationEngine:
             })
 
         ext_label = "highest" if is_max else "lowest"
+        pct_sign = "%" if (metric == "Literacy_Rate_Percent" or "Rate" in metric or "Percent" in metric) else ""
+        stat_word = "average" if metric == "Literacy_Rate_Percent" else "total"
         if limit == 1 and rankings:
             top_rec = rankings[0]
-            val_str = f"{top_rec['value']:,.0f}" if top_rec['value'].is_integer() else f"{top_rec['value']:,.2f}"
+            val_str = f"{top_rec['value']:,.0f}{pct_sign}" if top_rec['value'].is_integer() else f"{top_rec['value']:,.2f}{pct_sign}"
             cap_info = f" (Capital: {top_rec['capital']})" if top_rec.get("capital") else ""
-            ans = f"The state with the {ext_label} total {metric.replace('_', ' ')} across all registered states is {top_rec['state']}{cap_info} with {val_str}."
+            ans = f"The state with the {ext_label} {stat_word} {metric.replace('_', ' ')} across all registered states is {top_rec['state']}{cap_info} with {val_str}."
         elif rankings:
             top_word = "Top" if is_max else "Bottom"
             ans = f"{top_word} {len(rankings)} states by {metric.replace('_', ' ')} across all registered states:\n"
-            ans += "\n".join([f"{r['rank']}. {r['state']} (Capital: {r['capital']}): {r['value']:,.0f}" for r in rankings])
+            ans += "\n".join([f"{r['rank']}. {r['state']} (Capital: {r['capital']}): {r['value']:,.0f}{pct_sign}" if r['value'].is_integer() else f"{r['rank']}. {r['state']} (Capital: {r['capital']}): {r['value']:,.2f}{pct_sign}" for r in rankings])
         else:
             ans = f"No state ranking records found for {metric}."
 
@@ -548,11 +565,12 @@ class UniversalGlobalAggregationEngine:
         }
 
     def _execute_all_states_breakdown(self, metric: str, intent: str, question: str) -> Dict[str, Any]:
-        """Return total of each and every state sorted descending."""
+        """Return total or average of each and every state sorted descending."""
         con = self._ensure_duckdb()
         records: List[Dict[str, Any]] = []
 
-        agg_expr = "COUNT(*)" if metric == "VILLAGE_COUNT" else f'SUM("{metric}")'
+        is_avg = (intent == "AVERAGE" or metric == "Literacy_Rate_Percent")
+        agg_expr = "COUNT(*)" if metric == "VILLAGE_COUNT" else (f'AVG("{metric}")' if is_avg else f'SUM("{metric}")')
         where_clause = "" if metric == "VILLAGE_COUNT" else f'WHERE "{metric}" IS NOT NULL'
 
         if con is not None:
@@ -573,6 +591,8 @@ class UniversalGlobalAggregationEngine:
             if not df.empty and "State" in df.columns:
                 if metric == "VILLAGE_COUNT":
                     grouped = df.groupby(["State", "Capital"]).size().reset_index(name="val")
+                elif is_avg and metric in df.columns:
+                    grouped = df.groupby(["State", "Capital"])[metric].mean().reset_index(name="val")
                 elif metric in df.columns:
                     grouped = df.groupby(["State", "Capital"])[metric].sum().reset_index(name="val")
                 else:
@@ -581,11 +601,19 @@ class UniversalGlobalAggregationEngine:
                     sorted_df = grouped.sort_values(by="val", ascending=False)
                     records = [{"state": str(r["State"]), "capital": str(r["Capital"]), "value": float(r["val"])} for _, r in sorted_df.iterrows()]
 
-        ans = f"Total {metric.replace('_', ' ')} breakdown for all {len(records)} registered states:\n"
-        ans += "\n".join([f"{idx}. {r['state']} (Capital: {r['capital']}): {r['value']:,.0f}" for idx, r in enumerate(records, start=1)])
+        pct_sign = "%" if (metric == "Literacy_Rate_Percent" or "Rate" in metric or "Percent" in metric) else ""
+        if is_avg:
+            ans = f"Average {metric.replace('_', ' ')} breakdown for all {len(records)} registered states:\n"
+            ans += "\n".join([f"{idx}. {r['state']} (Capital: {r['capital']}): {r['value']:,.2f}{pct_sign}" for idx, r in enumerate(records, start=1)])
+        elif metric == "VILLAGE_COUNT":
+            ans = f"Village count breakdown for all {len(records)} registered states:\n"
+            ans += "\n".join([f"{idx}. {r['state']} (Capital: {r['capital']}): {r['value']:,.0f} villages" for idx, r in enumerate(records, start=1)])
+        else:
+            ans = f"Total {metric.replace('_', ' ')} breakdown for all {len(records)} registered states:\n"
+            ans += "\n".join([f"{idx}. {r['state']} (Capital: {r['capital']}): {r['value']:,.0f}" for idx, r in enumerate(records, start=1)])
 
         return {
-            "operation": "GROUP_AGGREGATE",
+            "operation": intent if intent != "GROUP_AGGREGATE" else "GROUP_AGGREGATE",
             "scope": "ALL_STATES_BREAKDOWN",
             "metric": metric,
             "results": records,
@@ -651,7 +679,38 @@ class UniversalGlobalAggregationEngine:
                     "verification_status": "PASS"
                 }
 
-        # Direct sum or aggregation
+        if intent in ["RANKING", "SORT"]:
+            is_asc = order == "ASC"
+            sorted_df = df.sort_values(by=metric, ascending=is_asc) if metric in df.columns else df
+            records = []
+            for rank, (idx, r) in enumerate(sorted_df.iterrows(), start=1):
+                val = float(r.get(metric)) if pd.notnull(r.get(metric)) else 0.0
+                records.append({
+                    "rank": rank,
+                    "village": str(r.get("Village") or f"Record_{idx}"),
+                    "Village": str(r.get("Village") or f"Record_{idx}"),
+                    "state": str(r.get("State") or ""),
+                    "State": str(r.get("State") or ""),
+                    "capital": str(r.get("Capital") or ""),
+                    "Capital": str(r.get("Capital") or ""),
+                    "metric": metric,
+                    "value": val
+                })
+            ans = f"Villages across all states ranked by {metric.replace('_', ' ')} ({'descending' if not is_asc else 'ascending'}):\n"
+            ans += "\n".join([f"{r['rank']}. {r['village']} ({r['state']}): {r['value']:,.0f}" for r in records[:20]])
+            if len(records) > 20:
+                ans += f"\n... and {len(records) - 20} more villages."
+            return {
+                "operation": intent,
+                "scope": "ALL_VILLAGES",
+                "metric": metric,
+                "results": records,
+                "result_count": len(records),
+                "answer": ans,
+                "child_dataset": "all_28_child_datasets",
+                "columns_used": ["Village", "State", "Capital", metric],
+                "verification_status": "PASS"
+            }
         total_val: float = 0.0
         if con is not None:
             try:
@@ -761,6 +820,8 @@ class UniversalGlobalAggregationEngine:
             agg_val = float(s.mean())
         elif intent == "MEDIAN":
             agg_val = float(s.median())
+        elif intent == "RANGE":
+            agg_val = float(s.max() - s.min())
         elif intent == "MIN":
             agg_val = float(s.min())
         elif intent == "MAX":
@@ -995,13 +1056,30 @@ class UniversalGlobalAggregationEngine:
 
         combined_df = pd.concat(dfs, ignore_index=True) if len(dfs) > 1 else dfs[0]
 
-        # 2. Apply additional filters from cls_res.filters if any (e.g. numeric thresholds)
+        # 2. Apply additional filters from cls_res.filters if any (e.g. numeric thresholds, column comparisons)
         filtered_df = combined_df
         for f in cls_res.filters:
             col = f.get("column")
             op = f.get("operator")
             val = f.get("value")
-            if col and col != "State" and col in filtered_df.columns:
+            cmp_col = f.get("compare_to_column")
+            if cmp_col and col in filtered_df.columns and cmp_col in filtered_df.columns:
+                try:
+                    s1 = pd.to_numeric(filtered_df[col], errors="coerce")
+                    s2 = pd.to_numeric(filtered_df[cmp_col], errors="coerce")
+                    if op in [">", "gt"]:
+                        filtered_df = filtered_df[s1 > s2]
+                    elif op in ["<", "lt"]:
+                        filtered_df = filtered_df[s1 < s2]
+                    elif op in [">=", "gte"]:
+                        filtered_df = filtered_df[s1 >= s2]
+                    elif op in ["<=", "lte"]:
+                        filtered_df = filtered_df[s1 <= s2]
+                    elif op in ["=", "=="]:
+                        filtered_df = filtered_df[s1 == s2]
+                except Exception:
+                    pass
+            elif col and col != "State" and col in filtered_df.columns and val is not None:
                 try:
                     s_num = pd.to_numeric(filtered_df[col], errors="coerce")
                     if op in [">", "gt"]:
@@ -1030,31 +1108,96 @@ class UniversalGlobalAggregationEngine:
             }
 
         # 3. Check Metric column existence
-        if metric not in filtered_df.columns:
-            m_col = next((c for c in filtered_df.columns if str(c).strip().lower() == metric.lower()), None)
-            if m_col:
-                metric = m_col
-            else:
-                metric = "Population"
+        if intent not in ["FILTER", "MULTI_FILTER"]:
+            if metric not in filtered_df.columns:
+                m_col = next((c for c in filtered_df.columns if str(c).strip().lower() == metric.lower()), None)
+                if m_col:
+                    metric = m_col
+                else:
+                    metric = "Population"
 
-        s_metric = pd.to_numeric(filtered_df[metric], errors="coerce").dropna()
-        if s_metric.empty:
-            return {
-                "operation": intent,
-                "scope": "FILTERED",
-                "results": [],
-                "result_count": 0,
-                "answer": f"No numeric data found for column '{metric}'.",
-                "child_dataset": ", ".join(loaded_datasets),
-                "columns_used": [metric],
-                "verification_status": "FAILED"
-            }
+            s_metric = pd.to_numeric(filtered_df[metric], errors="coerce").dropna()
+            if s_metric.empty:
+                return {
+                    "operation": intent,
+                    "scope": "FILTERED",
+                    "results": [],
+                    "result_count": 0,
+                    "answer": f"No numeric data found for column '{metric}'.",
+                    "child_dataset": ", ".join(loaded_datasets),
+                    "columns_used": [metric],
+                    "verification_status": "FAILED"
+                }
+        else:
+            s_metric = pd.Series(dtype=float)
 
         # 4. Compute Result based on intent
         results: List[Dict[str, Any]] = []
         ans: str = ""
 
-        if intent in ["MAX", "MIN"]:
+        if intent in ["FILTER", "MULTI_FILTER"]:
+            records = []
+            for rank, (idx, r) in enumerate(filtered_df.iterrows(), start=1):
+                v_name = str(r.get("Village") or r.get("village") or f"Record_{idx}")
+                st_name = str(r.get("State") or r.get("state") or target_states[0])
+                cap_name = str(r.get("Capital") or r.get("capital") or "")
+                v_id = str(r.get("Village_ID") or "")
+                rec = {
+                    "rank": rank,
+                    "village": v_name,
+                    "Village": v_name,
+                    "state": st_name,
+                    "State": st_name,
+                    "capital": cap_name,
+                    "Capital": cap_name,
+                    "village_id": v_id,
+                    "Village_ID": v_id,
+                }
+                for c in filtered_df.columns:
+                    if c not in rec:
+                        rec[c] = r[c]
+                records.append(rec)
+
+            st_label = target_states[0] if len(target_states) == 1 else ", ".join(target_states)
+            comp_filter = next((f for f in cls_res.filters if f.get("compare_to_column")), None)
+            if comp_filter:
+                c1 = comp_filter.get("column", "")
+                c2 = comp_filter.get("compare_to_column", "")
+                op_sym = comp_filter.get("operator", ">")
+                op_word = "more" if op_sym in [">", ">="] else "fewer"
+                ans = f"Found {len(records)} village(s) in {st_label} with {op_word} {c1.replace('_', ' ')} than {c2.replace('_', ' ')}:\n"
+                ans += "\n".join([f"- {r['village']}: {c1}={r.get(c1):,}, {c2}={r.get(c2):,}" for r in records])
+            else:
+                ans = f"Found {len(records)} village(s) in {st_label} matching the criteria:\n"
+                ans += "\n".join([f"- {r['village']} ({r['state']}): {metric.replace('_', ' ')}={r.get(metric):,}" if isinstance(r.get(metric), (int, float)) else f"- {r['village']}: {r.get(metric)}" for r in records])
+
+            results = records
+
+        elif intent in ["RANKING", "SORT"]:
+            is_asc = cls_res.order == "ASC"
+            sorted_df = filtered_df.sort_values(by=metric, ascending=is_asc)
+            records = []
+            for rank, (idx, r) in enumerate(sorted_df.iterrows(), start=1):
+                val = float(r.get(metric)) if pd.notnull(r.get(metric)) else 0.0
+                records.append({
+                    "rank": rank,
+                    "village": str(r.get("Village") or f"Record_{idx}"),
+                    "Village": str(r.get("Village") or f"Record_{idx}"),
+                    "state": str(r.get("State") or target_states[0]),
+                    "State": str(r.get("State") or target_states[0]),
+                    "capital": str(r.get("Capital") or ""),
+                    "Capital": str(r.get("Capital") or ""),
+                    "village_id": str(r.get("Village_ID") or ""),
+                    "Village_ID": str(r.get("Village_ID") or ""),
+                    "metric": metric,
+                    "value": val
+                })
+            results = records
+            st_scope_str = target_states[0] if len(target_states) == 1 else f"across {', '.join(target_states)}"
+            ans = f"Villages in {st_scope_str} ranked by {metric.replace('_', ' ')} ({'descending' if not is_asc else 'ascending'}):\n"
+            ans += "\n".join([f"{r['rank']}. {r['village']} ({r['state']}): {r['value']:,.0f}" for r in results])
+
+        elif intent in ["MAX", "MIN"]:
             idx_ext = s_metric.idxmax() if is_max else s_metric.idxmin()
             ext_row = filtered_df.loc[idx_ext]
             val = float(ext_row.get(metric))

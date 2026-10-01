@@ -121,6 +121,12 @@ class FastQueryClassifier:
         r"\bin\s+all\s+states\b",
         r"\bper\s+state\b",
         r"\beach\s+state\b",
+        r"\bby\s+state\b",
+        r"\bstate\s*wise\b",
+        r"\bstatewise\b",
+        r"\ball\s+28\s+states\b",
+        r"\bacross\s+india\b",
+        r"\bfor\s+each\s+state\b",
         r"\bsab\s+states\b",
         r"\bsabhi\s+states\b",
         r"\bsab\s+rajya\b",
@@ -271,22 +277,42 @@ class FastQueryClassifier:
         return res
 
     def extract_filters(self, question: str) -> List[Dict[str, Any]]:
-        """Extract explicit filters such as State/Capital or numeric thresholds from query."""
+        """Extract explicit filters such as State/Capital, column comparison, range, or numeric thresholds from query."""
         filters: List[Dict[str, Any]] = []
         norm_q = normalize_question(question)
         exp_q = expand_abbreviations(norm_q)
+        q_lower = norm_q.lower()
         states = self.extract_states(exp_q)
         if len(states) == 1:
             filters.append({"column": "State", "operator": "=", "value": states[0]})
         elif len(states) > 1:
             filters.append({"column": "State", "operator": "IN", "value": states})
 
-        m_num = re.search(r"\b(population|literacy|males|females|households|area)\s*(>|<|>=|<=|=|==|above|over|greater\s+than|below|under|less\s+than)\s*([0-9]+(?:\.[0-9]+)?)\b", norm_q.lower())
-        if m_num:
-            metric_raw, op_raw, val_raw = m_num.groups()
-            col = self.extract_metric(metric_raw)
-            op = ">" if op_raw in ["above", "over", "greater than", ">"] else ("<" if op_raw in ["below", "under", "less than", "<"] else "=")
-            filters.append({"column": col, "operator": op, "value": float(val_raw) if "." in val_raw else int(val_raw)})
+        # Column-to-column comparison filter (e.g. more males than females)
+        m_col_comp = re.search(r"\b(?:more|fewer|less|greater|higher|lower)\s+(males|men|females|women|households)\s+than\s+(males|men|females|women|households)\b", q_lower)
+        if not m_col_comp:
+            m_col_comp = re.search(r"\b(males|men|females|women|households)\s*(>|<|>=|<=)\s*(males|men|females|women|households)\b", q_lower)
+        if m_col_comp:
+            c1 = self.extract_metric(m_col_comp.group(1))
+            c2 = self.extract_metric(m_col_comp.group(2))
+            op = "<" if any(w in q_lower for w in ["fewer", "less", "lower", "<"]) else ">"
+            filters.append({"column": c1, "operator": op, "compare_to_column": c2})
+
+        # Range filter
+        m_range = re.search(r"\b(?:between|from)\s+([0-9]+(?:\.[0-9]+)?)\s+(?:and|to)\s+([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+        if m_range:
+            r1, r2 = float(m_range.group(1)), float(m_range.group(2))
+            metric_col = self.extract_metric(q_lower) or "Population"
+            filters.append({"column": metric_col, "operator": ">=", "value": min(r1, r2)})
+            filters.append({"column": metric_col, "operator": "<=", "value": max(r1, r2)})
+        else:
+            # Numeric threshold filter
+            m_num = re.search(r"\b(population|literacy|males|females|households|area)?\s*(>|<|>=|<=|=|==|above|over|greater\s+than|more\s+than|below|under|less\s+than|fewer\s+than)\s*([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+            if m_num:
+                metric_raw, op_raw, val_raw = m_num.groups()
+                col = self.extract_metric(metric_raw) if metric_raw else (self.extract_metric(q_lower) or "Population")
+                op = ">" if op_raw in ["above", "over", "greater than", "more than", ">"] else ("<" if op_raw in ["below", "under", "less than", "fewer than", "<"] else "=")
+                filters.append({"column": col, "operator": op, "value": float(val_raw) if "." in val_raw else int(val_raw)})
 
         return filters
 
@@ -393,6 +419,9 @@ class FastQueryClassifier:
             target_entity = m_top.group(3)
             order = "DESC" if direction_word == "top" else "ASC"
             intent = "TOP_N" if direction_word == "top" else "BOTTOM_N"
+            metric_target = metric
+            if target_entity == "villages" and metric_target == "VILLAGE_COUNT":
+                metric_target = "Population"
             if target_entity == "villages" and states:
                 return FastClassificationResult(
                     is_fast_path=True,
@@ -403,7 +432,7 @@ class FastQueryClassifier:
                     filter_entity="State",
                     filter_value=states[0] if len(states) == 1 else states,
                     filters=[{"column": "State", "operator": "=" if len(states) == 1 else "IN", "value": states[0] if len(states) == 1 else states}],
-                    metric=metric,
+                    metric=metric_target,
                     entities=states,
                     n_limit=n_val,
                     order=order,
@@ -417,7 +446,7 @@ class FastQueryClassifier:
                 scope="ALL_STATES" if target_entity == "states" else "ALL_VILLAGES",
                 scope_type="GLOBAL",
                 return_entity="State" if target_entity == "states" else "Village",
-                metric=metric,
+                metric=metric_target,
                 entities=[],
                 n_limit=n_val,
                 order=order,
@@ -425,6 +454,108 @@ class FastQueryClassifier:
                 original_question=question,
                 normalized_question=norm_q
             )
+
+        # 3.5. Pattern 2.5: Column-to-Column Comparison Filter (e.g. "which village has more males than females in Telangana?")
+        m_col_comp = re.search(r"\b(?:more|fewer|less|greater|higher|lower)\s+(males|men|females|women|households)\s+than\s+(males|men|females|women|households)\b", q_lower)
+        if not m_col_comp:
+            m_col_comp = re.search(r"\b(males|men|females|women|households)\s*(>|<|>=|<=)\s*(males|men|females|women|households)\b", q_lower)
+        if m_col_comp:
+            c1 = self.extract_metric(m_col_comp.group(1))
+            c2 = self.extract_metric(m_col_comp.group(2))
+            op = "<" if any(w in q_lower for w in ["fewer", "less", "lower", "<"]) else ">"
+            filt_list = []
+            if len(states) == 1:
+                filt_list.append({"column": "State", "operator": "=", "value": states[0]})
+            elif len(states) > 1:
+                filt_list.append({"column": "State", "operator": "IN", "value": states})
+            filt_list.append({"column": c1, "operator": op, "compare_to_column": c2})
+
+            return FastClassificationResult(
+                is_fast_path=True,
+                intent="FILTER",
+                scope="FILTERED" if states else "ALL_VILLAGES",
+                scope_type="FILTERED" if states else "GLOBAL",
+                return_entity="Village",
+                filter_entity="State" if states else None,
+                filter_value=states[0] if len(states) == 1 else (states if states else None),
+                filters=filt_list,
+                metric=c1,
+                entities=states,
+                original_question=question,
+                normalized_question=norm_q
+            )
+
+        # 3.6. Pattern 2.6: Village Numeric Threshold and Range Filters (e.g. "population above 10000 in AP", "between 5000 and 10000 in TG")
+        m_range = re.search(r"\b(?:between|from)\s+([0-9]+(?:\.[0-9]+)?)\s+(?:and|to)\s+([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+        m_thresh = re.search(r"\b(population|literacy|males|females|households|area)?\s*(>|<|>=|<=|=|==|above|over|greater\s+than|more\s+than|below|under|less\s+than|fewer\s+than)\s*([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+        if (m_range or m_thresh) and any(w in q_lower for w in ["village", "villages", "list", "which", "find", "show", "where", "with"]):
+            has_extreme_word = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ["highest", "maximum", "max", "most", "largest", "lowest", "minimum", "min", "least", "smallest", "top", "bottom"])
+            if not has_extreme_word:
+                filt_list = []
+                if len(states) == 1:
+                    filt_list.append({"column": "State", "operator": "=", "value": states[0]})
+                elif len(states) > 1:
+                    filt_list.append({"column": "State", "operator": "IN", "value": states})
+
+                if m_range:
+                    r1, r2 = float(m_range.group(1)), float(m_range.group(2))
+                    m_col = self.extract_metric(q_lower) or "Population"
+                    filt_list.append({"column": m_col, "operator": ">=", "value": min(r1, r2)})
+                    filt_list.append({"column": m_col, "operator": "<=", "value": max(r1, r2)})
+                elif m_thresh:
+                    m_raw, op_raw, val_raw = m_thresh.groups()
+                    m_col = self.extract_metric(m_raw) if m_raw else (self.extract_metric(q_lower) or "Population")
+                    op = ">" if op_raw in ["above", "over", "greater than", "more than", ">"] else ("<" if op_raw in ["below", "under", "less than", "fewer than", "<"] else "=")
+                    filt_list.append({"column": m_col, "operator": op, "value": float(val_raw) if "." in val_raw else int(val_raw)})
+
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="FILTER",
+                    scope="FILTERED" if states else "ALL_VILLAGES",
+                    scope_type="FILTERED" if states else "GLOBAL",
+                    return_entity="Village",
+                    filter_entity="State" if states else None,
+                    filter_value=states[0] if len(states) == 1 else (states if states else None),
+                    filters=filt_list,
+                    metric=metric or "Population",
+                    entities=states,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+        # 3.7. Pattern 2.7: Village Ranking (e.g. "Rank villages by population in Telangana", "Rank villages across all states")
+        is_village_ranking = bool(re.search(r"\b(?:rank|ranking|sort|order)\s+(?:the\s+)?villages?\b", q_lower)) or bool(re.search(r"\bvillages?\s+(?:by\s+)?(?:rank|ranking|ranked|sorted)\b", q_lower))
+        if is_village_ranking:
+            order = "ASC" if any(w in q_lower for w in ["ascending", "lowest", "least", "bottom"]) else "DESC"
+            if states:
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="RANKING",
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village",
+                    filter_entity="State",
+                    filter_value=states[0] if len(states) == 1 else states,
+                    filters=[{"column": "State", "operator": "=" if len(states) == 1 else "IN", "value": states[0] if len(states) == 1 else states}],
+                    metric=metric or "Population",
+                    entities=states,
+                    order=order,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+            else:
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="RANKING",
+                    scope="ALL_VILLAGES",
+                    scope_type="GLOBAL",
+                    return_entity="Village",
+                    metric=metric or "Population",
+                    entities=[],
+                    order=order,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
 
         # 4. Check State Rankings / Extremes: "which state has more population?", "which state has less population", "who has more people?", etc.
         m_state_ext = bool(re.search(r"\b(?:which\s+state|what\s+state|state\s+with|who\s+has|who\s+have|which\s+is\s+the\s+state|states\s+with)\b", q_lower))
@@ -567,11 +698,17 @@ class FastQueryClassifier:
             elif any(w in q_lower for w in ["count", "how many states"]):
                 op = "COUNT"
 
-            # Check if per-state breakdown is requested: "total population of every state", "population of each state", "Rank all states"
-            if any(w in q_lower for w in ["every state", "each state", "all states breakdown", "breakdown by state", "rank", "ranking", "sort", "order"]):
+            # Check if per-state breakdown is requested: "total population of every state", "population of each state", "Rank all states", "average population by state", "villages per state"
+            if any(w in q_lower for w in ["every state", "each state", "all states breakdown", "breakdown by state", "by state", "per state", "state wise", "statewise", "for each state", "rank", "ranking", "sort", "order"]):
+                breakdown_intent = "GROUP_AGGREGATE"
+                if any(w in q_lower for w in ["average", "avg", "mean"]) or metric == "Literacy_Rate_Percent":
+                    breakdown_intent = "AVERAGE"
+                elif any(w in q_lower for w in ["village", "villages", "count"]):
+                    breakdown_intent = "COUNT"
+                    metric = "VILLAGE_COUNT"
                 return FastClassificationResult(
                     is_fast_path=True,
-                    intent="GROUP_AGGREGATE",
+                    intent=breakdown_intent,
                     scope="ALL_STATES_BREAKDOWN",
                     metric=metric,
                     entities=[],
@@ -690,6 +827,8 @@ class FastQueryClassifier:
                 op = "AVERAGE"
             elif any(w in q_lower for w in ["median"]):
                 op = "MEDIAN"
+            elif any(w in q_lower for w in ["range"]):
+                op = "RANGE"
             elif any(w in q_lower for w in ["count", "how many villages", "number of villages", "village count", "count of villages"]):
                 op = "COUNT"
                 if any(w in q_lower for w in ["village", "villages"]):

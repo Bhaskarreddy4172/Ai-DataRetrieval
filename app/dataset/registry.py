@@ -340,9 +340,68 @@ class ParentChildRegistry:
                 f"TOTAL DATASETS CATALOGED: {dash['datasets_discovered']} | "
                 f"TOTAL READY: {dash['datasets_ready']}"
             )
+            # Print complete Section 3 Health Check Report
+            self._print_startup_health_report()
 
         except Exception as ex:
             logger.warning(f"ParentChildRegistry initialization error: {ex}")
+
+    def _print_startup_health_report(self) -> None:
+        """Print complete dataset health check report adhering to Section 3 and 4 of master specifications."""
+        all_states = self.get_available_states()
+        expected_states = 28
+        resolved_states = len(all_states)
+        mandatory_28 = [
+            "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+            "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+            "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+            "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+            "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+            "Uttar Pradesh", "Uttarakhand", "West Bengal"
+        ]
+        missing_states = [s for s in mandatory_28 if s not in all_states]
+
+        discovered = len(self._all_datasets_catalog)
+        ready = sum(1 for d in self._all_datasets_catalog.values() if d.get("status") == "READY")
+        failed = sum(1 for d in self._all_datasets_catalog.values() if d.get("status") == "FAILED")
+        indexed = ready
+
+        report_lines = [
+            "============================================================",
+            "DATASET HEALTH CHECK REPORT",
+            "============================================================",
+            f"DISCOVERED DATASETS: {discovered}",
+            f"REGISTERED DATASETS: {len(self._child_to_meta)} child + {len(self._standalone_datasets)} standalone + {1 if self._main_df is not None else 0} main",
+            f"INDEXED DATASETS: {indexed}",
+            f"READY DATASETS: {ready}",
+            f"FAILED DATASETS: {failed}",
+            "------------------------------------------------------------",
+            f"28-STATE COVERAGE VERIFICATION: {resolved_states}/{expected_states} READY",
+            "------------------------------------------------------------",
+        ]
+
+        if missing_states:
+            report_lines.append(f"MISSING STATES: {', '.join(missing_states)}")
+
+        for st in all_states:
+            meta = next((m for m in self._child_to_meta.values() if m.get("state") == st), None)
+            if meta:
+                child_p = meta["child_path"]
+                c_df = self.load_child_dataframe(child_p)
+                rc = len(c_df) if c_df is not None else 0
+                cols = list(c_df.columns) if c_df is not None else []
+                pop_col = next((c for c in cols if "pop" in c.lower()), "MISSING")
+                male_col = next((c for c in cols if "male" in c.lower() and "female" not in c.lower()), "MISSING")
+                fem_col = next((c for c in cols if "female" in c.lower()), "MISSING")
+                lit_col = next((c for c in cols if "literacy" in c.lower()), "MISSING")
+                report_lines.append(f"{st} -> READY (Rows: {rc}, Cols: {len(cols)}, Pop: {pop_col}, Male: {male_col}, Female: {fem_col}, Literacy: {lit_col})")
+            else:
+                report_lines.append(f"{st} -> FAILED (Child dataset not found)")
+
+        report_lines.append("============================================================")
+        full_text = "\n".join(report_lines)
+        print(full_text)
+        logger.info("\n" + full_text)
 
     def _index_entity_associations(
         self,
@@ -581,8 +640,34 @@ class ParentChildRegistry:
 
         return None
 
+    SEMANTIC_COLUMN_SYNONYMS: Dict[str, List[str]] = {
+        "State": ["state", "state_name", "statename", "province", "region"],
+        "Capital": ["capital", "capital_city", "capitalcity", "rajadhani"],
+        "Village": ["village", "village_name", "villagename", "gramam", "gram", "settlement", "town"],
+        "Village_ID": ["village_id", "villageid", "id", "vid", "code"],
+        "Population": ["population", "pop", "total_population", "population_count", "inhabitants", "residents", "people"],
+        "No_of_Males": ["no_of_males", "males", "male", "male_population", "men", "male_count"],
+        "No_of_Females": ["no_of_females", "females", "female", "female_population", "women", "female_count"],
+        "Literacy_Rate_Percent": ["literacy_rate_percent", "literacy_rate", "literacy", "literacy_percent", "education_rate"],
+        "Area_Sq_Km": ["area_sq_km", "area", "area_sqkm", "size_sq_km", "size", "land_area"],
+        "Households": ["households", "houses", "homes", "families", "household_count"]
+    }
+
+    @classmethod
+    def normalize_child_columns(cls, columns: List[str]) -> Dict[str, str]:
+        """Map dataset column aliases dynamically to universal semantic standard columns."""
+        rename_map: Dict[str, str] = {}
+        for col in columns:
+            clean_c = col.strip().lower().replace(" ", "_").replace("-", "_")
+            for canonical, syns in cls.SEMANTIC_COLUMN_SYNONYMS.items():
+                if clean_c in syns or clean_c.replace("_", "") in [s.replace("_", "") for s in syns]:
+                    if col != canonical:
+                        rename_map[col] = canonical
+                    break
+        return rename_map
+
     def load_child_dataframe(self, child_path: Union[str, Path]) -> Optional[pd.DataFrame]:
-        """Load and cache a child dataset dataframe in a thread-safe manner."""
+        """Load and cache a child dataset dataframe in a thread-safe manner with semantic column normalization."""
         path_obj = Path(child_path)
         cache_key = str(path_obj.resolve())
 
@@ -596,6 +681,10 @@ class ParentChildRegistry:
             try:
                 df = pd.read_csv(path_obj, encoding="utf-8")
                 df.columns = [str(c).strip() for c in df.columns]
+                # Apply dynamic semantic column alias normalization
+                norm_renames = self.normalize_child_columns(list(df.columns))
+                if norm_renames:
+                    df.rename(columns=norm_renames, inplace=True)
                 # Cast numeric columns
                 for col in ["Population", "No_of_Males", "No_of_Females", "Literacy_Rate_Percent", "Area_Sq_Km", "Households"]:
                     if col in df.columns:
