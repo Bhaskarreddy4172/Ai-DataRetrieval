@@ -203,8 +203,68 @@ class ValidationResultModel(Base):
     validated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
+class QueryPlanModel(Base):
+    """Structured JSON query plans for audit, debugging, and deterministic execution."""
+    __tablename__ = "query_plans"
+
+    plan_id = Column(String(150), primary_key=True)
+    session_id = Column(String(100), nullable=False, default="default", index=True)
+    question = Column(Text, nullable=False)
+    structured_plan = Column(JSON, nullable=False)
+    execution_type = Column(String(50), nullable=False, default="SQL")  # SQL, DUCKDB, RAG, BOOLEAN
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class QueryResultModel(Base):
+    """Execution results and verification cache."""
+    __tablename__ = "query_results"
+
+    result_id = Column(String(150), primary_key=True)
+    plan_id = Column(String(150), ForeignKey("query_plans.plan_id"), nullable=True, index=True)
+    data = Column(JSON, nullable=True)
+    result_count = Column(Integer, default=0)
+    execution_time = Column(Float, default=0.0)
+    verified = Column(Boolean, default=True)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class DatabaseMigrationModel(Base):
+    """Database schema migration version tracking."""
+    __tablename__ = "database_migrations"
+
+    migration_id = Column(String(150), primary_key=True)
+    version = Column(Integer, nullable=False, unique=True)
+    description = Column(String(255), nullable=False)
+    applied_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    status = Column(String(50), nullable=False, default="APPLIED")
+
+
+class SystemHealthModel(Base):
+    """System health audit logs."""
+    __tablename__ = "system_health"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    component = Column(String(100), nullable=False, index=True)
+    status = Column(String(50), nullable=False)
+    details = Column(JSON, nullable=True)
+    checked_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class EntityValueModel(Base):
+    """Specific entity attribute values for fast relational and fuzzy matching."""
+    __tablename__ = "entity_values"
+
+    value_id = Column(String(150), primary_key=True)
+    entity_id = Column(String(150), ForeignKey("entities.entity_id"), nullable=False, index=True)
+    column_name = Column(String(100), nullable=False)
+    raw_value = Column(String(255), nullable=False)
+    normalized_value = Column(String(255), nullable=False, index=True)
+
+
 # Indices for high-performance retrieval and filter execution
 Index("ix_village_state_pop", VillageDataModel.state, VillageDataModel.population)
 Index("ix_village_state_area", VillageDataModel.state, VillageDataModel.area_sq_km)
 Index("ix_dataset_status", DatasetModel.status)
 Index("ix_entity_alias_normalized", EntityAliasModel.normalized_alias)
+Index("ix_entity_val_norm", EntityValueModel.normalized_value)
+

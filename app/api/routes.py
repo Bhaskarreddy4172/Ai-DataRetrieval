@@ -121,6 +121,7 @@ def get_health() -> Dict[str, Any]:
 
 @router.get("/database/health")
 @router.get("/database/status")
+@router.get("/health/database")
 def get_database_health_endpoint() -> Dict[str, Any]:
     """Return database health, table row counts, pgvector status, and RAG document metrics."""
     from app.database.connection import db_manager
@@ -155,6 +156,83 @@ def get_database_health_endpoint() -> Dict[str, Any]:
         "status": "healthy" if health.get("healthy") else "degraded",
     }
 
+
+@router.get("/datasets")
+def list_all_datasets_endpoint() -> List[Dict[str, Any]]:
+    """List all registered datasets from the database registry."""
+    from app.database.repositories import dataset_repo
+    datasets = dataset_repo.list_datasets()
+    return [
+        {
+            "dataset_id": d.dataset_id,
+            "dataset_name": d.dataset_name,
+            "file_name": d.file_name,
+            "file_type": d.file_type,
+            "dataset_type": d.dataset_type,
+            "parent_dataset_id": d.parent_dataset_id,
+            "row_count": d.row_count,
+            "column_count": d.column_count,
+            "status": d.status,
+            "version": d.version,
+            "created_at": d.created_at.isoformat() if d.created_at else None,
+            "columns": [
+                {
+                    "column_id": c.column_id,
+                    "original_name": c.original_name,
+                    "normalized_name": c.normalized_name,
+                    "semantic_type": c.semantic_type,
+                    "data_type": c.data_type,
+                    "is_numeric": c.is_numeric,
+                }
+                for c in (d.columns or [])
+            ]
+        }
+        for d in datasets
+    ]
+
+
+@router.get("/schema")
+def get_global_schema_endpoint() -> Dict[str, Any]:
+    """Return complete database and dataset catalog schema."""
+    from app.database.repositories import dataset_repo, entity_repo
+    all_ds = dataset_repo.list_datasets()
+    catalog = {}
+    for ds in all_ds:
+        catalog[ds.dataset_name] = {
+            "dataset_id": ds.dataset_id,
+            "type": ds.dataset_type,
+            "row_count": ds.row_count,
+            "columns": [
+                {"name": c.original_name, "type": c.data_type, "semantic_type": c.semantic_type}
+                for c in (ds.columns or [])
+            ]
+        }
+    return {
+        "status": "success",
+        "datasets_count": len(all_ds),
+        "catalog": catalog
+    }
+
+
+@router.get("/system/status")
+def get_system_status_endpoint() -> Dict[str, Any]:
+    """Comprehensive system status report."""
+    from app.database.connection import db_manager
+    from app.dataset.registry import parent_child_registry
+    from app.rag.vector_store import database_vector_store
+
+    db_health = db_manager.check_health()
+    reg_health = parent_child_registry.get_health_report()
+    rag_count = database_vector_store.count_documents()
+
+    return {
+        "status": "operational",
+        "database": db_health,
+        "registry": reg_health,
+        "rag_index_size": rag_count,
+        "runtime_source": "DATABASE ONLY",
+        "file_access_at_runtime": False
+    }
 
 @router.get("/dataset/health-dashboard")
 def get_health_dashboard() -> Dict[str, Any]:
