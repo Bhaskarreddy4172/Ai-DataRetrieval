@@ -96,8 +96,14 @@ def get_health() -> Dict[str, Any]:
     from app.dataset.registry import parent_child_registry
     registry_health = parent_child_registry.get_health_report()
 
+    from app.database.connection import db_manager
+    db_health = db_manager.check_health()
+
     return {
-        "status": "healthy" if (ollama_info.get("available") and row_count > 0) else "ready",
+        "status": "healthy" if (row_count > 0 or db_health.get("healthy")) else "ready",
+        "database": db_health.get("status", "READY"),
+        "database_backend": db_health.get("backend", "SQLite"),
+        "pgvector": db_health.get("pgvector", "DISABLED"),
         "active_dataset": active_dataset,
         "rows": row_count,
         "columns": dataset_loader.get_columns(),
@@ -109,6 +115,44 @@ def get_health() -> Dict[str, Any]:
         "child_datasets_active": parent_child_registry.is_parent_child_active(),
         "child_datasets_count": registry_health.get("child_datasets_registered", 0),
         "registry_health": registry_health,
+        "runtime_source": "DATABASE ONLY",
+    }
+
+
+@router.get("/database/health")
+@router.get("/database/status")
+def get_database_health_endpoint() -> Dict[str, Any]:
+    """Return database health, table row counts, pgvector status, and RAG document metrics."""
+    from app.database.connection import db_manager
+    from app.database.repositories import (
+        dataset_repo, entity_repo, state_village_repo
+    )
+    from app.rag.vector_store import database_vector_store
+
+    health = db_manager.check_health()
+    states = state_village_repo.get_all_states()
+    all_ds = dataset_repo.list_datasets()
+    rag_count = database_vector_store.count_documents()
+
+    session = db_manager.get_session()
+    try:
+        from app.database.models import VillageDataModel
+        village_count = session.query(VillageDataModel).count()
+    except Exception:
+        village_count = 0
+    finally:
+        session.close()
+
+    return {
+        "database": "READY" if health.get("healthy") else "UNAVAILABLE",
+        "backend": health.get("backend", "PostgreSQL"),
+        "pgvector": health.get("pgvector", "DISABLED"),
+        "states": len(states),
+        "villages": village_count,
+        "datasets": len(all_ds),
+        "rag_documents": rag_count,
+        "runtime_source": "DATABASE ONLY",
+        "status": "healthy" if health.get("healthy") else "degraded",
     }
 
 
