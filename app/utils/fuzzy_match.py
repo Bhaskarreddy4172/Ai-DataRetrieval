@@ -81,6 +81,8 @@ LOCATION_ABBREVIATIONS: Dict[str, str] = {
     "ct": "Chhattisgarh",
     "ga": "Goa",
     "gj": "Gujarat",
+    "guj": "Gujarat",
+    "gujrat": "Gujarat",
     "hr": "Haryana",
     "hp": "Himachal Pradesh",
     "h.p.": "Himachal Pradesh",

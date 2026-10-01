@@ -97,7 +97,8 @@ class AnswerConsistencyValidator:
         operation: str,
         scope: str,
         answer: str,
-        results: List[Dict[str, Any]]
+        results: List[Dict[str, Any]],
+        session_id: Optional[str] = None
     ) -> Tuple[bool, Optional[str]]:
         """Validate answer consistency against question intent and constraints.
 
@@ -108,8 +109,17 @@ class AnswerConsistencyValidator:
         from app.query.fast_classifier import fast_query_classifier
 
         # Rule 1: State / Location Filter Constraint Enforcement (CRITICAL)
-        # If the user specified one or more states in the question, the result MUST belong to one of them.
+        # If the user specified one or more states in the question (or via active session context), the result MUST belong to one of them.
         expected_states = fast_query_classifier.extract_states(question)
+        if not expected_states and session_id and not fast_query_classifier.is_global_query(question, session_id=session_id):
+            try:
+                from app.conversation.context import conversation_manager
+                ctx_state = conversation_manager.get_active_state(session_id)
+                if ctx_state:
+                    expected_states = [ctx_state]
+            except Exception:
+                pass
+
         if expected_states and results:
             target_canonical = [s.lower() for s in expected_states]
             for r in results:

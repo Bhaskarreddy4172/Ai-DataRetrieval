@@ -217,6 +217,181 @@ class TestUniversalAll28StatesEngine(unittest.TestCase):
             self.assertLessEqual(pop, 100000)
             self.assertEqual(r.get("state"), "Telangana")
 
+    def test_11_multi_turn_conversation_flow(self):
+        """Verify 9-turn ChatGPT-style conversation sequence with state overrides, pivots, and follow-ups."""
+        from app.conversation.context import conversation_manager
+        from app.query.schema import StructuredQuery
+
+        session_id = "test_eval_convo_9turns"
+        conversation_manager.clear_session(session_id)
+
+        # Turn 1: Gujarat Highest Area
+        q1 = "Which village has the highest area in Gujarat?"
+        cls1 = fast_query_classifier.classify(q1, session_id=session_id)
+        res1 = universal_global_aggregation_engine.execute(q1, session_id=session_id)
+        self.assertEqual(cls1.intent, "MAX")
+        self.assertEqual(cls1.scope, "FILTERED")
+        self.assertEqual(cls1.metric, "Area_Sq_Km")
+        self.assertIn("Gujarat", res1.get("answer"))
+        self.assertIn("Gandhinagar_Village_10", res1.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q1, query=StructuredQuery(operation="MAX", limit=1),
+            result_count=len(res1.get("results", [])), results=res1.get("results", []),
+            answer=res1.get("answer", ""), metric=cls1.metric, intent=cls1.intent,
+            return_entity=cls1.return_entity, scope=cls1.scope
+        )
+
+        # Turn 2: Follow-up lowest area in Gujarat
+        q2 = "Which has less area?"
+        cls2 = fast_query_classifier.classify(q2, session_id=session_id)
+        res2 = universal_global_aggregation_engine.execute(q2, session_id=session_id)
+        self.assertEqual(cls2.intent, "MIN")
+        self.assertEqual(cls2.scope, "FILTERED")
+        self.assertEqual(cls2.metric, "Area_Sq_Km")
+        self.assertEqual(cls2.entities, ["Gujarat"])
+        self.assertIn("Gandhinagar_Village_05", res2.get("answer"))
+        self.assertIn("Gujarat", res2.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q2, query=StructuredQuery(operation="MIN", limit=1),
+            result_count=len(res2.get("results", [])), results=res2.get("results", []),
+            answer=res2.get("answer", ""), metric=cls2.metric, intent=cls2.intent,
+            return_entity=cls2.return_entity, scope=cls2.scope
+        )
+
+        # Turn 3: Explicit State Override to Karnataka
+        q3 = "Which village has highest area in Karnataka?"
+        cls3 = fast_query_classifier.classify(q3, session_id=session_id)
+        res3 = universal_global_aggregation_engine.execute(q3, session_id=session_id)
+        self.assertEqual(cls3.intent, "MAX")
+        self.assertEqual(cls3.scope, "FILTERED")
+        self.assertEqual(cls3.metric, "Area_Sq_Km")
+        self.assertEqual(cls3.entities, ["Karnataka"])
+        self.assertIn("Karnataka", res3.get("answer"))
+        self.assertIn("Bengaluru_Village_09", res3.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q3, query=StructuredQuery(operation="MAX", limit=1),
+            result_count=len(res3.get("results", [])), results=res3.get("results", []),
+            answer=res3.get("answer", ""), metric=cls3.metric, intent=cls3.intent,
+            return_entity=cls3.return_entity, scope=cls3.scope
+        )
+
+        # Turn 4: Follow-up highest population in Karnataka
+        q4 = "Which has more population?"
+        cls4 = fast_query_classifier.classify(q4, session_id=session_id)
+        res4 = universal_global_aggregation_engine.execute(q4, session_id=session_id)
+        self.assertEqual(cls4.intent, "MAX")
+        self.assertEqual(cls4.scope, "FILTERED")
+        self.assertEqual(cls4.metric, "Population")
+        self.assertEqual(cls4.entities, ["Karnataka"])
+        self.assertIn("Karnataka", res4.get("answer"))
+        self.assertIn("Bengaluru_Village_10", res4.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q4, query=StructuredQuery(operation="MAX", limit=1),
+            result_count=len(res4.get("results", [])), results=res4.get("results", []),
+            answer=res4.get("answer", ""), metric=cls4.metric, intent=cls4.intent,
+            return_entity=cls4.return_entity, scope=cls4.scope
+        )
+
+        # Turn 5: Pronoun capital lookup
+        q5 = "What is its capital?"
+        cls5 = fast_query_classifier.classify(q5, session_id=session_id)
+        res5 = universal_global_aggregation_engine.execute(q5, session_id=session_id)
+        self.assertEqual(cls5.intent, "CAPITAL_LOOKUP")
+        self.assertEqual(cls5.scope, "STATE_CAPITAL")
+        self.assertEqual(cls5.entities, ["Karnataka"])
+        self.assertIn("Bengaluru", res5.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q5, query=StructuredQuery(operation="CAPITAL_LOOKUP", limit=1),
+            result_count=len(res5.get("results", [])), results=res5.get("results", []),
+            answer=res5.get("answer", ""), metric=cls5.metric, intent=cls5.intent,
+            return_entity=cls5.return_entity, scope=cls5.scope
+        )
+
+        # Turn 6: Pronoun village count
+        q6 = "How many villages does it have?"
+        cls6 = fast_query_classifier.classify(q6, session_id=session_id)
+        res6 = universal_global_aggregation_engine.execute(q6, session_id=session_id)
+        self.assertEqual(cls6.intent, "COUNT")
+        self.assertEqual(cls6.metric, "VILLAGE_COUNT")
+        self.assertEqual(cls6.entities, ["Karnataka"])
+        self.assertIn("10 villages", res6.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q6, query=StructuredQuery(operation="COUNT", limit=1),
+            result_count=len(res6.get("results", [])), results=res6.get("results", []),
+            answer=res6.get("answer", ""), metric=cls6.metric, intent=cls6.intent,
+            return_entity=cls6.return_entity, scope=cls6.scope
+        )
+
+        # Turn 7: Elliptical pivot to Bihar preserving COUNT
+        q7 = "And for Bihar?"
+        cls7 = fast_query_classifier.classify(q7, session_id=session_id)
+        res7 = universal_global_aggregation_engine.execute(q7, session_id=session_id)
+        self.assertEqual(cls7.intent, "COUNT")
+        self.assertEqual(cls7.metric, "VILLAGE_COUNT")
+        self.assertEqual(cls7.entities, ["Bihar"])
+        self.assertIn("10 villages", res7.get("answer"))
+        conversation_manager.add_turn(
+            session_id=session_id, question=q7, query=StructuredQuery(operation="COUNT", limit=1),
+            result_count=len(res7.get("results", [])), results=res7.get("results", []),
+            answer=res7.get("answer", ""), metric=cls7.metric, intent=cls7.intent,
+            return_entity=cls7.return_entity, scope=cls7.scope
+        )
+
+        # Turn 8: Explicit global state ranking MAX
+        q8 = "which state has more population?"
+        cls8 = fast_query_classifier.classify(q8, session_id=session_id)
+        res8 = universal_global_aggregation_engine.execute(q8, session_id=session_id)
+        self.assertEqual(cls8.intent, "MAX")
+        self.assertEqual(cls8.scope, "STATE_RANKING")
+        self.assertIn("West Bengal", res8.get("answer"))
+
+        # Turn 9: Explicit global state ranking MIN
+        q9 = "which state has less population?"
+        cls9 = fast_query_classifier.classify(q9, session_id=session_id)
+        res9 = universal_global_aggregation_engine.execute(q9, session_id=session_id)
+        self.assertEqual(cls9.intent, "MIN")
+        self.assertEqual(cls9.scope, "STATE_RANKING")
+        self.assertIn("Goa", res9.get("answer"))
+
+    def test_12_all_columns_support_generic_operations(self):
+        """Verify all columns (Area, Households, Males, Females, Literacy, Population) support operations."""
+        cols = ["Area_Sq_Km", "Households", "No_of_Males", "No_of_Females", "Literacy_Rate_Percent", "Population"]
+        ops = ["SUM", "AVERAGE", "MEDIAN", "MIN", "MAX", "RANGE"]
+
+        for col in cols:
+            for op in ops:
+                with self.subTest(column=col, operation=op):
+                    q = f"{op} of {col} in Telangana"
+                    res = universal_global_aggregation_engine.execute(q)
+                    self.assertTrue(len(res.get("answer", "")) > 0)
+                    self.assertIn("Telangana", res.get("answer"))
+
+    def test_13_consistency_validator_enforces_state_filters(self):
+        """Verify AnswerConsistencyValidator catches state filter violations."""
+        from app.query.validator import answer_consistency_validator
+
+        # Valid result matching query state
+        valid_res = [{"village": "Village_1", "state": "Gujarat", "Area_Sq_Km": 40.72}]
+        is_ok, reason = answer_consistency_validator.validate_answer(
+            question="Which village has highest area in Gujarat?",
+            operation="MAX", scope="FILTERED",
+            answer="The village is Village_1 in Gujarat.",
+            results=valid_res
+        )
+        self.assertTrue(is_ok)
+        self.assertIsNone(reason)
+
+        # Invalid result from another state (e.g. Rajasthan returned for Gujarat query)
+        invalid_res = [{"village": "Jaipur_Village_1", "state": "Rajasthan", "Area_Sq_Km": 50.0}]
+        is_bad, reason = answer_consistency_validator.validate_answer(
+            question="Which village has highest area in Gujarat?",
+            operation="MAX", scope="FILTERED",
+            answer="The village is Jaipur_Village_1 in Rajasthan.",
+            results=invalid_res
+        )
+        self.assertFalse(is_bad)
+        self.assertIn("State constraint violation", reason)
+
 
 if __name__ == "__main__":
     unittest.main()

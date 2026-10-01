@@ -25,6 +25,7 @@ INDIAN_STATE_CODES: Dict[str, str] = {
     "ct": "Chhattisgarh",
     "ga": "Goa",
     "gj": "Gujarat",
+    "guj": "Gujarat",
     "hr": "Haryana",
     "hp": "Himachal Pradesh",
     "jh": "Jharkhand",

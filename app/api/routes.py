@@ -505,7 +505,8 @@ def process_query(payload: QueryRequest) -> QueryResponse:
             operation=h_res.get("operation", "LOOKUP"),
             scope=h_res.get("scope", ""),
             answer=h_res.get("answer", ""),
-            results=h_res.get("results", [])
+            results=h_res.get("results", []),
+            session_id=payload.session_id
         )
         if not is_consistent:
             logger.warning(f"AnswerConsistencyValidator triggered re-plan: {reason}")
@@ -524,7 +525,11 @@ def process_query(payload: QueryRequest) -> QueryResponse:
             query=h_query,
             result_count=h_res.get("result_count", 0),
             results=h_res.get("results", []),
-            answer=h_res.get("answer", "")
+            answer=h_res.get("answer", ""),
+            metric=h_res.get("metric"),
+            intent=h_res.get("operation"),
+            return_entity=h_res.get("return_entity"),
+            scope=h_res.get("scope")
         )
         cols_used = h_res.get("columns_used", [])
         return QueryResponse(

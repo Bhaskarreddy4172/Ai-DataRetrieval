@@ -197,12 +197,26 @@ class FastQueryClassifier:
                 states = self.extract_states(exp_q)
                 # GLOBAL ONLY IF NO STATE / LOCATION FILTERS ARE SPECIFIED!
                 if len(states) == 0:
+                    if session_id:
+                        try:
+                            from app.conversation.context import conversation_manager
+                            if conversation_manager.get_active_state(session_id):
+                                return False
+                        except Exception:
+                            pass
                     return True
 
         # 4. Global totals or averages without specific entity (e.g. "what is the total population?", "average population")
         if re.search(r"\b(?:total|sum\s+of|average|mean|median)\s+(?:population|people|villages|males|females)\b", norm_q):
             states = self.extract_states(exp_q)
             if not states:
+                if session_id:
+                    try:
+                        from app.conversation.context import conversation_manager
+                        if conversation_manager.get_active_state(session_id) and not any(w in norm_q for w in ["all", "india", "country"]):
+                            return False
+                    except Exception:
+                        pass
                 return True
 
         # 5. Global rankings (e.g. "rank all states", "top 5 states", "rank states by population")
@@ -326,6 +340,91 @@ class FastQueryClassifier:
         metric = self.extract_metric(q_lower)
         states = self.extract_states(exp_q)
 
+        # Retrieve session context if session_id is provided
+        last_turn = None
+        active_state = None
+        active_capital = None
+        active_village = None
+        last_metric = None
+        last_intent = None
+        last_return_entity = None
+        if session_id:
+            try:
+                from app.conversation.context import conversation_manager
+                last_turn = conversation_manager.get_last_turn(session_id)
+                active_state = conversation_manager.get_active_state(session_id)
+                active_capital = conversation_manager.get_active_capital(session_id)
+                active_village = conversation_manager.get_last_village(session_id)
+                last_metric = conversation_manager.get_last_metric(session_id)
+                last_intent = conversation_manager.get_last_intent(session_id)
+                last_return_entity = conversation_manager.get_last_return_entity(session_id)
+            except Exception:
+                pass
+
+        # 0.9. Check for Elliptical Entity Pivot: "And for Karnataka?", "What about Bihar?", "How about Telangana?"
+        if len(states) == 1 and last_turn:
+            is_pivot = any(q_lower.startswith(w) for w in ["what about", "how about", "and for", "and in", "what of", "now in"]) or q_lower.strip().rstrip("?").rstrip(".") in [s.lower() for s in states]
+            has_explicit_metric_or_op = any(w in q_lower for w in [
+                "highest", "lowest", "max", "min", "most", "least", "more", "less",
+                "total", "sum", "average", "avg", "mean", "median", "range", "count",
+                "capital", "capitals", "villages", "village", "population", "people",
+                "males", "females", "literacy", "area", "households"
+            ])
+            if is_pivot and not has_explicit_metric_or_op:
+                target_state = states[0]
+                target_metric = last_metric or "Population"
+                target_intent = last_intent or "SUM"
+                target_return_entity = last_return_entity or "Village"
+
+                if target_intent == "CAPITAL_LOOKUP":
+                    return FastClassificationResult(
+                        is_fast_path=True,
+                        intent="CAPITAL_LOOKUP",
+                        scope="STATE_CAPITAL",
+                        metric="Capital",
+                        entities=[target_state],
+                        original_question=question,
+                        normalized_question=norm_q
+                    )
+                elif target_intent == "COUNT" and target_metric == "VILLAGE_COUNT":
+                    return FastClassificationResult(
+                        is_fast_path=True,
+                        intent="COUNT",
+                        scope="SINGLE_STATE",
+                        metric="VILLAGE_COUNT",
+                        entities=[target_state],
+                        original_question=question,
+                        normalized_question=norm_q
+                    )
+                elif target_intent in ["MAX", "MIN"]:
+                    order = "DESC" if target_intent == "MAX" else "ASC"
+                    return FastClassificationResult(
+                        is_fast_path=True,
+                        intent=target_intent,
+                        scope="FILTERED",
+                        scope_type="FILTERED",
+                        return_entity="Village",
+                        filter_entity="State",
+                        filter_value=target_state,
+                        filters=[{"column": "State", "operator": "=", "value": target_state}],
+                        metric=target_metric,
+                        entities=[target_state],
+                        n_limit=1,
+                        order=order,
+                        original_question=question,
+                        normalized_question=norm_q
+                    )
+                elif target_intent in ["AVERAGE", "MEDIAN", "RANGE", "SUM"]:
+                    return FastClassificationResult(
+                        is_fast_path=True,
+                        intent=target_intent,
+                        scope="SINGLE_STATE",
+                        metric=target_metric,
+                        entities=[target_state],
+                        original_question=question,
+                        normalized_question=norm_q
+                    )
+
         # 1. Check for Contextual Session References: "these 5 states", "these states"
         if not states and session_id:
             m_these = re.search(r"\b(?:these|those)\s+(?:(\d+)\s+)?states\b", q_lower)
@@ -345,6 +444,145 @@ class FastQueryClassifier:
                 if session_states:
                     count_req = int(m_these.group(1)) if m_these.group(1) else len(session_states)
                     states = session_states[:count_req]
+
+        # 1.5. Contextual Follow-up without explicit state: inherit active_state
+        is_explicit_all_states = any(re.search(pat, q_lower) or re.search(pat, exp_lower) for pat in self.ALL_STATES_PATTERNS)
+        is_explicit_all_villages = any(re.search(pat, q_lower) or re.search(pat, exp_lower) for pat in self.ALL_VILLAGES_PATTERNS)
+        is_state_ranking_query = bool(re.search(r"\b(?:which\s+state|what\s+state|state\s+with|who\s+has|who\s+have|which\s+is\s+the\s+state|states\s+with)\b", q_lower)) or bool(re.search(r"^\s*who\s+(?:has|have|is)\b", q_lower))
+
+        if not states and active_state and not is_explicit_all_states and not is_explicit_all_villages and not is_state_ranking_query:
+            # Check Pronoun Capital Lookup: "What is its capital?", "capital of it", "its capital"
+            if any(w in q_lower for w in ["capital", "capitals", "rajadhani"]):
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="CAPITAL_LOOKUP",
+                    scope="STATE_CAPITAL",
+                    metric="Capital",
+                    entities=[active_state],
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+            # Check Pronoun Village Count: "How many villages does it have?", "count of villages in it"
+            if any(w in q_lower for w in ["how many villages", "number of villages", "count of villages", "village count"]) or (any(w in q_lower for w in ["how many", "count"]) and any(w in q_lower for w in ["it have", "in it", "does it have", "are in it", "has it"])):
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="COUNT",
+                    scope="SINGLE_STATE",
+                    metric="VILLAGE_COUNT",
+                    entities=[active_state],
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+            # Check Follow-up Village Extremes: "Which has less area?", "Which has more population?", "Which village has lowest area?", "What about lowest area?"
+            ext_max_words = ["highest", "maximum", "max", "most", "largest", "more", "higher", "greater", "greatest", "top", "best"]
+            ext_min_words = ["lowest", "minimum", "min", "least", "smallest", "less", "fewer", "fewest", "lower", "bottom", "worst"]
+            has_v_max = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_max_words)
+            has_v_min = any(re.search(r"\b" + re.escape(w) + r"\b", q_lower) for w in ext_min_words)
+            if has_v_max or has_v_min:
+                is_max = has_v_max and not has_v_min
+                intent = "MAX" if is_max else "MIN"
+                order = "DESC" if is_max else "ASC"
+                target_metric = metric
+                if not target_metric or target_metric == "VILLAGE_COUNT":
+                    target_metric = last_metric or "Population"
+
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent=intent,
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village",
+                    filter_entity="State",
+                    filter_value=active_state,
+                    filters=[{"column": "State", "operator": "=", "value": active_state}],
+                    metric=target_metric,
+                    entities=[active_state],
+                    n_limit=1,
+                    order=order,
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+            # Check Follow-up Column Comparison Filter: "which village has more males than females"
+            m_col_comp = re.search(r"\b(?:more|fewer|less|greater|higher|lower)\s+(males|men|females|women|households)\s+than\s+(males|men|females|women|households)\b", q_lower)
+            if not m_col_comp:
+                m_col_comp = re.search(r"\b(males|men|females|women|households)\s*(>|<|>=|<=)\s*(males|men|females|women|households)\b", q_lower)
+            if m_col_comp:
+                c1 = self.extract_metric(m_col_comp.group(1))
+                c2 = self.extract_metric(m_col_comp.group(2))
+                op = "<" if any(w in q_lower for w in ["fewer", "less", "lower", "<"]) else ">"
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="FILTER",
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village",
+                    filter_entity="State",
+                    filter_value=active_state,
+                    filters=[
+                        {"column": "State", "operator": "=", "value": active_state},
+                        {"column": c1, "operator": op, "compare_to_column": c2}
+                    ],
+                    metric=c1,
+                    entities=[active_state],
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+            # Check Follow-up Numeric Threshold or Range: "population above 10000", "between 5000 and 10000"
+            m_range = re.search(r"\b(?:between|from)\s+([0-9]+(?:\.[0-9]+)?)\s+(?:and|to)\s+([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+            m_thresh = re.search(r"\b(population|literacy|males|females|households|area)?\s*(>|<|>=|<=|=|==|above|over|greater\s+than|more\s+than|below|under|less\s+than|fewer\s+than)\s*([0-9]+(?:\.[0-9]+)?)\b", q_lower)
+            if m_range or m_thresh:
+                filt_list = [{"column": "State", "operator": "=", "value": active_state}]
+                if m_range:
+                    r1, r2 = float(m_range.group(1)), float(m_range.group(2))
+                    m_col = self.extract_metric(q_lower) or "Population"
+                    filt_list.append({"column": m_col, "operator": ">=", "value": min(r1, r2)})
+                    filt_list.append({"column": m_col, "operator": "<=", "value": max(r1, r2)})
+                elif m_thresh:
+                    m_raw, op_raw, val_raw = m_thresh.groups()
+                    m_col = self.extract_metric(m_raw) if m_raw else (self.extract_metric(q_lower) or "Population")
+                    op = ">" if op_raw in ["above", "over", "greater than", "more than", ">"] else ("<" if op_raw in ["below", "under", "less than", "fewer than", "<"] else "=")
+                    filt_list.append({"column": m_col, "operator": op, "value": float(val_raw) if "." in val_raw else int(val_raw)})
+
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent="FILTER",
+                    scope="FILTERED",
+                    scope_type="FILTERED",
+                    return_entity="Village",
+                    filter_entity="State",
+                    filter_value=active_state,
+                    filters=filt_list,
+                    metric=m_col,
+                    entities=[active_state],
+                    original_question=question,
+                    normalized_question=norm_q
+                )
+
+            # Check Follow-up State Aggregation: "total population of it", "what is its area", "average literacy"
+            is_agg = any(w in q_lower for w in ["average", "avg", "mean", "median", "range", "total", "sum", "what is its", "its population", "its area", "its literacy"])
+            if is_agg and (metric or last_metric):
+                m = metric or last_metric or "Population"
+                op = "SUM"
+                if any(w in q_lower for w in ["average", "avg", "mean"]) or m == "Literacy_Rate_Percent":
+                    op = "AVERAGE"
+                elif any(w in q_lower for w in ["median"]):
+                    op = "MEDIAN"
+                elif any(w in q_lower for w in ["range"]):
+                    op = "RANGE"
+
+                return FastClassificationResult(
+                    is_fast_path=True,
+                    intent=op,
+                    scope="SINGLE_STATE",
+                    metric=m,
+                    entities=[active_state],
+                    original_question=question,
+                    normalized_question=norm_q
+                )
 
         # 1.6. Check Capital Lookup: "What is the capital of Telangana?", "Capitals of Telangana, AP and Karnataka"
         has_capital_word = any(w in q_lower for w in ["capital", "capitals", "rajadhani"])

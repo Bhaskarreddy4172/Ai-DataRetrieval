@@ -21,6 +21,10 @@ class ConversationManager:
         result_count: int,
         results: Optional[List[Dict[str, Any]]] = None,
         answer: Optional[str] = None,
+        metric: Optional[str] = None,
+        intent: Optional[str] = None,
+        return_entity: Optional[str] = None,
+        scope: Optional[str] = None,
     ):
         import time
         from app.dataset.registry import parent_child_registry
@@ -47,6 +51,29 @@ class ConversationManager:
                 if not curr_state:
                     curr_state = name
 
+        # Extract metric, intent, return_entity
+        from app.query.fast_classifier import fast_query_classifier
+        curr_metric = metric
+        if not curr_metric:
+            if results and len(results) > 0 and isinstance(results[0], dict) and "metric" in results[0]:
+                curr_metric = results[0].get("metric")
+            elif hasattr(query, "target_column") and getattr(query, "target_column"):
+                curr_metric = getattr(query, "target_column")
+            else:
+                curr_metric = fast_query_classifier.extract_metric(question)
+
+        curr_intent = intent or (getattr(query, "operation", None) if query else None)
+        curr_return_entity = return_entity
+        if not curr_return_entity:
+            if curr_village or "village" in question.lower():
+                curr_return_entity = "Village"
+            elif curr_capital or "capital" in question.lower():
+                curr_return_entity = "Capital"
+            elif curr_state or "state" in question.lower():
+                curr_return_entity = "State"
+            else:
+                curr_return_entity = "Record"
+
         curr_comparison = None
         if results and len(results) > 0 and isinstance(results[0], dict) and "left_entity" in results[0]:
             c_rec = results[0]
@@ -67,8 +94,7 @@ class ConversationManager:
             if session_id not in self._sessions:
                 self._sessions[session_id] = []
             
-            # Inherit previous session state only if not a global query
-            from app.query.fast_classifier import fast_query_classifier
+            # Inherit previous session state only if not an explicit all-states query
             is_global = fast_query_classifier.is_global_query(question)
 
             if is_global:
@@ -82,6 +108,9 @@ class ConversationManager:
                     final_child_ds = None
                 final_village = None
                 final_comparison = curr_comparison
+                final_metric = curr_metric
+                final_intent = curr_intent
+                final_return_entity = curr_return_entity
             else:
                 prev_turn = self._sessions[session_id][-1] if self._sessions[session_id] else {}
                 final_state = curr_state or prev_turn.get("state")
@@ -89,6 +118,9 @@ class ConversationManager:
                 final_child_ds = curr_child_ds or prev_turn.get("child_dataset")
                 final_village = curr_village or prev_turn.get("village")
                 final_comparison = curr_comparison or prev_turn.get("comparison")
+                final_metric = curr_metric or prev_turn.get("metric")
+                final_intent = curr_intent or prev_turn.get("intent")
+                final_return_entity = curr_return_entity or prev_turn.get("return_entity")
 
             self._sessions[session_id].append({
                 "question": question,
@@ -101,6 +133,11 @@ class ConversationManager:
                 "child_dataset": final_child_ds,
                 "village": final_village,
                 "comparison": final_comparison,
+                "metric": final_metric,
+                "intent": final_intent,
+                "operation": final_intent,
+                "return_entity": final_return_entity,
+                "scope": scope,
                 "timestamp": time.time(),
             })
             # Retain up to 50 turns per session
@@ -174,6 +211,37 @@ class ConversationManager:
             history = self._sessions.get(session_id)
             if history:
                 return history[-1].get("village")
+            return None
+
+    def get_last_turn(self, session_id: str) -> Optional[Dict[str, Any]]:
+        with self._lock:
+            history = self._sessions.get(session_id)
+            if history:
+                return history[-1]
+            return None
+
+    def get_last_state(self, session_id: str) -> Optional[str]:
+        return self.get_active_state(session_id)
+
+    def get_last_metric(self, session_id: str) -> Optional[str]:
+        with self._lock:
+            history = self._sessions.get(session_id)
+            if history:
+                return history[-1].get("metric")
+            return None
+
+    def get_last_intent(self, session_id: str) -> Optional[str]:
+        with self._lock:
+            history = self._sessions.get(session_id)
+            if history:
+                return history[-1].get("intent")
+            return None
+
+    def get_last_return_entity(self, session_id: str) -> Optional[str]:
+        with self._lock:
+            history = self._sessions.get(session_id)
+            if history:
+                return history[-1].get("return_entity")
             return None
 
     def contextualize_followup(self, question: str, session_id: str, current_query: StructuredQuery) -> StructuredQuery:
